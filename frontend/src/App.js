@@ -17,7 +17,6 @@ import anima37 from './theme/images/online-payment.png';
 import scrn1 from './theme/images/scrn-1.png';
 import scrn2 from './theme/images/scrn-2.png';
 import scrn3 from './theme/images/scrn-3.png';
-import scrn4 from './theme/images/a';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -89,7 +88,7 @@ const App = () => {
                     </div>
                 </header>
 
-                <IonContent className="ion-padding" fullscreen>
+                <IonContent fullscreen>
                     <section className="banner v3">
                         <div className="container">
                             <div className="row">
