@@ -43,6 +43,7 @@ setupIonicReact();
 const App = () => {
     return (
         <IonApp>
+            {/*/////// HOME PAGE //////*/}
             <IonPage style={{display:'none'}}>
                 <IonHeader className="header03">
                     <div className="header-top">
@@ -534,12 +535,15 @@ const App = () => {
 
                 </IonContent>
             </IonPage>
+            {/*/////// HOME PAGE //////*/}
+            {/*/////// DASHBOARD PAGE //////*/}
             <IonPage>
                 <IonHeader>Dashboard Header</IonHeader>
                 <IonContent fullscreen>
                     Dash board page
                 </IonContent>
             </IonPage>
+            {/*/////// DASHBOARD PAGE //////*/}
         </IonApp>
     );
 };
