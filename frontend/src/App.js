@@ -19,6 +19,7 @@ import scrn2 from './theme/images/scrn-2.png';
 import scrn3 from './theme/images/scrn-3.png';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
+import './css/common.css';
 
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
@@ -42,7 +43,7 @@ setupIonicReact();
 const App = () => {
     return (
         <IonApp>
-            <IonPage>
+            <IonnoPage>
                 <header className="header03">
                     <div className="header-top">
                         <div className="container">
@@ -533,7 +534,7 @@ const App = () => {
                     </footer>
 
                 </IonContent>
-            </IonPage>
+            </IonnoPage>
         </IonApp>
     );
 };
