@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonPage, setupIonicReact,IonApp, IonContent} from '@ionic/react';
+import {IonPage, setupIonicReact, IonApp, IonContent, IonHeader} from '@ionic/react';
 import unikPayLogo from './theme/images/UnikPayIndia-Logo.png';
 import anima1 from './theme/images/an1/1.png';
 import anima2 from './theme/images/an1/2.png';
@@ -43,8 +43,8 @@ setupIonicReact();
 const App = () => {
     return (
         <IonApp>
-            <IonPage>
-                <header className="header03">
+            <IonPage style={{display:'none'}}>
+                <IonHeader className="header03">
                     <div className="header-top">
                         <div className="container">
                             <div className="row align-items-center">
@@ -87,8 +87,7 @@ const App = () => {
                             </nav>
                         </div>
                     </div>
-                </header>
-
+                </IonHeader>
                 <IonContent fullscreen>
                     <section className="banner v3">
                         <div className="container">
@@ -533,6 +532,12 @@ const App = () => {
                         </div>
                     </footer>
 
+                </IonContent>
+            </IonPage>
+            <IonPage>
+                <IonHeader>Dashboard Header</IonHeader>
+                <IonContent fullscreen>
+                    Dash board page
                 </IonContent>
             </IonPage>
         </IonApp>
