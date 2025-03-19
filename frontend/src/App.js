@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonPage, setupIonicReact,IonApp, IonHeader, IonToolbar, IonTitle, IonContent, IonText } from '@ionic/react';
+import { IonPage, setupIonicReact,IonApp, IonContent} from '@ionic/react';
 import unikPayLogo from './theme/images/UnikPayIndia-Logo.png';
 import anima1 from './theme/images/an1/1.png';
 import anima2 from './theme/images/an1/2.png';
