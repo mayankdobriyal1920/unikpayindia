@@ -43,7 +43,7 @@ setupIonicReact();
 const App = () => {
     return (
         <IonApp>
-            <IonnoPage>
+            <IonPage>
                 <header className="header03">
                     <div className="header-top">
                         <div className="container">
@@ -534,7 +534,7 @@ const App = () => {
                     </footer>
 
                 </IonContent>
-            </IonnoPage>
+            </IonPage>
         </IonApp>
     );
 };
