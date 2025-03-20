@@ -17,6 +17,7 @@ import anima37 from './theme/images/online-payment.png';
 import scrn1 from './theme/images/scrn-1.png';
 import scrn2 from './theme/images/scrn-2.png';
 import scrn3 from './theme/images/scrn-3.png';
+import scrn4 from './theme/images/scrn-4.png';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 import './css/common.css';
@@ -43,8 +44,122 @@ setupIonicReact();
 const App = () => {
     return (
         <IonApp>
+            {/*/////// LOGIN PAGE //////*/}
+            <IonPage>
+                <IonHeader className="header03">
+                    <div className="header-top">
+                        <div className="container">
+                            <div className="row align-items-center">
+                                <div className="col-sm-8">
+                                    <div className="d-inline-flex ml-auto">
+                                        <a href="#" className="top-text"><i
+                                            className="fas fa-phone-alt"></i> info@roysha.com</a>
+                                        <a href="#" className="top-text"><i className="fas fa-envelope"></i> +21 (0) 332
+                                            0000 12</a>
+                                    </div>
+                                </div>
+                                <div className="col-sm-4 text-sm-right">
+                                    <div className="social-icons">
+                                        <a href="#"><i className="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i className="fab fa-twitter"></i></a>
+                                        <a href="#"><i className="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="header-main">
+                        <div className="container d-flex align-items-center">
+                            <a className="logo" href="index.html">
+                                <img src={unikPayLogo} alt=""/>
+                            </a>
+                            <nav className="primary-menu ml-auto">
+                                <a id="mobile-menu-toggler" href="#"><i className="fas fa-bars"></i></a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li><a href="landing-page-send.html">About</a></li>
+                                    <li><a href="landing-page-receive.html">Services</a></li>
+                                    <li><a href="landing-page-receive.html">Clients</a></li>
+                                    <li><a href="landing-page-receive.html">Contact</a></li>
+                                    <li><a href="landing-page-receive.html">Login</a></li>
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <section className="login-page">
+                        <div className="signup-login">
+                            <div className="sl-slider-caro">
+                                <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                                    <ol className="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0"
+                                            className="active"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                    </ol>
+                                    <div className="carousel-inner">
+                                        <div className="carousel-item single-sl-slide active">
+                                            <img className="d-block w-100" src={scrn4} alt="First slide"/>
+                                        </div>
+                                        <div className="carousel-item single-sl-slide">
+                                            <img className="d-block w-100" src={scrn4} alt="Second slide"/>
+                                        </div>
+                                        <div className="carousel-item single-sl-slide">
+                                            <img className="d-block w-100" src={scrn4} alt="Third slide"/>
+                                        </div>
+                                    </div>
+                                    <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                       data-slide="prev">
+                                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span className="sr-only">Previous</span>
+                                    </a>
+                                    <a className="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                       data-slide="next">
+                                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span className="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="sl-form-wrap">
+                                <div className="content-box">
+                                    <h2>Login Account</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit sedo<br/>
+                                        eiusmod tempor incididunt dolore.
+                                    </p>
+                                </div>
+                                <form>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputEmail1">Phone Number</label>
+                                        <input type="phone" className="form-control" id="exampleInputEmail1"
+                                               aria-describedby="emailHelp" placeholder="Phone Number"/>
+
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInputPassword1">Password</label>
+                                        <input type="password" className="form-control" id="exampleInputPassword1"
+                                               placeholder="Password"/>
+                                    </div>
+                                    <div className="form-group form-check">
+                                        <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+                                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                                    </div>
+                                    <button type="submit" className="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </IonHeader>
+
+            </IonPage>
             {/*/////// HOME PAGE //////*/}
-            <IonPage style={{display:'none'}}>
+            <IonPage style={{display: 'none'}}>
                 <IonHeader className="header03">
                     <div className="header-top">
                         <div className="container">
@@ -537,7 +652,7 @@ const App = () => {
             </IonPage>
             {/*/////// HOME PAGE //////*/}
             {/*/////// DASHBOARD PAGE //////*/}
-            <IonPage>
+            <IonPage style={{display: 'none'}}>
                 <IonHeader>Dashboard Header</IonHeader>
                 <IonContent fullscreen>
                     Dash board page

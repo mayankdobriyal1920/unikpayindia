@@ -1,0 +1,19 @@
+.signup-login {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.signup-login .sl-slider-caro {
+    background-color: #256be6;
+    position: relative;
+    padding: 10% 0 5%;
+}
+.signup-login .sl-slider-caro .single-sl-slide img{
+    max-width: 763px;
+    margin: 0 auto 40px;
+}
