@@ -474,13 +474,13 @@
     addClassName();
 })(jQuery);
 
-var imported = document.createElement("script");
-imported.src = "inc/switcher/js/switcher.js";
-document.head.appendChild(imported);
-var styleE = document.createElement("link");
-styleE.href = "inc/switcher/css/switcher.css";
-styleE.rel = "stylesheet";
-document.head.appendChild(styleE);
+// var imported = document.createElement("script");
+// imported.src = "inc/switcher/js/switcher.js";
+// document.head.appendChild(imported);
+// var styleE = document.createElement("link");
+// styleE.href = "inc/switcher/css/switcher.css";
+// styleE.rel = "stylesheet";
+// document.head.appendChild(styleE);
 
 
 //======================

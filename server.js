@@ -8,13 +8,12 @@ import pool from './models/connection.js'; // MySQL connection
 import dotenv from 'dotenv';
 import commonRouter from './routers/commonRouter.js';
 import cookieParser from 'cookie-parser';
-import {actionToSetAllCronJobsToBettingSlot} from "./models/commonModel.js";
 
 dotenv.config(); // Load environment variables
 
 // Initialize Express app
 const app = express();
-const PORT = process.env.PORT || 4003;
+const PORT = process.env.PORT || 4000;
 export let userSocketIdsObject = {};
 
 // Define allowed origins from environment variables or default to localhost
@@ -22,7 +21,7 @@ const allowedOrigins = [
         'http://localhost',
         'http://localhost:3000',
         'https://localhost',
-        'https://getbet.in',
+        'https://unikpayindia.com',
         'https://localhost:3000',
         'http://192.168.1.6:3000',
     ];
@@ -50,10 +49,10 @@ app.set('trust proxy', 1);
 app.use(
     session({
         store: sessionStore,
-        secret: process.env.SESSION_SECRET || 'get-bet-session-store', // Use environment variable for secret
+        secret: process.env.SESSION_SECRET || 'unikpayindia-mobile-app-session-store', // Use environment variable for secret
         resave: false,
         saveUninitialized: false,
-        name: 'get-bet-mobile-app-session', // Use dynamic session name
+        name: 'unikpayindia-mobile-app-session', // Use dynamic session name
         cookie: {
             expires: new Date(Date.now() + 31536000000),  // 1 year expiration
             httpOnly: true,
@@ -86,9 +85,9 @@ app.use(
 
 
 // Routes
-app.use('/api-get-bet/common', commonRouter);
+app.use('/api-call-unikpay/common', commonRouter);
 
-app.get('/api-get-bet/', (req, res) => {
+app.get('/api-call-unikpay/', (req, res) => {
     res.send(`Server is running!`);
 });
 
@@ -122,6 +121,5 @@ io.on('connection', (socket) => {
 
 // Start server
 server.listen(PORT, () => {
-    actionToSetAllCronJobsToBettingSlot();
     console.log(`Server is running on http://localhost:${PORT}`);
 });
