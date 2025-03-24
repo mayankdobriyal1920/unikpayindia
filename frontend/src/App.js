@@ -64,6 +64,7 @@ const App = () => {
     const userSession = useSelector((state) => state.userSession);
     const {userInfo} = useSelector((state) => state.userAuthDetail);
 
+
     useEffect(() => {
         dispatch(actionToGetUserSessionData());
     }, []);
