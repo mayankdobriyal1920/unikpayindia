@@ -2,6 +2,7 @@ import React from 'react';
 import {IonContent, IonHeader, IonPage} from "@ionic/react";
 import unikPayLogo from '../theme/images/UnikPayIndia-Logo.png';
 import usericon from '../theme/images/user-icon.jpg';
+import multiwallet from '../theme/images/retailer-icons/multi-wallet-icon.svg';
 export default function DashboardPage(){
     return(
         <IonPage>
@@ -83,7 +84,7 @@ export default function DashboardPage(){
                                                     </div>
                                                     <div className="d-sm-block d-none userprofile">
                                                         <p className=" mb-0">Elizabeth Zane</p>
-                                                        <span className="op-7 fw-normal d-block fs-11 lh-1">Premium Member</span>
+                                                        <span className="op-7 fw-normal d-block fs-11 lh-1">Retailer</span>
                                                     </div>
                                                 </div>
 
@@ -153,14 +154,16 @@ export default function DashboardPage(){
             <IonContent fullscreen>
                 <div className="upi-side-nav">
                     <div className="upi-side-nav-scroll mm-active">
-                        <ul className="metismenu mm-show" id="menu">
+                        <ul className="metismenu" id="menu">
                             <li className="nav-label first">Main Menu</li>
-                            <li className=""><a className="has-arrow" href="javascript:void(0);" aria-expanded="false">
-                                <i className="la la-home"></i>
-                                <span className="nav-text">Dashboard</span>
-                            </a>
+                            <li className="">
+                                <a className="has-arrow" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-house"></i>
+                                    <span className="nav-text">Dashboard</span>
+                                </a>
                                 <ul aria-expanded="false" className="mm-collapse">
-                                    <li className="mm-active"><a href="index.html" className="mm-active">Dashboard 1</a>
+                                    <li className="mm-active">
+                                        <a href="index.html" className="mm-active">Dashboard 1</a>
                                     </li>
                                     <li><a href="index-2.html">Dashboard 2</a></li>
                                     <li><a href="index-3.html">Dashboard 3</a></li>
@@ -174,6 +177,51 @@ export default function DashboardPage(){
                         </ul>
                     </div>
                 </div>
+
+                <div className="upi-content-body">
+                    <div className="container-fluid">
+                        <div className="col-xl-12 col-md-12 col-lg-12 update-news d-flex mt-2 pl-0">
+                            <h6 className="crypto mt-0">Live Updates</h6>
+                            <p className="retailer_p pl-2">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
+                        </div>
+                        <div className="d-md-flex d-block align-items-center justify-content-between my-3 page-header-breadcrumb">
+                            <div className="left-content">
+                                <h3 className="content-title mb-2">Welcome back,</h3>
+                                <div className="d-flex p-0">
+                                    <i className="fa-solid fa-house"></i>
+                                    <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-9">
+                                <div className="row retailer-das ">
+                                    <div className="col-2 text-center ">
+                                        <a href="#">
+                                            <div className="retailer-das-icon animate-bell">
+                                                <img src={multiwallet} className=""/>
+                                            </div>
+                                            <p>Multi Wallet</p>
+                                        </a>
+                                    </div>
+                                    <div className="col-2 text-center ">
+                                        <a href="#">
+                                            <div className="retailer-das-icon animate-bell">
+                                                <img src={multiwallet} className=""/>
+                                            </div>
+                                            <p>Money Transfer</p>
+                                        </a>
+                                    </div>
+                                    <div className="col-2"></div>
+                                    <div className="col-2"></div>
+                                    <div className="col-2"></div>
+                                    <div className="col-2"></div>
+                                </div>
+                            </div>
+                            <div className="col-lg-9"> </div>
+                            </div>
+                        </div>
+                    </div>
             </IonContent>
         </IonPage>
     )
