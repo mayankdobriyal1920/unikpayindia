@@ -27,6 +27,15 @@ import {Redirect, Route} from "react-router";
 import LoginPage from "./pages/LoginPage";
 import WithoutLoginHomePage from "./pages/WithoutLoginHomePage";
 import DashboardPage from "./pages/DashboardPage";
+import SettingPage from "./pages/SettingPage";
+import CommissionAndChargePage from "./pages/CommissionAndChargePage";
+import ComplaintPage from "./pages/ComplaintPage";
+import MoneyRequestPage from "./pages/MoneyRequestPage";
+import PendingRefundsPage from "./pages/PendingRefundsPage";
+import ManageFundsPage from "./pages/ManageFundsPage";
+import ReportsPage from "./pages/ReportsPage";
+import BusinessSummeryPage from "./pages/BusinessSummeryPage";
+import StatementsPage from "./pages/StatementsPage";
 setupIonicReact();
 
 const AppEnterMainPage = () => {
@@ -39,12 +48,21 @@ const AppEnterMainPage = () => {
         <IonReactRouter>
             <IonRouterOutlet>
                 <Route path="/dashboard-home" component={DashboardPage}/>
+                <Route path="/dashboard-business-summery" component={BusinessSummeryPage}/>
+                <Route path="/dashboard-reports" component={ReportsPage}/>
+                <Route path="/dashboard-manage-funds" component={ManageFundsPage}/>
+                <Route path="/dashboard-pending-refunds" component={PendingRefundsPage}/>
+                <Route path="/dashboard-money-request" component={MoneyRequestPage}/>
+                <Route path="/dashboard-statements" component={StatementsPage}/>
+                <Route path="/dashboard-complaint" component={ComplaintPage}/>
+                <Route path="/dashboard-commission-and-charge" component={CommissionAndChargePage}/>
+                <Route path="/dashboard-setting" component={SettingPage}/>
                 <Redirect  exact from="/"  to="/dashboard-home" />
                 <Route render={() => <Redirect to="/dashboard-home" />} />
             </IonRouterOutlet>
         </IonReactRouter>
     );
-};
+}
 
 const PublicRoutes = () => {
     return (
@@ -78,5 +96,5 @@ const App = () => {
             <IonLoading className={"loading_loader_spinner_container"} isOpen={userSession?.loading} message={"Loading..."}/>
         </IonApp>
     );
-};
+}
 export default App;

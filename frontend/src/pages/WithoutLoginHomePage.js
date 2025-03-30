@@ -475,7 +475,6 @@ const WithoutLoginHomePage = () => {
                             </div>
                         </div>
                     </footer>
-
                 </IonContent>
             </IonPage>
         </React.Fragment>

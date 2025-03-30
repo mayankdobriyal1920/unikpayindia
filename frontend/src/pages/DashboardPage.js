@@ -23,6 +23,7 @@ import FastagIcon from '../theme/images/retailer-icons/Fastag.svg';
 import multiwallet from '../theme/images/retailer-icons/multi-wallet-icon.svg';
 
 import myBusinessIcon from '../theme/images/retailer-icons/My-Business.svg';
+import LeftSideBarComponent from "../components/LeftSideBarComponent";
 export default function DashboardPage(){
     return(
         <IonPage className="UnikPayIndia">
@@ -157,105 +158,7 @@ export default function DashboardPage(){
             </IonHeader>
 
             <IonContent fullscreen>
-                <div className="upi-side-nav bg-color">
-                    <div className="upi-side-nav-scroll mm-active">
-                        <ul className="metismenu" id="menu">
-                            <li className="nav-label first">Main Menu</li>
-                            <li className="">
-                                <a className="has-arrow" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-house"></i>
-                                    <span className="nav-text">Dashboard</span>
-                                </a>
-                                <ul aria-expanded="false" className="mm-collapse">
-                                    <li className="mm-active">
-                                        <a href="index.html" className="mm-active">Dashboard 1</a>
-                                    </li>
-                                    <li><a href="index-2.html">Dashboard 2</a></li>
-                                    <li><a href="index-3.html">Dashboard 3</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a className="ai-icon" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-file-pen"></i>
-                                    <span className="nav-text">Business Summary</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a className="ai-icon" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-file-pen"></i>
-                                    <span className="nav-text">Reports</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a className="ai-icon" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-file-pen"></i>
-                                    <span className="nav-text">Manage Fund</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a className="ai-icon" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-file-pen"></i>
-                                    <span className="nav-text">Refund Pending</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="ai-icon" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-file-pen"></i>
-                                    <span className="nav-text">Money Request</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="ai-icon" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-file-pen"></i>
-                                    <span className="nav-text">Statements</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="ai-icon" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-file-pen"></i>
-                                    <span className="nav-text">Complaint</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="ai-icon" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-file-pen"></i>
-                                    <span className="nav-text">Commision & Charge</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="ai-icon" href="#" aria-expanded="false">
-                                    <i className="fa-solid fa-file-pen"></i>
-                                    <span className="nav-text">Setting</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div className="LetsConnect pl-3">
-                            <h6 className="mt-0 ">Lets Connect</h6>
-                        </div>
-                        <div className="LetsConnect  green-Bg pl-3">
-                            <h6 className="mt-0 ">Your Distributor</h6>
-                        </div>
-                        <div className="Your-Distri text-center">
-                            <i className="fa-solid fa-user-tie"></i>
-                            <p className="mb-0">Distributor</p>
-                            <p>Phone: +91 99999 99999</p>
-                        </div>
-                        <div className="LetsConnect  green-Bg pl-3">
-                            <h6 className="mt-0 ">Quick Support</h6>
-
-                        </div>
-                        <div className="Your-Distri text-center">
-                            <p>Phone: +91 99999 99999</p>
-                            <p>Email: info@unikpayindia.com</p>
-                            <p>Whatsapp: +91 99999 99999</p>
-                        </div>
-
-                    </div>
-
-                </div>
+                <LeftSideBarComponent/>
 
                 <div className="upi-content-body">
                     <div className="container-fluid">
@@ -529,46 +432,46 @@ export default function DashboardPage(){
                             </div>
                             <div className="col-lg-3">
                                 <div className="upi-home-right">
-                                   <div className="underBox">
-                                       <div className="my-buss-sum d-inline-flex align-items-center mb-3">
-                                           <img src={myBusinessIcon} alt="icon" className="mr-2 "/>
-                                           <div className="flex items-center">
-                                               <h3 className="mb-0 mt-0 red-color">My Business</h3>
-                                               <h4 className="mt-0">Summary</h4>
-                                           </div>
+                                    <div className="underBox">
+                                        <div className="my-buss-sum d-inline-flex align-items-center mb-3">
+                                            <img src={myBusinessIcon} alt="icon" className="mr-2 "/>
+                                            <div className="flex items-center">
+                                                <h3 className="mb-0 mt-0 red-color">My Business</h3>
+                                                <h4 className="mt-0">Summary</h4>
+                                            </div>
 
-                                       </div>
-                                       <div className="d-inline-flex align-items-center">
-                                           <div className="MoneyTransfer mr-3 text-center">
-                                               <h5>Money Transfer</h5>
-                                               <p className="">₹ 43,565.00</p>
-                                           </div>
+                                        </div>
+                                        <div className="d-inline-flex align-items-center">
+                                            <div className="MoneyTransfer mr-3 text-center">
+                                                <h5>Money Transfer</h5>
+                                                <p className="">₹ 43,565.00</p>
+                                            </div>
 
-                                           <div className="MoneyTransfer text-center">
-                                               <h5>Utilities/Bill</h5>
-                                               <p className="">₹199.00</p>
-                                           </div>
-                                       </div>
+                                            <div className="MoneyTransfer text-center">
+                                                <h5>Utilities/Bill</h5>
+                                                <p className="">₹199.00</p>
+                                            </div>
+                                        </div>
 
-                                       <div className="d-inline-flex">
-                                           <div className="summary-cc mr-3">
-                                               <h5>Credit Card Bill</h5>
-                                               <p className="text-center">₹ 0</p>
-                                           </div>
+                                        <div className="d-inline-flex">
+                                            <div className="summary-cc mr-3">
+                                                <h5>Credit Card Bill</h5>
+                                                <p className="text-center">₹ 0</p>
+                                            </div>
 
-                                           <div className="summary-cc">
-                                               <h5 className="text-center">Flight</h5>
-                                               <p className="text-center">₹ 565.00</p>
-                                           </div>
-                                       </div>
+                                            <div className="summary-cc">
+                                                <h5 className="text-center">Flight</h5>
+                                                <p className="text-center">₹ 565.00</p>
+                                            </div>
+                                        </div>
 
-                                       <div className="flex">
-                                           <div className="MoneyTransfer text-center">
-                                               <h5>AEPS/MATM/MPOS/ADDHAR</h5>
-                                               <p className="text-center">₹ 43,565.00</p>
-                                           </div>
-                                       </div>
-                                   </div>
+                                        <div className="flex">
+                                            <div className="MoneyTransfer text-center">
+                                                <h5>AEPS/MATM/MPOS/ADDHAR</h5>
+                                                <p className="text-center">₹ 43,565.00</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div className="underBox mt-2">
                                         <div className="flex text-center pb-2">
