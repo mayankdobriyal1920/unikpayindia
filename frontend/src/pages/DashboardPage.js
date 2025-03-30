@@ -43,6 +43,16 @@ export default function DashboardPage(){
 
                             </div>
                             {/*//  End::header-link*/}
+                            <div className="d-inline-flex text-center ml-3 MainHeader-report ">
+                                <div className="Opening-Balance">
+                                    <h6 className="mb-0 blue-color">Opening Balance</h6>
+                                    <h5 className="mt-0 red-color">₹ 14,5555.00</h5>
+                                </div>
+                                <div className="Opening-Balance ml-4">
+                                    <h6 className="mb-0 blue-color">Available Balance</h6>
+                                    <h5 className="mt-0 red-color">₹ 14,5555.00</h5>
+                                </div>
+                            </div>
                             <div className="main-header-center ms-3 my-auto d-none d-xl-block">
                                 <input type="search" className="form-control" placeholder="Search..."/>
                                 <button className="search-btn btn mr-0">
@@ -94,7 +104,7 @@ export default function DashboardPage(){
                                     </ul>
                                     <div className="p-2 empty-header-item border-top bg-primary-transparent">
                                         <div className="d-grid text-center">
-                                            <a href="notifications.html" className="text-primary">VIEW ALL</a>
+                                            <a href="#" className="text-primary">VIEW ALL</a>
                                         </div>
                                     </div>
 
@@ -164,32 +174,106 @@ export default function DashboardPage(){
                                     <li><a href="index-3.html">Dashboard 3</a></li>
                                 </ul>
                             </li>
-                            <li><a className="ai-icon" href="event-management.html" aria-expanded="false">
-                                <i className="la la-calendar"></i>
-                                <span className="nav-text">Event Management</span>
-                            </a>
+                            <li>
+                                <a className="ai-icon" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-file-pen"></i>
+                                    <span className="nav-text">Business Summary</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a className="ai-icon" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-file-pen"></i>
+                                    <span className="nav-text">Reports</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a className="ai-icon" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-file-pen"></i>
+                                    <span className="nav-text">Manage Fund</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a className="ai-icon" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-file-pen"></i>
+                                    <span className="nav-text">Refund Pending</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a className="ai-icon" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-file-pen"></i>
+                                    <span className="nav-text">Money Request</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a className="ai-icon" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-file-pen"></i>
+                                    <span className="nav-text">Statements</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a className="ai-icon" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-file-pen"></i>
+                                    <span className="nav-text">Complaint</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a className="ai-icon" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-file-pen"></i>
+                                    <span className="nav-text">Commision & Charge</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a className="ai-icon" href="#" aria-expanded="false">
+                                    <i className="fa-solid fa-file-pen"></i>
+                                    <span className="nav-text">Setting</span>
+                                </a>
                             </li>
                         </ul>
+                        <div className="LetsConnect pl-3">
+                            <h6 className="mt-0 ">Lets Connect</h6>
+                        </div>
+                        <div className="LetsConnect  green-Bg pl-3">
+                            <h6 className="mt-0 ">Your Distributor</h6>
+                        </div>
+                        <div className="Your-Distri text-center">
+                            <i className="fa-solid fa-user-tie"></i>
+                            <p className="mb-0">Distributor</p>
+                            <p>Phone: +91 99999 99999</p>
+                        </div>
+                        <div className="LetsConnect  green-Bg pl-3">
+                            <h6 className="mt-0 ">Quick Support</h6>
+
+                        </div>
+                        <div className="Your-Distri text-center">
+                            <p>Phone: +91 99999 99999</p>
+                            <p>Email: info@unikpayindia.com</p>
+                            <p>Whatsapp: +91 99999 99999</p>
+                        </div>
+
                     </div>
+
                 </div>
 
                 <div className="upi-content-body">
                     <div className="container-fluid">
-                        <div className="col-xl-12 col-md-12 col-lg-12 update-news d-flex mt-2 pl-0">
+                        <div className="col-xl-12 col-md-12 col-lg-12 update-news d-flex mt-2 pl-0 align-items-center">
                             <h6 className="crypto mt-0">Live Updates</h6>
-                            <p className="retailer_p pl-2">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
+                            <p className="retailer_p pl-2 mb-0">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
                         </div>
                         <div className="d-md-flex d-block align-items-center justify-content-between my-3 page-header-breadcrumb">
                             <div className="left-content">
-                                <h3 className="content-title mb-2">Welcome back,</h3>
+                                <h3 className="content-title mb-2 mt-2">Welcome back,</h3>
                                 <div className="d-flex p-0">
                                     <i className="fa-solid fa-house"></i>
                                     <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
                                 </div>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-lg-9">
+                        <div className="row ">
+                            <div className="col-lg-9 boxShadow">
                                 <div className="row retailer-das ">
                                     <div className="col-2 text-center ">
                                         <a href="#">
@@ -396,24 +480,24 @@ export default function DashboardPage(){
                                                     <div id="navpills-1" className="tab-pane active show" role="tabpanel">
                                                         <div className="row">
                                                             <div className="col-md-3 text-center">
-                                                                <h4>Fund Request</h4>
-                                                                <h2>$24.00</h2>
+                                                                <h6 className="green-color">Fund Request</h6>
+                                                                <p>$24.00</p>
                                                             </div>
                                                             <div className="col-md-2">
-                                                                <h4>Fund Request</h4>
-                                                                <h2>$24.00</h2>
+                                                                <h6 className="green-color">Money Credit</h6>
+                                                                <p>$24.00</p>
                                                             </div>
                                                             <div className="col-md-2">
-                                                                <h4>Fund Request</h4>
-                                                                <h2>$24.00</h2>
+                                                                <h6 className="green-color">Money Debit</h6>
+                                                                <p>$24.00</p>
                                                             </div>
                                                             <div className="col-md-2">
-                                                                <h4>Fund Request</h4>
-                                                                <h2>$24.00</h2>
+                                                                <h6 className="green-color">Quick Collect</h6>
+                                                                <p>$24.00</p>
                                                             </div>
                                                             <div className="col-md-3">
-                                                                <h4>Fund Request</h4>
-                                                                <h2>$24.00</h2>
+                                                                <h6 className="green-color">Quick Paid</h6>
+                                                                <p>$24.00</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -447,22 +531,22 @@ export default function DashboardPage(){
                                 <div className="upi-home-right">
                                    <div className="underBox">
                                        <div className="my-buss-sum d-inline-flex align-items-center mb-3">
-                                           <img src={myBusinessIcon} alt="icon" className="mr-2 mt-2"/>
+                                           <img src={myBusinessIcon} alt="icon" className="mr-2 "/>
                                            <div className="flex items-center">
-                                               <h3 className="mb-0">My Business</h3>
+                                               <h3 className="mb-0 mt-0 red-color">My Business</h3>
                                                <h4 className="mt-0">Summary</h4>
                                            </div>
 
                                        </div>
-                                       <div className="d-inline-flex">
-                                           <div className="MoneyTransfer mr-3">
+                                       <div className="d-inline-flex align-items-center">
+                                           <div className="MoneyTransfer mr-3 text-center">
                                                <h5>Money Transfer</h5>
-                                               <p className="text-center">₹ 43,565.00</p>
+                                               <p className="">₹ 43,565.00</p>
                                            </div>
 
-                                           <div className="MoneyTransfer">
-                                               <h5>Money Transfer</h5>
-                                               <p className="text-center">₹ 43,565.00</p>
+                                           <div className="MoneyTransfer text-center">
+                                               <h5>Utilities/Bill</h5>
+                                               <p className="">₹199.00</p>
                                            </div>
                                        </div>
 
@@ -478,7 +562,7 @@ export default function DashboardPage(){
                                            </div>
                                        </div>
 
-                                       <div className="d-inline-flex">
+                                       <div className="flex">
                                            <div className="MoneyTransfer text-center">
                                                <h5>AEPS/MATM/MPOS/ADDHAR</h5>
                                                <p className="text-center">₹ 43,565.00</p>

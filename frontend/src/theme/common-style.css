@@ -1,6 +1,21 @@
 body{
     background-color: rgb(89,101,249);
 }
+a,h1,h2,h3,h4,h5,h6,p,h1,h2,h3,h4,h5,h6,p{
+    font-family: "Mulish", sans-serif;
+}
+.yellow-color{
+    color:#ffc107;
+}
+.red-color{
+    color:#ff5959e6;
+}
+.blue-color{
+    color: #5965f9;
+}
+.green-color{
+    color: #21B75D;
+}
 .signup-login {
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -147,7 +162,7 @@ body{
     transition: none;
     font-size: 16px;
     padding-inline-end: 13px;
-    width: auto;
+    min-width: auto;
 
 }
 .form-control {
@@ -179,7 +194,7 @@ body{
     position: relative;
 }
 .nav-link {
-    display: block;
+    display: flex;
     padding: 0.5rem 0rem;
     background: none;
     border: 0;
@@ -231,6 +246,10 @@ border:none;
         -moz-box-shadow: 0 0 0 0 rgba(34, 192, 60, 0);
         box-shadow: 0 0 0 0 rgba(34, 192, 60, 0);
     }
+}
+.header-content-right  .notification_dropdown{
+    display: flex;
+    align-items: center;
 }
 .app-header .dropdown-toggle{
     position: relative;
@@ -498,6 +517,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     height: 100%;
 }
 
+
 .header-right {
     height: 100%;
 }
@@ -625,7 +645,23 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
         }
     }
 }
-
+.upi-side-nav-scroll .LetsConnect{
+    background-color: #ff5959e6;
+    padding: 0.225rem;
+    color: #fff;
+    align-items: center;
+}
+.upi-side-nav-scroll .LetsConnect h6{
+    color: #fff;
+    padding:0.625rem;
+}
+.upi-side-nav-scroll .Your-Distri{
+    background-color:#E5ECFF;
+    padding:1rem;
+}
+.green-Bg{
+    background-color: #08c18d !important;
+}
 
 
 
@@ -731,13 +767,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 UPI Body
 
 }*/
-.upi-content-body{
-    min-height: calc(100vh - 7.5rem);
-    margin-block-end: 0;
-    /*margin-block-start: 3.75rem;*/
-    margin-inline-start: 17.4rem;
-    transition: all 50ms ease;
+@media (min-width: 992px) {
+    .upi-content-body{
+        min-height: calc(100vh - 7.5rem);
+        margin-block-end: 0;
+        margin-block-start: 4.75rem;
+        margin-inline-start: 17.4rem;
+        transition: all 50ms ease;
+    }
 }
+
 .upi-content-body .update-news{
     background-color: rgba(89,101,249,0.2);
 }
@@ -757,7 +796,7 @@ UPI Body
     font-size: .875rem;
 }
 .crypto{
-    background: linear-gradient(to bottom, rgba(89,101,249,1) 0%, rgba(118,75,162,1) 100%);
+    background-color:#08c18d;
     font-size: 0.875rem;
     line-height: 0.875rem;
     font-weight: 500;
@@ -765,6 +804,12 @@ UPI Body
     padding-top: 0.85rem;
     color: #fff;
     display: inline-block;
+}
+.boxShadow{
+    border-radius: 0.795rem;
+    box-shadow: 0px 6px 24px 0px rgba(53, 55, 81, 0.06);
+    height: calc(100% - 30px);
+    padding: 1.275rem;
 }
 .retailer-das-icon{
     background-color: #E5ECFF;
@@ -845,13 +890,12 @@ UPI Body
     padding-bottom: 0;
 }
 .nav-pills .nav-link {
-
     border-top-left-radius: 0.795rem !important;
     border-top-right-radius: 0.795rem !important;
     border-radius: 0;
     padding: 0.75rem 1.875rem;
     color: #416CEF;;
-    font-size: 16px;
+    font-size: 1rem;
 }
 .nav-pills.light .nav-link.active, .nav-pills.light .show > .nav-link {
     background: #416CEF;
@@ -873,14 +917,22 @@ UPI Body
     border-radius: 0.795rem;
     box-shadow: 0px 6px 24px 0px rgba(53, 55, 81, 0.06);
     height: calc(100% - 30px);
-    padding: 1.875rem;
+    padding: 1.275rem;
 }
 .Recent-Trans a{
     color: #416CEF;
 }
 .my-buss-sum img{
-    width: 50px;
-    height: 50px;
+    width: 2.125rem;
+    height: 2.125rem;
+}
+.my-buss-sum h3{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.my-buss-sum h4{
+    font-size: 1rem;
+
 }
 .upi-home-right .MoneyTransfer{
     background-color: #E5ECFF;
