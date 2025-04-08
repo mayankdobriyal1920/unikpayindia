@@ -166,203 +166,215 @@ export default function DashboardPage(){
                             <h6 className="crypto mt-0">Live Updates</h6>
                             <p className="retailer_p pl-2 mb-0">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
                         </div>
-                        <div className="d-md-flex d-block align-items-center justify-content-between my-3 page-header-breadcrumb">
-                            <div className="left-content">
-                                <h3 className="content-title mb-2 mt-2">Welcome back,</h3>
-                                <div className="d-flex p-0">
-                                    <i className="fa-solid fa-house"></i>
-                                    <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
+                        <div className="col-xl-12 col-md-12 col-lg-12 d-md-flex d-block  my-3 page-header-breadcrumb">
+                            <div className="row">
+                                <div className="col-xl-6 col-md-6 col-lg-6">
+                                    <div className="left-content">
+                                        <h3 className="content-title  mt-2">Welcome back,</h3>
+                                        <div className="d-flex p-0">
+                                            <i className="fa-solid fa-house"></i>
+                                            <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-xl-6 col-md-6 col-lg-6 align-items-end">
+                                    <div><label className="fs-13 text-muted">Online Sales</label>
+                                        <h5 className="mb-0 fw-semibold">563,275</h5>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
                         <div className="row ">
-                            <div className="col-lg-9 boxShadow">
-                                <div className="row retailer-das ">
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={multiwallet} className=""/>
-                                            </div>
-                                            <p>Multi Wallet</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={MoneTransfer} className=""/>
-                                            </div>
-                                            <p>Money Transfer</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={PPIWallet} className=""/>
-                                            </div>
-                                            <p>PPI Wallet</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={multiwallet} className=""/>
-                                            </div>
-                                            <p>PPI Digikhata</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={AEpsIcon} className=""/>
-                                            </div>
-                                            <p>AEPS</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={RechargeIcon} className=""/>
-                                            </div>
-                                            <p>Recharge</p>
-                                        </a>
-                                    </div>
+                            <div className="col-lg-9 ">
+                                <div className="upi-style-icon white-bgcolor boxShadow">
+                                    <div className="row retailer-das ">
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={multiwallet} className=""/>
+                                                </div>
+                                                <p>Multi Wallet</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={MoneTransfer} className=""/>
+                                                </div>
+                                                <p>Money Transfer</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={PPIWallet} className=""/>
+                                                </div>
+                                                <p>PPI Wallet</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={multiwallet} className=""/>
+                                                </div>
+                                                <p>PPI Digikhata</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={AEpsIcon} className=""/>
+                                                </div>
+                                                <p>AEPS</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={RechargeIcon} className=""/>
+                                                </div>
+                                                <p>Recharge</p>
+                                            </a>
+                                        </div>
 
 
-                                </div>
-                                <div className="row retailer-das ">
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={GasIcon} className=""/>
-                                            </div>
-                                            <p>GAS</p>
-                                        </a>
                                     </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={DTHIcon} className=""/>
-                                            </div>
-                                            <p>DTH</p>
-                                        </a>
-                                    </div>
+                                    <div className="row retailer-das ">
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={GasIcon} className=""/>
+                                                </div>
+                                                <p>GAS</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={DTHIcon} className=""/>
+                                                </div>
+                                                <p>DTH</p>
+                                            </a>
+                                        </div>
 
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={BillCMSIcon} className=""/>
-                                            </div>
-                                            <p>Bill & CMS offline</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={UPIIcon} className=""/>
-                                            </div>
-                                            <p>UPI</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={CCPaymentIcon} className=""/>
-                                            </div>
-                                            <p>Credit Card Payment</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={QuickFundIcon} className=""/>
-                                            </div>
-                                            <p>Quick Fund</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={LICIcon} className=""/>
-                                            </div>
-                                            <p>LIC</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={CMSIcon} className=""/>
-                                            </div>
-                                            <p>CMS</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={InsuranceIcon} className=""/>
-                                            </div>
-                                            <p>Insurance</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={MoneTransfer} className=""/>
-                                            </div>
-                                            <p>BBPS</p>
-                                        </a>
-                                    </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={BillCMSIcon} className=""/>
+                                                </div>
+                                                <p>Bill & CMS offline</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={UPIIcon} className=""/>
+                                                </div>
+                                                <p>UPI</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={CCPaymentIcon} className=""/>
+                                                </div>
+                                                <p>Credit Card Payment</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={QuickFundIcon} className=""/>
+                                                </div>
+                                                <p>Quick Fund</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={LICIcon} className=""/>
+                                                </div>
+                                                <p>LIC</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={CMSIcon} className=""/>
+                                                </div>
+                                                <p>CMS</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={InsuranceIcon} className=""/>
+                                                </div>
+                                                <p>Insurance</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={MoneTransfer} className=""/>
+                                                </div>
+                                                <p>BBPS</p>
+                                            </a>
+                                        </div>
 
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={QRCodeIcon} className=""/>
-                                            </div>
-                                            <p>QR Code</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={TravelIcon} className=""/>
-                                            </div>
-                                            <p>Travel</p>
-                                        </a>
-                                    </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={QRCodeIcon} className=""/>
+                                                </div>
+                                                <p>QR Code</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={TravelIcon} className=""/>
+                                                </div>
+                                                <p>Travel</p>
+                                            </a>
+                                        </div>
 
-                                </div>
-                                <div className="row retailer-das ">
+                                    </div>
+                                    <div className="row retailer-das ">
 
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={PGIcon} className=""/>
-                                            </div>
-                                            <p>PG</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={FastagIcon} className=""/>
-                                            </div>
-                                            <p>Fas Tag</p>
-                                        </a>
-                                    </div>
-                                    <div className="col-2 text-center ">
-                                        <a href="#">
-                                            <div className="retailer-das-icon animate-bel">
-                                                <img src={QRCodeIcon} className=""/>
-                                            </div>
-                                            <p>QR Code</p>
-                                        </a>
-                                    </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={PGIcon} className=""/>
+                                                </div>
+                                                <p>PG</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={FastagIcon} className=""/>
+                                                </div>
+                                                <p>Fas Tag</p>
+                                            </a>
+                                        </div>
+                                        <div className="col-2 text-center ">
+                                            <a href="#">
+                                                <div className="retailer-das-icon animate-bel">
+                                                    <img src={QRCodeIcon} className=""/>
+                                                </div>
+                                                <p>QR Code</p>
+                                            </a>
+                                        </div>
 
+                                    </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-xl-12">
                                         <div className="card retailer-home-balance">
 
-                                            <div className="card-body">
+                                            <div className="card-body card-tabs-new">
                                                 <ul className="nav nav-pills light" role="tablist">
                                                     <li className=" nav-item" role="presentation">
                                                         <a href="#navpills-1" className="nav-link active" data-bs-toggle="tab"
@@ -406,21 +418,49 @@ export default function DashboardPage(){
                                                     </div>
                                                     <div id="navpills-2" className="tab-pane" role="tabpanel">
                                                         <div className="row">
-                                                            <div className="col-md-12"> It is a long established fact that a
-                                                                reader will be distracted by the readable content of a page when
-                                                                looking at its layout. The point of using Lorem Ipsum is that it
-                                                                has a more-or-less normal distribution of letters, as opposed to
-                                                                using Cont here, content h making it look like readable
-                                                                English.
+                                                            <div className="col-md-3 text-center">
+                                                                <h6 className="green-color">Fund Request</h6>
+                                                                <p>$24.00</p>
+                                                            </div>
+                                                            <div className="col-md-2">
+                                                                <h6 className="green-color">Money Credit</h6>
+                                                                <p>$24.00</p>
+                                                            </div>
+                                                            <div className="col-md-2">
+                                                                <h6 className="green-color">Money Debit</h6>
+                                                                <p>$24.00</p>
+                                                            </div>
+                                                            <div className="col-md-2">
+                                                                <h6 className="green-color">Quick Collect</h6>
+                                                                <p>$24.00</p>
+                                                            </div>
+                                                            <div className="col-md-3">
+                                                                <h6 className="green-color">Quick Paid</h6>
+                                                                <p>$24.00</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div id="navpills-3" className="tab-pane" role="tabpanel">
                                                         <div className="row">
-                                                            <div className="col-md-12"> There are many variations of passages of
-                                                                Lorem Ipsum available, but the majority have suffered alteration
-                                                                in some form, by injected humour, or randomised words which
-                                                                look even slightly believable.
+                                                            <div className="col-md-3 text-center">
+                                                                <h6 className="green-color">Fund Request</h6>
+                                                                <p>$24.00</p>
+                                                            </div>
+                                                            <div className="col-md-2">
+                                                                <h6 className="green-color">Money Credit</h6>
+                                                                <p>$24.00</p>
+                                                            </div>
+                                                            <div className="col-md-2">
+                                                                <h6 className="green-color">Money Debit</h6>
+                                                                <p>$24.00</p>
+                                                            </div>
+                                                            <div className="col-md-2">
+                                                                <h6 className="green-color">Quick Collect</h6>
+                                                                <p>$24.00</p>
+                                                            </div>
+                                                            <div className="col-md-3">
+                                                                <h6 className="green-color">Quick Paid</h6>
+                                                                <p>$24.00</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -441,25 +481,32 @@ export default function DashboardPage(){
                                             </div>
 
                                         </div>
-                                        <div className="d-inline-flex align-items-center">
-                                            <div className="MoneyTransfer mr-3 text-center">
-                                                <h5>Money Transfer</h5>
-                                                <p className="">₹ 43,565.00</p>
+
+                                            <div className="d-flex align-items-center">
+                                                <div className="flex-fill">
+                                                    <div className="MoneyTransfer mr-2 text-center">
+                                                        <h5>Money Transfer</h5>
+                                                        <p className="">₹ 43,565.00</p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex-fill align-items-end">
+                                                    <div className="MoneyTransfer text-center">
+                                                        <h5>Utilities/Bill</h5>
+                                                        <p className="">₹199.00</p>
+                                                    </div>
+                                                </div>
+
                                             </div>
 
-                                            <div className="MoneyTransfer text-center">
-                                                <h5>Utilities/Bill</h5>
-                                                <p className="">₹199.00</p>
-                                            </div>
-                                        </div>
 
-                                        <div className="d-inline-flex">
-                                            <div className="summary-cc mr-3">
+
+                                        <div className="d-flex align-items-center">
+                                            <div className="flex-fill text-center summary-cc mr-3">
                                                 <h5>Credit Card Bill</h5>
                                                 <p className="text-center">₹ 0</p>
                                             </div>
 
-                                            <div className="summary-cc">
+                                            <div className="flex-fill summary-cc">
                                                 <h5 className="text-center">Flight</h5>
                                                 <p className="text-center">₹ 565.00</p>
                                             </div>
@@ -473,35 +520,35 @@ export default function DashboardPage(){
                                         </div>
                                     </div>
 
-                                    <div className="underBox mt-2">
+                                    <div className="retailer-recent-trans mt-2">
                                         <div className="flex text-center pb-2">
-                                            <h5>Recent Transaction</h5>
+                                            <h5 className="mt-0">Recent Transaction</h5>
                                         </div>
 
                                         <div className="Recent-Trans">
                                             <div className="table-responsive">
                                                 <table className="table border-dashed table-responsive-sm">
                                                     <thead>
-                                                    <tr>
-                                                        <th>Transaction No.</th>
-                                                        <th className="text-end">Amount</th>
+                                                    <tr className="LightBlue-BgColor">
+                                                        <th scope="col">Transaction No.</th>
+                                                        <th scope="col" className="text-end">Amount</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
-                                                        <td><a href="#">101510100114692</a></td>
+                                                        <th scope="row"><a href="#">101510100114692</a></th>
                                                         <td className="text-end">Rs. 18564</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><a href="#">101510100114692</a></td>
+                                                        <th scope="row"><a href="#">101510100114692</a></th>
                                                         <td className="text-end">Rs. 18564</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><a href="#">101510100114692</a></td>
+                                                        <th scope="row"><a href="#">101510100114692</a></th>
                                                         <td className="text-end">Rs. 18564</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><a href="#">101510100114692</a></td>
+                                                        <th scope="row"><a href="#">101510100114692</a></th>
                                                         <td className="text-end">Rs. 18564</td>
                                                     </tr>
 

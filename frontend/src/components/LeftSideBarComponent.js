@@ -9,12 +9,19 @@ export default function LeftSideBarComponent(){
         history.replace(page);
     }
     return (
-        <div className="upi-side-nav bg-color">
-            <div className="upi-side-nav-scroll mm-active">
+
+    <div className="upi-side-nav bg-color">
+        <div className="main-sidebar-header">
+            <a href="index.html" className="header-logo">
+                <img src="#" alt="logo" className="desktop-logo"/>
+            </a>
+        </div>
+        <div className="upi-side-nav-scroll mm-active">
+            <div className="simplebar-wrapper">
                 <ul className="metismenu" id="menu">
                     <li className="nav-label first">Main Menu</li>
                     <li className="">
-                        <a className="has-arrow" onClick={()=>goToPage('/dashboard-home')} aria-expanded="false">
+                        <a className="has-arrow" onClick={() => goToPage('/dashboard-home')} aria-expanded="false">
                             <i className="fa-solid fa-house"></i>
                             <span className="nav-text">Dashboard</span>
                         </a>
@@ -85,9 +92,9 @@ export default function LeftSideBarComponent(){
                     </li>
                 </ul>
                 <div className="LetsConnect pl-3">
-                    <h6 className="mt-0 ">Lets Connect</h6>
+                    <h6 className="mt-0 text-center">Lets Connect</h6>
                 </div>
-                <div className="LetsConnect  green-Bg pl-3">
+                <div className="LetsConnect text-center  green-Bg pl-3">
                     <h6 className="mt-0 ">Your Distributor</h6>
                 </div>
                 <div className="Your-Distri text-center">
@@ -95,7 +102,7 @@ export default function LeftSideBarComponent(){
                     <p className="mb-0">Distributor</p>
                     <p>Phone: +91 99999 99999</p>
                 </div>
-                <div className="LetsConnect  green-Bg pl-3">
+                <div className="LetsConnect text-center green-Bg pl-3">
                     <h6 className="mt-0 ">Quick Support</h6>
 
                 </div>
@@ -104,8 +111,9 @@ export default function LeftSideBarComponent(){
                     <p>Email: info@unikpayindia.com</p>
                     <p>Whatsapp: +91 99999 99999</p>
                 </div>
-
             </div>
+
+        </div>
 
         </div>
     )

@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(89,101,249);
+    background-color: #F3F6FF !important;
 }
 a,h1,h2,h3,h4,h5,h6,p,h1,h2,h3,h4,h5,h6,p{
     font-family: "Mulish", sans-serif;
@@ -10,11 +10,23 @@ a,h1,h2,h3,h4,h5,h6,p,h1,h2,h3,h4,h5,h6,p{
 .red-color{
     color:#ff5959e6;
 }
+.bggreen-color{
+    background-color:#21B75D !important;
+}
 .blue-color{
     color: #5965f9;
 }
+.LightBlue-BgColor{
+    background-color: #E5ECFF;
+}
 .green-color{
     color: #21B75D;
+}
+.white-color{
+    color: #fff !important;
+}
+.white-bgcolor{
+    background-color: #ffffff !important;
 }
 .signup-login {
     -webkit-box-align: center;
@@ -82,10 +94,10 @@ a,h1,h2,h3,h4,h5,h6,p,h1,h2,h3,h4,h5,h6,p{
     position: fixed;
     inset-block-start: 0;
     inset-inline: 0;
-    background: #fff;
+    /*background: #fff;*/
     border-block-end: 1px solid #f3f3f3;
     transition: all .1s ease;
-    box-shadow: 5px 7px 26px -5px #bebdcc;
+    /*box-shadow: 5px 7px 26px -5px #bebdcc;*/
 }
 @media (min-width: 992px) {
     .app-header {
@@ -97,6 +109,7 @@ a,h1,h2,h3,h4,h5,h6,p,h1,h2,h3,h4,h5,h6,p{
     align-items: stretch;
     justify-content: space-between;
     height: 100%;
+    background: #fff;
 }
 .main-header-container .header-content-left, .main-header-container .header-content-right {
     display: flex;
@@ -552,25 +565,55 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     border-inline-end: 9px solid transparent;
 }*/
 /*Side Nav*/
+.main-sidebar-header {
+    height: 4.375rem;
+    width: 15rem;
+    position: fixed;
+    display: flex;
+    background: #5965f9;
+    z-index: 9;
+    align-items: center;
+    justify-content: center;
+    padding: .813rem 1.25rem;
+    border-inline-end: 1px solid rgba(255, 255, 255, 0.1);
+    border-block-end: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 50ms ease;
+}
+.main-sidebar-header .header-logo img {
+    height: 2rem;
+    line-height: 2rem;
+}
 .bg-color{
     background-color: #e4e3ef;
 }
+.simplebar-wrapper {
+    overflow: hidden;
+    width: inherit;
+    height: inherit;
+    max-width: inherit;
+    max-height: inherit
+}
 .upi-side-nav{
-    width: 16.5rem;
+    width: 15rem;
     padding-bottom: 0;
-    height: calc(100% - 4.5rem);
+    height: 100%;
     position: fixed;
     top: 4.5rem;
     padding-top: 0;
     z-index: 6;
+    inset-block-start: 0;
+    inset-inline-start: 0;
     background: linear-gradient(to bottom, rgba(89,101,249,1) 0%, rgba(118,75,162,1) 100%);
     transition: all .2s ease;
     box-shadow: 0rem 0.9375rem 1.875rem 0rem rgba(0, 0, 0, 0);
 
     .upi-side-nav-scroll {
         position: relative;
-        height: 100%;
+        height: 100vh;
         overflow-y:scroll;
+        margin-block-start: 3.438rem;
+        padding-block-start: .5rem;
+        padding-block-end: 5rem;
     }
     .metismenu {
         display: flex;
@@ -595,6 +638,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
             }
 
             a {
+                color: #fff;
                 &>i {
                     font-size: 0.85rem;
                     display: inline-block;
@@ -611,6 +655,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
                 &:hover{
                     background-color: rgba(255, 255, 255, .05);
                     border-radius: .5rem;
+                    color: #fff;
                 }
             }
             &>a {
@@ -772,13 +817,15 @@ UPI Body
         min-height: calc(100vh - 7.5rem);
         margin-block-end: 0;
         margin-block-start: 4.75rem;
-        margin-inline-start: 17.4rem;
+        margin-inline-start: 16.2rem;
         transition: all 50ms ease;
     }
 }
 
 .upi-content-body .update-news{
-    background-color: rgba(89,101,249,0.2);
+    background-color: #D9FBE6;
+    font-size: 0.875rem;
+    color: #000000;
 }
 .upi-content-body .left-content i{
     display: inline-block;
@@ -795,20 +842,23 @@ UPI Body
 .upi-content-body .left-content p{
     font-size: .875rem;
 }
+.left-content .content-title{
+    font-weight: bold;
+}
 .crypto{
-    background-color:#08c18d;
+    background-color: #fd777c;
     font-size: 0.875rem;
     line-height: 0.875rem;
     font-weight: 500;
     padding: 0.625rem;
-    padding-top: 0.85rem;
+    /*padding-top: 0.85rem;*/
     color: #fff;
     display: inline-block;
 }
 .boxShadow{
     border-radius: 0.795rem;
     box-shadow: 0px 6px 24px 0px rgba(53, 55, 81, 0.06);
-    height: calc(100% - 30px);
+    /*height: calc(100% - 30px);*/
     padding: 1.275rem;
 }
 .retailer-das-icon{
@@ -863,7 +913,7 @@ UPI Body
     position: relative;
     border: 0px solid transparent;
     border-radius: 5px;
-    box-shadow: 0px 6px 24px 0px rgba(53, 55, 81, 0.06);
+    /*box-shadow: 0px 6px 24px 0px rgba(53, 55, 81, 0.06);*/
     height: calc(100% - 30px);
 }
 .card-header {
@@ -893,7 +943,7 @@ UPI Body
     border-top-left-radius: 0.795rem !important;
     border-top-right-radius: 0.795rem !important;
     border-radius: 0;
-    padding: 0.75rem 1.875rem;
+    padding: 0.35rem 1.875rem;
     color: #416CEF;;
     font-size: 1rem;
 }
@@ -907,10 +957,15 @@ UPI Body
     background-color: #EFF7F9;
     border-bottom-left-radius: 0.795rem;
     border-bottom-right-radius: 0.795rem;
+    padding: 0.35rem 0rem;
+    border: 1px solid #2EC563;
+    border-top: none;
+}
+.retailer-home-balance .card-tabs-new{
     padding: 1.25rem 0rem;
 }
 .upi-home-right{
-    background: #fff;
+    /*background: #fff;*/
 
 }
 .upi-home-right .underBox{
@@ -918,7 +973,16 @@ UPI Body
     box-shadow: 0px 6px 24px 0px rgba(53, 55, 81, 0.06);
     height: calc(100% - 30px);
     padding: 1.275rem;
+    background-color: #ffffff;
 }
+.upi-home-right .retailer-recent-trans{
+    border-radius: 0.795rem;
+    box-shadow: 0px 6px 24px 0px rgba(53, 55, 81, 0.06);
+    height: calc(100% - 30px);
+    padding-top: 1.275rem;
+    background-color: #ffffff;
+}
+
 .Recent-Trans a{
     color: #416CEF;
 }
@@ -947,4 +1011,103 @@ UPI Body
 }
 .upi-home-right .summary-cc h5{
     color: #2EC563;
+}
+
+/*Business Summary Page*/
+.businessSum-Cat{
+    background-color: #F7FAFC;
+    border: 0.063rem solid #E5E7EB;
+    padding: 0.75rem;
+    color: #000000;
+    font-size: 0.938rem;
+}
+.bus-summary-tablehead thead{
+    border:1px solid #76D89B;
+    background-color: #EFF7F9;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.bus-summary-tablehead th{
+    border:none;
+}
+.bus-summary-tablehead .buss-result-border td{
+    border-top:none;
+}
+.ShowTrans{
+    background-color: #fff;
+    border-radius: 0.795rem;
+    padding: 1.275rem;
+}
+.bsst-dmt{
+    padding: 0.35rem 1.875rem;
+    background-color: #EFF7F9;
+    border-bottom: 1px solid #76D89B;
+    margin-top: 0;
+    color: #1d2124;
+    font-weight: bold;
+}
+.main-retailer-report input{
+    border: 1px solid #E5E7EB;
+    background-color: #F7FAFC;
+    border-radius: 5px;
+}
+.bss-select .form-select{
+    border: 1px solid #E5E7EB;
+    background-color: #F7FAFC;
+    border-radius: 5px;
+    padding: 0.55rem 1.875rem 0.55rem 1rem;
+    text-align: left;
+    font-size: 0.938rem;
+    width: 100%;
+}
+.bss-select .form-select::after{
+    right: 10px;
+}
+.bss-select .form-select option:hover, .bss-select .form-select option:focus{
+    background-color: #F7FAFC;
+}
+.pagination-style-1 .pagination .page-item.active:hover .page-link {
+    border-radius: 3px;
+    background-color: #8760fb;
+    color: #fff;
+}
+.total-request{
+    color: #416CEF;
+    font-size: 14px;
+}
+.retailer-pagination .page-link:hover{
+    background-color: #D9FBE6;
+    color: #22C55E;
+}
+.retailer-pagination .page-link{
+    color: #9FADBE;
+    border: none;
+}
+.pagination_retailer select{
+    background-color: #F7FAFC;
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    padding: 8px;
+}
+.retailer-addfund thead th{
+    font-weight: normal;
+    vertical-align: middle;
+    padding: .45rem;
+    text-align: center;
+    font-size: 13px;
+    background-color: #EFF7F9;
+}
+.retailer-addfund tbody td{
+    font-weight: normal;
+    vertical-align: middle;
+    padding: .45rem;
+    text-align: center;
+    font-size: 13px;
+    border-top: 0;
+
+}
+.retailer-addfund thead tr{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid #76D89B;
 }
