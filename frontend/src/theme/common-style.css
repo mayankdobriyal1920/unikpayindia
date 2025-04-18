@@ -10,6 +10,9 @@ a,h1,h2,h3,h4,h5,h6,p,h1,h2,h3,h4,h5,h6,p{
 .red-color{
     color:#ff5959e6;
 }
+.bgred-color{
+    background-color:#ff5959e6;
+}
 .bggreen-color{
     background-color:#21B75D !important;
 }

@@ -59,9 +59,10 @@ export default function ReportsPage(){
                                     <ul>
                                         <li className="dropdown-item p-3">
                                             <div className="d-flex align-items-start">
-                                                <div className="pr-2"><span
-                                                    className="avatar avatar-md bg-success-transparent avatar-rounded">
-                                                                <i className="fa-solid fa-circle-exclamation text-success"></i></span>
+                                                <div className="pr-2">
+                                                    <span className="avatar avatar-md bg-success-transparent avatar-rounded">
+                                                                <i className="fa-solid fa-circle-exclamation text-success"></i>
+                                                    </span>
                                                 </div>
                                                 <div
                                                     className="flex-grow-1 d-flex align-items-center justify-content-between">
@@ -95,10 +96,10 @@ export default function ReportsPage(){
                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     <div className="d-flex align-items-center">
                                         <div className="me-sm-2 mr-2 me-0">
-                                            <img src={usericon} width="20" alt=""/>
+                                            <img src={usericon} width="20" alt="" />
                                         </div>
                                         <div className="d-sm-block d-none userprofile">
-                                            <p className=" mb-0">Elizabeth Zane</p>
+                                            <p className=" mb-0 text-white">Elizabeth Zane</p>
                                             <span className="op-7 fw-normal d-block fs-11 lh-1">Retailer</span>
                                         </div>
                                     </div>
@@ -189,7 +190,7 @@ export default function ReportsPage(){
                                             <div id="navpills-1" className="tab-pane active show bsstdmt" role="tabpanel">
                                                 <div className="">
                                                     <h6 className="green-color bsst-dmt mb-2">DMT Transactions</h6>
-                                                    <div className="col-xl-12">
+                                                    <div className="col-xl-12 align-items-center justify-content-center">
                                                         <div className="d-flex ">
                                                             <div className="flex-fill mr-2">
                                                                 <div className="dmt-trasno">
@@ -197,7 +198,8 @@ export default function ReportsPage(){
                                                                         <div className="form-row">
                                                                             <div className="col">
                                                                                 <input type="text" className="form-control"
-                                                                                       placeholder="Transaction No"/>                                                    </div>
+                                                                                       placeholder="Transaction No"/>
+                                                                            </div>
 
                                                                         </div>
                                                                     </form>
@@ -274,16 +276,17 @@ export default function ReportsPage(){
                                                                 </div>
                                                             </div>
 
-                                                            <div className="flex-fill mr-2">
-                                                                <div className="dmt-trasno">
-                                                                    <button type="button" className="btn btn-success">Search</button>
-                                                                </div>
+                                                            <div className="flex-grow-1 mr-2">
+                                                                <button type="button" className="btn btn-md w-50" style={{backgroundColor:"#43A047"}} >
+                                                                    <i className="bi bi-search"></i> Search
+                                                                </button>
                                                             </div>
 
-                                                            <div className="flex-fill ">
-                                                                <div className="dmt-trasno">
-                                                                    <button type="button" className="btn btn-primary">Export</button>
-                                                                </div>
+
+                                                            <div className="flex-grow-1 mr-2">
+                                                                <button type="button" className="btn btn-md text-white w-50" style={{backgroundColor:"#5a65fa"}}>
+                                                                    <i className="bi bi-box-arrow-up"></i> Export
+                                                                </button>
                                                             </div>
                                                         </div>
                                                         <div className="d-flex mt-3">
@@ -380,131 +383,724 @@ export default function ReportsPage(){
                                                 </div>
                                             </div>
                                             <div id="navpills-2" className="tab-pane" role="tabpanel">
-                                                <div className="row">
-                                                    <div className="col-md-3 text-center">
-                                                        <h6 className="green-color">Fund Request</h6>
-                                                        <p>$24.00</p>
-                                                    </div>
-                                                    <div className="col-md-2">
-                                                        <h6 className="green-color">Money Credit</h6>
-                                                        <p>$24.00</p>
-                                                    </div>
-                                                    <div className="col-md-2">
-                                                        <h6 className="green-color">Money Debit</h6>
-                                                        <p>$24.00</p>
-                                                    </div>
-                                                    <div className="col-md-2">
-                                                        <h6 className="green-color">Quick Collect</h6>
-                                                        <p>$24.00</p>
-                                                    </div>
-                                                    <div className="col-md-3">
-                                                        <h6 className="green-color">Quick Paid</h6>
-                                                        <p>$24.00</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="navpills-3" className="tab-pane" role="tabpanel">
-                                                <div className="row">
+                                                <div className="">
                                                     <div className="col-xl-12">
-                                                        <div className="d-flex ">
-                                                            <div className="flex-fill">
-                                                                <div className="dmt-trasno">
-                                                                    <form>
-                                                                        <div className="form-row">
-                                                                            <div className="col">
-                                                                                <input type="text" className="form-control"
-                                                                                       placeholder="Transaction No"/>                                                    </div>
-
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
+                                                        <div className="d-flex flex-wrap align-items-end gap-2">
+                                                            {/* Transaction No Input */}
+                                                            <div className="mr-2">
+                                                                <input type="text" className="form-control form-control-md" placeholder="Transaction No" />
                                                             </div>
 
-                                                            <div className="flex-fill">
-                                                                <div className="dmt-trasno">
-                                                                    <form>
-                                                                        <div className="form-row">
-                                                                            <div className="col">
-                                                                                <input type="text" className="form-control"
-                                                                                       placeholder="Transaction No"/>                                                    </div>
 
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
+
+                                                            {/* Type Dropdown */}
+                                                            <div className="mr-2">
+                                                                <select className="form-control form-select form-select-md">
+                                                                    <option selected disabled>-Status-</option>
+                                                                    <option>Money Transfer</option>
+                                                                    <option>Utility/Recharge</option>
+                                                                    <option>AEPS/MATM</option>
+                                                                    <option>Credit Card</option>
+                                                                </select>
+                                                            </div>
+                                                            {/* IMPS/NEFT Dropdown */}
+                                                            <div className="mr-2">
+                                                                <select className="form-control form-select form-select-md">
+                                                                    <option selected disabled>-IMPS/NEFT-</option>
+                                                                    <option>Money Transfer</option>
+                                                                    <option>Utility/Recharge</option>
+                                                                    <option>AEPS/MATM</option>
+                                                                    <option>Credit Card</option>
+                                                                </select>
                                                             </div>
 
-                                                            <div className="flex-fill">
-                                                                <div className="dmt-trasno">
-                                                                    <div className="dropdown">
-                                                                        <button className="btn btn-secondary businessSum-Cat dropdown-toggle"
-                                                                                type="button"
-                                                                                id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                            Category
-                                                                        </button>
-                                                                        <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                                            <li>
-                                                                                <button className="dropdown-item" type="button">Money Transfer</button>
-                                                                            </li>
-                                                                            <li>
-                                                                                <button className="dropdown-item" type="button">Utility/Recharge
-                                                                                </button>
-                                                                            </li>
-                                                                            <li>
-                                                                                <button className="dropdown-item" type="button">AEPS/MATM
-                                                                                </button>
-                                                                            </li>
-                                                                            <li>
-                                                                                <button className="dropdown-item" type="button">Credit Card
-                                                                                </button>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
+                                                            {/* From Date */}
+                                                            <div className="mr-2">
+                                                                <input type="date" className="form-control form-control-md" defaultValue="2025-04-14" />
                                                             </div>
 
-                                                            <div className="flex-fill">
-                                                                <div className="dmt-trasno">
-                                                                    <form>
-                                                                        <div className="form-row">
-                                                                            <div className="col">
-                                                                                <input type="text" className="form-control"
-                                                                                       placeholder="Transaction No"/>
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
+                                                            {/* To Date */}
+                                                            <div className="mr-2">
+                                                                <input type="date" className="form-control form-control-md" defaultValue="2025-04-14" />
                                                             </div>
 
-                                                            <div className="flex-fill">
-                                                                <div className="dmt-trasno">
-                                                                    <form>
-                                                                        <div className="form-row">
-                                                                            <div className="col">
-                                                                                <input type="text" className="form-control"
-                                                                                       placeholder="Transaction No"/>
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
+                                                            {/* Search Button */}
+                                                            <div className="mr-2">
+                                                                <button type="button" className="btn btn-dark btn-md w-100" style={{minWidth:'50%', backgroundColor:"#764ba3"}} >
+                                                                    <i className="bi bi-search"></i> Search
+                                                                </button>
                                                             </div>
 
-                                                            <div className="flex-fill">
-                                                                <div className="dmt-trasno">
-                                                                    <button type="button" className="btn btn-success">Search</button>
-                                                                </div>
-                                                            </div>
-
-                                                            <div className="flex-fill">
-                                                                <div className="dmt-trasno">
-                                                                    <button type="button" className="btn btn-primary">Export</button>
-                                                                </div>
+                                                            {/* Export Button */}
+                                                            <div>
+                                                                <button type="button" className="btn btn-info btn-md text-white w-100" style={{ minWidth: '50%',backgroundColor:"#5a65fa" }}>
+                                                                    <i className="bi bi-box-arrow-up"></i> Export
+                                                                </button>
                                                             </div>
                                                         </div>
+
+                                                        <div className="row mt-3 column-gap-0">
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>Total Transcation</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#1a227d"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6>Total Amount</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#8b5cf6"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6> Charges Paid</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6 className=''>Commission Received</h6>
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2 " style={{backgroundColor: "#1a227d"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>Refund Pending</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#8b5cf6"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6 className=''>Refunded Transaction</h6>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        {/*Pagination*/}
+                                                        <div className="row pagination_retailer mt-3">
+                                                            <div className="col-6 d-flex pt-2">
+                                                                <p className="mr-2 pb-0">Show result:</p>
+                                                                <select className="form-select"
+                                                                        aria-label="Default select example">
+                                                                    <option selected>1
+                                                                    </option>
+                                                                    <option value="1">2</option>
+                                                                    <option value="2">3</option>
+                                                                    <option value="3">4</option>
+                                                                </select>
+                                                            </div>
+                                                            <div className="col-6 text-end retailer-pagination">
+                                                                <nav aria-label="Page navigation example">
+                                                                    <ul className="pagination float-right">
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#" aria-label="Previous">
+                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                <span className="sr-only">Previous</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#">1</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">2</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">3</a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#"
+                                                                               aria-label="Next">
+                                                                                    <span
+                                                                                        aria-hidden="true">&raquo;</span>
+                                                                                <span
+                                                                                    className="sr-only">Next</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </nav>
+                                                            </div>
+
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
+
+
+
+                                            <div id="navpills-3" className="tab-pane" role="tabpanel">
+                                                <div className="">
+                                                    <div className="col-xl-12">
+                                                        <div className="d-flex flex-wrap align-items-end gap-2">
+                                                            {/* Transaction No Input */}
+                                                            <div className="mr-2">
+                                                                <input type="text" className="form-control form-control-md" placeholder="Transaction No" />
+                                                            </div>
+
+                                                            {/* Status Dropdown */}
+                                                            <div className="mr-2">
+                                                                <select className="form-control form-select form-select-md">
+                                                                    <option selected disabled>-Status-</option>
+                                                                    <option>Success</option>
+                                                                    <option>Pending</option>
+                                                                    <option>Failed</option>
+                                                                </select>
+                                                            </div>
+
+                                                            {/* Type Dropdown */}
+                                                            <div className="mr-2">
+                                                                <select className="form-control form-select form-select-md">
+                                                                    <option selected disabled>-Type-</option>
+                                                                    <option>Money Transfer</option>
+                                                                    <option>Utility/Recharge</option>
+                                                                    <option>AEPS/MATM</option>
+                                                                    <option>Credit Card</option>
+                                                                </select>
+                                                            </div>
+
+                                                            {/* From Date */}
+                                                            <div className="mr-2">
+                                                                <input type="date" className="form-control form-control-md" defaultValue="2025-04-14" />
+                                                            </div>
+
+                                                            {/* To Date */}
+                                                            <div className="mr-2">
+                                                                <input type="date" className="form-control form-control-md" defaultValue="2025-04-14" />
+                                                            </div>
+
+                                                            {/* Search Button */}
+                                                            <div className="mr-2">
+                                                                <button type="button" className="btn btn-dark btn-md w-100"  style={{minWidth:'50%', backgroundColor:"#43A047"}} >
+                                                                    <i className="bi bi-search"></i> Search
+                                                                </button>
+                                                            </div>
+
+                                                            {/* Export Button */}
+                                                            <div>
+                                                                <button type="button" className="btn btn-info btn-md text-white w-100" style={{ minWidth: '50%',backgroundColor:"#5a65fa" }}>
+                                                                    <i className="bi bi-box-arrow-up"></i> Export
+                                                                </button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="row mt-3 column-gap-0">
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>Total Transcation</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#1a227d"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6>Total Amount</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2 " style={{backgroundColor: "#8b5cf6"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6>Total Charges</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>₹  0</h5>
+                                                                    <h6>Total Commission</h6>
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2 " style={{backgroundColor: "#1a227d"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>Refund Pending</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#8b5cf6"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6 className='' >Refunded Transaction</h6>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        {/*Pagination*/}
+                                                        <div className="row pagination_retailer mt-3">
+                                                            <div className="col-6 d-flex pt-2">
+                                                                <p className="mr-2 pb-0">Show result:</p>
+                                                                <select className="form-select"
+                                                                        aria-label="Default select example">
+                                                                    <option selected>1
+                                                                    </option>
+                                                                    <option value="1">2</option>
+                                                                    <option value="2">3</option>
+                                                                    <option value="3">4</option>
+                                                                </select>
+                                                            </div>
+                                                            <div className="col-6 text-end retailer-pagination">
+                                                                <nav aria-label="Page navigation example">
+                                                                    <ul className="pagination float-right">
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#" aria-label="Previous">
+                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                <span className="sr-only">Previous</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#">1</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">2</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">3</a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#"
+                                                                               aria-label="Next">
+                                                                                    <span
+                                                                                        aria-hidden="true">&raquo;</span>
+                                                                                <span
+                                                                                    className="sr-only">Next</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </nav>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div id="navpills-4" className="tab-pane active show bsstdmt" role="tabpanel">
+                                                <div className="">
+                                                    <div className="col-xl-12">
+                                                        <div className="d-flex flex-wrap align-items-end gap-2">
+                                                            {/* Transaction No Input */}
+                                                            <div className="mr-2">
+                                                                <input type="text" className="form-control form-control-md" placeholder="Transaction No" />
+                                                            </div>
+
+                                                            {/* Status Dropdown */}
+                                                            <div className="mr-2">
+                                                                <select className="form-control form-select form-select-md">
+                                                                    <option selected disabled>-Status-</option>
+                                                                    <option>Success</option>
+                                                                    <option>Pending</option>
+                                                                    <option>Failed</option>
+                                                                </select>
+                                                            </div>
+
+                                                            {/* Type Dropdown */}
+                                                            <div className="mr-2">
+                                                                <select className="form-control form-select form-select-md">
+                                                                    <option selected disabled>-Type-</option>
+                                                                    <option>Money Transfer</option>
+                                                                    <option>Utility/Recharge</option>
+                                                                    <option>AEPS/MATM</option>
+                                                                    <option>Credit Card</option>
+                                                                </select>
+                                                            </div>
+
+                                                            {/* From Date */}
+                                                            <div className="mr-2">
+                                                                <input type="date" className="form-control form-control-md" defaultValue="2025-04-14" />
+                                                            </div>
+
+                                                            {/* To Date */}
+                                                            <div className="mr-2">
+                                                                <input type="date" className="form-control form-control-md" defaultValue="2025-04-14" />
+                                                            </div>
+
+                                                            {/* Search Button */}
+                                                            <div className="mr-2">
+                                                                <button type="button" className="btn btn-dark btn-md w-100" style={{ minWidth:'50%', backgroundColor:"#43A047"}}>
+                                                                    <i className="bi bi-search"></i> Search
+                                                                </button>
+                                                            </div>
+
+                                                            {/* Export Button */}
+                                                            <div>
+                                                                <button type="button" className="btn btn-info btn-md text-white w-100" style={{ minWidth: '50%',backgroundColor:"#5a65fa" }}>
+                                                                    <i className="bi bi-box-arrow-up"></i> Export
+                                                                </button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="row mt-3 column-gap-0">
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>Total Transcation</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#1a227d"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6>Total Amount</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#8b5cf6"}} >
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6>Total Charges</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>₹  0</h5>
+                                                                    <h6>Total Commission</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-1 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#1a227d"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>APES</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-1 mb-2">
+                                                                <div className="border rounded p-2 " style={{backgroundColor: "#8b5cf6"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>MATH</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-1 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>MPOS</h6>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        {/*Pagination*/}
+                                                        <div className="row pagination_retailer mt-3">
+                                                            <div className="col-6 d-flex pt-2">
+                                                                <p className="mr-2 pb-0">Show result:</p>
+                                                                <select className="form-select"
+                                                                        aria-label="Default select example">
+                                                                    <option selected>1
+                                                                    </option>
+                                                                    <option value="1">2</option>
+                                                                    <option value="2">3</option>
+                                                                    <option value="3">4</option>
+                                                                </select>
+                                                            </div>
+                                                            <div className="col-6 text-end retailer-pagination">
+                                                                <nav aria-label="Page navigation example">
+                                                                    <ul className="pagination float-right">
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#" aria-label="Previous">
+                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                <span className="sr-only">Previous</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#">1</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">2</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">3</a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#"
+                                                                               aria-label="Next">
+                                                                                    <span
+                                                                                        aria-hidden="true">&raquo;</span>
+                                                                                <span
+                                                                                    className="sr-only">Next</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </nav>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="navpills-5" className="tab-pane active show bsstdmt" role="tabpanel">
+                                                <div className="">
+                                                    <div className="col-xl-12">
+                                                        <div className="d-flex flex-wrap align-items-center w-100 gap-2">
+                                                            {/* Transaction No Input */}
+                                                            <div className="flex-grow-1 mr-2">
+                                                                <input type="text" className="form-control form-control-md w-100" placeholder="Transaction No" />
+                                                            </div>
+
+                                                            {/* Status Dropdown */}
+                                                            <div className="flex-grow-1 mr-2">
+                                                                <select className="form-control form-select form-select-md w-100">
+                                                                    <option selected disabled>-Status-</option>
+                                                                    <option>Success</option>
+                                                                    <option>Pending</option>
+                                                                    <option>Failed</option>
+                                                                </select>
+                                                            </div>
+
+                                                            {/* From Date */}
+                                                            <div className="flex-grow-1 mr-2">
+                                                                <input type="date" className="form-control form-control-md w-100" defaultValue="2025-04-14" />
+                                                            </div>
+
+                                                            {/* To Date */}
+                                                            <div className="flex-grow-1 mr-2">
+                                                                <input type="date" className="form-control form-control-md w-100" defaultValue="2025-04-14" />
+                                                            </div>
+
+                                                            {/* Search Button */}
+                                                            <div className="flex-grow-1 mr-2">
+                                                                <button type="button" className="btn btn-dark btn-md w-50" style={{backgroundColor:"#43A047"}}>
+                                                                    <i className="bi bi-search"></i> Search
+                                                                </button>
+                                                            </div>
+
+                                                            {/* Export Button */}
+                                                            <div className="flex-grow-1 mr-2">
+                                                                <button type="button" className="btn btn-info btn-md text-white w-50" style={{backgroundColor:"#5a65fa"}}>
+                                                                    <i className="bi bi-box-arrow-up"></i> Export
+                                                                </button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="row mt-3">
+                                                            <div className="col-md-3 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>Total Transcation</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-3 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#1a227d"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6>Total Amount</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-3 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor:"#8b5cf6"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6>Total Charges</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-3 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>₹  0</h5>
+                                                                    <h6>Total Commission</h6>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        {/*Pagination*/}
+                                                        <div className="row pagination_retailer mt-3">
+                                                            <div className="col-6 d-flex pt-2">
+                                                                <p className="mr-2 pb-0">Show result:</p>
+                                                                <select className="form-select"
+                                                                        aria-label="Default select example">
+                                                                    <option selected>1
+                                                                    </option>
+                                                                    <option value="1">2</option>
+                                                                    <option value="2">3</option>
+                                                                    <option value="3">4</option>
+                                                                </select>
+                                                            </div>
+                                                            <div className="col-6 text-end retailer-pagination">
+                                                                <nav aria-label="Page navigation example">
+                                                                    <ul className="pagination float-right">
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#" aria-label="Previous">
+                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                <span className="sr-only">Previous</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#">1</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">2</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">3</a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#"
+                                                                               aria-label="Next">
+                                                                                    <span
+                                                                                        aria-hidden="true">&raquo;</span>
+                                                                                <span
+                                                                                    className="sr-only">Next</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </nav>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div id="navpills-6" className="tab-pane" role="tabpanel">
+                                                <div className="">
+                                                    <div className="col-xl-12">
+                                                        <div className="d-flex flex-wrap align-items-end gap-2">
+                                                            {/* Transaction No Input */}
+                                                            <div className="mr-2">
+                                                                <input type="text" className="form-control form-control-md" placeholder="Transaction No" />
+                                                            </div>
+
+                                                            {/* Mobile Input */}
+                                                            <div className="mr-2">
+                                                                <input type="text" className="form-control form-control-md"
+                                                                       placeholder="Mobile No" />
+                                                            </div>
+
+                                                            {/* Type Dropdown */}
+                                                            <div className="mr-2">
+                                                                <select className="form-control form-select form-select-md">
+                                                                    <option selected disabled>-Status-</option>
+                                                                    <option>Money Transfer</option>
+                                                                    <option>Utility/Recharge</option>
+                                                                    <option>AEPS/MATM</option>
+                                                                    <option>Credit Card</option>
+                                                                </select>
+                                                            </div>
+
+                                                            {/* From Date */}
+                                                            <div className="mr-2">
+                                                                <input type="date" className="form-control form-control-md" defaultValue="2025-04-14" />
+                                                            </div>
+
+                                                            {/* To Date */}
+                                                            <div className="mr-2">
+                                                                <input type="date" className="form-control form-control-md" defaultValue="2025-04-14" />
+                                                            </div>
+
+                                                            {/* Search Button */}
+                                                            <div className="mr-2">
+                                                                <button type="button" className="btn btn-dark btn-md w-100"  style={{minWidth:'50%' ,backgroundColor:"#43A047" }} >
+                                                                    <i className="bi bi-search"></i> Search
+                                                                </button>
+                                                            </div>
+
+                                                            {/* Export Button */}
+                                                            <div>
+                                                                <button type="button" className="btn btn-info btn-md text-white w-100 " style={{ minWidth: '50%', backgroundColor:"#5a65fa" }}>
+                                                                    <i className="bi bi-box-arrow-up"></i> Export
+                                                                </button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="row mt-3 column-gap-0">
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>Total Transcation</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#1a227d"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6>Total Amount</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor:"#8b5cf6"}} >
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6> Charges Paid</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
+                                                                    <h5>₹ 0</h5>
+                                                                    <h6 className=''>Commission Received</h6>
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor: "#1a227d"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6>Refund Pending</h6>
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-md-2 mb-2">
+                                                                <div className="border rounded p-2" style={{backgroundColor:"#8b5cf6"}}>
+                                                                    <h5>0</h5>
+                                                                    <h6 className=''>Refunded Transaction</h6>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        {/*Pagination*/}
+                                                        <div className="row pagination_retailer mt-3">
+                                                            <div className="col-6 d-flex pt-2">
+                                                                <p className="mr-2 pb-0">Show result:</p>
+                                                                <select className="form-select"
+                                                                        aria-label="Default select example">
+                                                                    <option selected>1
+                                                                    </option>
+                                                                    <option value="1">2</option>
+                                                                    <option value="2">3</option>
+                                                                    <option value="3">4</option>
+                                                                </select>
+                                                            </div>
+                                                            <div className="col-6 text-end retailer-pagination">
+                                                                <nav aria-label="Page navigation example">
+                                                                    <ul className="pagination float-right">
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#" aria-label="Previous">
+                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                <span className="sr-only">Previous</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#">1</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">2</a>
+                                                                        </li>
+                                                                        <li className="page-item"><a
+                                                                            className="page-link" href="#">3</a>
+                                                                        </li>
+                                                                        <li className="page-item">
+                                                                            <a className="page-link" href="#"
+                                                                               aria-label="Next">
+                                                                                    <span
+                                                                                        aria-hidden="true">&raquo;</span>
+                                                                                <span
+                                                                                    className="sr-only">Next</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </nav>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                     </div>
                                 </div>
