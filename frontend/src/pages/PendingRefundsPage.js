@@ -142,7 +142,7 @@ export default function PendingRefundsPage(){
                     <div className="container-fluid">
 
                         <div className="card">
-                            <div className="card-header bg-primary text-white">
+                            <div className="card-header bg-purple text-white">
                                 <strong>Refund Pending</strong>
                             </div>
                             <div className="card-body">

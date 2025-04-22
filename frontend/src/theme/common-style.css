@@ -1,23 +1,27 @@
 body{
-    background-color: #F3F6FF !important;
+    /*background-color: #F3F6FF !important;*/
+    background-color: #f5f3f3 !important;
 }
 a,h1,h2,h3,h4,h5,h6,p,h1,h2,h3,h4,h5,h6,p{
     font-family: "Mulish", sans-serif;
 }
 .yellow-color{
-    color:#ffc107;
+    color:#fdcb72;
 }
 .red-color{
-    color:#ff5959e6;
+    color:#ee7f54;
 }
 .bgred-color{
-    background-color:#ff5959e6;
+    background-color:#ee7f54;
 }
 .bggreen-color{
     background-color:#21B75D !important;
 }
 .blue-color{
-    color: #5965f9;
+    color: #503d7f;
+}
+.bg-purple{
+    background-color: #503d7f !important;
 }
 .LightBlue-BgColor{
     background-color: #E5ECFF;
@@ -573,7 +577,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     width: 15rem;
     position: fixed;
     display: flex;
-    background: #5965f9;
+    background: #fff;
     z-index: 9;
     align-items: center;
     justify-content: center;
@@ -606,7 +610,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     z-index: 6;
     inset-block-start: 0;
     inset-inline-start: 0;
-    background: linear-gradient(to bottom, rgba(89,101,249,1) 0%, rgba(118,75,162,1) 100%);
+    background: #503d81;
+    /*background: linear-gradient(to bottom, rgba(89,101,249,1) 0%, rgba(118,75,162,1) 100%);*/
     transition: all .2s ease;
     box-shadow: 0rem 0.9375rem 1.875rem 0rem rgba(0, 0, 0, 0);
 
@@ -826,7 +831,7 @@ UPI Body
 }
 
 .upi-content-body .update-news{
-    background-color: #D9FBE6;
+    background-color: #fff;
     font-size: 0.875rem;
     color: #000000;
 }
@@ -849,7 +854,7 @@ UPI Body
     font-weight: bold;
 }
 .crypto{
-    background-color: #fd777c;
+    background-color: #ee8055;
     font-size: 0.875rem;
     line-height: 0.875rem;
     font-weight: 500;
@@ -865,13 +870,18 @@ UPI Body
     padding: 1.275rem;
 }
 .retailer-das-icon{
-    background-color: #E5ECFF;
-    border-radius: 0.75rem;
-    border: 1px solid #A2B6F4;
+    background-color: #fffdfc;
+    /*width: 6rem;*/
+    /*height: 6rem;*/
+    border: 1px solid #ee7f5461;
     display: inline-block;
+    border-radius: 0.635rem;
+    box-shadow: 0 0 20px 0px #ee7f5417;
 }
 .retailer-das-icon img{
-    padding: 0.625rem;
+    padding: 0.825rem;
+    width: 6rem;
+    height: 6rem;
 }
 .retailer-das a{
     opacity: 1;
@@ -932,8 +942,8 @@ UPI Body
     border-radius: 0.23rem;
 }
 .nav-pills {
-    background-color: #E5ECFF;
-    border: 1px solid #A2B6F4;
+    background-color: #fff;
+    border: 1px solid #d86621;
     --bs-nav-pills-border-radius: 0.375rem;
     --bs-nav-pills-link-active-color: #fff;
     --bs-nav-pills-link-active-bg: #416CEF;
@@ -947,21 +957,21 @@ UPI Body
     border-top-right-radius: 0.795rem !important;
     border-radius: 0;
     padding: 0.35rem 1.875rem;
-    color: #416CEF;;
+    color: #744e71;;
     font-size: 1rem;
 }
 .nav-pills.light .nav-link.active, .nav-pills.light .show > .nav-link {
-    background: #416CEF;
+    background: #d86621;
     color: #fff;;
     box-shadow: none;
 
 }
 .retailer-home-balance .tab-content {
-    background-color: #EFF7F9;
+    background-color: #fff;
     border-bottom-left-radius: 0.795rem;
     border-bottom-right-radius: 0.795rem;
     padding: 0.35rem 0rem;
-    border: 1px solid #2EC563;
+    border: 1px solid #d6642c;
     border-top: none;
 }
 .retailer-home-balance .card-tabs-new{
@@ -987,7 +997,7 @@ UPI Body
 }
 
 .Recent-Trans a{
-    color: #416CEF;
+    color: #978185;
 }
 .my-buss-sum img{
     width: 2.125rem;
@@ -1002,18 +1012,18 @@ UPI Body
 
 }
 .upi-home-right .MoneyTransfer{
-    background-color: #E5ECFF;
+    background-color: #978185;
     border-radius: 5px;
     padding: 0.575rem;
 }
 .upi-home-right .MoneyTransfer h5{
-    color: #416CEF;
+    color: #fff;
 }
 .upi-home-right .summary-cc{
     padding: 0.575rem;
 }
 .upi-home-right .summary-cc h5{
-    color: #2EC563;
+    color: #ee8157;
 }
 
 /*Business Summary Page*/

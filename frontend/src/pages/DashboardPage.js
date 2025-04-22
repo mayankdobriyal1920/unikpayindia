@@ -1,6 +1,6 @@
 import React from 'react';
 import {IonContent, IonHeader, IonPage} from "@ionic/react";
-import unikPayLogo from '../theme/images/UnikPayIndia-Logo.png';
+
 import usericon from '../theme/images/user-icon.jpg';
 import MoneTransfer from '../theme/images/retailer-icons/MoneyTransfer.svg';
 import PPIWallet from '../theme/images/retailer-icons/PPI-Wallet.svg';
@@ -162,28 +162,22 @@ export default function DashboardPage(){
 
                 <div className="upi-content-body">
                     <div className="container-fluid">
-                        <div className="col-xl-12 col-md-12 col-lg-12 update-news d-flex mt-2 pl-0 align-items-center">
-                            <h6 className="crypto mt-0">Live Updates</h6>
-                            <p className="retailer_p pl-2 mb-0">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
-                        </div>
-                        <div className="col-xl-12 col-md-12 col-lg-12 d-md-flex d-block  my-3 page-header-breadcrumb">
-                            <div className="row">
-                                <div className="col-xl-6 col-md-6 col-lg-6">
-                                    <div className="left-content">
-                                        <h3 className="content-title  mt-2">Welcome back,</h3>
-                                        <div className="d-flex p-0">
-                                            <i className="fa-solid fa-house"></i>
-                                            <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-6 col-md-6 col-lg-6 align-items-end">
-                                    <div><label className="fs-13 text-muted">Online Sales</label>
-                                        <h5 className="mb-0 fw-semibold">563,275</h5>
-                                    </div>
-                                </div>
+                        <div className="row">
+                            <div className="col-xl-12 col-md-12 col-lg-12 update-news d-flex mt-2 pl-0 align-items-center">
+                                <h6 className="crypto mt-0">Live Updates</h6>
+                                <p className="retailer_p pl-2 mb-0">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
                             </div>
+                            <div className="col-xl-12 col-md-12 col-lg-12 d-flex d-block  my-3 page-header-breadcrumb">
+                                <div className="left-content">
+                                    <h3 className="content-title  mt-2">Welcome back,</h3>
+                                    <div className="d-flex p-0">
+                                        <i className="fa-solid fa-house"></i>
+                                        <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
+                                    </div>
+                                </div>
 
+
+                            </div>
                         </div>
                         <div className="row ">
                             <div className="col-lg-9 ">
@@ -486,13 +480,13 @@ export default function DashboardPage(){
                                                 <div className="flex-fill">
                                                     <div className="MoneyTransfer mr-2 text-center">
                                                         <h5>Money Transfer</h5>
-                                                        <p className="">₹ 43,565.00</p>
+                                                        <p className="yellow-color">₹ 43,565.00</p>
                                                     </div>
                                                 </div>
                                                 <div className="flex-fill align-items-end">
                                                     <div className="MoneyTransfer text-center">
                                                         <h5>Utilities/Bill</h5>
-                                                        <p className="">₹199.00</p>
+                                                        <p className="yellow-color">₹199.00</p>
                                                     </div>
                                                 </div>
 
@@ -515,7 +509,7 @@ export default function DashboardPage(){
                                         <div className="flex">
                                             <div className="MoneyTransfer text-center">
                                                 <h5>AEPS/MATM/MPOS/ADDHAR</h5>
-                                                <p className="text-center">₹ 43,565.00</p>
+                                                <p className="yellow-color text-center">₹ 43,565.00</p>
                                             </div>
                                         </div>
                                     </div>

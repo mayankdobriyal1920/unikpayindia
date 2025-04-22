@@ -144,15 +144,26 @@ export default function MoneyRequestPage(){
                             <h6 className="crypto mt-0">Live Updates</h6>
                             <p className="retailer_p pl-2 mb-0">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
                         </div>
-                        <div className="d-md-flex d-block align-items-center justify-content-between my-3 page-header-breadcrumb">
-                            <div className="left-content">
-                                <h3 className="content-title  mt-2">Add Fund</h3>
-                                <div className="d-flex p-0">
-                                    <i className="fa-solid fa-house"></i>
-                                    <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Add Fund</p>
+                        <div className="col-12">
+                            <div className="row">
+                                <div className="col-6">
+                                    <div className="d-md-flex d-block align-items-center justify-content-between my-3 page-header-breadcrumb">
+                                        <div className="left-content">
+                                            <h3 className="content-title  mt-2">Add Fund</h3>
+                                            <div className="d-flex p-0">
+                                                <i className="fa-solid fa-house"></i>
+                                                <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Add Fund</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-6 text-end mt-4">
+                                    <a  className=" btn bggreen-color">Add New Request</a>
+                                    <a className="btn bg-primary">Export</a>
                                 </div>
                             </div>
                         </div>
+
                         <div className="row main-retailer-report ShowTrans">
                             <div className="col-xl-12">
                                 <div className="card retailer-home-balance">
@@ -167,10 +178,7 @@ export default function MoneyRequestPage(){
                                                 <a href="#navpills-2" className="nav-link" data-bs-toggle="tab"
                                                    aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Pending Money Requests</a>
                                             </li>
-                                            <li className="nav-item align-items-end" role="presentation">
-                                                <a href="" className="nav-link bggreen-color white-color" data-bs-toggle="tab"
-                                                   aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Add New Request</a>
-                                            </li>
+
 
 
                                         </ul>
@@ -480,6 +488,61 @@ export default function MoneyRequestPage(){
 
 
                         </div>
+
+                    {/*   Add New Request Page */}
+                           <div className="container">
+                               <div className="row">
+                                   <div className="col-12">
+                                       <h3 className="bgred-color white-color pl-2 pt-2 pb-2">New Request</h3>
+                                       <form className="mt-3">
+                                           <div className="form-row">
+                                               <div className="form-group col-md-6">
+                                                   <label htmlFor="inputEmail4">Amount</label>
+                                                   <input type="text" className="form-control" id="inputEmail4"/>
+                                               </div>
+                                               <div className="form-group col-md-6">
+                                                   <label htmlFor="inputPassword4">Payment Mode</label>
+                                                   <select id="inputState" className="form-control">
+                                                       <option selected>Cash/Stuck Amount</option>
+                                                       <option>CDM</option>
+                                                       <option>IMPS/UPI</option>
+                                                       <option>NEFT/RTGS</option>
+                                                       <option>Fund Transfer</option>
+                                                       <option>Cheque</option>
+                                                   </select>
+                                               </div>
+                                           </div>
+                                           <div className="form-row">
+                                               <div className="form-group col-md-6">
+                                                   <label htmlFor="inputEmail4">Bank Account</label>
+                                                   <select id="inputState" className="form-control">
+                                                       <option selected>Cash/Stuck Amount</option>
+                                                       <option>CDM</option>
+                                                       <option>IMPS/UPI</option>
+                                                       <option>NEFT/RTGS</option>
+                                                       <option>Fund Transfer</option>
+                                                       <option>Cheque</option>
+                                                   </select>
+                                               </div>
+                                               <div className="form-group col-md-6">
+                                                   <label htmlFor="inputPassword4">Upload Deposit Slip Photo</label>
+                                                   <input type="file" className="form-control" id="inputGroupFile01"/>
+                                               </div>
+                                           </div>
+                                           <div className="form-row">
+                                               <div className="form-group col-md-6">
+                                                   <label htmlFor="inputEmail4">Deposit Date</label>
+                                                   <input type="date" className="form-control form-control-md" value="2025-04-14"/>
+                                               </div>
+                                               <div className="form-group col-md-6">
+                                                   <label htmlFor="inputPassword4">Remarks</label>
+                                                   <input type="text" className="form-control" id="inputGroupFile01"/>
+                                               </div>
+                                           </div>
+                                       </form>
+                                   </div>
+                               </div>
+                           </div>
                     </div>
                 </div>
             </IonContent>
