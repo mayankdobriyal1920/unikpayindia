@@ -1,22 +1,49 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {useHistory} from "react-router";
 import siteLogo from "../theme/images/UnikPayIndia-Logo.png";
+import {useDispatch, useSelector} from "react-redux";
+import {actionToOpenCloseSideBarMenu} from "../redux/CommonAction";
 
 
 export default function LeftSideBarComponent(){
     const history = useHistory();
+    const {isOpen} = useSelector((state) => state.openCloseSideBarMenu);
+    const menuRef = useRef(null);
+    const dispatch = useDispatch();
+
+    const callToOpenCloseSideBarMenu = ()=>{
+        dispatch(actionToOpenCloseSideBarMenu(false));
+    }
+
+    // Close when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (isOpen && menuRef.current && !menuRef.current.contains(event.target) &&
+                !event.target.closest('#login_icon_burger_in')) {
+                callToOpenCloseSideBarMenu();
+            }
+        };
+
+        if(isOpen)
+            document.addEventListener('mousedown', handleClickOutside);
+        else
+            document.removeEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
     const goToPage = (page)=>{
         history.replace(page);
     }
-    return (
 
-    <div className="upi-side-nav bg-color">
+    return (
+       <div ref={menuRef} className={`upi-side-nav bg-color after_login_sidebar_panel ${isOpen ? 'login_after_sidebar_open' : ''}`}>
         <div className="main-sidebar-header">
             <a onClick={() => goToPage('/dashboard-home')} className="header-logo">
                 <img src={siteLogo} alt="logo" className="desktop-logo"/>
             </a>
         </div>
-        <div className="upi-side-nav-scroll mm-active">
+        <div className="upi-side-nav-scroll">
             <div className="simplebar-wrapper">
                 <ul className="metismenu" id="menu">
                     <li className="nav-label first">Main Menu</li>

@@ -2,3 +2,17 @@
     left: 100px!important;
     display: block!important;
 }
+.after_login_sidebar_panel{
+    display: none;
+}
+.login_after_sidebar_open{
+    display: block;
+}
+@media screen and (min-width: 990px) {
+    .after_login_sidebar_panel {
+        display: block !important;
+    }
+    #login_icon_burger_in{
+        display: none!important;
+    }
+}

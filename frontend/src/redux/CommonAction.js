@@ -7,7 +7,7 @@ import {
     USER_SIGNIN_REQUEST,
     USER_SIGNIN_SUCCESS,
     USER_SIGNUP_SIGNIN_ERROR,
-    USER_GET_OTP_REQUEST,
+    USER_GET_OTP_REQUEST, OPEN_CLOSE_SIDE_BAR_MENU,
 } from "./CommonConstants";
 import createSocketConnection from "../socket/socket";
 const api = Axios.create({
@@ -77,6 +77,12 @@ export const actionToLogoutUserSession = (setUserLogoutLoading) => async (dispat
     }
 }
 
+export const actionToOpenCloseSideBarMenu = (action) => async (dispatch) => {
+    dispatch({
+        type: OPEN_CLOSE_SIDE_BAR_MENU,
+        payload:{isOpen:action}
+    });
+}
 export const actionToVerifyLoginUserOtp = (phone,otp) => async (dispatch) => {
     dispatch({type: USER_SIGNIN_REQUEST});
     try {

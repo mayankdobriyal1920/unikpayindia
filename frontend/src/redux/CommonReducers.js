@@ -7,7 +7,7 @@ import {
     USER_SIGNIN_REQUEST,
     USER_SIGNIN_SUCCESS,
     USER_SIGNOUT,
-    USER_GET_OTP_REQUEST, USER_SIGNUP_SIGNIN_ERROR,
+    USER_GET_OTP_REQUEST, USER_SIGNUP_SIGNIN_ERROR, OPEN_CLOSE_SIDE_BAR_MENU,
 } from "./CommonConstants";
 
 export const userAuthDetailReducer = (state = {}, action) => {
@@ -53,6 +53,14 @@ export const userOtpReducer = (state = {}, action) => {
             return { loading: false };
         case USER_GET_OTP_REQUEST_FAIL:
             return { loading: false };
+        default:
+            return state;
+    }
+};
+export const openCloseSideBarMenuReducer = (state = {}, action) => {
+    switch (action.type) {
+        case OPEN_CLOSE_SIDE_BAR_MENU:
+            return action.payload;
         default:
             return state;
     }
