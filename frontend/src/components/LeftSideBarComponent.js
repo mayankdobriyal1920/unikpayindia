@@ -1,7 +1,7 @@
 import React from 'react';
-import {IonContent, IonHeader, IonPage} from "@ionic/react";
-import {Route, useHistory} from "react-router";
-import unikPayLogo from '../theme/images/UnikPayIndia-Logo.png';
+import {useHistory} from "react-router";
+import siteLogo from "../theme/images/UnikPayIndia-Logo.png";
+
 
 export default function LeftSideBarComponent(){
     const history = useHistory();
@@ -12,8 +12,8 @@ export default function LeftSideBarComponent(){
 
     <div className="upi-side-nav bg-color">
         <div className="main-sidebar-header">
-            <a href="index.html" className="header-logo">
-                <img src={unikPayLogo} alt="logo" className="desktop-logo"/>
+            <a onClick={() => goToPage('/dashboard-home')} className="header-logo">
+                <img src={siteLogo} alt="logo" className="desktop-logo"/>
             </a>
         </div>
         <div className="upi-side-nav-scroll mm-active">

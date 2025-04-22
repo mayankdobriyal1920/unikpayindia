@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {setupIonicReact, IonApp, IonRouterOutlet, IonLoading} from '@ionic/react';
 import '@ionic/react/css/core.css';
-import './css/common.css';
 
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
@@ -36,6 +35,7 @@ import ManageFundsPage from "./pages/ManageFundsPage";
 import ReportsPage from "./pages/ReportsPage";
 import BusinessSummeryPage from "./pages/BusinessSummeryPage";
 import StatementsPage from "./pages/StatementsPage";
+import './css/common.css';
 setupIonicReact();
 
 const AppEnterMainPage = () => {

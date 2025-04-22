@@ -1,14 +1,31 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {IonHeader} from "@ionic/react";
 import unikPayLogo from "../theme/images/UnikPayIndia-Logo.png";
 import {useHistory} from "react-router";
 
 export default function HeaderWithoutLogin(){
     const history = useHistory();
+    const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef(null);
 
     const goToPage = (page)=>{
         history.replace(page);
     }
+
+    // Close when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return(
         <IonHeader className="header03">
             <div className="header-top">
@@ -38,17 +55,19 @@ export default function HeaderWithoutLogin(){
                     <a className="logo" onClick={()=>goToPage('/home')}>
                         <img src={unikPayLogo} alt=""/>
                     </a>
-                    <nav className="primary-menu ml-auto">
-                        <a id="mobile-menu-toggler" href="#"><i className="fas fa-bars"></i></a>
-                        <ul>
-                            <li>
-                                <a onClick={()=>goToPage('/home')}>Home</a>
-                            </li>
-                            <li><a onClick={()=>goToPage('/home')}>About</a></li>
-                            <li><a onClick={()=>goToPage('/home')}>Services</a></li>
-                            <li><a onClick={()=>goToPage('/home')}>Clients</a></li>
-                            <li><a onClick={()=>goToPage('/home')}>Contact</a></li>
-                            <li><a onClick={()=>goToPage('/login')}>Login</a></li>
+                    <nav ref={menuRef} className="primary-menu ml-auto">
+                        <a id="mobile-menu-toggler"
+                           onClick={(e) => {
+                               e.preventDefault();
+                               setIsOpen((prev) => !prev)
+                           }}><i className="fas fa-bars"></i></a>
+                        <ul className={`${isOpen ? 'left_side_bar_open' : ''}`}>
+                            <li><a onClick={() => goToPage('/home')}>Home</a></li>
+                            <li><a onClick={() => goToPage('/about')}>About</a></li>
+                            <li><a onClick={() => goToPage('/services')}>Services</a></li>
+                            <li><a onClick={() => goToPage('/clients')}>Clients</a></li>
+                            <li><a onClick={() => goToPage('/contact')}>Contact</a></li>
+                            <li><a onClick={() => goToPage('/login')}>Login</a></li>
                         </ul>
                     </nav>
                 </div>
