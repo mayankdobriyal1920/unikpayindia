@@ -32,30 +32,6 @@ export default function BusinessSummeryPage(){
                                     <div className="business-summary d-flex">
                                         <div className="bss-select mr-3">
                                             <select className="form-select" aria-label="Default select example">
-                                                <option selected>Category</option>
-                                                <option value="1">Money Transfer</option>
-                                                <option value="2">Utility/Recharge</option>
-                                                <option value="3">AEPS/MATM</option>
-                                                <option value="3">Credit Card</option>
-                                            </select>
-                                        </div>
-
-                                        <div className="bss-select mr-3">
-                                            <select className="form-select" aria-label="Default select example">
-                                                <option selected>Date IN</option>
-
-                                            </select>
-                                        </div>
-
-                                        <div className="bss-select mr-3">
-                                            <select className="form-select" aria-label="Default select example">
-                                                <option selected>Date End</option>
-
-                                            </select>
-                                        </div>
-
-                                        <div className="bss-select mr-3">
-                                            <select className="form-select" aria-label="Default select example">
                                                 <option selected>Type of transaction</option>
                                                 <option value="1">Money Transfer</option>
                                                 <option value="2">Utility/Recharge</option>
@@ -63,7 +39,20 @@ export default function BusinessSummeryPage(){
                                                 <option value="3">Credit Card</option>
                                             </select>
                                         </div>
-                                        <button type="button" className="btn btn-success bggreen-color">Success</button>
+
+                                        <div className="bss-select mr-3">
+                                            <input type="date" className="form-control form-control-md" value="2025-04-14"/>
+                                        </div>
+
+                                        <div className="bss-select mr-3">
+                                            <input type="date" className="form-control form-control-md" value="2025-04-14"/>
+                                        </div>
+                                        <button type="button" className="btn btn-success btn-purple">Success</button>
+
+
+
+
+
                                     </div>
                                 </div>
                             </div>

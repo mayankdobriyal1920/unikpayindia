@@ -313,21 +313,21 @@ export default function ReportsPage(){
 
                                                         <div className="row mt-3 column-gap-0">
                                                             <div className="col-md-2 mb-2">
-                                                                <div className="border rounded p-2" style={{backgroundColor: "#fc885c"}}>
-                                                                    <h5>0</h5>
-                                                                    <h6>Total Transcation</h6>
+                                                                <div className="border rounded p-2 bg-purple ">
+                                                                    <h5 className="white-color">0</h5>
+                                                                    <h6 className="white-color">Total Transcation</h6>
                                                                 </div>
                                                             </div>
                                                             <div className="col-md-2 mb-2">
-                                                                <div className="border rounded p-2" style={{backgroundColor: "#1a227d"}}>
+                                                                <div className="border rounded p-2 bgred-color">
                                                                     <h5>₹ 0</h5>
                                                                     <h6>Total Amount</h6>
                                                                 </div>
                                                             </div>
                                                             <div className="col-md-2 mb-2">
-                                                                <div className="border rounded p-2" style={{backgroundColor: "#8b5cf6"}}>
-                                                                    <h5>₹ 0</h5>
-                                                                    <h6> Charges Paid</h6>
+                                                                <div className="border rounded p-2 bg-purple" >
+                                                                    <h5 className="white-color">₹ 0</h5>
+                                                                    <h6 className="white-color"> Charges Paid</h6>
                                                                 </div>
                                                             </div>
                                                             <div className="col-md-2 mb-2">

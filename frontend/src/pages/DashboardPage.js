@@ -53,13 +53,13 @@ export default function DashboardPage(){
                         <div className="row ">
                             <div className="col-lg-9 ">
                                 <div className="upi-style-icon white-bgcolor boxShadow">
-                                    <div className="row retailer-das ">
+                                    <div className="row retailer-das mb-4">
                                         <div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={multiwallet} className=""/>
                                                 </div>
-                                                <p>Multi Wallet</p>
+                                                <h5 className="mt-0">Multi Wallet</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -67,7 +67,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={MoneTransfer} className=""/>
                                                 </div>
-                                                <p>Money Transfer</p>
+                                                <h5 className="mt-0">Money Transfer</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -75,7 +75,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={PPIWallet} className=""/>
                                                 </div>
-                                                <p>PPI Wallet</p>
+                                                <h5 className="mt-0">PPI Wallet</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -83,7 +83,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={multiwallet} className=""/>
                                                 </div>
-                                                <p>PPI Digikhata</p>
+                                                <h5 className="mt-0">PPI Digikhata</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -91,7 +91,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={AEpsIcon} className=""/>
                                                 </div>
-                                                <p>AEPS</p>
+                                                <h5 className="mt-0">AEPS</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -99,19 +99,19 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={RechargeIcon} className=""/>
                                                 </div>
-                                                <p>Recharge</p>
+                                                <h5 className="mt-0">Recharge</h5>
                                             </a>
                                         </div>
 
 
                                     </div>
-                                    <div className="row retailer-das ">
+                                    <div className="row retailer-das mb-4">
                                         <div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={GasIcon} className=""/>
                                                 </div>
-                                                <p>GAS</p>
+                                                <h5 className="mt-0">GAS</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -119,7 +119,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={DTHIcon} className=""/>
                                                 </div>
-                                                <p>DTH</p>
+                                                <h5 className="mt-0">DTH</h5>
                                             </a>
                                         </div>
 
@@ -128,7 +128,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={BillCMSIcon} className=""/>
                                                 </div>
-                                                <p>Bill & CMS offline</p>
+                                                <h5 className="mt-0">Bill & CMS offline</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -136,7 +136,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={UPIIcon} className=""/>
                                                 </div>
-                                                <p>UPI</p>
+                                                <h5 className="mt-0">UPI</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -144,7 +144,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={CCPaymentIcon} className=""/>
                                                 </div>
-                                                <p>Credit Card Payment</p>
+                                                <h5 className="mt-0">Credit Card Payment</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -152,15 +152,19 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={QuickFundIcon} className=""/>
                                                 </div>
-                                                <p>Quick Fund</p>
+                                                <h5 className="mt-0">Quick Fund</h5>
                                             </a>
                                         </div>
+
+
+                                    </div>
+                                    <div className="row retailer-das mb-4">
                                         <div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={LICIcon} className=""/>
                                                 </div>
-                                                <p>LIC</p>
+                                                <h5 className="mt-0">LIC</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -168,7 +172,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={CMSIcon} className=""/>
                                                 </div>
-                                                <p>CMS</p>
+                                                <h5 className="mt-0">CMS</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -176,7 +180,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={InsuranceIcon} className=""/>
                                                 </div>
-                                                <p>Insurance</p>
+                                                <h5 className="mt-0">Insurance</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -184,7 +188,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={MoneTransfer} className=""/>
                                                 </div>
-                                                <p>BBPS</p>
+                                                <h5 className="mt-0">BBPS</h5>
                                             </a>
                                         </div>
 
@@ -193,7 +197,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={QRCodeIcon} className=""/>
                                                 </div>
-                                                <p>QR Code</p>
+                                                <h5 className="mt-0">QR Code</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -201,10 +205,9 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={TravelIcon} className=""/>
                                                 </div>
-                                                <p>Travel</p>
+                                                <h5 className="mt-0">Travel</h5>
                                             </a>
                                         </div>
-
                                     </div>
                                     <div className="row retailer-das ">
 
@@ -213,7 +216,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={PGIcon} className=""/>
                                                 </div>
-                                                <p>PG</p>
+                                                <h5 className="mt-0">PG</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -221,7 +224,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={FastagIcon} className=""/>
                                                 </div>
-                                                <p>Fas Tag</p>
+                                                <h5 className="mt-0">Fas Tag</h5>
                                             </a>
                                         </div>
                                         <div className="col-2 text-center ">
@@ -229,7 +232,7 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={QRCodeIcon} className=""/>
                                                 </div>
-                                                <p>QR Code</p>
+                                                <h5 className="mt-0">QR Code</h5>
                                             </a>
                                         </div>
 

@@ -23,6 +23,15 @@ a,h1,h2,h3,h4,h5,h6,p,h1,h2,h3,h4,h5,h6,p{
 .bg-purple{
     background-color: #503d7f !important;
 }
+.btn-purple{
+    background-color: #503d7f !important;
+    border-color: #503d7f !important;
+    border-radius: .35rem;
+}
+.btn-purple:hover{
+    background-color: #d6642c;
+}
+
 .LightBlue-BgColor{
     background-color: #E5ECFF;
 }
@@ -586,10 +595,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     border-block-end: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 50ms ease;
 }
-.main-sidebar-header .header-logo img {
-    height: 3rem;
-    line-height: 2rem;
-}
+/*.main-sidebar-header .header-logo img {*/
+/*    height: 3rem;*/
+/*    line-height: 2rem;*/
+/*}*/
 .bg-color{
     background-color: #e4e3ef;
 }
@@ -610,7 +619,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     z-index: 6;
     inset-block-start: 0;
     inset-inline-start: 0;
-    background: #503d81;
+    background: #444444;
+    /*background: #503d81;*/
     /*background: linear-gradient(to bottom, rgba(89,101,249,1) 0%, rgba(118,75,162,1) 100%);*/
     transition: all .2s ease;
     box-shadow: 0rem 0.9375rem 1.875rem 0rem rgba(0, 0, 0, 0);
@@ -877,6 +887,10 @@ UPI Body
     display: inline-block;
     border-radius: 0.635rem;
     box-shadow: 0 0 20px 0px #ee7f5417;
+    transition: all linear 0.3s;
+}
+.retailer-das-icon:hover{
+    box-shadow: 0 0 20px 0px #ee7f5496;
 }
 .retailer-das-icon img{
     padding: 0.825rem;
@@ -1065,13 +1079,26 @@ UPI Body
     border-radius: 5px;
 }
 .bss-select .form-select{
-    border: 1px solid #E5E7EB;
-    background-color: #F7FAFC;
+    border: 1px solid #c7b1ff;
+    background-color: #fbfaff;
     border-radius: 5px;
     padding: 0.55rem 1.875rem 0.55rem 1rem;
     text-align: left;
-    font-size: 0.938rem;
+    font-size: .813rem;
     width: 100%;
+    color: #334151;
+
+    option {
+        background-color: transparent;
+        padding: 0.35rem 0.75rem;
+        border-radius: 0.25rem;
+    }
+
+    option:checked {
+        background-color: #8760fb33;
+        color: #8760fbe6;
+    }
+
 }
 .bss-select .form-select::after{
     right: 10px;
