@@ -69,13 +69,13 @@ export default function BusinessSummeryPage(){
                                                 <div className="flex items-center gap-1 text-center">Total Amount </div>
                                             </th>
                                             <th scope="col">
-                                                <div className="flex items-center gap-1 text-center">Type of Transaction</div>
+                                                <div className="flex items-center gap-1 text-center">Success Amount</div>
                                             </th>
                                             <th scope="col">
-                                                <div className="flex items-center gap-1 text-center"> Total Charge</div>
+                                                <div className="flex items-center gap-1 text-center"> Pending</div>
                                             </th>
                                             <th scope="col">
-                                                <div className="flex items-center gap-1 text-center">Total Commission</div>
+                                                <div className="flex items-center gap-1 text-center">Failed</div>
                                             </th>
                                             <th scope="col">
                                                 <div className="flex items-center gap-1 text-center">Refund Pending</div>
@@ -91,7 +91,7 @@ export default function BusinessSummeryPage(){
                                                 </div>
                                             </td>
                                             <td className="py-2 align-middle text-center">548.00</td>
-                                            <td className="py-2 align-middle text-center text-success">Success</td>
+                                            <td className="py-2 align-middle text-center">72544.00</td>
                                             <td className="py-2 align-middle text-center">
                                                 <span className="flex items-center gap-2">
                                                     0

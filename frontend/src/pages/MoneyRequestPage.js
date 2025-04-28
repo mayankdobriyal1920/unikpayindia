@@ -48,10 +48,10 @@ export default function MoneyRequestPage(){
                                                 <a href="#navpills-1" className="nav-link active" data-bs-toggle="tab"
                                                    aria-expanded="false" aria-selected="true" role="tab">All Money Requests</a>
                                             </li>
-                                            <li className="nav-item" role="presentation">
+                                           {/* <li className="nav-item" role="presentation">
                                                 <a href="#navpills-2" className="nav-link" data-bs-toggle="tab"
                                                    aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Pending Money Requests</a>
-                                            </li>
+                                            </li>*/}
 
 
 
@@ -226,7 +226,7 @@ export default function MoneyRequestPage(){
 
                                                 </div>
                                             </div>
-                                            <div id="navpills-2" className="tab-pane" role="tabpanel">
+                                            {/*<div id="navpills-2" className="tab-pane" role="tabpanel">
                                                 <div className="row">
                                                     <div className="col-md-3 text-center">
                                                         <h6 className="green-color">Fund Request</h6>
@@ -249,7 +249,7 @@ export default function MoneyRequestPage(){
                                                         <p>$24.00</p>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>*/}
 
                                         </div>
                                     </div>

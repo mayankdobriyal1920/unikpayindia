@@ -40,7 +40,7 @@ export default function DashboardPage(){
                             </div>
                             <div className="col-xl-12 col-md-12 col-lg-12 d-flex d-block  my-3 page-header-breadcrumb">
                                 <div className="left-content">
-                                    <h3 className="content-title  mt-2">Welcome back,</h3>
+                                    <h3 className="content-title  mt-2">Welcome Back,</h3>
                                     <div className="d-flex p-0">
                                         <i className="fa-solid fa-house"></i>
                                         <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
@@ -54,14 +54,14 @@ export default function DashboardPage(){
                             <div className="col-lg-9 ">
                                 <div className="upi-style-icon white-bgcolor boxShadow">
                                     <div className="row retailer-das mb-4">
-                                        <div className="col-2 text-center ">
+                                        {/*<div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={multiwallet} className=""/>
                                                 </div>
                                                 <h5 className="mt-0">Multi Wallet</h5>
                                             </a>
-                                        </div>
+                                        </div>*/}
                                         <div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
@@ -103,9 +103,6 @@ export default function DashboardPage(){
                                             </a>
                                         </div>
 
-
-                                    </div>
-                                    <div className="row retailer-das mb-4">
                                         <div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
@@ -114,6 +111,11 @@ export default function DashboardPage(){
                                                 <h5 className="mt-0">GAS</h5>
                                             </a>
                                         </div>
+
+
+                                    </div>
+                                    <div className="row retailer-das mb-4">
+
                                         <div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
@@ -152,13 +154,9 @@ export default function DashboardPage(){
                                                 <div className="retailer-das-icon animate-bel">
                                                     <img src={QuickFundIcon} className=""/>
                                                 </div>
-                                                <h5 className="mt-0">Quick Fund</h5>
+                                                <h5 className="mt-0">Wallet</h5>
                                             </a>
                                         </div>
-
-
-                                    </div>
-                                    <div className="row retailer-das mb-4">
                                         <div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
@@ -167,6 +165,11 @@ export default function DashboardPage(){
                                                 <h5 className="mt-0">LIC</h5>
                                             </a>
                                         </div>
+
+
+                                    </div>
+                                    <div className="row retailer-das mb-4">
+
                                         <div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
@@ -208,8 +211,6 @@ export default function DashboardPage(){
                                                 <h5 className="mt-0">Travel</h5>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div className="row retailer-das ">
 
                                         <div className="col-2 text-center ">
                                             <a href="#">
@@ -219,6 +220,11 @@ export default function DashboardPage(){
                                                 <h5 className="mt-0">PG</h5>
                                             </a>
                                         </div>
+
+                                    </div>
+                                    <div className="row retailer-das ">
+
+
                                         <div className="col-2 text-center ">
                                             <a href="#">
                                                 <div className="retailer-das-icon animate-bel">
@@ -287,49 +293,39 @@ export default function DashboardPage(){
                                                     <div id="navpills-2" className="tab-pane" role="tabpanel">
                                                         <div className="row">
                                                             <div className="col-md-3 text-center">
-                                                                <h6 className="green-color">Fund Request</h6>
+                                                                <h6 className="green-color">DMT</h6>
                                                                 <p>$24.00</p>
                                                             </div>
                                                             <div className="col-md-2">
-                                                                <h6 className="green-color">Money Credit</h6>
+                                                                <h6 className="green-color">Utility/Bills</h6>
                                                                 <p>$24.00</p>
                                                             </div>
                                                             <div className="col-md-2">
-                                                                <h6 className="green-color">Money Debit</h6>
+                                                                <h6 className="green-color">Credit Card</h6>
                                                                 <p>$24.00</p>
                                                             </div>
-                                                            <div className="col-md-2">
-                                                                <h6 className="green-color">Quick Collect</h6>
-                                                                <p>$24.00</p>
-                                                            </div>
-                                                            <div className="col-md-3">
-                                                                <h6 className="green-color">Quick Paid</h6>
-                                                                <p>$24.00</p>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                     <div id="navpills-3" className="tab-pane" role="tabpanel">
                                                         <div className="row">
                                                             <div className="col-md-3 text-center">
-                                                                <h6 className="green-color">Fund Request</h6>
+                                                                <h6 className="green-color">DMT</h6>
                                                                 <p>$24.00</p>
                                                             </div>
                                                             <div className="col-md-2">
-                                                                <h6 className="green-color">Money Credit</h6>
+                                                                <h6 className="green-color">Utility/Bills</h6>
                                                                 <p>$24.00</p>
                                                             </div>
                                                             <div className="col-md-2">
-                                                                <h6 className="green-color">Money Debit</h6>
+                                                                <h6 className="green-color">Credit Card </h6>
                                                                 <p>$24.00</p>
                                                             </div>
                                                             <div className="col-md-2">
-                                                                <h6 className="green-color">Quick Collect</h6>
+                                                                <h6 className="green-color">AEPS/MATM/MPOS/ADDHAR Pay</h6>
                                                                 <p>$24.00</p>
                                                             </div>
-                                                            <div className="col-md-3">
-                                                                <h6 className="green-color">Quick Paid</h6>
-                                                                <p>$24.00</p>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>

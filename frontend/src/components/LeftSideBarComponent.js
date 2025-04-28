@@ -46,7 +46,7 @@ export default function LeftSideBarComponent(){
         <div className="upi-side-nav-scroll">
             <div className="simplebar-wrapper">
                 <ul className="metismenu" id="menu">
-                    <li className="nav-label first">Main Menu</li>
+                    {/*<li className="nav-label first">Main Menu</li>*/}
                     <li className="">
                         <a className="has-arrow" onClick={() => goToPage('/dashboard-home')} aria-expanded="false">
                             <i className="fa-solid fa-house"></i>
@@ -70,7 +70,7 @@ export default function LeftSideBarComponent(){
                     <li>
                         <a className="ai-icon" onClick={()=>goToPage('/dashboard-reports')} aria-expanded="false">
                             <i className="fa-solid fa-file-pen"></i>
-                            <span className="nav-text">Reports</span>
+                            <span className="nav-text">Transactions</span>
                         </a>
                     </li>
 

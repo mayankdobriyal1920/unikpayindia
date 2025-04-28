@@ -43,7 +43,7 @@ export default function ReportsPage(){
                                             </li>
                                             <li className="nav-item" role="presentation">
                                                 <a href="#navpills-3" className="nav-link" data-bs-toggle="tab"
-                                                   aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Wallet 2 Wallet</a>
+                                                   aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Wallet History</a>
                                             </li>
 
 
@@ -52,59 +52,59 @@ export default function ReportsPage(){
 
                                         </ul>
                                         <div className="tab-content white-bgcolor">
-                                            <div id="navpills-1" className="tab-pane active show bsstdmt" role="tabpanel">
-                                                <div className="">
-                                                    {/*<h6 className="green-color bsst-dmt mb-2">DMT Transactions</h6>*/}
-                                                    <div className="col-xl-12 mt-2">
-                                                        <div className="d-flex">
-                                                            <form>
-                                                                <div className="form-row">
-                                                                    <div className="form-group col-md-3">
-                                                                        <input type="date" className="form-control form-control-md" value="2025-04-14"/>
-                                                                    </div>
-
-                                                                    <div className="form-group col-md-3">
-                                                                        <input type="date" className="form-control form-control-md" value="2025-04-14"/>
-                                                                    </div>
-
-                                                                    <div className="form-group col-md-3">
-                                                                        <input type="text" className="form-control form-control-md"/>
-                                                                    </div>
-
-                                                                    <div className="form-group col-md-3">
-                                                                        <div className="dmt-trasno d-flex">
-                                                                            <button type="button" className="btn btn-success">Search  </button>
-                                                                            <button type="button" className="btn btn-success">Export  </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-
-
+                                            <div id="navpills-1" className="tab-pane active show bsstdmt pl-2" role="tabpanel">
+                                                <form>
+                                                    <div className="form-row">
+                                                        <div className="form-group col-md-3">
+                                                            <input type="date" className="form-control form-control-md" value="2025-04-14"/>
                                                         </div>
+
+                                                        <div className="form-group col-md-3">
+                                                            <input type="date" className="form-control form-control-md" value="2025-04-14"/>
+                                                        </div>
+
+                                                        <div className="form-group col-md-3">
+                                                            <input type="text" placeholder="Global Search" className="form-control form-control-md"/>
+                                                        </div>
+
+                                                        <div className="form-group col-md-3">
+                                                            <div className="dmt-trasno btn-group" role="group">
+                                                                <button type="button" className="btn btn-outline-success">Search  </button>
+                                                                <button type="button" className="btn btn-outline-secondary">Export  </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div className="row">
+                                                    {/*<h6 className="green-color bsst-dmt mb-2">DMT Transactions</h6>*/}
+                                                    <div className=" mt-2">
                                                         <div className="d-flex mt-3">
                                                             <div className="flex-fill mr-2">
                                                                 <div className="dmt-trasno">
                                                                     <form>
                                                                         <div className="form-row">
                                                                             <div className="col">
-                                                                                <p className="mb-0 total-request">Transactions </p>
-                                                                                <input type="text" className="form-control"  placeholder="Transaction No"/>
+                                                                                <blockquote className="text-center">
+                                                                                    <p className="mb-0 total-request">Transactions </p>
+                                                                                    <h4>4</h4>
+                                                                                </blockquote>
+
+                                                                                <input type="text" className="form-control"  placeholder="Total Transactions (9) "/>
                                                                             </div>
 
                                                                             <div className="col">
                                                                                 <p className="mb-0 total-request">Credit Amount</p>
-                                                                                <input type="text" className="form-control" placeholder="Transaction No"/>
+                                                                                <input type="text" className="form-control" placeholder="0.00"/>
                                                                             </div>
 
                                                                             <div className="col bss-select">
                                                                                 <p className="mb-0 total-request">Debit Amount</p>
-                                                                                <input type="text" className="form-control" placeholder="Transaction No"/>
+                                                                                <input type="text" className="form-control" placeholder="0.00"/>
                                                                             </div>
 
                                                                             <div className="col bss-select">
                                                                                 <p className="mb-0 total-request">Charge</p>
-                                                                                <input type="text" className="form-control" placeholder="Transaction No"/>
+                                                                                <input type="text" className="form-control" placeholder="0.00"/>
                                                                             </div>
 
                                                                         </div>
@@ -182,8 +182,8 @@ export default function ReportsPage(){
                                                                     <tbody>
                                                                     <tr className="table-bordered ">
                                                                         <th scope="row">1</th>
+                                                                        <td className="text-end">24/02/2025 </td>
                                                                         <td className="text-end">24022025123842</td>
-                                                                        <td className="text-end">24/02/2025</td>
                                                                         <td className="text-end">Cash</td>
                                                                         <td className="text-end">AXIS CASH:- 923020064179135</td>
                                                                         <td className="text-end"></td>

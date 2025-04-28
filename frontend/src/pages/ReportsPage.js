@@ -83,8 +83,19 @@ export default function ReportsPage(){
                                                                     <form>
                                                                         <div className="form-row">
                                                                             <div className="col">
-                                                                                <input type="text" className="form-control"
-                                                                                       placeholder="Transaction No"/>                                                    </div>
+                                                                                <select
+                                                                                    className="form-control form-select form-select-md">
+                                                                                    <option disabled="">-Status- </option>
+                                                                                    <option>Success</option>
+                                                                                    <option>InProgress</option>
+                                                                                    <option>Initated</option>
+                                                                                    <option>Failed</option>
+                                                                                    <option>Refund Pending</option>
+                                                                                    <option>Refunded</option>
+
+                                                                                </select>
+
+                                                                            </div>
 
                                                                         </div>
                                                                     </form>
@@ -101,52 +112,16 @@ export default function ReportsPage(){
                                                                         </button>
                                                                         <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
                                                                             <li>
-                                                                                <button className="dropdown-item" type="button">Money Transfer</button>
+                                                                                <button className="dropdown-item" type="button">IMPS/NEFT</button>
                                                                             </li>
-                                                                            <li>
-                                                                                <button className="dropdown-item" type="button">Utility/Recharge
-                                                                                </button>
-                                                                            </li>
-                                                                            <li>
-                                                                                <button className="dropdown-item" type="button">AEPS/MATM
-                                                                                </button>
-                                                                            </li>
-                                                                            <li>
-                                                                                <button className="dropdown-item" type="button">Credit Card
-                                                                                </button>
-                                                                            </li>
+
+
                                                                         </ul>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
-                                                            <div className="flex-fill mr-2">
-                                                                <div className="dmt-trasno">
-                                                                    <form>
-                                                                        <div className="form-row">
-                                                                            <div className="col">
-                                                                                <input type="text" className="form-control"
-                                                                                       placeholder="Transaction No"/>
-                                                                            </div>
 
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div className="flex-fill mr-2">
-                                                                <div className="dmt-trasno">
-                                                                    <form>
-                                                                        <div className="form-row">
-                                                                            <div className="col">
-                                                                                <input type="text" className="form-control"
-                                                                                       placeholder="Transaction No"/>
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
 
                                                             <div className="flex-grow-1 mr-2">
                                                                 <button type="button" className="btn btn-md w-50" style={{backgroundColor:"#43A047"}} >
@@ -167,7 +142,7 @@ export default function ReportsPage(){
                                                                     <form>
                                                                         <div className="form-row">
                                                                             <div className="col">
-                                                                                <p className="mb-0 total-request">Total Request</p>
+                                                                                <p className="mb-0 total-request">Total Transactions</p>
                                                                                 <input type="text" className="form-control"  placeholder="Transaction No"/>
                                                                             </div>
 
