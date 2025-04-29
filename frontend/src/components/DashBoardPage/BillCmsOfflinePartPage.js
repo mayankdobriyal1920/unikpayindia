@@ -1,0 +1,19 @@
+import React from 'react';
+import {useHistory} from "react-router";
+
+export default function BillCmsOfflinePartPage() {
+    const history = useHistory();
+    const goBack = ()=>{
+        history.goBack();
+    }
+    return (
+        <div>
+            <div className={"header_with_back_button"}>
+                <div className={"row"}>
+                    <div onClick={goBack} className={"col-2"}>X</div>
+                    <div className={"col"}>Header detail here</div>
+                </div>
+            </div>
+        </div>
+    )
+}
