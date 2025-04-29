@@ -337,44 +337,61 @@ export default function DashboardPage(){
                             <div className="col-lg-3">
                                 <div className="upi-home-right">
                                     <div className="underBox">
-                                        <div className="my-buss-sum d-inline-flex align-items-center mb-3">
-                                            <img src={myBusinessIcon} alt="icon" className="mr-2 "/>
-                                            <div className="flex items-center">
-                                                <h3 className="mb-0 mt-0 red-color">My Business</h3>
-                                                <h4 className="mt-0">Summary</h4>
-                                            </div>
-
-                                        </div>
-
-                                            <div className="d-flex align-items-center">
-                                                <div className="flex-fill">
-                                                    <div className="MoneyTransfer mr-2 text-center">
-                                                        <h5>Money Transfer</h5>
-                                                        <p className="yellow-color">₹ 43,565.00</p>
+                                        <div className="row ">
+                                            <div className="col-12 ">
+                                                <div className="my-buss-sum d-inline-flex align-items-center mb-3">
+                                                    <img src={myBusinessIcon} alt="icon" className="mr-2 "/>
+                                                    <div className="flex items-center">
+                                                        <h3 className="mb-0 mt-0 red-color">My Business</h3>
+                                                        <h4 className="mt-0">Summary</h4>
                                                     </div>
+
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-6">
+                                                <div className="d-flex align-items-center">
+                                                    <div className="flex-fill">
+                                                        <div className="MoneyTransfer mr-2 text-center">
+                                                            <h5>Money Transfer</h5>
+                                                            <p className="yellow-color">₹ 43,565.00</p>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                            <div className="col-6">
                                                 <div className="flex-fill align-items-end">
                                                     <div className="MoneyTransfer text-center">
                                                         <h5>Utilities/Bill</h5>
                                                         <p className="yellow-color">₹199.00</p>
                                                     </div>
                                                 </div>
-
-                                            </div>
-
-
-
-                                        <div className="d-flex align-items-center">
-                                            <div className="flex-fill text-center summary-cc mr-3">
-                                                <h5>Credit Card Bill</h5>
-                                                <p className="text-center">₹ 0</p>
-                                            </div>
-
-                                            <div className="flex-fill summary-cc">
-                                                <h5 className="text-center">Flight</h5>
-                                                <p className="text-center">₹ 565.00</p>
                                             </div>
                                         </div>
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <div className="flex-fill text-center summary-cc mr-3">
+                                                    <h5>Credit Card Bill</h5>
+                                                    <p className="text-center">₹ 0</p>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <div className="flex-fill summary-cc">
+                                                    <h5 className="text-center">Flight</h5>
+                                                    <p className="text-center">₹ 565.00</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="upi-home-right">
+                                    <div className="underBox">
+
+
 
                                         <div className="flex">
                                             <div className="MoneyTransfer text-center">

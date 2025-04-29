@@ -57,6 +57,7 @@ const AppEnterMainPage = () => {
                 <Route path="/dashboard-complaint" component={ComplaintPage}/>
                 <Route path="/dashboard-commission-and-charge" component={CommissionAndChargePage}/>
                 <Route path="/dashboard-setting" component={SettingPage}/>
+
                 <Redirect  exact from="/"  to="/dashboard-home" />
                 <Route render={() => <Redirect to="/dashboard-home" />} />
             </IonRouterOutlet>

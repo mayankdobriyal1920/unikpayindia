@@ -5,6 +5,9 @@ body{
 a,h1,h2,h3,h4,h5,h6,p,h1,h2,h3,h4,h5,h6,p{
     font-family: "Mulish", sans-serif;
 }
+.btn-width-auto{
+    min-width: 9rem;
+}
 .yellow-color{
     color:#fdcb72;
 }
@@ -777,7 +780,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     -webkit-transform: rotate(-135deg) translateY(-50%);
     transform: rotate(-135deg) translateY(-50%);
 }
-.metismenu .has-arrow:after {
+/*.metismenu .has-arrow:after {
     position: absolute;
     content: "";
     width: .5em;
@@ -787,7 +790,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     transform-origin: top;
     top: 50%;
     transition: all .3s ease-out
-}
+}*/
 .upi-side-nav .metismenu ul a:hover{
     padding-left: 4rem;
 
@@ -1110,6 +1113,12 @@ UPI Body
     border-radius: 3px;
     background-color: #8760fb;
     color: #fff;
+}
+.creditHistory-manage{
+    background-color: #9fb1c1;
+    border-radius: 0.3rem;
+    padding: 1rem;
+
 }
 .total-request{
     color: #416CEF;

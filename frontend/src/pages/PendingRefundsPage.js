@@ -29,22 +29,24 @@ export default function PendingRefundsPage(){
                         </div>
                         <div className="ShowTrans">
                             <form>
-                                <div className="form-row">
+                                <div className="form-row mt-5 m-auto">
                                     <div className="form-group col-md-3">
-                                        <input type="date" className="form-control" value="2025-04-14" />
+                                        <input type="date" className="form-control form-control-md" value="2025-04-14"/>
                                     </div>
 
                                     <div className="form-group col-md-3">
-                                        <input type="date" className="form-control" value="2025-04-14" />
+                                        <input type="date" className="form-control form-control-md" value="2025-04-14"/>
                                     </div>
 
                                     <div className="form-group col-md-3">
-                                        <input type="text" className="form-control" placeholder="Global Search" />
+                                        <input type="text" placeholder="Global Search" className="form-control form-control-md"/>
                                     </div>
 
-                                    <div className="form-group col-md-3 d-flex">
-                                        <button className="btn btn-success btn-purple ">Search</button>
-                                        <button className="btn btn-success btn-purple">Export</button>
+                                    <div className="form-group col-md-3">
+                                        <div className="dmt-trasno btn-group" role="group">
+                                            <button type="button" className="btn btn-width-auto btn-success mr-2">Search  </button>
+                                            <button type="button" className="btn btn-width-auto btn-secondary">Export  </button>
+                                        </div>
                                     </div>
                                 </div>
                             </form>

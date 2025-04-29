@@ -122,13 +122,13 @@ export default function MoneyRequestPage(){
 
                                                             <div className="flex-fill mr-2">
                                                                 <div className="dmt-trasno">
-                                                                    <button type="button" className="btn btn-success">Search</button>
+                                                                    <button type="button" className="btn btn-success btn-width-auto">Search</button>
                                                                 </div>
                                                             </div>
 
                                                             <div className="flex-fill ">
                                                                 <div className="dmt-trasno">
-                                                                    <button type="button" className="btn btn-primary">Export</button>
+                                                                    <button type="button" className="btn btn-primary btn-width-auto">Export</button>
                                                                 </div>
                                                             </div>
                                                         </div>
