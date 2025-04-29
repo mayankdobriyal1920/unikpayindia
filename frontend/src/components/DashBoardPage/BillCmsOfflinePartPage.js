@@ -11,7 +11,7 @@ export default function BillCmsOfflinePartPage() {
             <div className={"header_with_back_button"}>
                 <div className={"row"}>
                     <div onClick={goBack} className={"col-2"}>X</div>
-                    <div className={"col"}>Header detail here</div>
+                    <div className={"col"}>BillCmsOfflinePartPage</div>
                 </div>
             </div>
         </div>

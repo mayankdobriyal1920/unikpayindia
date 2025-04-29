@@ -11,7 +11,7 @@ export default function QRCodePartPage() {
             <div className={"header_with_back_button"}>
                 <div className={"row"}>
                     <div onClick={goBack} className={"col-2"}>X</div>
-                    <div className={"col"}>Money transfer</div>
+                    <div className={"col"}>QRCodePartPage</div>
                 </div>
             </div>
         </div>

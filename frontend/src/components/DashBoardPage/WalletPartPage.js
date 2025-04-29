@@ -11,7 +11,7 @@ export default function WalletPartPage() {
             <div className={"header_with_back_button"}>
                 <div className={"row"}>
                     <div onClick={goBack} className={"col-2"}>X</div>
-                    <div className={"col"}>Wallet</div>
+                    <div className={"col"}>WalletPartPage</div>
                 </div>
             </div>
         </div>

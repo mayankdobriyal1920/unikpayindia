@@ -11,7 +11,7 @@ export default function PPIWalletPartPage() {
             <div className={"header_with_back_button"}>
                 <div className={"row"}>
                     <div onClick={goBack} className={"col-2"}>X</div>
-                    <div className={"col"}>PPI Wallet</div>
+                    <div className={"col"}>PPIWalletPartPage</div>
                 </div>
             </div>
         </div>

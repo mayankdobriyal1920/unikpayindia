@@ -11,7 +11,7 @@ export default function UPIPartPage() {
             <div className={"header_with_back_button"}>
                 <div className={"row"}>
                     <div onClick={goBack} className={"col-2"}>X</div>
-                    <div className={"col"}>UPI</div>
+                    <div className={"col"}>UPIPartPage</div>
                 </div>
             </div>
         </div>

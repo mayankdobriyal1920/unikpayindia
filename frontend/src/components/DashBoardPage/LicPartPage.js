@@ -11,7 +11,7 @@ export default function LicPartPage() {
             <div className={"header_with_back_button"}>
                 <div className={"row"}>
                     <div onClick={goBack} className={"col-2"}>X</div>
-                    <div className={"col"}>Lic</div>
+                    <div className={"col"}>LicPartPage</div>
                 </div>
             </div>
         </div>

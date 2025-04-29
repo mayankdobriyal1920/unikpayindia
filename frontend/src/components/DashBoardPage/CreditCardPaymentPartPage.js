@@ -11,7 +11,7 @@ export default function CreditCardPaymentPartPage() {
             <div className={"header_with_back_button"}>
                 <div className={"row"}>
                     <div onClick={goBack} className={"col-2"}>X</div>
-                    <div className={"col"}>Credit Card Payment</div>
+                    <div className={"col"}>CreditCardPaymentPartPage</div>
                 </div>
             </div>
         </div>
