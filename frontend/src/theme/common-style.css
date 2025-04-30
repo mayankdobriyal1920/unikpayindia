@@ -1160,3 +1160,18 @@ UPI Body
     border-top-right-radius: 5px;
     border: 1px solid #76D89B;
 }
+/*retailer dashboard service*/
+.money-closebt{
+    display: inline-flex;
+    background-color: #5e1ae7;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.money-closebt i{
+    color: #fff;
+}
+.moneytramsferservice .form-control{
+    border-color: #9fb1c1;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
