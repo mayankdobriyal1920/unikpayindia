@@ -17,7 +17,6 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import './theme/additional.css';
 import './theme/common-style.css';
 import {useDispatch,useSelector} from "react-redux";
 import {actionToConnectSocketServer, actionToGetUserSessionData} from "./redux/CommonAction";
@@ -27,6 +26,9 @@ import LoginPage from "./pages/LoginPage";
 import WithoutLoginHomePage from "./pages/WithoutLoginHomePage";
 import DashboardPage from "./pages/DashboardPage";
 import './css/common.css';
+import RegisterPage from "./pages/RegisterPage";
+import ForgotPassword from "./pages/ForgotPassword";
+import BecomeMember from "./pages/BecomeMember";
 setupIonicReact();
 
 const AppEnterMainPage = () => {
@@ -38,6 +40,7 @@ const AppEnterMainPage = () => {
     return (
         <IonReactRouter>
             <IonRouterOutlet>
+                <Route path="/become-member" component={BecomeMember}/>
                 <Route path="/dashboard-home" component={DashboardPage}/>
                 <Redirect  exact from="/"  to="/dashboard-home" />
                 <Route render={() => <Redirect to="/dashboard-home" />} />
@@ -51,9 +54,10 @@ const PublicRoutes = () => {
         <IonReactRouter>
             <IonRouterOutlet>
                 <Route path="/login" exact={true} component={LoginPage} />
-                <Route path="/home" exact={true} component={WithoutLoginHomePage} />
-                <Redirect  exact from="/"  to="/home" />
-                <Route render={() => <Redirect to="/home" />} />
+                <Route path="/signup" exact={true} component={RegisterPage} />
+                <Route path="/forgot-password" exact={true} component={ForgotPassword} />
+                <Redirect  exact from="/"  to="/login" />
+                <Route render={() => <Redirect to="/login" />} />
             </IonRouterOutlet>
         </IonReactRouter>
     );

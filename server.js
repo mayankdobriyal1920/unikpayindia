@@ -13,7 +13,7 @@ dotenv.config(); // Load environment variables
 
 // Initialize Express app
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4004;
 export let userSocketIdsObject = {};
 
 // Define allowed origins from environment variables or default to localhost
@@ -21,7 +21,7 @@ const allowedOrigins = [
         'http://localhost',
         'http://localhost:3000',
         'https://localhost',
-        'https://unikpayindia.com',
+        'https://caworld.com',
         'https://localhost:3000',
         'http://192.168.1.6:3000',
     ];
@@ -49,10 +49,10 @@ app.set('trust proxy', 1);
 app.use(
     session({
         store: sessionStore,
-        secret: process.env.SESSION_SECRET || 'unikpayindia-mobile-app-session-store', // Use environment variable for secret
+        secret: process.env.SESSION_SECRET || 'ca-world-mobile-app-session-store', // Use environment variable for secret
         resave: false,
         saveUninitialized: false,
-        name: 'unikpayindia-mobile-app-session', // Use dynamic session name
+        name: 'ca-world-mobile-app-session', // Use dynamic session name
         cookie: {
             expires: new Date(Date.now() + 31536000000),  // 1 year expiration
             httpOnly: true,
@@ -85,9 +85,9 @@ app.use(
 
 
 // Routes
-app.use('/api-call-unikpay/common', commonRouter);
+app.use('/api-ca-world/common', commonRouter);
 
-app.get('/api-call-unikpay/', (req, res) => {
+app.get('/api-ca-world/', (req, res) => {
     res.send(`Server is running!`);
 });
 
