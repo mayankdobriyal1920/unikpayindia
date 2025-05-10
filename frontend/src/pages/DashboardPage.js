@@ -7,7 +7,7 @@ export default function DashboardPage(){
         <IonPage className="UnikPayIndia">
             <HeaderAfterLoginComponent/>
             <IonContent fullscreen>
-                Dashboard
+                Dashboard 12
             </IonContent>
         </IonPage>
     )
