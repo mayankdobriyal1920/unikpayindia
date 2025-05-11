@@ -56,11 +56,11 @@ const PublicRoutes = () => {
                 <Route path="/login" exact={true} component={LoginPage} />
                 <Route path="/signup" exact={true} component={RegisterPage} />
                 <Route path="/forgot-password" exact={true} component={ForgotPassword} />
-                <Route path="/dashboard/*" component={DashboardPage}/>
-                {/*<Redirect exact from="/"  to="/login" />*/}
-                {/*<Route render={() => <Redirect to="/login" />} />*/}
-                <Redirect  exact from="/"  to="/dashboard/" />
-                <Route render={() => <Redirect to="/dashboard/" />} />
+                <Redirect exact from="/"  to="/login" />
+                <Route render={() => <Redirect to="/login" />} />
+                {/*<Route path="/dashboard/*" component={DashboardPage}/>*/}
+                {/*<Redirect  exact from="/"  to="/dashboard/" />*/}
+                {/*<Route render={() => <Redirect to="/dashboard/" />} />*/}
             </IonRouterOutlet>
         </IonReactRouter>
     );
