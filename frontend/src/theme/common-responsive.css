@@ -1,0 +1,12 @@
+@media screen and (min-width: 1000px) {
+    .with_login-title {
+        justify-content: flex-start;
+        text-align: left;
+        max-width: 13rem;
+    }
+    .with_login-header {
+        --background: white;
+        border-bottom: none;
+        box-shadow: none;
+    }
+}

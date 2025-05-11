@@ -6,7 +6,7 @@ import {
     IonRow,
     IonCol,
     IonButton,
-    IonText
+    IonText, IonSelect, IonSelectOption
 } from '@ionic/react';
 import appLogo from "../theme/images/logo-big.png";
 import {useHistory} from "react-router";
@@ -166,16 +166,18 @@ const RegisterPage = () => {
                         <IonCol size="12" sizeMd={6}>
                             <div className="form-group">
                                 <label className="form-label">Designation</label>
-                                <select
-                                    className="form-input"
+                                <IonSelect
+                                    className="form-input ion-slide-select"
                                     value={form.designation}
-                                    onChange={(e) => handleChange('designation', e.target.value)}
+                                    onIonChange={(e) => handleChange('designation', e.detail.value)}
+                                    interface="action-sheet"
+                                    placeholder="Select your designation"
                                 >
-                                    <option value="ca_member">CA Member</option>
-                                    <option value="ca_student">CA Student / CA Finalist</option>
-                                    <option value="other_professional">Other Professional</option>
-                                    <option value="accountant_other">Accountants / Others</option>
-                                </select>
+                                    <IonSelectOption value="ca_member">CA Member</IonSelectOption>
+                                    <IonSelectOption value="ca_student">CA Student / CA Finalist</IonSelectOption>
+                                    <IonSelectOption value="other_professional">Other Professional</IonSelectOption>
+                                    <IonSelectOption value="accountant_other">Accountants / Others</IonSelectOption>
+                                </IonSelect>
                             </div>
                         </IonCol>
 

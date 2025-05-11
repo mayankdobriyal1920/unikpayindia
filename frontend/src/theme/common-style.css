@@ -279,3 +279,131 @@
     margin-top: 0.5rem;
 }
 
+.form-input.ion-slide-select {
+    min-height: 10px;
+}
+.tab-selected {
+    color: #b7412c !important;
+}
+
+ion-toolbar.header-common-tab {
+    --background: white;
+    --color: rgb(106, 105, 105);
+}
+
+.header-common-tab ion-button {
+    --color: rgb(106, 105, 105);
+}
+
+.with_login-header {
+    --background: white;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.with_login-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.with_login-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.with_login-logo {
+    height: 5rem;
+    object-fit: contain;
+}
+
+.with_login-menu-button {
+    font-size: 24px;
+    color: rgb(106 105 105);
+    transition: transform 0.3s ease;
+}
+
+.with_login-menu-button.open ion-icon {
+    transform: rotate(180deg);
+}
+
+.with_login-icons ion-icon {
+    font-size: 24px;
+    color: rgb(106 105 105);
+}
+
+/* Mobile menu */
+.with_login-mobile-menu {
+    padding: 20px;
+}
+
+.with_login-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    font-size: 16px;
+    color: rgb(106 105 105);
+    border-bottom: 1px solid #eee;
+}
+
+.with_login-menu-item ion-icon {
+    font-size: 20px;
+    color: #b7412c;
+}
+
+/* Desktop inline menu */
+.with_login-desktop-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-left: 20px;
+}
+.top_header_icon{
+    color: rgb(106 105 105)!important;
+}
+.with_login-desktop-menu .with_login-menu-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgb(106 105 105);
+    transition: color 0.3s ease;
+}
+
+.with_login-desktop-menu .with_login-menu-item:hover {
+    color: #b7412c;
+    border-bottom: 1px solid #b7412c;
+}
+
+.with_login-desktop-menu .with_login-menu-item ion-icon {
+    font-size: 18px;
+    color: #b7412c;
+}
+
+.custom-tabbar {
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #ddd;
+}
+
+.with_login-desktop-menu .with_login-menu-item.active {
+    border-bottom: 1px solid #b7412c;
+    color: #b7412c;
+}
+.with_login-desktop-menu .with_login-menu-item.active .top_header_icon{
+    color: #b7412c!important;
+}
+
+.page-content {
+    --padding-top: 60px; /* Header height */
+    --padding-bottom: 20px;
+}
+
+.content-area {
+    height: 100%;
+    padding: 16px;
+}

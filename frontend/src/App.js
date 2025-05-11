@@ -18,12 +18,12 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import './theme/common-style.css';
+import './theme/common-responsive.css';
 import {useDispatch,useSelector} from "react-redux";
 import {actionToConnectSocketServer, actionToGetUserSessionData} from "./redux/CommonAction";
 import {IonReactRouter} from "@ionic/react-router";
 import {Redirect, Route} from "react-router";
 import LoginPage from "./pages/LoginPage";
-import WithoutLoginHomePage from "./pages/WithoutLoginHomePage";
 import DashboardPage from "./pages/DashboardPage";
 import './css/common.css';
 import RegisterPage from "./pages/RegisterPage";
@@ -41,9 +41,9 @@ const AppEnterMainPage = () => {
         <IonReactRouter>
             <IonRouterOutlet>
                 <Route path="/become-member" component={BecomeMember}/>
-                <Route path="/dashboard-home" component={DashboardPage}/>
-                <Redirect  exact from="/"  to="/dashboard-home" />
-                <Route render={() => <Redirect to="/dashboard-home" />} />
+                <Route path="/dashboard/*" component={DashboardPage}/>
+                <Redirect  exact from="/"  to="/dashboard/" />
+                <Route render={() => <Redirect to="/dashboard/" />} />
             </IonRouterOutlet>
         </IonReactRouter>
     );
@@ -56,8 +56,11 @@ const PublicRoutes = () => {
                 <Route path="/login" exact={true} component={LoginPage} />
                 <Route path="/signup" exact={true} component={RegisterPage} />
                 <Route path="/forgot-password" exact={true} component={ForgotPassword} />
-                <Redirect  exact from="/"  to="/login" />
-                <Route render={() => <Redirect to="/login" />} />
+                <Route path="/dashboard/*" component={DashboardPage}/>
+                {/*<Redirect exact from="/"  to="/login" />*/}
+                {/*<Route render={() => <Redirect to="/login" />} />*/}
+                <Redirect  exact from="/"  to="/dashboard/" />
+                <Route render={() => <Redirect to="/dashboard/" />} />
             </IonRouterOutlet>
         </IonReactRouter>
     );
