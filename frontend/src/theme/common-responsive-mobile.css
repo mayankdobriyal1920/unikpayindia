@@ -67,7 +67,7 @@
         padding-bottom: 1rem;
         position: absolute;
         width: 100%;
-        height: 55px;
+        height: 50px;
         z-index: 9999;
         background: #ffffff;
         top: -7px;
@@ -92,7 +92,7 @@
     .news-card-stack {
         position: relative;
         height: 100%;
-        margin-top: 53px;
+        margin-top: 50px;
     }
 
     .news-card {
@@ -103,7 +103,7 @@
         display: flex;
         flex-direction: column;
         margin: 2px 4px 4px 4px;
-        box-shadow: 0px 3px 20px 0px #b7b7b7;
+        box-shadow: 0px 3px 20px 0px #eaeaea;
         border-radius: 10px;
         border: 1px solid #ededed;
     }
