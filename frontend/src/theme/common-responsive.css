@@ -4,9 +4,279 @@
         text-align: left;
         max-width: 13rem;
     }
-    .with_login-header {
-        --background: white;
-        border-bottom: none;
-        box-shadow: none;
+    .page-content {
+        --padding-top: 100px;
+        --padding-bottom:100px;
     }
+    .membership-options {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .with_login-desktop-menu .with_login-menu-item {
+        height: 50px;
+    }
+    .with_login-desktop-menu .with_login-menu-item.active,.with_login-desktop-menu .with_login-menu-item:hover {
+        border-bottom: 2px solid #b7412c;
+    }
+    .with_login-menu-item{
+        margin-bottom: 0px;
+    }
+
+    /*NEWS PAGE */
+    .news-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .featured-news-card {
+        height: 500px;
+    }
+
+    .featured-news-img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .featured-title {
+        font-size: 1.8rem;
+    }
+
+    .news-snippet-item {
+        gap: 1.2rem;
+    }
+
+    .news-thumbnail {
+        width: 150px;
+        height: 100px;
+    }
+
+    .news-title {
+        font-size: 1.2rem;
+    }
+     /*fullpage news*/
+    .news-detail-image-wrapper {
+        height: 400px;
+    }
+
+    .news-detail-title {
+        font-size: 2rem;
+    }
+
+    .news-detail-content {
+        max-width: 800px;
+        margin: -50px auto 0;
+        padding: 2rem;
+    }
+
+    /*///// JOB PORTAL /////*/
+    /* === Desktop Job Portal === */
+    /* === Root === */
+    /* === Container === */
+    .job-portal-desktop {
+        padding: 32px 24px;
+        color: #333;
+    }
+
+    .job-portal-container {
+        display: grid;
+        grid-template-columns: 280px 1fr 300px;
+        gap: 32px;
+    }
+
+    /* === Sidebar === */
+    .filter-sidebar {
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        overflow-y: auto;
+        max-height: calc(100vh - 64px);
+    }
+
+    .filter-sidebar-content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .filter_main_heading {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .filter_main_heading_2 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 8px;
+    }
+
+    .filter-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter-section ion-item {
+        --background: transparent;
+        --inner-padding-end: 0px;
+        --min-height: 36px;
+        font-size: 14px;
+        color: #444;
+    }
+
+    .filter-section ion-label {
+        margin-left: 8px;
+    }
+
+    .range-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #777;
+        margin-top: 4px;
+    }
+
+    /* === Job List Section === */
+    .job-list-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .job-list-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .job-list-header .job-count {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .job-list-header .job-sort ion-button {
+        --background: transparent;
+        --box-shadow: none;
+        --color: #333;
+        font-size: 14px;
+    }
+
+    .job-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* === Job Card === */
+    .job-card-desktop {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px 24px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        transition: box-shadow 0.2s ease;
+    }
+
+    .job-card-desktop:hover {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .job-card-desktop h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 4px;
+    }
+
+    .company-rating {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 13px;
+        color: #555;
+    }
+
+    .company-rating ion-icon {
+        color: #f5a623;
+        font-size: 14px;
+    }
+
+    .job-meta {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin: 8px 0;
+        font-size: 13px;
+        color: #666;
+    }
+
+    .job-meta ion-icon {
+        color: #888;
+        font-size: 14px;
+    }
+
+    .tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 12px 0;
+    }
+
+    .job-tag {
+        background: #f1f3f5;
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 12px;
+    }
+
+    .posted {
+        font-size: 12px;
+        color: #999;
+    }
+
+    /* === Right Banner === */
+    .right-banner {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .right-banner .featured-companies,
+    .right-banner .ad {
+        background: #fff;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .right-banner h4 {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .right-banner .companies-logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .right-banner img {
+        width: 48px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* === Misc === */
+    a {
+        color: #3a57e8;
+        text-decoration: none;
+        font-size: 13px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /*///// JOB PORTAL /////*/
 }

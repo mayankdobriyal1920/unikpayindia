@@ -75,12 +75,13 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
-
   --primary-color: #d13a2f;
+  --secondry-color: #314377;
   --input-bg: #f9f9f9;
   --input-border: #ddd;
+  --input-border-focus: #5b6693;
   --input-radius: 0.8rem;
-  --font-color: #222;
+  --font-color: #4d4d4d;
   --placeholder-color: #999;
 }
 

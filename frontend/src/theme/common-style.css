@@ -1,9 +1,29 @@
+body,html,#root{
+    font-family: 'Inter', sans-serif!important;
+}
 
 .login-content {
     --background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.alert-wrapper .alert-message{
+    color: var(--font-color);
+    font-size: 0.8rem;
+}
+.alert-wrapper .alert-head .alert-title{
+    color: var(--font-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.alert-wrapper .alert-button-group .alert-button{
+    color: var(--primary-color);
+}
+
+.alert-wrapper .alert-button-group .alert-button.alert-button-role-cancel{
+    color: #878787;
 }
 
 .login-grid {
@@ -30,14 +50,19 @@
 .login-label {
     display: block;
     font-size: 1rem;
+    font-weight: bold;
     margin-bottom: 0.5rem;
     color: var(--font-color);
 }
-
+input:focus{
+    outline: none;
+    border-color: var( --input-border-focus);
+    background: none;
+}
 .login-input {
     width: 100%;
     padding: 0.75rem 1rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     border: 1px solid var(--input-border);
     border-radius: var(--input-radius);
     background: var(--input-bg);
@@ -64,11 +89,12 @@
 }
 
 .login-button {
-    --background: var(--primary-color);
+    --background: var(--secondry-color);
     --border-radius: 2rem;
     font-size: 1rem;
     font-weight: 600;
     margin-top: 0.5rem;
+    height: 2.6rem;
 }
 
 .login-links {
@@ -86,9 +112,13 @@
     font-weight: 600;
     cursor: pointer;
     font-size: 1rem;
+    margin-top: 0.3rem;
 }
 
-
+/* In your CSS file */
+.custom-tab-bar {
+    --ripple-color: var(--primary-color); /* Orange ripple, for example */
+}
 .register-content {
     --background: #ffffff;
     display: flex;
@@ -114,6 +144,7 @@
 .form-label {
     display: block;
     font-size: 1rem;
+    font-weight: bold;
     margin-bottom: 0.5rem;
     color: var(--font-color);
 }
@@ -121,7 +152,7 @@
 .form-input {
     width: 100%;
     padding: 0.75rem 1rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     border: 1px solid var(--input-border);
     border-radius: var(--input-radius);
     background: var(--input-bg);
@@ -134,8 +165,9 @@
 }
 
 .register-button {
-    --background: var(--primary-color);
+    --background: var(--secondry-color);
     --border-radius: 2rem;
+    height: 2.6rem;
     font-size: 1rem;
     font-weight: 600;
 }
@@ -153,10 +185,10 @@
 }
 
 .login-link {
-    color: var(--ion-color-primary);
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    margin-left: 0.5rem;
+    margin-left: 0.1rem;
 }
 
 .membership-container {
@@ -182,13 +214,6 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-@media (min-width: 768px) {
-    .membership-options {
-        flex-direction: row;
-        justify-content: center;
-    }
 }
 
 .membership-card {
@@ -283,7 +308,12 @@
     min-height: 10px;
 }
 .tab-selected {
-    color: #b7412c !important;
+    color: var(--primary-color) !important;
+    border-top: 2px solid var(--primary-color) !important;
+}
+
+.custom-ripple-color{
+    --ripple-color: var(--font-color) !important;
 }
 
 ion-toolbar.header-common-tab {
@@ -296,9 +326,9 @@ ion-toolbar.header-common-tab {
 }
 
 .with_login-header {
-    --background: white;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --background: white !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
 
 .with_login-toolbar {
@@ -320,8 +350,8 @@ ion-toolbar.header-common-tab {
 }
 
 .with_login-menu-button {
-    font-size: 24px;
-    color: rgb(106 105 105);
+    font-size: 1.1rem;
+    color: var(--font-color);
     transition: transform 0.3s ease;
 }
 
@@ -336,22 +366,33 @@ ion-toolbar.header-common-tab {
 
 /* Mobile menu */
 .with_login-mobile-menu {
-    padding: 20px;
+    padding: 1rem;
+}
+.with_login-menu-item-header-row {
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e5e5;
 }
 
+.with_login-menu-item.menu-names {
+    margin-left: 0.3rem;
+}
 .with_login-menu-item {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px;
     font-size: 16px;
     color: rgb(106 105 105);
-    border-bottom: 1px solid #eee;
+    margin-bottom: 2rem;
 }
 
 .with_login-menu-item ion-icon {
-    font-size: 20px;
-    color: #b7412c;
+    font-size: 1.4rem;
+    color: var(--font-color);
+}
+.with_login-menu-item span {
+    font-size: 1rem;
+    color: var(--font-color);
 }
 
 /* Desktop inline menu */
@@ -361,9 +402,7 @@ ion-toolbar.header-common-tab {
     align-items: center;
     margin-left: 20px;
 }
-.top_header_icon{
-    color: rgb(106 105 105)!important;
-}
+
 .with_login-desktop-menu .with_login-menu-item {
     cursor: pointer;
     display: flex;
@@ -371,19 +410,11 @@ ion-toolbar.header-common-tab {
     gap: 8px;
     font-weight: 500;
     font-size: 15px;
-    color: rgb(106 105 105);
+    color: var(--font-color);
     transition: color 0.3s ease;
 }
 
-.with_login-desktop-menu .with_login-menu-item:hover {
-    color: #b7412c;
-    border-bottom: 1px solid #b7412c;
-}
 
-.with_login-desktop-menu .with_login-menu-item ion-icon {
-    font-size: 18px;
-    color: #b7412c;
-}
 
 .custom-tabbar {
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
@@ -398,6 +429,38 @@ ion-toolbar.header-common-tab {
     color: #b7412c!important;
 }
 
+
+
+
+/* === Base menu container === */
+.with_login-mobile-menu {
+    padding: 16px;
+}
+
+/* === User header === */
+.with_login-menu-item-header-row {
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+.user_prof_initial .user_name_initial img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd; /* subtle border */
+}
+
+.user_full_info {
+    margin-left: 8px;
+}
+
+.close_header_menu IonIcon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
 .page-content {
     --padding-top: 60px; /* Header height */
     --padding-bottom: 20px;
@@ -407,3 +470,459 @@ ion-toolbar.header-common-tab {
     height: 100%;
     padding: 16px;
 }
+
+
+.user_prof_initial .user_name_initial {
+    margin: auto;
+    text-align: center;
+}
+
+.user_full_info .user_full_name {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #111;
+}
+
+.user_full_info .user_full_email {
+    font-size: 0.7rem;
+    line-height: 1.1rem;
+}
+
+.user_full_info {
+    width: 170px;
+    height: auto;
+}
+
+.user_full_info .user_full_contact {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+}
+
+.with_login-menu-item.available_on_menu .available_on_menu_row {
+    margin-top: 0.4rem;
+}
+.with_login-menu-item.available_on_menu {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.with_login-menu-item.version_no_section {
+    text-align: center;
+    width: 100%;
+}
+
+.with_login-menu-item.version_no_section .version_no_section {
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.with_login-menu-item.logout_button_section {
+    margin-top: 2rem;
+}
+
+.logout_button_menu {
+    width: 100%;
+    --background: var(--secondry-color);
+    --border-radius: 2rem;
+    height: 40px;
+    font-size: 0.9rem;
+}
+
+
+  /*NEWS PAGE*/
+
+/* General page styles */
+.news-page {
+    padding: 1rem;
+}
+
+.news-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.top-news-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000; /* fallback for dark overlay */
+    color: #fff;
+}
+
+.top-news-card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.top-news-card-content {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+}
+
+.category-badge {
+    background: #c62828;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.top-news-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 0.3rem 0;
+}
+
+.top-news-meta {
+    font-size: 0.8rem;
+    color: #eee;
+}
+
+/* News snippets list */
+/* ---------- General Layout ---------- */
+.news-page {
+    padding: 1rem;
+}
+
+.news-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ---------- Filter Tabs ---------- */
+.news-tabs {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+}
+
+.news-tabs .tab {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--font-color);
+    background: #ffffff;
+    white-space: nowrap;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.news-tabs .tab.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* ---------- Featured News ---------- */
+.featured-news-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.featured-news-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(60%);
+}
+
+.featured-news-content {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: #ffffff;
+}
+
+.featured-category {
+    background: var(--primary-color);
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 0.91rem;
+    margin-bottom: 0.5rem;
+}
+
+.featured-meta {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    opacity: 0.8;
+}
+
+.featured-title {
+    font-size: 1.2rem;
+    max-width: 90%;
+    line-height: 1.6rem;
+}
+
+/* ---------- Snippet Items ---------- */
+.news-snippets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.news-snippet-item {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 1rem;
+}
+
+.news-thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.news-snippet-content {
+    flex: 1;
+}
+
+.news-category {
+    background: var(--primary-color);
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.news-title {
+    font-size: 1rem;
+    margin: 0 0 0.4rem;
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    color: var(--font-color);
+}
+
+.news-author-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*full page news*/
+.news-detail-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.news-detail-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(45%);
+}
+
+.news-detail-overlay {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    color: #fff;
+    z-index: 1;
+}
+
+.news-detail-category {
+    background: var(--primary-color);
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.news-detail-title {
+    font-size: 1.4rem;
+    margin: 0 0 0.2rem;
+}
+
+.news-detail-meta {
+    font-size: 0.75rem;
+}
+
+.news-detail-content {
+    background: #fff;
+    border-radius: 16px 16px 0 0;
+    padding: 1.5rem;
+}
+
+.news-detail-source {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.news-detail-source img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.news-detail-content p {
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+}
+
+.news-detail-top-buttons {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.circle-btn {
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.circle-btn ion-icon {
+    color: #fff;
+    font-size: 20px;
+}
+
+.right-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Smooth transition for header */
+ion-header,
+ion-tab-bar {
+    transition: transform 0.3s ease-in-out;
+}
+
+ion-header.hide_element {
+    transform: translateY(-100%);
+}
+
+ion-tab-bar.hide_element {
+    transform: translateY(100%);
+}
+.with_login-menu-button .profile-avatar {
+    position: relative;
+    width: 40px;       /* adjust size */
+    height: 40px;
+}
+
+.with_login-menu-button .avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* makes it circular */
+    object-fit: cover;
+}
+
+.with_login-menu-button .avatar-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #ffffff;   /* optional: white background circle */
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 14px;
+    color: #333;
+}
+
+.header_button {
+    position: relative;
+    --background: transparent;
+    --color: #111;  /* icon color */
+    padding: 0;
+}
+
+.notification-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--primary-color);;   /* iOS style red badge */
+    color: #ffffff;
+    font-size: 0.7rem;
+    border-radius: 50%;
+    padding: 2px;
+    line-height: 1;
+    min-width: 16px;
+    text-align: center;
+}
+
+
+span.swiper-pagination-bullet {
+    background: #ffffff;
+    opacity: 0.6;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--primary-color);
+    opacity: 1;
+}
+
+.featured-news-carousel {
+    position: relative;
+}
+
+.featured-news-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    height: 240px;
+}
+
+.featured-news-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-news-content {
+    position: absolute;
+    bottom: 0;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 80%);
+    width: 100%;
+    color: #fff;
+}
+
+
+
+

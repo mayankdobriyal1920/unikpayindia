@@ -25,6 +25,7 @@ const allowedOrigins = [
         'https://localhost:3000',
         'http://192.168.1.6:3000',
         'http://192.168.1.9:3000',
+        'http://192.168.1.12:3000',
     ];
 
 // Middleware to parse the request body

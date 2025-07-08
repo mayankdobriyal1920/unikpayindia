@@ -37,6 +37,9 @@ const ForgotPassword = () => {
         history.push('/verify-otp');
     };
 
+    const goToPage = (page)=>{
+        history.replace(page);
+    }
     return (
         <IonPage>
             <IonContent fullscreen className="login-content">
@@ -72,7 +75,8 @@ const ForgotPassword = () => {
 
                         <IonCol size="12" className="ion-text-center login-links">
                             <p className="login-link-text" onClick={() => history.replace('/login')}>
-                                Remembered your password? Login
+                                Remembered your password? <a onClick={() => goToPage('/login')}
+                                                             className="login-link">Login</a>
                             </p>
                         </IonCol>
                     </IonRow>

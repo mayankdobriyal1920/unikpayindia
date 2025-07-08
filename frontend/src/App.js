@@ -19,6 +19,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './theme/common-style.css';
 import './theme/common-responsive.css';
+import './theme/common-responsive-mobile.css';
 import {useDispatch,useSelector} from "react-redux";
 import {actionToConnectSocketServer, actionToGetUserSessionData} from "./redux/CommonAction";
 import {IonReactRouter} from "@ionic/react-router";
@@ -29,6 +30,11 @@ import './css/common.css';
 import RegisterPage from "./pages/RegisterPage";
 import ForgotPassword from "./pages/ForgotPassword";
 import BecomeMember from "./pages/BecomeMember";
+import NewsDetailPage from "./components/NewsDetailPage";
+import {Capacitor} from "@capacitor/core";
+import {NavigationBar} from "@mauricewegner/capacitor-navigation-bar";
+import {StatusBar, Style} from "@capacitor/status-bar";
+
 setupIonicReact();
 
 const AppEnterMainPage = () => {
@@ -37,11 +43,13 @@ const AppEnterMainPage = () => {
         dispatch(actionToConnectSocketServer());
     }, []);
 
+
     return (
         <IonReactRouter>
             <IonRouterOutlet>
                 <Route path="/become-member" component={BecomeMember}/>
                 <Route path="/dashboard/*" component={DashboardPage}/>
+                <Route exact path="/news-detail/:id" component={NewsDetailPage}/>
                 <Redirect  exact from="/"  to="/dashboard/" />
                 <Route render={() => <Redirect to="/dashboard/" />} />
             </IonRouterOutlet>
@@ -52,15 +60,17 @@ const AppEnterMainPage = () => {
 const PublicRoutes = () => {
     return (
         <IonReactRouter>
+            {/*<AppBackButtonHandler/>*/}
             <IonRouterOutlet>
                 <Route path="/login" exact={true} component={LoginPage} />
                 <Route path="/signup" exact={true} component={RegisterPage} />
                 <Route path="/forgot-password" exact={true} component={ForgotPassword} />
-                <Redirect exact from="/"  to="/login" />
-                <Route render={() => <Redirect to="/login" />} />
-                {/*<Route path="/dashboard/*" component={DashboardPage}/>*/}
-                {/*<Redirect  exact from="/"  to="/dashboard/" />*/}
-                {/*<Route render={() => <Redirect to="/dashboard/" />} />*/}
+                <Route exact path="/news-detail/:id" component={NewsDetailPage}/>
+                {/*<Redirect exact from="/"  to="/login" />*/}
+                {/*<Route render={() => <Redirect to="/login" />} />*/}
+                <Route path="/dashboard/*" component={DashboardPage}/>
+                <Redirect  exact from="/"  to="/dashboard/" />
+                <Route render={() => <Redirect to="/dashboard/" />} />
             </IonRouterOutlet>
         </IonReactRouter>
     );
@@ -74,6 +84,15 @@ const App = () => {
     useEffect(() => {
         dispatch(actionToGetUserSessionData());
     }, []);
+
+    useEffect(()=>{
+        if(Capacitor.isNativePlatform()){
+            NavigationBar.setColor({ color: '#ffffff' , darkButtons:true});
+            StatusBar.setBackgroundColor({ color: '#ffffff' }).then(()=>{
+                StatusBar.setStyle({ style:Style.Light });
+            });
+        }
+    },[])
 
     return (
         <IonApp>

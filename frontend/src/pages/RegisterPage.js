@@ -201,7 +201,7 @@ const RegisterPage = () => {
                                 Register
                             </IonButton>
 
-                            <div className="divider-or">OR</div>
+                            <div className="divider-or">or</div>
 
                             <p className="login-text">
                                 Already have an account? <a onClick={()=>goToPage('/login')} className="login-link">Login</a>

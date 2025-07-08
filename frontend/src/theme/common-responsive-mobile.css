@@ -1,0 +1,486 @@
+@media screen and (max-width: 999px) {
+    /* For Chrome, Edge, Safari, Opera */
+    *::-webkit-scrollbar {
+        width: 0px;    /* vertical scrollbar */
+        height: 0px;   /* horizontal scrollbar */
+        background: transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* For Firefox */
+    * {
+        scrollbar-width: none; /* hides scrollbar */
+        -ms-overflow-style: none; /* IE 10+ */
+    }
+
+    *::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+
+    .page-content {
+        --padding-top: 70px;
+        --padding-bottom: 10px;
+    }
+    .with_login-logo{
+       display: none;
+    }
+    .sudo_search_div_place_holder_search {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1px solid #ddd; /* subtle border */
+        border-radius: 50px;    /* fully rounded */
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        color: var(--font-color);
+        cursor: pointer; /* make it clickable if it opens a search modal */
+        transition: border 0.2s ease, box-shadow 0.2s ease;
+    }
+    .sudo_search_div_place_holder_search ion-icon {
+        font-size: 1rem;
+        color: var(--font-color);
+    }
+
+    /*///// NEWS PAGE /////*/
+    /* NewsFeedPage.css */
+    .page-content {
+        --background: #ffffff;
+    }
+
+    .news-feed-page {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .news-menu {
+        display: flex;
+        justify-content: space-around;
+        padding: 12px 0;
+    }
+
+    .news-tab {
+        background: none;
+        border: none;
+        font-size: 1rem;
+        color: var(--font-color);
+        padding: 4px 8px;
+        cursor: pointer;
+    }
+
+    .news-tab.active {
+        color: var(--primary-color);  /* Your theme color */
+        border-bottom: 2px solid var(--primary-color);
+    }
+
+    .news-card-stack {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .news-card {
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 5px); /* adjust for menu bar if needed */
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .news-card.active {
+        z-index: 2;
+    }
+
+    .news-card.under {
+        z-index: 1;
+        transform: scale(0.95) translateY(20px);
+    }
+
+    .news-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .news-content {
+        padding: 1rem;
+        overflow-y: auto;
+    }
+
+
+    .news-card.next {
+        z-index: 2;
+        transform: translateY(100%) scale(0.95);
+    }
+
+    .news-card.previous {
+        z-index: 2;
+        transform: translateY(-100%) scale(0.95);
+    }
+
+    .news-card.hidden {
+        opacity: 0;
+    }
+
+    .news-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    .news-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        overflow: hidden;
+    }
+
+    .news-content h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--font-color);
+    }
+
+    .news-content p {
+        font-size: 0.9rem;
+        color: var(--font-color);
+        line-height: 1.4;
+        overflow-y: auto;     /* allow scroll if too long */
+        flex: 1;              /* take all available space */
+        margin: 0;            /* remove default margin */
+    }
+    .news-content p::-webkit-scrollbar {
+        display: none; /* hide scrollbar for mobile */
+    }
+
+    .news-footer {
+        margin-top: 14px;
+        font-size: 0.9rem;
+        color: #777;
+    }
+
+    /*///// NEWS PAGE /////*/
+
+    .header_button ion-icon{
+        font-size: 1.4rem;
+    }
+    .with_login-menu-item.menu-names.active span {
+        color: var(--primary-color);
+    }
+
+    .with_login-menu-item.menu-names.active ion-icon.top_header_icon {
+        color: var(--primary-color);
+    }
+
+    /* === Job Portal === */
+    .mobile-job-list-page {
+        background: #f9fafc;
+        padding: 16px;
+    }
+
+    .filter-header {
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Space between icon and tags */
+        flex-wrap: wrap; /* Wrap on small screens */
+        margin-bottom: 16px;
+        margin-left:1rem ;
+    }
+
+    .filter-header ion-button {
+        --color: #333;
+        font-size: 14px;
+        align-self: flex-start;
+    }
+
+    .filter-header .tags {
+        display: flex;
+        flex-wrap: nowrap;      /* Make it scroll horizontally */
+        overflow-x: auto;       /* Allow horizontal scrolling */
+        gap: 8px;
+        -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+        scrollbar-width: none;  /* Firefox hide scrollbar */
+        width: 85%;
+    }
+
+    .filter-header .tags::-webkit-scrollbar {
+        display: none;          /* Chrome/Safari hide scrollbar */
+    }
+
+    .filter-header .tag {
+        flex: 0 0 auto;         /* Prevent tags from shrinking */
+        display: inline-block;
+        background: #f0f0f0;
+        color: var(--font-color);
+        font-size: .9rem;
+        padding: 6px 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        white-space: nowrap;    /* Prevent text wrap */
+        transition: background 0.3s;
+    }
+
+    .job-alert {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+
+    .results-count {
+        font-size: 12px;
+        color: #555;
+    }
+
+    .job-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .job-card {
+        display: flex;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .company-icon {
+        background: #f0f1f6;
+        color: #1a1a1a;
+        font-weight: 600;
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .job-info h3 {
+        margin: 0 0 4px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .company-rating {
+        font-size: 0.9rem;
+        color: var(--font-color);
+        margin-bottom: 4px;
+    }
+
+    .company-rating span {
+        color: var(--primary-color);
+        margin-left: 4px;
+        vertical-align: text-top;
+    }
+
+    .job-meta {
+        font-size: 0.9rem;
+        color: var(--font-color);
+        margin-bottom: 8px;
+    }
+
+    .tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+
+    .job-tag {
+        background: #f1f3f5;
+        font-size: 0.9rem;
+        padding: 2px 8px;
+        border-radius: 12px;
+    }
+
+    .posted {
+        font-size: 0.9rem;
+        color: var(--font-color);
+    }
+    .company-rating ion-icon {
+        font-size: 0.9rem;
+        vertical-align: text-top;
+        color: var(--primary-color); /* IMDb-like yellow, or your theme */
+        margin: 0 4px;
+    }
+    .job-meta ion-icon {
+        font-size: 0.9rem;
+        vertical-align: text-top;
+        margin-right: 4px;
+        color: var(--font-color);
+    }
+    .filter-header-wrapper {
+        width: 100%;
+        z-index: 10;
+    }
+
+    .filter-header-wrapper {
+        position: sticky;
+        top: -10px;
+        background: #ffffff;
+        border-bottom: 1px solid #ddd;
+        transition: transform 0.3s ease-in-out;
+    }
+    .filter-header-wrapper.sticky {
+        top: -70px;
+        padding-top: 1rem;
+    }
+    .mobile-job-list-page .job-list{
+        padding-top: 10px;
+    }
+    /*////// filter modal //////*/
+    .filter-content {
+        display: flex;
+        flex-direction: row;
+        height: calc(100% - 60px);
+        font-size: 0.9rem;
+        color: var(--font-color);
+    }
+
+    .filter-menu {
+        flex: 0 0 35%;
+        border-right: 1px solid #ddd;
+        overflow-y: auto;
+    }
+    .filter_item_sheet_panel{
+        font-size: 0.9rem;
+        color: var(--font-color);
+    }
+
+    .filter_sheet_clear_all_btn{
+        font-size: 0.9rem;
+        color: var(--font-color);
+    }
+
+    .filter_sheet_header{
+        box-shadow: none;
+        border: 1px solid #cccccc;
+    }
+
+    .filter_sheet_header_text{
+        font-size: 1.1rem;
+        color: var(--font-color);
+    }
+
+    .filter-options {
+        flex: 1;
+        padding: 16px;
+        overflow-y: auto;
+    }
+
+    .option-count {
+        margin-left: auto;
+    }
+
+    .filter-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 16px;
+        border-top: 1px solid #ddd;
+        background: #fff;
+    }
+
+    ion-modal {
+        --border-radius: 16px;
+    }
+
+    /*////// filter modal //////*/
+    /* === Job Portal === */
+
+
+    /*///// MATRIMONIAL PAGE //////*/
+    /* MatrimonyProfileCard.css */
+
+    .matrimony-list {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .matrimony-card {
+        display: flex;
+        align-items: flex-start;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        padding: 12px;
+        position: relative;
+    }
+
+    .matrimony-card-img {
+        width: 80px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    .matrimony-card-info {
+        flex: 1;
+        margin-left: 12px;
+    }
+
+    .matrimony-card-name {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0;
+        color: #222;
+    }
+
+    .matrimony-card-details {
+        font-size: 0.9rem;
+        margin: 4px 0;
+        color: #444;
+    }
+
+    .matrimony-card-occupation,
+    .matrimony-card-location {
+        font-size: 0.85rem;
+        margin: 2px 0;
+        color: #666;
+        display: flex;
+        align-items: center;
+    }
+
+    .matrimony-card-occupation ion-icon,
+    .matrimony-card-location ion-icon {
+        margin-right: 4px;
+    }
+
+    .matrimony-card-status {
+        font-size: 0.8rem;
+        color: #888;
+        margin-top: 4px;
+    }
+
+    .matrimony-card-heart {
+        font-size: 1.4rem;
+        color: #ff5a5f;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        cursor: pointer;
+    }
+    /*///// MATRIMONIAL PAGE //////*/
+}

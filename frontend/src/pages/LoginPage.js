@@ -98,7 +98,7 @@ const LoginPage = () => {
                         <IonCol size="12" className="ion-text-center login-links">
                             <p className="login-link-text" onClick={() => goToPage('/forgot-password')}>Forgot Password?</p>
                             <p className="login-link-text">or</p>
-                            <p className="login-register" onClick={() => goToPage('/signup')}>Registration</p>
+                            <p className="login-register" onClick={() => goToPage('/signup')}>Register</p>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
