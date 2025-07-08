@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonContent, IonPage, IonRefresher, IonRefresherContent } from '@ionic/react';
+import {IonContent, IonIcon, IonPage, IonRefresher, IonRefresherContent} from '@ionic/react';
 import { useSwipeable } from 'react-swipeable';
 import { AnimatePresence, motion } from 'framer-motion';
 import imgNws1 from '../theme/images/img-nws-1.png';
@@ -7,13 +7,14 @@ import imgNws2 from '../theme/images/img-nws-2.png';
 import imgNws3 from '../theme/images/img-nws-3.png';
 import imgNws4 from '../theme/images/img-nws-4.png';
 import imgNws5 from '../theme/images/img-nws-5.png';
+import {bookmarkOutline, shareOutline} from "ionicons/icons";
 
 const dummyNews = [
     {
         id: 1,
         title: 'Ahmedabad woman kills 6-year-old daughter by strangulation',
         description:
-            'The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday.\n\nNehal Modi, 46, was taken into custody on Friday, US authorities informed Indian officials...',
+            'The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday...',
         time: 'few hours ago',
         source: 'The CSR Journal',
         imageUrl: imgNws1,
@@ -22,7 +23,7 @@ const dummyNews = [
         id: 2,
         title: 'Rising Inflation Hits Middle Class Families Hard',
         description:
-            'Experts warn that the rising cost of essential goods is likely to affect household budgets The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday.\n\nNehal Modi, 46, was taken into custody on Friday, US authorities informed Indian officials, according to a report by news agency PTI. His next court appearance is scheduled for July 17, where he is expected to seek bail...',
+            'Experts warn that the rising cost of essential goods is likely to affect household budgets The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States...',
         time: '1 day ago',
         source: 'The Financial Express',
         imageUrl: imgNws2,
@@ -76,7 +77,7 @@ const dummyNews = [
         id: 8,
         title: 'ISRO Prepares for Next Lunar Mission',
         description:
-            'The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday.\n\nNehal Modi, 46, was taken into custody on Friday, US authorities informed Indian officials, according to a report by news agency PTI. His next court appearance is scheduled for July 17, where he is expected to seek bail, a move that US prosecutors will oppose, PTI reported.\n\nThe extradition request pertains to two charges: one count of money laundering under Section 3 of the Prevention of Money Laundering Act (PMLA)...',
+            'The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday...',
         time: '3 days ago',
         source: 'Times of India',
         imageUrl: imgNws5,
@@ -166,20 +167,28 @@ export default function HomeMobilePage() {
                     </div>
 
                     <div className="news-card-stack">
-                        <AnimatePresence mode="wait">
+                        <AnimatePresence mode="popLayout">
                             <motion.div
                                 key={news.id}
                                 className="news-card"
                                 initial={{
-                                    y: direction === 'up' ? 150 : -150
+                                    y: direction === 'up' ? 300 : -300
                                 }}
                                 animate={{
                                     y: 0
                                 }}
 
-                                transition={{ duration: 0.25, ease: "easeInOut" }}>
+                                transition={{ duration: 0.25 }}>
                                 <img className="news-image" src={news.imageUrl} alt={news.title} />
                                 <div className="news-content">
+                                    <div className="news-sub-h-text">
+                                        <div className="news-category">Finance</div>
+                                        <div className="news-actions">
+                                            <IonIcon icon={shareOutline}></IonIcon>
+                                            <IonIcon icon={bookmarkOutline}></IonIcon>
+                                        </div>
+                                    </div>
+                                    <hr/>
                                     <h2>{news.title}</h2>
                                     <p>{news.description}</p>
                                     <div className="news-footer">

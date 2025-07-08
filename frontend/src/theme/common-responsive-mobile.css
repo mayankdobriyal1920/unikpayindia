@@ -37,8 +37,8 @@
         gap: 0.5rem;
         border: 1px solid #ddd; /* subtle border */
         border-radius: 50px;    /* fully rounded */
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
         color: var(--font-color);
         cursor: pointer; /* make it clickable if it opens a search modal */
         transition: border 0.2s ease, box-shadow 0.2s ease;
@@ -58,104 +58,131 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        position: relative;
     }
 
     .news-menu {
         display: flex;
         justify-content: space-around;
-        padding: 12px 0;
+        padding-bottom: 1rem;
+        position: absolute;
+        width: 100%;
+        height: 55px;
+        z-index: 9999;
+        background: #ffffff;
+        top: -7px;
     }
 
     .news-tab {
         background: none;
         border: none;
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: var(--heading-color);
-        padding: 4px 8px;
+        padding: 8px 8px;
         cursor: pointer;
     }
 
     .news-tab.active {
         color: var(--primary-color);  /* Your theme color */
         border-bottom: 2px solid var(--primary-color);
+        font-weight: 600;
     }
     /* Container scroll snap */
-
-    .news-feed-page {
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-    }
 
     .news-card-stack {
         position: relative;
         height: 100%;
+        margin-top: 53px;
     }
 
     .news-card {
         position: absolute;
-        height: calc(100vh - 240px);
-        width: 100%;
+        height: 100%;
+        width: 98%;
         overflow: hidden;
         display: flex;
         flex-direction: column;
-    }
-    .news-image {
-        width: 100%;
-        height: 50%;
-        object-fit: cover;
-    }
-
-    .news-feed-page {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+        margin: 2px 4px 4px 4px;
+        box-shadow: 0px 3px 20px 0px #b7b7b7;
+        border-radius: 10px;
+        border: 1px solid #ededed;
     }
 
     .news-image {
         width: 100%;
         height: 260px;
         object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 
     .news-content {
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding: 1rem;
         overflow: hidden;
+        padding: 1rem 0;
     }
 
     .news-content h2 {
         font-size: 1.2rem;
         font-weight: 600;
+        padding: 0 1rem;
         margin-bottom: 8px;
+        margin-top: 0px;
         color: var(--heading-color);
     }
 
     .news-content p {
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 6; /* Show up to 6 lines — adjust as needed */
+        -webkit-line-clamp: 5;
         overflow: hidden;
+        padding: 0 1rem;
         text-overflow: ellipsis;
         line-height: 1.5;
         font-size: 1rem;
         color: var(--font-color);
         margin: 0;
+        word-wrap: break-word;      /* old syntax, widely supported */
+        overflow-wrap: break-word;  /* modern syntax, does same thing */
     }
 
 
     .news-footer {
-        margin-top: 14px;
         font-size: 0.9rem;
+        padding: 0 1rem;
+        color: #b4b4b4;
+    }
+
+
+    .news-sub-h-text {
+        display: flex;
+        padding: 0 1rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .news-category {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0px;
+    }
+
+    .news-actions {
+        display: flex;
+        gap: 12px;
+        font-size: 1.4rem;
         color: var(--font-color);
     }
 
+    .news-actions ion-icon {
+        cursor: pointer;
+    }
     /*///// NEWS PAGE /////*/
 
     .header_button ion-icon{
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
     .with_login-menu-item.menu-names.active span {
         color: var(--primary-color);
