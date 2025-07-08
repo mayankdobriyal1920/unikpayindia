@@ -1,4 +1,4 @@
-import React, { useState,useRef } from 'react';
+import React, { useState } from 'react';
 import { IonContent, IonPage, IonRefresher, IonRefresherContent } from '@ionic/react';
 import { useSwipeable } from 'react-swipeable';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -106,19 +106,19 @@ const categories = ['Trending', 'Opinion', 'Finance', 'Audit', 'Industry'];
 export default function HomeMobilePage() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [categoryIndex, setCategoryIndex] = useState(0);
-    const directionRef = useRef('up');
+    const [direction, setDirection] = useState('up');
 
     const handlers = useSwipeable({
         onSwipedUp: () => {
             if (currentIndex < dummyNews.length - 1) {
-                directionRef.current = 'up';
-                setCurrentIndex(prev => prev + 1);
+                setDirection('up');
+                setCurrentIndex(currentIndex + 1);
             }
         },
         onSwipedDown: () => {
             if (currentIndex > 0) {
-                directionRef.current = 'down';
-                setCurrentIndex(prev => prev - 1);
+                setDirection('down');
+                setCurrentIndex(currentIndex - 1);
             }
         },
         onSwipedLeft: () => {
@@ -165,17 +165,20 @@ export default function HomeMobilePage() {
                         ))}
                     </div>
 
-                    <div className="news-card-stack">k
+                    <div className="news-card-stack">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={news.id}
-                                initial={{y: directionRef.current === 'up' ? 300 : -300}}
-                                animate={{y: 0}}
-                                exit={{y: directionRef.current === 'up' ? -300 : 300}}
-                                transition={{duration: 0.25}}
                                 className="news-card"
-                            >
-                                <img className="news-image" src={news.imageUrl} alt={news.title}/>
+                                initial={{
+                                    y: direction === 'up' ? 150 : -150
+                                }}
+                                animate={{
+                                    y: 0
+                                }}
+
+                                transition={{ duration: 0.25, ease: "easeInOut" }}>
+                                <img className="news-image" src={news.imageUrl} alt={news.title} />
                                 <div className="news-content">
                                     <h2>{news.title}</h2>
                                     <p>{news.description}</p>
