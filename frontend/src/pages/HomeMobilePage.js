@@ -1,13 +1,12 @@
-// NewsFeedPage.jsx
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
+import { IonContent, IonPage, IonRefresher, IonRefresherContent } from '@ionic/react';
 import { useSwipeable } from 'react-swipeable';
-import {IonContent, IonPage, IonRefresher, IonRefresherContent} from "@ionic/react";
+import { AnimatePresence, motion } from 'framer-motion';
 import imgNws1 from '../theme/images/img-nws-1.png';
 import imgNws2 from '../theme/images/img-nws-2.png';
 import imgNws3 from '../theme/images/img-nws-3.png';
 import imgNws4 from '../theme/images/img-nws-4.png';
 import imgNws5 from '../theme/images/img-nws-5.png';
-import NewsCardStack from "../components/NewsCardStack";
 
 const dummyNews = [
     {
@@ -107,16 +106,19 @@ const categories = ['Trending', 'Opinion', 'Finance', 'Audit', 'Industry'];
 export default function HomeMobilePage() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [categoryIndex, setCategoryIndex] = useState(0);
+    const directionRef = useRef('up');
 
     const handlers = useSwipeable({
         onSwipedUp: () => {
             if (currentIndex < dummyNews.length - 1) {
-                setCurrentIndex(currentIndex + 1);
+                directionRef.current = 'up';
+                setCurrentIndex(prev => prev + 1);
             }
         },
         onSwipedDown: () => {
             if (currentIndex > 0) {
-                setCurrentIndex(currentIndex - 1);
+                directionRef.current = 'down';
+                setCurrentIndex(prev => prev - 1);
             }
         },
         onSwipedLeft: () => {
@@ -136,18 +138,13 @@ export default function HomeMobilePage() {
 
     const handleRefresh = (event) => {
         console.log('Refreshing...');
-
-        // Simulate async refresh logic (e.g., fetch new data)
         setTimeout(() => {
-            console.log('Async operation has ended');
-
-            // You could reset your news or categories here:
             setCurrentIndex(0);
-
-            // When done, complete the refresher
             event.detail.complete();
-        }, 2000); // 2 seconds fake refresh
+        }, 2000);
     };
+
+    const news = dummyNews[currentIndex];
 
     return (
         <IonPage>
@@ -168,14 +165,30 @@ export default function HomeMobilePage() {
                         ))}
                     </div>
 
-                    <NewsCardStack
-                        dummyNews={dummyNews}
-                        currentIndex={currentIndex}
-                        setCurrentIndex={setCurrentIndex}
-                    />
-
+                    <div className="news-card-stack">k
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={news.id}
+                                initial={{y: directionRef.current === 'up' ? 300 : -300}}
+                                animate={{y: 0}}
+                                exit={{y: directionRef.current === 'up' ? -300 : 300}}
+                                transition={{duration: 0.25}}
+                                className="news-card"
+                            >
+                                <img className="news-image" src={news.imageUrl} alt={news.title}/>
+                                <div className="news-content">
+                                    <h2>{news.title}</h2>
+                                    <p>{news.description}</p>
+                                    <div className="news-footer">
+                                        <span>{news.time} | {news.source}</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
                 </div>
             </IonContent>
         </IonPage>
     );
 }
+
