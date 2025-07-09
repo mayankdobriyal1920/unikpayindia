@@ -842,8 +842,8 @@ ion-tab-bar.hide_element {
 }
 .with_login-menu-button .profile-avatar {
     position: relative;
-    width: 40px;       /* adjust size */
-    height: 40px;
+    width: 42px;       /* adjust size */
+    height: 42px;
 }
 
 .with_login-menu-button .avatar-img {

@@ -75,7 +75,7 @@
     .news-tab {
         background: none;
         border: none;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: var(--heading-color);
         padding: 8px 8px;
         cursor: pointer;
@@ -573,7 +573,7 @@
 
     .more-sheet-modal {
         border-radius: 16px 16px 0 0;
-        bottom: 57px;
+        bottom: 56px;
     }
 
 
@@ -608,6 +608,18 @@
         align-items: center;
     }
 
+    .more-tile {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 3%), 0px 1px 20px rgb(0 0 0 / 8%);
+        transition: transform 0.2s ease;
+    }
+
     .more-sheet-item.active ion-icon{
         color: var(--primary-color);
     }
@@ -616,20 +628,19 @@
     }
 
     .more-sheet-item ion-icon {
-        font-size: 1.3rem;
-        margin-bottom: 6px;
-        color: var(--font-color);
+        font-size: 1.4rem;
+        color: var(--secondry-color);
     }
 
     .more-sheet-item span {
+        margin-top: 7px;
         font-size: 0.9rem;
         color: var(--font-color);
     }
 
-
-    /*.more-sheet-modal::part(handle){*/
-    /*    display: none;*/
-    /*}*/
+    .more-sheet-modal::part(handle){
+        display: none;
+    }
 
     /*/////// Mobile more tabs //////////*/
 
