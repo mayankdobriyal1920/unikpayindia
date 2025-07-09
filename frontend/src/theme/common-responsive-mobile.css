@@ -572,7 +572,7 @@
     /*/////// Mobile more tabs //////////*/
 
     .more-sheet-modal {
-        border-radius: 16px 16px 0 0;
+        border-radius: 18px 18px 0 0;
         bottom: 56px;
     }
 
@@ -596,10 +596,10 @@
 
     .more-sheet-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         text-align: center;
-        margin-top: 1.3rem;
+        margin-top: 0.6rem;
     }
 
     .more-sheet-item {
@@ -609,14 +609,14 @@
     }
 
     .more-tile {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
         border-radius: 8px;
         background: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 3%), 0px 1px 20px rgb(0 0 0 / 8%);
+        box-shadow: 0px 0px 7px 0px #00000014;
         transition: transform 0.2s ease;
     }
 
@@ -628,8 +628,8 @@
     }
 
     .more-sheet-item ion-icon {
-        font-size: 1.4rem;
-        color: var(--secondry-color);
+        font-size: 1.3rem;
+        color: var(--font-color);
     }
 
     .more-sheet-item span {
@@ -638,9 +638,9 @@
         color: var(--font-color);
     }
 
-    .more-sheet-modal::part(handle){
-        display: none;
-    }
+    /*.more-sheet-modal::part(handle){*/
+    /*    display: none;*/
+    /*}*/
 
     /*/////// Mobile more tabs //////////*/
 

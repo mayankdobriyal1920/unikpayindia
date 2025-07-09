@@ -168,23 +168,22 @@ const DashboardPage = () => {
                     <IonModal
                         isOpen={showMoreSheet}
                         onDidDismiss={() => setShowMoreSheet(false)}
-                        breakpoints={[0, 0.35]}
-                        initialBreakpoint={0.35}
-                        className="more-sheet-modal"
-                    >
+                        breakpoints={[0, 0.17]}
+                        initialBreakpoint={0.17}
+                        className="more-sheet-modal">
                         <IonContent className="ion-padding">
                             <div className="more-sheet-grid">
                                 <div onClick={() => gotToPage('/dashboard/matrimonial', 'matrimonial')}
                                      className={`more-sheet-item ${currentPath === 'matrimonial' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={heartSharp}/>
+                                            <IonIcon icon={heartOutline}/>
                                         </div>
                                         <span>Matrimonial</span>
                                     </div>
                                 <div onClick={() => gotToPage('/dashboard/events', 'events')}
                                      className={`more-sheet-item ${currentPath === 'events' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={calendarSharp}/>
+                                            <IonIcon icon={calendarOutline}/>
                                         </div>
                                         <span>Events</span>
                                     </div>
@@ -192,14 +191,14 @@ const DashboardPage = () => {
                                      className={`more-sheet-item ${currentPath === 'newsletter' ? 'active' : ''}`}>
                                         <div className="more-tile">
                                             <IonIcon
-                                                icon={newspaperSharp}/>
+                                                icon={newspaperOutline}/>
                                         </div>
                                         <span>Newsletter</span>
                                     </div>
                                 <div onClick={() => gotToPage('/dashboard/contribute', 'contribute')}
                                      className={`more-sheet-item ${currentPath === 'contribute' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={cashSharp}/>
+                                            <IonIcon icon={cashOutline}/>
                                         </div>
                                         <span>Contribute</span>
                                     </div>
