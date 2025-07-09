@@ -568,4 +568,69 @@
 
     /*////// Assignment page ///////////*/
 
+
+    /*/////// Mobile more tabs //////////*/
+
+    .more-sheet-modal {
+        border-radius: 16px 16px 0 0;
+        bottom: 57px;
+    }
+
+
+    .ion-modal {
+        animation: slideUp 0.3s ease forwards;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    .more-sheet-modal .modal-wrapper {
+        border-radius: 16px 16px 0 0;
+    }
+
+    .more-sheet-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        text-align: center;
+        margin-top: 1.3rem;
+    }
+
+    .more-sheet-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .more-sheet-item.active ion-icon{
+        color: var(--primary-color);
+    }
+    .more-sheet-item.active span{
+        color: var(--primary-color);
+    }
+
+    .more-sheet-item ion-icon {
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+        color: var(--font-color);
+    }
+
+    .more-sheet-item span {
+        font-size: 0.9rem;
+        color: var(--font-color);
+    }
+
+
+    /*.more-sheet-modal::part(handle){*/
+    /*    display: none;*/
+    /*}*/
+
+    /*/////// Mobile more tabs //////////*/
+
 }
