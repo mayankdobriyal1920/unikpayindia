@@ -931,4 +931,50 @@ span.swiper-pagination-bullet {
 
 
 
+/*//////////// ASSIGNMENTS MODAL //////////////*/
+.rfp-type-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.rfp-type-toggle button {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+}
+
+.rfp-type-toggle button.active {
+    background: #222;
+    color: #fff;
+}
+
+.scope-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.validity-text {
+    margin: 16px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.submit-btn {
+    margin-top: 20px;
+}
+
+/*//////////// ASSIGNMENTS MODAL //////////////*/
+
 

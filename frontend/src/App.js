@@ -18,7 +18,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import './theme/common-style.css';
-import './theme/common-responsive.css';
+import './theme/common-responsive-desktop.css';
 import './theme/common-responsive-mobile.css';
 import {useDispatch,useSelector} from "react-redux";
 import {actionToConnectSocketServer, actionToGetUserSessionData} from "./redux/CommonAction";
@@ -26,7 +26,6 @@ import {IonReactRouter} from "@ionic/react-router";
 import {Redirect, Route} from "react-router";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
-import './css/common.css';
 import RegisterPage from "./pages/RegisterPage";
 import ForgotPassword from "./pages/ForgotPassword";
 import BecomeMember from "./pages/BecomeMember";

@@ -22,8 +22,11 @@ import {
     homeSharp
 } from "ionicons/icons";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
-import JobPortalDesktopPage from "../components/JobPortalDesktopPage";
+import JobPortalDesktopPage from "./JobPortalDesktopPage";
 import HomeMobilePage from "./HomeMobilePage";
+import MatrimonialDesktopPage from "./MatrimonialDesktopPage";
+import MagazineDesktopPage from "./MagazineDesktopPage";
+import AssignmentMobilePage from "./AssignmentMobilePage";
 
 const DashboardPage = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
@@ -81,8 +84,26 @@ const DashboardPage = () => {
                                     }
                                 </>
                             )} />
-                            <Route exact path="/dashboard/matrimonial" render={()=><MatrimonialPage handleScroll={handleScroll} />} />
-                            <Route exact path="/dashboard/magazine" render={()=><MagazinePage handleScroll={handleScroll} />} />
+
+                            <Route exact path="/dashboard/matrimonial" render={()=>(
+                                <>
+                                    {(isMobile) ?
+                                        <MatrimonialPage handleScroll={handleScroll} />
+                                        :
+                                        <MatrimonialDesktopPage handleScroll={handleScroll} />
+                                    }
+                                </>
+                            )} />
+
+                            <Route exact path="/dashboard/magazine" render={()=>(
+                                <>
+                                    {(isMobile) ?
+                                        <AssignmentMobilePage handleScroll={handleScroll} />
+                                        :
+                                        <MagazineDesktopPage handleScroll={handleScroll} />
+                                    }
+                                </>
+                            )} />
                             <Redirect exact from="/dashboard" to="/dashboard/home" />
                         </IonRouterOutlet>
                     </IonPage>

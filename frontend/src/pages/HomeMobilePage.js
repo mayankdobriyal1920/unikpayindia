@@ -7,7 +7,7 @@ import imgNws2 from '../theme/images/img-nws-2.png';
 import imgNws3 from '../theme/images/img-nws-3.png';
 import imgNws4 from '../theme/images/img-nws-4.png';
 import imgNws5 from '../theme/images/img-nws-5.png';
-import {bookmarkOutline, shareOutline} from "ionicons/icons";
+import {bookmarkOutline, downloadOutline, shareOutline} from "ionicons/icons";
 
 const dummyNews = [
     {
@@ -184,7 +184,7 @@ export default function HomeMobilePage() {
                                     <div className="news-sub-h-text">
                                         <div className="news-category">Finance</div>
                                         <div className="news-actions">
-                                            <IonIcon icon={shareOutline}></IonIcon>
+                                            <IonIcon icon={downloadOutline}></IonIcon>
                                             <IonIcon icon={bookmarkOutline}></IonIcon>
                                         </div>
                                     </div>

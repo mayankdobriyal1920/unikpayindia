@@ -2,13 +2,14 @@
 import React from 'react';
 import { IonPage, IonContent, IonButton, IonIcon } from '@ionic/react';
 import { funnelOutline } from 'ionicons/icons';
-import FilterSidebar from './FilterSidebar';
-import JobCard from './JobCard';
+import FilterSidebar from '../components/FilterSidebar';
+import JobCard from '../components/JobCard';
 import company1 from "../theme/images/company-1.png";
 import company2 from "../theme/images/company-2.png";
 import company3 from "../theme/images/company-3.png";
 import company4 from "../theme/images/company-4.png";
 import company5 from "../theme/images/company-5.png";
+import JobDetails from "../components/JobDetails";
 
 const jobs = [
     {
@@ -134,18 +135,16 @@ const jobs = [
 export default function JobPortalDesktopPage({handleScroll}) {
     return (
         <IonPage>
-            <IonContent scrollEvents={true} onIonScroll={handleScroll} fullscreen className="job-portal-desktop page-content">
+            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="job-portal-desktop page-content">
                 <div className="job-portal-container">
-
-                    {/* Sidebar */}
+                    {/* Filter Sidebar */}
                     <aside className="filter-sidebar">
                         <FilterSidebar />
                     </aside>
 
-                    {/* Main job list */}
+                    {/* Job List */}
                     <section className="job-list-section">
                         <div className="job-list-header">
-                            <div>1 - 20 of 10,590 React Js Developer Jobs</div>
                             <div className="job-sort">
                                 <IonButton fill="clear" size="small">
                                     <IonIcon icon={funnelOutline} slot="start" />
@@ -154,11 +153,16 @@ export default function JobPortalDesktopPage({handleScroll}) {
                             </div>
                         </div>
                         <div className="job-list">
-                            {jobs.map(job => (
+                            {jobs.map((job) => (
                                 <JobCard key={job.id} job={job} />
                             ))}
                         </div>
                     </section>
+
+                    {/* Job Details */}
+                    <aside className="job-details-sidebar">
+                        <JobDetails/> {/* Replace with your details component */}
+                    </aside>
                 </div>
             </IonContent>
         </IonPage>

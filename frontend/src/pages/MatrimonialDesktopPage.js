@@ -1,14 +1,21 @@
-import React,{useState} from "react";
-import { IonPage, IonContent, IonIcon, IonButton } from "@ionic/react";
-import {funnelOutline} from "ionicons/icons";
-import matrimony1 from "../theme/images/matrimony-img-1.png";
-import matrimony2 from "../theme/images/matrimony-img-2.png";
-import matrimony3 from "../theme/images/matrimony-img-3.png";
+// JobPortalDesktopPage.tsx
+import React from 'react';
+import { IonPage, IonContent, IonButton, IonIcon } from '@ionic/react';
+import { funnelOutline } from 'ionicons/icons';
+import company1 from "../theme/images/company-1.png";
+import company2 from "../theme/images/company-2.png";
+import company3 from "../theme/images/company-3.png";
+import company4 from "../theme/images/company-4.png";
+import company5 from "../theme/images/company-5.png";
+import MatrimonyFilterSidebar from "../components/MatrimonyFilterSidebar";
+import MatrimonyProfileCard from "../components/MatrimonyProfileCard";
+import MatrimonyProfileDetails from "../components/MatrimonyProfileDetails";
+import matrimony6 from "../theme/images/matrimony-img-6.png";
 import matrimony4 from "../theme/images/matrimony-img-4.png";
 import matrimony5 from "../theme/images/matrimony-img-5.png";
-import matrimony6 from "../theme/images/matrimony-img-6.png";
-import FilterSheetModal from "../components/FilterSheetModal";
-import MatrimonyProfileCard from "../components/MatrimonyProfileCard";
+import matrimony2 from "../theme/images/matrimony-img-2.png";
+import matrimony1 from "../theme/images/matrimony-img-1.png";
+import matrimony3 from "../theme/images/matrimony-img-3.png";
 
 const profiles = [
     {
@@ -133,58 +140,39 @@ const profiles = [
     },
 ];
 
-export default function MatrimonialPage({handleScroll}) {
-    const [isSticky, setIsSticky] = useState(false);
-    const [lastScrollTop, setLastScrollTop] = useState(0);
-    const [isFilterOpen, setIsFilterOpen] = useState(false);
-
-    const callFunctionToHandleScroll = (event) => {
-        handleScroll(event);
-        const scrollTop = event.detail.scrollTop;
-
-        if (scrollTop < lastScrollTop) {
-            // Scrolling UP → stick
-            setIsSticky(false);
-        } else {
-            // Scrolling DOWN → unstick
-            setIsSticky(true);
-        }
-
-        setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
-    };
-
+export default function MatrimonialDesktopPage({handleScroll}) {
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll}
-                        className="mobile-job-list-page page-content">
-                <div className={`filter-header-wrapper ${isSticky ? "sticky" : ""}`}>
-                    <div className="filter-header">
-                        <IonButton fill="clear" size="small" onClick={() => setIsFilterOpen(true)}
-                                   className="filter-btn">
-                            <IonIcon icon={funnelOutline} slot="start"/>
-                        </IonButton>
-                        <div className="tags">
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Work mode</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Department</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Experience</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Salary</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Role</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Category</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Education</span>
-                        </div>
-                    </div>
-                </div>
+            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="job-portal-desktop page-content">
+                <div className="job-portal-container">
+                    {/* Filter Sidebar */}
+                    <aside className="filter-sidebar">
+                        <MatrimonyFilterSidebar />
+                    </aside>
 
-                <div className="matrimony-list">
-                    {profiles.map((profile) => (
-                        <MatrimonyProfileCard key={profile.id} profile={profile}/>
-                    ))}
+                    {/* Job List */}
+                    <section className="job-list-section">
+                        <div className="job-list-header">
+                            <div className="job-sort">
+                                <IonButton fill="clear" size="small">
+                                    <IonIcon icon={funnelOutline} slot="start" />
+                                    Sort by: Recommended
+                                </IonButton>
+                            </div>
+                        </div>
+                        <div className="job-list">
+                            {profiles.map((profile) => (
+                                <MatrimonyProfileCard key={profile.id} profile={profile} />
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Job Details */}
+                    <aside className="job-details-sidebar">
+                        <MatrimonyProfileDetails/> {/* Replace with your details component */}
+                    </aside>
                 </div>
             </IonContent>
-            <FilterSheetModal
-                isOpen={isFilterOpen}
-                onDidDismiss={() => setIsFilterOpen(false)}
-            />
         </IonPage>
     );
 }

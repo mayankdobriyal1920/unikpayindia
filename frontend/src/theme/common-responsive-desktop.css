@@ -77,26 +77,29 @@
         color: #333;
     }
 
+    /* === Sidebar === */
+
     .job-portal-container {
         display: grid;
-        grid-template-columns: 280px 1fr 300px;
-        gap: 32px;
+        grid-template-columns: 200px 450px 617px;
+        height: 100vh;
+        margin: 0px 127px;
+        gap: 24px;
     }
 
-    /* === Sidebar === */
-    .filter-sidebar {
-        background: #fff;
+    .filter-sidebar,
+    .job-list-section,
+    .job-details-sidebar {
+        height: 100%;
+        background: #ffffff;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
         border-radius: 8px;
         padding: 24px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-        overflow-y: auto;
-        max-height: calc(100vh - 64px);
     }
 
     .filter-sidebar-content {
         display: flex;
         flex-direction: column;
-        gap: 24px;
     }
 
     .filter_main_heading {
@@ -147,7 +150,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 24px;
+        margin-bottom: 14px;
     }
 
     .job-list-header .job-count {
@@ -279,4 +282,81 @@
     }
 
     /*///// JOB PORTAL /////*/
+
+    /*///// MATRIMONIAL PAGE //////*/
+    /* MatrimonyProfileCard.css */
+
+    .matrimony-list {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .matrimony-card {
+        display: flex;
+        align-items: flex-start;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        padding: 12px;
+        position: relative;
+    }
+
+    .matrimony-card-img {
+        width: 80px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    .matrimony-card-info {
+        flex: 1;
+        margin-left: 12px;
+    }
+
+    .matrimony-card-name {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0;
+        color: #222;
+    }
+
+    .matrimony-card-details {
+        font-size: 0.9rem;
+        margin: 4px 0;
+        color: #444;
+    }
+
+    .matrimony-card-occupation,
+    .matrimony-card-location {
+        font-size: 0.85rem;
+        margin: 2px 0;
+        color: #666;
+        display: flex;
+        align-items: center;
+    }
+
+    .matrimony-card-occupation ion-icon,
+    .matrimony-card-location ion-icon {
+        margin-right: 4px;
+    }
+
+    .matrimony-card-status {
+        font-size: 0.8rem;
+        color: #888;
+        margin-top: 4px;
+    }
+
+    .matrimony-card-heart {
+        font-size: 1.4rem;
+        color: #ff5a5f;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        cursor: pointer;
+    }
+    /*///// MATRIMONIAL PAGE //////*/
+
 }

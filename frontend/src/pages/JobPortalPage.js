@@ -7,7 +7,7 @@ import company3 from "../theme/images/company-3.png";
 import company4 from "../theme/images/company-4.png";
 import company5 from "../theme/images/company-5.png";
 import FilterSheetModal from "../components/FilterSheetModal";
-import JobPortalDesktopPage from "../components/JobPortalDesktopPage";
+import JobPortalDesktopPage from "./JobPortalDesktopPage";
 
 const jobs = [
     {
@@ -153,8 +153,7 @@ export default function JobPortalPage({handleScroll}) {
 
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll}
-                        className="mobile-job-list-page page-content">
+            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll} className="mobile-job-list-page page-content">
                 <div className={`filter-header-wrapper ${isSticky ? "sticky" : ""}`}>
                     <div className="filter-header">
                         <IonButton fill="clear" size="small" onClick={()=>setIsFilterOpen(true)} className="filter-btn">
