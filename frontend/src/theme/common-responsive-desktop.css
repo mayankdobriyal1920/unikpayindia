@@ -13,7 +13,7 @@
         justify-content: center;
     }
     .with_login-desktop-menu .with_login-menu-item {
-        height: 50px;
+        height: 84px;
     }
     .with_login-desktop-menu .with_login-menu-item.active,.with_login-desktop-menu .with_login-menu-item:hover {
         border-bottom: 2px solid #b7412c;
@@ -24,8 +24,9 @@
 
     /*NEWS PAGE */
     .news-wrapper {
-        max-width: 1000px;
+        max-width: 100%;
         margin: 0 auto;
+        padding: 5px 15px 15px 15px;
     }
 
     .featured-news-card {
@@ -51,7 +52,7 @@
     }
 
     .news-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
      /*fullpage news*/
     .news-detail-image-wrapper {
