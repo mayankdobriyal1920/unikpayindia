@@ -159,6 +159,7 @@ export default function HomeMobilePage() {
                         {categories.map((cat, index) => (
                             <button
                                 key={cat}
+                                onClick={()=>setCategoryIndex(index)}
                                 className={`news-tab ${index === categoryIndex ? 'active' : ''}`}
                             >
                                 {cat}

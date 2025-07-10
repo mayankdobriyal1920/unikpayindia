@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import { IonPage, IonContent, IonIcon, IonButton } from "@ionic/react";
 import {cashOutline, funnelOutline, locationOutline, lockClosedOutline, star} from "ionicons/icons";
 import company1 from "../theme/images/company-1.png";
@@ -18,6 +18,7 @@ const jobs = [
         img_url:company1,
         location: "New Delhi",
         experience: "2-5 Yrs",
+        salary: "15-27.5 Lacs P.A",
         tags: ["Redux", "Fullstack Development", "CSS"],
         posted: "1d ago"
     },

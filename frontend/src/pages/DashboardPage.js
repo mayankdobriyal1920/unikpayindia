@@ -145,7 +145,7 @@ const DashboardPage = () => {
             <IonTabBar
                 slot="bottom"
                 style={{display: !isMobile ? 'none' : ''}}
-                className={`custom-tabbar main-tab-bar ${hideTabBar ? 'hide_element' : ''}`}
+                className={`custom-tabbar main-tab-bar`}
             >
                 <IonTabButton tab="home" className={"custom-ripple-color"} onClick={()=>callFunctionToSetCurrentPath('home')} href="/dashboard/home">
                     <IonIcon icon={currentPath === 'home' ? homeSharp : homeOutline} />

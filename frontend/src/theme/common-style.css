@@ -531,7 +531,7 @@ ion-toolbar.header-common-tab {
 
 .logout_button_menu {
     width: 100%;
-    --background: var(--secondry-color);
+    --background: var(--primary-color);
     --border-radius: 2rem;
     height: 40px;
     font-size: 0.9rem;
@@ -708,9 +708,15 @@ ion-toolbar.header-common-tab {
     border-radius: 30px;
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
+    box-shadow: var(--common-box-shadow);
     color: #ffffff;
 }
-
+ion-checkbox {
+    margin: 1rem;
+    border: unset;
+    --checkbox-background-checked: var(--primary-color)!important;
+    --border-color-checked: var(--primary-color)!important;
+}
 .news-title {
     font-size: 1rem;
     margin: 0 0 0.4rem;
