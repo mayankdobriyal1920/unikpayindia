@@ -80,15 +80,16 @@
     .news-tab {
         background: none;
         border: none;
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: var(--heading-color);
         padding: 8px 8px;
+        font-weight: bold;
         cursor: pointer;
     }
 
     .news-tab.active {
         color: var(--primary-color);  /* Your theme color */
-        font-weight: 600;
+        font-weight: bold;
     }
     /* Container scroll snap */
 

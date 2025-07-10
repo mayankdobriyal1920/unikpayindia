@@ -994,7 +994,7 @@ span.swiper-pagination-bullet {
     display: flex;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     padding: 16px;
     gap: 12px;
 }
