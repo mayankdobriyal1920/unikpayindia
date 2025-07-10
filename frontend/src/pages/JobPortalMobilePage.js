@@ -7,7 +7,7 @@ import company3 from "../theme/images/company-3.png";
 import company4 from "../theme/images/company-4.png";
 import company5 from "../theme/images/company-5.png";
 import FilterSheetModal from "../components/FilterSheetModal";
-import JobPortalDesktopPage from "./JobPortalDesktopPage";
+import JobDetailsSheetPopup from "../components/JobDetailsSheetPopup";
 
 const jobs = [
     {
@@ -135,6 +135,8 @@ export default function JobPortalMobilePage({handleScroll}) {
     const [isSticky, setIsSticky] = useState(false);
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [isDetailOpen, setIsDetailOpen] = useState(false);
+    const [jobDetailsData, setJobDetailsData] = useState(null);
 
     const callFunctionToHandleScroll = (event) => {
         handleScroll(event);
@@ -150,6 +152,11 @@ export default function JobPortalMobilePage({handleScroll}) {
 
         setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
     };
+
+    const openJobDetailPanel = (jobDetail)=>{
+        setJobDetailsData(jobDetail);
+        setIsDetailOpen(true);
+    }
 
     return (
         <IonPage>
@@ -173,7 +180,7 @@ export default function JobPortalMobilePage({handleScroll}) {
 
                 <div className="job-list">
                     {jobs.map(job => (
-                        <div key={job.id} className="job-card">
+                        <div key={job.id} onClick={()=>openJobDetailPanel(job)} className="job-card">
                             <div className="company-icon">
                                 <img alt={"company"} src={job?.img_url}/>
                             </div>
@@ -206,6 +213,9 @@ export default function JobPortalMobilePage({handleScroll}) {
                 isOpen={isFilterOpen}
                 onDidDismiss={() => setIsFilterOpen(false)}
             />
+            <JobDetailsSheetPopup isOpen={isDetailOpen}
+                                  jobDetailsData={jobDetailsData}
+                                  onDidDismiss={() => setIsDetailOpen(false)} />
         </IonPage>
     );
 }
