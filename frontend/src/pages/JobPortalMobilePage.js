@@ -8,6 +8,7 @@ import company4 from "../theme/images/company-4.png";
 import company5 from "../theme/images/company-5.png";
 import FilterSheetModal from "../components/FilterSheetModal";
 import JobDetailsSheetPopup from "../components/JobDetailsSheetPopup";
+import JobCard from "../components/JobCard";
 
 const jobs = [
     {
@@ -181,32 +182,7 @@ export default function JobPortalMobilePage({handleScroll}) {
 
                 <div className="job-list">
                     {jobs.map(job => (
-                        <div key={job.id} onClick={()=>openJobDetailPanel(job)} className="job-card">
-                            <div className="company-icon">
-                                <img alt={"company"} src={job?.img_url}/>
-                            </div>
-                            <div className="job-info">
-                                <h3>{job.title}</h3>
-                                <div className="company-rating">
-                                    {job.company} <IonIcon icon={star}/> {job.rating}
-                                </div>
-                                <div className="job-meta">
-                                    <IonIcon icon={locationOutline}/> {job.location} &nbsp;|&nbsp;
-                                    <IonIcon icon={lockClosedOutline}/> {job.experience}
-                                    {job.salary && (
-                                        <>
-                                            &nbsp;|&nbsp; <IonIcon icon={cashOutline}/> {job.salary}
-                                        </>
-                                    )}
-                                </div>
-                                <div className="tags-row">
-                                    {job.tags.map((tag, i) => (
-                                        <span key={i} className="job-tag">{tag}</span>
-                                    ))}
-                                </div>
-                                <div className="posted">{job.posted}</div>
-                            </div>
-                        </div>
+                        <JobCard key={job?.id} job={job} handleJobItemClick={openJobDetailPanel} />
                     ))}
                 </div>
             </IonContent>

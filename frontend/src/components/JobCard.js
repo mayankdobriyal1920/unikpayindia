@@ -1,23 +1,30 @@
 // JobCard.tsx
 import React from 'react';
 import { IonIcon } from '@ionic/react';
-import { star, locationOutline, briefcaseOutline } from 'ionicons/icons';
+import {star, locationOutline, briefcaseOutline, lockClosedOutline, cashOutline} from 'ionicons/icons';
 
-export default function JobCard({ job }) {
+export default function JobCard({ job,handleJobItemClick }) {
     return (
-        <div className="job-card-desktop">
-            <div className="job-card-content">
+        <div key={job.id} onClick={() => handleJobItemClick(job)} className="job-card">
+            <div className="company-icon">
+                <img alt={"company"} src={job?.img_url}/>
+            </div>
+            <div className="job-info">
                 <h3>{job.title}</h3>
                 <div className="company-rating">
-                    {job.company} <IonIcon icon={star} /> {job.rating}
+                    {job.company} <IonIcon icon={star}/> {job.rating}
                 </div>
                 <div className="job-meta">
-                    <IonIcon icon={briefcaseOutline} /> {job.experience}
-                    {' '}|{' '}
-                    <IonIcon icon={locationOutline} /> {job.location}
+                    <IonIcon icon={locationOutline}/> {job.location} &nbsp;|&nbsp;
+                    <IonIcon icon={lockClosedOutline}/> {job.experience}
+                    {job.salary && (
+                        <>
+                            &nbsp;|&nbsp; <IonIcon icon={cashOutline}/> {job.salary}
+                        </>
+                    )}
                 </div>
                 <div className="tags-row">
-                    {job.tags?.map((tag, i) => (
+                    {job.tags.map((tag, i) => (
                         <span key={i} className="job-tag">{tag}</span>
                     ))}
                 </div>

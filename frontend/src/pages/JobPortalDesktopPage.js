@@ -1,5 +1,5 @@
 // JobPortalDesktopPage.tsx
-import React from 'react';
+import React, {useState} from 'react';
 import { IonPage, IonContent, IonButton, IonIcon } from '@ionic/react';
 import { funnelOutline } from 'ionicons/icons';
 import FilterSidebar from '../components/FilterSidebar';
@@ -133,6 +133,7 @@ const jobs = [
 ];
 
 export default function JobPortalDesktopPage({handleScroll}) {
+    const [jobDetailsData, setJobDetailsData] = useState(jobs[0]);
     return (
         <IonPage>
             <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="job-portal-desktop page-content">
@@ -154,14 +155,14 @@ export default function JobPortalDesktopPage({handleScroll}) {
                         </div>
                         <div className="job-list">
                             {jobs.map((job) => (
-                                <JobCard key={job.id} job={job} />
+                                <JobCard key={job.id} job={job} handleJobItemClick={setJobDetailsData} />
                             ))}
                         </div>
                     </section>
 
                     {/* Job Details */}
                     <aside className="job-details-sidebar">
-                        <JobDetails/> {/* Replace with your details component */}
+                        <JobDetails jobDetailsData={jobDetailsData}/> {/* Replace with your details component */}
                     </aside>
                 </div>
             </IonContent>
