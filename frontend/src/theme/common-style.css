@@ -1,5 +1,5 @@
 body,html,#root{
-    font-family: 'Inter', sans-serif!important;
+    font-family: sans-serif;
 }
 hr{
     background: #f1f1f1;
@@ -332,9 +332,10 @@ ion-toolbar.header-common-tab {
 }
 
 .with_login-header {
-    --background: white !important;
-    border-bottom: none !important;
+    background: white !important;
+    border-bottom: 1px solid var(--ion-color-medium);
     box-shadow: none !important;
+
 }
 
 .with_login-toolbar {
@@ -393,8 +394,8 @@ ion-toolbar.header-common-tab {
 }
 
 .with_login-menu-item ion-icon {
-    font-size: 1.4rem;
-    color: var(--font-color);
+    font-size: 1.1rem;
+    color: var(--icon-color);
 }
 .with_login-menu-item span {
     font-size: 1rem;
@@ -406,7 +407,7 @@ ion-toolbar.header-common-tab {
     display: flex;
     gap: 30px;
     align-items: center;
-    margin-left: 20px;
+    justify-content: center;
 }
 
 .with_login-desktop-menu .with_login-menu-item {
@@ -610,10 +611,13 @@ ion-toolbar.header-common-tab {
     display: flex;
     gap: 0.5rem;
     overflow-x: auto;
+    background-color: #efefef;
+    padding:15px;
+    border-radius: 15px;
 }
 
 .news-tabs .tab {
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     color: var(--font-color);

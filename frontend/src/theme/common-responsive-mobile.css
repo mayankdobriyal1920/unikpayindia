@@ -48,6 +48,8 @@
         color: var(--font-color);
     }
 
+    .toolbar-container{background-color: var(--ion-color-light)}
+
     /*///// NEWS PAGE /////*/
     /* NewsFeedPage.css */
     .page-content {
@@ -69,13 +71,12 @@
         height: 48px;
         z-index: 9999;
         background: #ffffff;
-        top: -7px;
     }
 
     .news-tab {
         background: none;
         border: none;
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: var(--heading-color);
         padding: 8px 8px;
         cursor: pointer;
