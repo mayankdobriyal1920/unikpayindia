@@ -10,7 +10,7 @@ import {Route, Redirect } from 'react-router-dom';
 
 
 import HomePage from './HomePage';
-import JobPortalPage from './JobPortalPage';
+import JobPortalMobilePage from './JobPortalMobilePage';
 import MatrimonialPage from './MatrimonialPage';
 import MagazinePage from './MagazinePage';
 import {
@@ -100,7 +100,7 @@ const DashboardPage = () => {
                             <Route exact path="/dashboard/job-portal" render={()=>(
                                 <>
                                     {(isMobile) ?
-                                        <JobPortalPage handleScroll={handleScroll} />
+                                        <JobPortalMobilePage handleScroll={handleScroll} />
                                         :
                                         <JobPortalDesktopPage handleScroll={handleScroll} />
                                     }

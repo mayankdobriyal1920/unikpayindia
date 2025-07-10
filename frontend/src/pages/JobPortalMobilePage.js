@@ -131,7 +131,7 @@ const jobs = [
 ];
 
 
-export default function JobPortalPage({handleScroll}) {
+export default function JobPortalMobilePage({handleScroll}) {
     const [isSticky, setIsSticky] = useState(false);
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [isFilterOpen, setIsFilterOpen] = useState(false);
