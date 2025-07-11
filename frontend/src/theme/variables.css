@@ -60,7 +60,7 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
-  --ion-color-medium: #92949c;
+  --ion-color-medium: #e1e1e1;
   --ion-color-medium-rgb: 146, 148, 156;
   --ion-color-medium-contrast: #ffffff;
   --ion-color-medium-contrast-rgb: 255, 255, 255;
@@ -90,6 +90,7 @@ http://ionicframework.com/docs/theming/ */
   --font-size-6: 10px;
   --font-size-7: 8px;
   --font-color-light: #a1a1a1;
+  --font-color: #000000;
   --heading-color: #0e0e0e;
   --placeholder-color: #999;
   --common-box-shadow:1px 3px 10px 5px #00000012;
