@@ -176,29 +176,28 @@ const DashboardPage = () => {
                                 <div onClick={() => gotToPage('/dashboard/matrimonial', 'matrimonial')}
                                      className={`more-sheet-item ${currentPath === 'matrimonial' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={heartOutline}/>
+                                            <IonIcon icon={currentPath === 'matrimonial' ? heartSharp: heartOutline}/>
                                         </div>
                                         <span>Matrimonial</span>
                                     </div>
                                 <div onClick={() => gotToPage('/dashboard/events', 'events')}
                                      className={`more-sheet-item ${currentPath === 'events' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={calendarOutline}/>
+                                            <IonIcon icon={currentPath === 'events' ? calendarSharp: calendarOutline}/>
                                         </div>
                                         <span>Events</span>
                                     </div>
                                 <div onClick={() => gotToPage('/dashboard/newsletter', 'newsletter')}
                                      className={`more-sheet-item ${currentPath === 'newsletter' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon
-                                                icon={newspaperOutline}/>
+                                            <IonIcon icon={currentPath === 'newsletter' ? newspaperSharp: newspaperOutline}/>
                                         </div>
                                         <span>Newsletter</span>
                                     </div>
                                 <div onClick={() => gotToPage('/dashboard/contribute', 'contribute')}
                                      className={`more-sheet-item ${currentPath === 'contribute' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={cashOutline}/>
+                                            <IonIcon icon={currentPath === 'contribute' ? cashSharp : cashOutline}/>
                                         </div>
                                         <span>Contribute</span>
                                     </div>

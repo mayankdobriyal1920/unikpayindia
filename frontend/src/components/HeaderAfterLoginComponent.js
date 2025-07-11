@@ -16,11 +16,8 @@ import {
     homeSharp,
     briefcaseSharp,
     heartSharp,
-    bookSharp,
     personSharp,
-    settingsSharp,
-    phonePortraitSharp,
-    notificationsSharp,
+    notificationsSharp, clipboardSharp, calendarSharp, newspaperSharp,
 } from 'ionicons/icons';
 import appLogo from '../theme/images/logo-big.png';
 import {useHistory, useLocation} from "react-router";
@@ -32,10 +29,10 @@ import userInitialImg from '../theme/images/user_initial.png';
 const menuItems = [
     { label: 'Home', icon: homeSharp,pathName:'/dashboard/home' },
     { label: 'Jobs', icon: briefcaseSharp ,pathName:'/dashboard/job-portal'},
+    { label: 'Assignments', icon: clipboardSharp,pathName:'/dashboard/assignments' },
     { label: 'Matrimonial', icon: heartSharp,pathName:'/dashboard/matrimonial' },
-    { label: 'Magazine', icon: bookSharp,pathName:'/dashboard/magazine' },
-    { label: 'Contact', icon: phonePortraitSharp,pathName:'/dashboard/contact' },
-    { label: 'Settings', icon: settingsSharp,pathName:'/dashboard/contact' },
+    { label: 'Events', icon: calendarSharp,pathName:'/dashboard/events' },
+    { label: 'Newsletter', icon: newspaperSharp,pathName:'/dashboard/magazine' },
     { label: 'Profile', icon: personSharp,pathName:'/dashboard/contact' },
 ];
 

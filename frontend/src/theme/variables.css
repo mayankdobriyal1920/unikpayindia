@@ -82,7 +82,13 @@ http://ionicframework.com/docs/theming/ */
   --input-border-focus: #5b6693;
   --input-radius: 0.8rem;
   --icon-color: #9f9f9f;
-  --font-color: #4B4B4D;
+  --font-size-1: 22px;
+  --font-size-2: 20px;
+  --font-size-3: 16px;
+  --font-size-4: 14px;
+  --font-size-5: 12px;
+  --font-size-6: 10px;
+  --font-size-7: 8px;
   --font-color-light: #a1a1a1;
   --heading-color: #0e0e0e;
   --placeholder-color: #999;
