@@ -58,7 +58,7 @@
     }
 
     .with_login-desktop-menu .with_login-menu-item {
-        height: 84px;
+        height: 70px;
         border-bottom: 2px solid transparent;
     }
     .with_login-desktop-menu .with_login-menu-item.active,.with_login-desktop-menu .with_login-menu-item:hover {
