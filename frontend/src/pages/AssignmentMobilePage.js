@@ -108,7 +108,6 @@ const rfpList = [
     }
 ];
 
-
 export default function AssignmentMobilePage({handleScroll}) {
     const [isSticky, setIsSticky] = useState(false);
     const [lastScrollTop, setLastScrollTop] = useState(0);

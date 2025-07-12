@@ -15,7 +15,6 @@ import {
     homeSharp,
     briefcaseSharp,
     heartSharp,
-    personSharp,
     notificationsSharp, clipboardSharp, calendarSharp, newspaperSharp, cashSharp, medalSharp,
 } from 'ionicons/icons';
 import appLogo from '../theme/images/logo-big.png';

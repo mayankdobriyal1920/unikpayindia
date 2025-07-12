@@ -295,6 +295,11 @@
         border-bottom: 1px solid #cccccc!important;
     }
 
+    .more-sheet-modal {
+        margin-bottom: 56px!important;
+    }
+
+
     .filter-header-wrapper {
         position: sticky;
         width: 100%;
