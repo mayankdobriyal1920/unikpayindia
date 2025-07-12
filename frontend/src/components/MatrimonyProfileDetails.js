@@ -1,6 +1,6 @@
 import React from 'react';
 import {IonIcon, IonText} from "@ionic/react";
-import {briefcaseOutline, cashOutline, heartOutline, locationOutline, lockClosedOutline, star} from "ionicons/icons";
+import {briefcaseOutline, locationOutline} from "ionicons/icons";
 
 export default function MatrimonyProfileDetails({matrimonialProfileDetail}){
     return (

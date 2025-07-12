@@ -7,10 +7,9 @@ import matrimony3 from "../theme/images/matrimony-img-3.png";
 import matrimony4 from "../theme/images/matrimony-img-4.png";
 import matrimony5 from "../theme/images/matrimony-img-5.png";
 import matrimony6 from "../theme/images/matrimony-img-6.png";
-import FilterSheetModal from "../components/FilterSheetModal";
 import MatrimonyProfileCard from "../components/MatrimonyProfileCard";
-import JobDetailsSheetPopup from "../components/MatrimonialDetailSheetPopup";
 import MatrimonialFilterSheetModal from "../components/MatrimonialFilterSheetModal";
+import MatrimonialDetailSheetPopup from "../components/MatrimonialDetailSheetPopup";
 
 const profiles = [
     {
@@ -193,7 +192,7 @@ export default function MatrimonialMobilePage({handleScroll}) {
                     ))}
                 </div>
             </IonContent>
-            <JobDetailsSheetPopup
+            <MatrimonialDetailSheetPopup
                 isOpen={isDetailOpen}
                 onDidDismiss={() => setIsDetailOpen(false)}
                 matrimonialProfileDetail={matrimonialProfileDetail}/>

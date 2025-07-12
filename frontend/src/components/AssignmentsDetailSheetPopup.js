@@ -13,9 +13,9 @@ import {
     shareSocialOutline,
     arrowBack,
 } from 'ionicons/icons';
-import MatrimonyProfileDetails from "./MatrimonyProfileDetails";
+import AssignmentDetail from "./AssignmentDetail";
 
-export default function MatrimonialDetailSheetPopup({ isOpen, onDidDismiss,matrimonialProfileDetail }) {
+export default function AssignmentsDetailSheetPopup({ isOpen, onDidDismiss,assignmentDetail }) {
     return (
         <IonModal
             isOpen={isOpen}
@@ -24,7 +24,7 @@ export default function MatrimonialDetailSheetPopup({ isOpen, onDidDismiss,matri
             breakpoints={[0, 1]}
             handleBehavior="cycle"
         >
-            {(matrimonialProfileDetail?.id) ?
+            {(assignmentDetail?.id) ?
                 <>
                     <IonHeader className="job_detail_sheet_header sheet_modal_header">
                         <IonToolbar>
@@ -35,7 +35,7 @@ export default function MatrimonialDetailSheetPopup({ isOpen, onDidDismiss,matri
                             </IonButtons>
                             <div className="job_detail_sheet_header_text">
                                 <div className="job-basic-info-image">
-                                    <span className="job-basic-info-text">{matrimonialProfileDetail.name}</span>
+                                    <span className="job-basic-info-text">{assignmentDetail.title}</span>
                                 </div>
                             </div>
                             <IonButtons slot="end">
@@ -46,7 +46,7 @@ export default function MatrimonialDetailSheetPopup({ isOpen, onDidDismiss,matri
                         </IonToolbar>
                     </IonHeader>
                     <IonContent className="ion-padding job_detail_sheet_content">
-                        <MatrimonyProfileDetails matrimonialProfileDetail={matrimonialProfileDetail}/>
+                        <AssignmentDetail assignmentDetail={assignmentDetail}/>
                     </IonContent>
                     <IonFooter className="job_detail_sheet_footer ion-padding">
                         <IonRow>
