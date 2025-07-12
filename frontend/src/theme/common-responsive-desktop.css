@@ -19,7 +19,11 @@
         height: 100vh;
         margin: 0px auto;
         gap: 24px;
-        width: 90%;
+        width: 80%;
+    }
+
+    .news-wrapper{
+        width: 80%;
     }
 
     .with_login-desktop-menu .with_login-menu-item {
@@ -215,7 +219,7 @@
         width: 100px;
         max-width: 100px;
     }
-    .with_login-toolbar{width:94%; margin:0 auto;}
+    .with_login-toolbar{width:80%; margin:0 auto;}
     .right-banner img {
         width: 48px;
         height: auto;
