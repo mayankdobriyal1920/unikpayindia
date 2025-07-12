@@ -186,7 +186,9 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
+        margin: 0px 15px;
     }
+    .job-details-sidebar{padding: 0 15px;}
 
     /* === Job Card === */
 
