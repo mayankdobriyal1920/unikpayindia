@@ -372,9 +372,7 @@ ion-toolbar.header-common-tab {
 }
 
 /* Mobile menu */
-.with_login-mobile-menu {
-    padding: 1rem;
-}
+
 .with_login-menu-item-header-row {
     align-items: center;
     padding-bottom: 16px;
@@ -382,7 +380,7 @@ ion-toolbar.header-common-tab {
 }
 
 .with_login-menu-item.menu-names {
-    margin-left: 0.3rem;
+    margin-left: 12px;
 }
 .with_login-menu-item {
     display: flex;
@@ -390,11 +388,11 @@ ion-toolbar.header-common-tab {
     gap: 12px;
     font-size: var(--font-size-3);
     color: rgb(106 105 105);
-    margin-bottom: 2rem;
+    margin-bottom: 30px;
 }
 
 .with_login-menu-item ion-icon {
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-2);
     color: var(--icon-color);
 }
 .with_login-menu-item span {
@@ -442,6 +440,9 @@ ion-toolbar.header-common-tab {
 /* === Base menu container === */
 .with_login-mobile-menu {
     padding: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* === User header === */
@@ -519,6 +520,7 @@ ion-toolbar.header-common-tab {
 .with_login-menu-item.version_no_section {
     text-align: center;
     width: 100%;
+    margin-top:20px;
 }
 
 .with_login-menu-item.version_no_section .version_no_section {
@@ -527,9 +529,7 @@ ion-toolbar.header-common-tab {
     font-weight: 600;
     color: var(--primary-color);
 }
-.with_login-menu-item.logout_button_section {
-    margin-top: 2rem;
-}
+
 
 .logout_button_menu {
     width: 100%;
@@ -1162,7 +1162,7 @@ span.swiper-pagination-bullet {
 
 .apply_job_button{
     --background: var(--primary-color);
-    font-size: var(--font-size-3);
+    font-size: var(--font-size-4);
     box-shadow: var(--common-box-shadow);
 }
 
@@ -1200,6 +1200,24 @@ span.swiper-pagination-bullet {
     color: var(--font-color)!important;
 }
 
+.matrimony-card-status {
+    font-size: var(--font-size-4);
+    color: var(--font-color)!important;
+    margin-top: 4px;
+}
+.matrimony-card-occupation,
+.matrimony-card-location {
+    font-size: var(--font-size-4);
+    margin: 2px 0;
+    color: var(--font-color)!important;;
+    display: flex;
+    align-items: center;
+}
+.matrimony-card-occupation ion-icon,
+.matrimony-card-location ion-icon {
+    margin-right: 4px;
+    font-size: var(--font-size-4);
+}
 /*/////// JOB DETAIL PANEL ///////////*/
 
 

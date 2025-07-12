@@ -315,7 +315,7 @@
     }
 
     .with_login-title_in_center_mob .with_login-logo-mob {
-        width: 115px;
+        width: 105px;
         margin: auto;
         height: auto;
     }
@@ -417,26 +417,6 @@
         font-size: var(--font-size-4);
         margin: 4px 0;
         color: #444;
-    }
-
-    .matrimony-card-occupation,
-    .matrimony-card-location {
-        font-size: var(--font-size-4);
-        margin: 2px 0;
-        color: #666;
-        display: flex;
-        align-items: center;
-    }
-
-    .matrimony-card-occupation ion-icon,
-    .matrimony-card-location ion-icon {
-        margin-right: 4px;
-    }
-
-    .matrimony-card-status {
-        font-size: var(--font-size-3);
-        color: #888;
-        margin-top: 4px;
     }
 
     .matrimony-card-heart {

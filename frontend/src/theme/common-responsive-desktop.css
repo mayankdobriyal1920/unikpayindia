@@ -287,26 +287,6 @@
         color: #444;
     }
 
-    .matrimony-card-occupation,
-    .matrimony-card-location {
-        font-size: 0.85rem;
-        margin: 2px 0;
-        color: #666;
-        display: flex;
-        align-items: center;
-    }
-
-    .matrimony-card-occupation ion-icon,
-    .matrimony-card-location ion-icon {
-        margin-right: 4px;
-    }
-
-    .matrimony-card-status {
-        font-size: var(--font-size-5);
-        color: #888;
-        margin-top: 4px;
-    }
-
     .matrimony-card-heart {
         font-size: var(--font-size-1);
         color: #ff5a5f;

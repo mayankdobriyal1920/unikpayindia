@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useLayoutEffect, useRef, useState} from 'react';
 import {IonContent, IonIcon, IonPage, IonRefresher, IonRefresherContent} from '@ionic/react';
 import { useSwipeable } from 'react-swipeable';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -7,9 +7,8 @@ import imgNws2 from '../theme/images/img-nws-2.png';
 import imgNws3 from '../theme/images/img-nws-3.png';
 import imgNws4 from '../theme/images/img-nws-4.png';
 import imgNws5 from '../theme/images/img-nws-5.png';
-import {bookmarkOutline, downloadOutline, eyeSharp, shareOutline} from "ionicons/icons";
+import {bookmarkOutline, downloadOutline, eyeSharp} from "ionicons/icons";
 import NewsDetailSheetModal from "../components/NewsDetailSheetModal";
-import JobDetailsSheetPopup from "../components/JobDetailsSheetPopup";
 
 const dummyNews = [
     {
@@ -155,7 +154,7 @@ export default function HomeMobilePage() {
         }, 2000);
     };
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const element = newsContentRef.current;
         if (element) {
             const computedStyles = getComputedStyle(element);
