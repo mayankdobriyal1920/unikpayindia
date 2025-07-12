@@ -134,9 +134,8 @@
     .news-content p {
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 5;
         overflow: hidden;
-        padding: 0 1rem;
+        padding: 0 12px;
         text-overflow: ellipsis;
         line-height: 1.5;
         font-size: var(--font-size-3);
@@ -362,7 +361,7 @@
         padding: 5px 10px;
         text-align: center;
         border-radius: 10px;
-        margin-left: 16px;
+        margin-left: auto;
         background: var(--primary-color);
         font-size: var(--font-size-5);
         color: #ffffff;
