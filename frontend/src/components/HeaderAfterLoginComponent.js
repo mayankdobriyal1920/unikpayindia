@@ -247,9 +247,12 @@ const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef}) => {
                     )}
 
                     {isMobile ? (
-                            <div className="sudo_search_div_place_holder_search">
-                            <IonIcon icon={searchOutline}/>
-                                Search...
+                            // <div className="sudo_search_div_place_holder_search">
+                            // <IonIcon icon={searchOutline}/>
+                            //     Search...
+                            // </div>
+                            <div slot="start" className="with_login-title_in_center_mob">
+                                <img src={appLogo} alt="Logo" className="with_login-logo-mob"/>
                             </div>
                         )
                         : (
@@ -271,13 +274,10 @@ const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef}) => {
                         </IonButtons>
                     )}
                     <IonButtons slot="end" className="with_login-icons">
-                        {!isMobile ? (
-                            <IonButton className="header_button">
-                                <IonIcon icon={searchOutline}/>
-                            </IonButton>
-                            ):''
-                        }
-                        <IonButton className="header_button">
+                        <IonButton className="header_button_right">
+                            <IonIcon icon={searchOutline}/>
+                        </IonButton>
+                        <IonButton className="header_button_right">
                             <div className="notification-icon">
                                 <IonIcon icon={notificationsSharp} />
                                 <span className="notification-badge">3</span>  {/* Replace 3 with your dynamic count */}

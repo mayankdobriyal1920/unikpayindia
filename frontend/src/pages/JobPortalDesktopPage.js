@@ -137,7 +137,7 @@ export default function JobPortalDesktopPage({handleScroll}) {
     return (
         <IonPage>
             <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="job-portal-desktop page-content">
-                <div className="job-portal-container">
+                <div className="job-portal-container three-panel-grid">
                     {/* Filter Sidebar */}
                     <aside className="filter-sidebar">
                         <FilterSidebar />

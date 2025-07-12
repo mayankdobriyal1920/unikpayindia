@@ -356,11 +356,6 @@ ion-toolbar.header-common-tab {
     flex-grow: 1;
 }
 
-.with_login-logo {
-    height: 5rem;
-    object-fit: contain;
-}
-
 .with_login-menu-button {
     font-size: var(--font-size-3);
     color: var(--font-color);
@@ -879,11 +874,12 @@ ion-tab-bar.hide_element {
     color: #333;
 }
 
-.header_button {
+.header_button_right {
     position: relative;
     --background: transparent;
-    --color: #111;  /* icon color */
-    padding: 0;
+    --color: var(--font-color);
+    padding: 0!important;
+    margin: 0!important;
 }
 
 .notification-icon {

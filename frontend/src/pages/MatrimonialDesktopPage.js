@@ -1,12 +1,6 @@
 // JobPortalDesktopPage.tsx
-import React from 'react';
-import { IonPage, IonContent, IonButton, IonIcon } from '@ionic/react';
-import { funnelOutline } from 'ionicons/icons';
-import company1 from "../theme/images/company-1.png";
-import company2 from "../theme/images/company-2.png";
-import company3 from "../theme/images/company-3.png";
-import company4 from "../theme/images/company-4.png";
-import company5 from "../theme/images/company-5.png";
+import React, {useState} from 'react';
+import { IonPage, IonContent} from '@ionic/react';
 import MatrimonyFilterSidebar from "../components/MatrimonyFilterSidebar";
 import MatrimonyProfileCard from "../components/MatrimonyProfileCard";
 import MatrimonyProfileDetails from "../components/MatrimonyProfileDetails";
@@ -141,10 +135,11 @@ const profiles = [
 ];
 
 export default function MatrimonialDesktopPage({handleScroll}) {
+    const [matrimonialProfileDetail, setMatrimonialProfileDetail] = useState(profiles[0]);
     return (
         <IonPage>
             <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="job-portal-desktop page-content">
-                <div className="job-portal-container">
+                <div className="job-portal-container three-panel-grid">
                     {/* Filter Sidebar */}
                     <aside className="filter-sidebar">
                         <MatrimonyFilterSidebar />
@@ -162,14 +157,14 @@ export default function MatrimonialDesktopPage({handleScroll}) {
                         {/*</div>*/}
                         <div className="job-list">
                             {profiles.map((profile) => (
-                                <MatrimonyProfileCard key={profile.id} profile={profile} />
+                                <MatrimonyProfileCard key={profile.id} profile={profile} handleProfileItemClick={setMatrimonialProfileDetail} />
                             ))}
                         </div>
                     </section>
 
                     {/* Job Details */}
                     <aside className="job-details-sidebar">
-                        <MatrimonyProfileDetails/> {/* Replace with your details component */}
+                        <MatrimonyProfileDetails matrimonialProfileDetail={matrimonialProfileDetail}/> {/* Replace with your details component */}
                     </aside>
                 </div>
             </IonContent>

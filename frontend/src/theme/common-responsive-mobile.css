@@ -31,9 +31,7 @@
     ion-tab-button {
         font-size: var(--font-size-4);
     }
-    .with_login-logo{
-       display: none;
-    }
+
     .sudo_search_div_place_holder_search {
         display: flex;
         align-items: center;
@@ -182,7 +180,7 @@
     }
     /*///// NEWS PAGE /////*/
 
-    .header_button ion-icon{
+    .header_button_right ion-icon{
         font-size: var(--font-size-1);
     }
     .with_login-menu-item.menu-names.active span {
@@ -206,12 +204,14 @@
         flex-wrap: wrap; /* Wrap on small screens */
         margin-bottom: 16px;
         margin-left:1rem ;
+        width: 100%;
     }
 
     .filter-header ion-button {
         --color: var(--font-color);
         font-size: var(--font-size-4);
         align-self: flex-start;
+        width: 8%!important;
     }
 
     .filter-header .tags {
@@ -306,7 +306,18 @@
         font-size: var(--font-size-4);
         --color: var(--primary-color);
     }
+    .with_login-title_in_center_mob {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        height: auto;
+    }
 
+    .with_login-title_in_center_mob .with_login-logo-mob {
+        width: 115px;
+        margin: auto;
+        height: auto;
+    }
     .filter_sheet_header{
         box-shadow: none;
         border: 1px solid #cccccc;

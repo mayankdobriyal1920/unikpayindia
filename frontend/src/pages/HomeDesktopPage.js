@@ -91,7 +91,7 @@ const sampleData = [
         content: 'Opinion: How small businesses can thrive in an AI-driven economy.'
     }
 ];
-export default function HomePage({handleScroll}) {
+export default function HomeDesktopPage({handleScroll}) {
     return (
         <IonPage>
             <IonContent onIonScroll={handleScroll} scrollEvents={true} fullscreen className="news-page page-content off-white-background-content">

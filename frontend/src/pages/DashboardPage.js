@@ -9,9 +9,9 @@ import {
 import {Route, Redirect } from 'react-router-dom';
 
 
-import HomePage from './HomePage';
+import HomeDesktopPage from './HomeDesktopPage';
 import JobPortalMobilePage from './JobPortalMobilePage';
-import MatrimonialPage from './MatrimonialPage';
+import MatrimonialMobilePage from './MatrimonialMobilePage';
 import MagazinePage from './MagazinePage';
 import {
     briefcaseOutline,
@@ -102,7 +102,7 @@ const DashboardPage = () => {
                                     {(isMobile) ?
                                         <HomeMobilePage />
                                         :
-                                        <HomePage handleScroll={handleScroll} />
+                                        <HomeDesktopPage handleScroll={handleScroll} />
                                     }
                                 </>
                             )} />
@@ -119,7 +119,7 @@ const DashboardPage = () => {
                             <Route exact path="/dashboard/matrimonial" render={()=>(
                                 <>
                                     {(isMobile) ?
-                                        <MatrimonialPage handleScroll={handleScroll} />
+                                        <MatrimonialMobilePage handleScroll={handleScroll} />
                                         :
                                         <MatrimonialDesktopPage handleScroll={handleScroll} />
                                     }

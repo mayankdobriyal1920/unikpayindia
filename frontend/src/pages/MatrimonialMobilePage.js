@@ -9,6 +9,7 @@ import matrimony5 from "../theme/images/matrimony-img-5.png";
 import matrimony6 from "../theme/images/matrimony-img-6.png";
 import FilterSheetModal from "../components/FilterSheetModal";
 import MatrimonyProfileCard from "../components/MatrimonyProfileCard";
+import JobDetailsSheetPopup from "../components/MatrimonialDetailSheetPopup";
 
 const profiles = [
     {
@@ -133,10 +134,12 @@ const profiles = [
     },
 ];
 
-export default function MatrimonialPage({handleScroll}) {
+export default function MatrimonialMobilePage({handleScroll}) {
     const [isSticky, setIsSticky] = useState(false);
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [matrimonialProfileDetail, setMatrimonialProfileDetail] = useState(profiles[0]);
+    const [isDetailOpen, setIsDetailOpen] = useState(false);
 
     const callFunctionToHandleScroll = (event) => {
         handleScroll(event);
@@ -152,6 +155,11 @@ export default function MatrimonialPage({handleScroll}) {
 
         setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
     };
+
+    const openMatrimonialProfileDetailPanel = (jobDetail)=>{
+        setMatrimonialProfileDetail(jobDetail);
+        setIsDetailOpen(true);
+    }
 
     return (
         <IonPage>
@@ -177,10 +185,14 @@ export default function MatrimonialPage({handleScroll}) {
 
                 <div className="matrimony-list">
                     {profiles.map((profile) => (
-                        <MatrimonyProfileCard key={profile.id} profile={profile}/>
+                        <MatrimonyProfileCard key={profile.id} handleProfileItemClick={openMatrimonialProfileDetailPanel} profile={profile}/>
                     ))}
                 </div>
             </IonContent>
+            <JobDetailsSheetPopup
+                isOpen={isDetailOpen}
+                onDidDismiss={() => setIsDetailOpen(false)}
+                matrimonialProfileDetail={matrimonialProfileDetail}/>
             <FilterSheetModal
                 isOpen={isFilterOpen}
                 onDidDismiss={() => setIsFilterOpen(false)}
