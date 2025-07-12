@@ -347,8 +347,11 @@
         background: #fff;
     }
 
-    ion-modal {
-        --border-radius: 16px;
+    ion-modal::part(content) {
+        border-top-left-radius: 16px!important;
+        border-top-right-radius: 16px!important;
+        border-bottom-left-radius: 0!important;
+        border-bottom-right-radius: 0!important;
     }
 
     /*////// filter modal //////*/
