@@ -710,6 +710,7 @@ ion-checkbox {
     border: unset;
     --checkbox-background-checked: var(--primary-color)!important;
     --border-color-checked: var(--primary-color)!important;
+    border-width: 1px;
 }
 .news-title {
     font-size: var(--font-size-3);
@@ -937,10 +938,13 @@ span.swiper-pagination-bullet {
 
 
 /*//////////// ASSIGNMENTS MODAL //////////////*/
+ion-modal.sheet_modal_header ion-label.sc-ion-label{margin-bottom: 10px}
+
 .rfp-type-toggle {
     display: flex;
     gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .rfp-type-toggle button {
@@ -971,14 +975,16 @@ span.swiper-pagination-bullet {
 }
 
 .validity-text {
-    margin: 16px 0;
+    margin: 10px 0 10px 0px;
     font-size: var(--font-size-4);
     color: #666;
 }
 
 .submit-btn {
-    margin-top: 20px;
+    margin-top: 0px;
 }
+.item-native{--padding-start: 0px !important;}
+ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
 
 /*//////////// ASSIGNMENTS MODAL //////////////*/
 
@@ -1011,7 +1017,7 @@ span.swiper-pagination-bullet {
 }
 
 .job-info h3 {
-    margin: 0 0 4px;
+    margin: 0 0 5px;
     font-size: var(--font-size-3);
     font-weight: 600;
 }
@@ -1019,7 +1025,7 @@ span.swiper-pagination-bullet {
 .company-rating {
     font-size: var(--font-size-4);
     color: var(--font-color);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .company-rating span {
@@ -1064,6 +1070,7 @@ span.swiper-pagination-bullet {
     margin-right: 4px;
     color: var(--font-color);
 }
+.icon-inner svg.ionicon{ stroke: var(--primary-color) !important;}
 /*/////////// JOB CARD CSS ////////*/
 
 
@@ -1111,6 +1118,8 @@ span.swiper-pagination-bullet {
     color: var(--font-color);
 }
 
+
+.job-key-responsiblities  ul{padding-left: 0px;}
 .job-requirement{
     margin-top: 20px;
     background: #fff;
@@ -1121,9 +1130,6 @@ span.swiper-pagination-bullet {
     color: var(--font-color);
 }
 
-.job_detail_common_page ul {
-    padding-left: 18px!important;
-}
 
 .job_detail_common_page ul li{
     margin-bottom: 5px!important;
@@ -1131,6 +1137,8 @@ span.swiper-pagination-bullet {
     color: var(--font-color);
     line-height: 20px;
 }
+
+.job_detail_common_page ul{padding-inline-start: 0px;}
 
 .job_detail_sheet_footer {
     display: flex;
@@ -1200,7 +1208,7 @@ span.swiper-pagination-bullet {
 .matrimony-card-occupation,
 .matrimony-card-location {
     font-size: var(--font-size-4);
-    margin: 2px 0;
+    margin: 5px 0;
     color: var(--font-color)!important;;
     display: flex;
     align-items: center;
@@ -1326,7 +1334,7 @@ span.swiper-pagination-bullet {
 }
 
 .rfp-min {
-    font-size: var(--font-size-4);
+    font-size: var(--font-size-5);
     color: var(--font-color);
 }
 
