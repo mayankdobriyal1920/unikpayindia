@@ -1,20 +1,20 @@
 import React from 'react';
 import {IonPage, IonContent, IonIcon} from '@ionic/react';
 import testNewsImageIcon from '../theme/images/img-nws-2.png';
-import {bookmarkOutline, chevronBackOutline, ellipsisHorizontalOutline} from "ionicons/icons";
+import {
+    chevronBackOutline,
+    downloadOutline,
+    shareSocialOutline
+} from "ionicons/icons";
 import {useHistory} from "react-router-dom";
 
-export default function NewsDetailPage() {
-    const history = useHistory();
-
-    // Fetch the full news details using the `id` (mocked for now)
-    const news = {
-        title: 'Alexander wears modified helmet in road races',
-        image: testNewsImageIcon,
-        category: 'Sports',
-        source: 'CNN Indonesia',
-        time: '6 hours ago',
-        content: `The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday.
+const news = {
+    title: 'Alexander wears modified helmet in road races',
+    image: testNewsImageIcon,
+    category: 'Sports',
+    source: 'CNN Indonesia',
+    time: '6 hours ago',
+    content: `The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday.
 
 Nehal Modi, 46, was taken into custody on Friday, US authorities informed Indian officials, according to a report by news agency PTI. His next court appearance is scheduled for July 17, where he is expected to seek bail, a move that US prosecutors will oppose, PTI reported.
 
@@ -27,7 +27,13 @@ Born and raised in Antwerp, Belgium, Nehal Modi is fluent in English, Gujarati, 
 Authorities said Nehal Modi helped conceal and transfer large sums of illicit funds through a network of shell companies and offshore transactions. He has been named in a charge sheet filed by the ED and has been accused of destroying evidence and “knowingly and intentionally” facilitating Nirav Modi’s illegal activities, PTI reported.
 
 The ED also alleged that following the exposure of the PNB fraud, Nehal and Nirav’s top aide Mihir R Bhansali “took 50 kg gold and substantial cash from Dubai” and instructed dummy directors not to reveal his name to authorities, officials told PTI.`
-    };
+};
+
+export default function NewsDetailPage() {
+    const history = useHistory();
+
+    // Fetch the full news details using the `id` (mocked for now)
+
 
 
     const goBack = ()=>{
@@ -46,10 +52,10 @@ The ED also alleged that following the exposure of the PNB fraud, Nehal and Nira
                         </button>
                         <div className="right-buttons">
                             <button className="circle-btn">
-                                <IonIcon icon={bookmarkOutline}/>
+                                <IonIcon icon={downloadOutline}/>
                             </button>
                             <button className="circle-btn">
-                                <IonIcon icon={ellipsisHorizontalOutline}/>
+                                <IonIcon icon={shareSocialOutline}/>
                             </button>
                         </div>
                     </div>

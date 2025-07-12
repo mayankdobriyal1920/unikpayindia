@@ -7,7 +7,9 @@ import imgNws2 from '../theme/images/img-nws-2.png';
 import imgNws3 from '../theme/images/img-nws-3.png';
 import imgNws4 from '../theme/images/img-nws-4.png';
 import imgNws5 from '../theme/images/img-nws-5.png';
-import {bookmarkOutline, downloadOutline, shareOutline} from "ionicons/icons";
+import {bookmarkOutline, downloadOutline, eyeSharp, shareOutline} from "ionicons/icons";
+import NewsDetailSheetModal from "../components/NewsDetailSheetModal";
+import JobDetailsSheetPopup from "../components/JobDetailsSheetPopup";
 
 const dummyNews = [
     {
@@ -108,6 +110,8 @@ export default function HomeMobilePage() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [categoryIndex, setCategoryIndex] = useState(0);
     const [direction, setDirection] = useState('up');
+    const [newsDetailsData, setNewsDetailsData] = useState(null);
+    const [isDetailOpen, setIsDetailOpen] = useState(false);
 
     const handlers = useSwipeable({
         onSwipedUp: () => {
@@ -136,6 +140,11 @@ export default function HomeMobilePage() {
         },
         trackMouse: true,
     });
+
+    const openDetailPanel = (jobDetail)=>{
+        setNewsDetailsData(jobDetail);
+        setIsDetailOpen(true);
+    }
 
     const handleRefresh = (event) => {
         console.log('Refreshing...');
@@ -178,7 +187,6 @@ export default function HomeMobilePage() {
                                 animate={{
                                     y: 0
                                 }}
-
                                 transition={{ duration: 0.25 }}>
                                 <img className="news-image" src={news.imageUrl} alt={news.title} />
                                 <div className="news-content">
@@ -194,6 +202,7 @@ export default function HomeMobilePage() {
                                     <p>{news.description}</p>
                                     <div className="news-footer">
                                         <span>{news.time} | {news.source}</span>
+                                        <button onClick={()=>openDetailPanel(news)} className="view_news_button"> <IonIcon icon={eyeSharp}/> Read more</button>
                                     </div>
                                 </div>
                             </motion.div>
@@ -201,6 +210,9 @@ export default function HomeMobilePage() {
                     </div>
                 </div>
             </IonContent>
+            <NewsDetailSheetModal isOpen={isDetailOpen}
+                                  newsDetailsData={newsDetailsData}
+                                  onDidDismiss={() => setIsDetailOpen(false)} />
         </IonPage>
     );
 }

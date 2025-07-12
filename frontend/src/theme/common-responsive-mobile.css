@@ -150,8 +150,10 @@
     .news-footer {
         font-size: var(--font-size-4);
         padding: 0 1rem;
-        margin-top: 1rem;
+        margin-top: 22px;
+        display: flex;
         color: #b4b4b4;
+        align-items: flex-end;
     }
 
 
@@ -356,6 +358,20 @@
 
     /*////// filter modal //////*/
     /* === Job Portal === */
+    .news-footer .view_news_button {
+        padding: 5px 10px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 16px;
+        background: var(--primary-color);
+        font-size: var(--font-size-5);
+        color: #ffffff;
+        display: flex;
+    }
+    .news-footer .view_news_button ion-icon {
+        margin-right: 3px;
+        font-size: var(--font-size-5);
+    }
 
 
     /*///// MATRIMONIAL PAGE //////*/
