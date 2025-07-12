@@ -4,10 +4,10 @@
         text-align: left;
         max-width: 13rem;
     }
-    .page-content {
+   /* .page-content {
         --padding-top: 100px;
         --padding-bottom:100px;
-    }
+    }*/
     .membership-options {
         flex-direction: row;
         justify-content: center;
@@ -17,10 +17,12 @@
         display: grid;
         grid-template-columns: 17.86% 32.14% 50%;
         height: 100vh;
-        margin: 0px auto;
+        margin: 0px auto 0px auto;
         gap: 24px;
         width: 80%;
+        padding-top:100px;
     }
+    .swiper-wrapper{padding-top:100px;}
 
     .news-wrapper{
         width: 80%;
@@ -96,7 +98,7 @@
     /* === Sidebar === */
 
     h3.filter_main_heading{border-bottom: 1px solid var(--ion-color-medium); margin: 0 0 10px 0; padding-bottom: 10px}
-    .filter-sidebar{border:1px solid var(--ion-color-medium)}
+    .filter-sidebar{border:1px solid var(--ion-color-medium); padding:15px !important; }
     .filter_main_heading_2{margin-top:10px;}
     .filter-sidebar ion-checkbox{margin:0px }
     .filter-sidebar ion-item{--padding-start: 0px;}
@@ -107,9 +109,9 @@
     .job-details-sidebar {
         height: 100%;
         background: #ffffff;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
         border-radius: 8px;
-        padding:15px;
+        padding:0px;
+        max-height: calc(100vh - 115px); overflow-y: auto;
     }
 
     .filter-sidebar-content {
