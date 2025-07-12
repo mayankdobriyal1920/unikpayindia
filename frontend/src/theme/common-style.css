@@ -14,6 +14,10 @@ hr{
     align-items: center;
     justify-content: center;
 }
+.sheet_modal_header{
+    box-shadow: unset!important;
+    border-bottom: 1px solid #cccccc!important;
+}
 .alert-wrapper .alert-message{
     color: var(--font-color);
     font-size: var(--font-size-5);
@@ -23,7 +27,23 @@ hr{
     font-size: var(--font-size-3);
     font-weight: bold;
 }
-
+.add_assignment_button {
+    height: 50px;
+    width: 50px;
+    background: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 19px 7px #00000030;
+    position: fixed;
+    right: 18px;
+    top: 85%;
+    font-size: 38px;
+    text-align: center;
+    display: flex;
+}
+.add_assignment_button ion-icon {
+    margin: auto;
+}
 .alert-wrapper .alert-button-group .alert-button{
     color: var(--primary-color);
 }

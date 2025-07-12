@@ -1,9 +1,10 @@
 import React,{useState} from "react";
 import { IonPage, IonContent, IonIcon, IonButton } from "@ionic/react";
-import {funnelOutline} from "ionicons/icons";
+import {add, funnelOutline} from "ionicons/icons";
 import AssignmentDataCard from "../components/AssignmentDataCard";
 import AssignmentsFilterSheetModal from "../components/AssignmentsFilterSheetModal";
 import AssignmentsDetailSheetPopup from "../components/AssignmentsDetailSheetPopup";
+import RaiseRFPModal from "../components/RaiseRFPModal";
 
 const rfpList = [
     {
@@ -114,6 +115,7 @@ export default function AssignmentMobilePage({handleScroll}) {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [assignmentDetail, setAssignmentDetail] = useState(rfpList[0]);
     const [isDetailOpen, setIsDetailOpen] = useState(false);
+    const [showRaiseRFP, setShowRaiseRFP] = useState(false);
 
     const callFunctionToHandleScroll = (event) => {
         handleScroll(event);
@@ -157,9 +159,11 @@ export default function AssignmentMobilePage({handleScroll}) {
 
                 <div className="matrimony-list">
                     {rfpList.map((assignment) => (
-                        <AssignmentDataCard key={assignment.id} handleDetailItemClick={handleDetailItemClick} assignment={assignment}/>
+                        <AssignmentDataCard key={assignment.id} handleDetailItemClick={handleDetailItemClick}
+                                            assignment={assignment}/>
                     ))}
                 </div>
+                <button onClick={()=>setShowRaiseRFP(true)} className={"add_assignment_button"}><IonIcon icon={add}></IonIcon></button>
             </IonContent>
             <AssignmentsDetailSheetPopup
                 isOpen={isDetailOpen}
@@ -169,6 +173,7 @@ export default function AssignmentMobilePage({handleScroll}) {
                 isOpen={isFilterOpen}
                 onDidDismiss={() => setIsFilterOpen(false)}
             />
+            <RaiseRFPModal isOpen={showRaiseRFP} onDismiss={() => setShowRaiseRFP(false)} />
         </IonPage>
     );
 }

@@ -1,9 +1,11 @@
 // JobPortalDesktopPage.tsx
 import React, {useState} from 'react';
-import { IonPage, IonContent} from '@ionic/react';
+import {IonPage, IonContent, IonIcon} from '@ionic/react';
 import AssignmentDataCard from "../components/AssignmentDataCard";
 import AssignmentDetail from "../components/AssignmentDetail";
 import AssignmentFilterSidebar from "../components/AssignmentFilterSidebar";
+import RaiseRFPModal from "../components/RaiseRFPModal";
+import {add} from "ionicons/icons";
 
 const rfpList = [
     {
@@ -109,6 +111,7 @@ const rfpList = [
 
 export default function AssignmentDesktopPage({handleScroll}) {
     const [assignmentDetail, setAssignmentDetail] = useState(rfpList[0]);
+    const [showRaiseRFP, setShowRaiseRFP] = useState(false);
 
     const handleDetailItemClick = (jobDetail)=>{
         setAssignmentDetail(jobDetail);
@@ -116,28 +119,34 @@ export default function AssignmentDesktopPage({handleScroll}) {
 
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="job-portal-desktop page-content">
+            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll}
+                        className="job-portal-desktop page-content">
                 <div className="job-portal-container three-panel-grid">
                     {/* Filter Sidebar */}
                     <aside className="filter-sidebar">
-                        <AssignmentFilterSidebar />
+                        <AssignmentFilterSidebar/>
                     </aside>
 
                     {/* Job List */}
                     <section className="job-list-section">
                         <div className="job-list">
                             {rfpList.map((assignment) => (
-                                <AssignmentDataCard key={assignment.id} handleDetailItemClick={handleDetailItemClick} assignment={assignment}/>
+                                <AssignmentDataCard key={assignment.id} handleDetailItemClick={handleDetailItemClick}
+                                                    assignment={assignment}/>
                             ))}
                         </div>
                     </section>
 
                     {/* Job Details */}
                     <aside className="job-details-sidebar">
-                        <AssignmentDetail assignmentDetail={assignmentDetail}/> {/* Replace with your details component */}
+                        <AssignmentDetail
+                            assignmentDetail={assignmentDetail}/> {/* Replace with your details component */}
                     </aside>
                 </div>
+                <button onClick={() => setShowRaiseRFP(true)} className={"add_assignment_button"}><IonIcon
+                    icon={add}></IonIcon></button>
             </IonContent>
+            <RaiseRFPModal isOpen={showRaiseRFP} onDismiss={() => setShowRaiseRFP(false)}/>
         </IonPage>
     );
 }
