@@ -174,8 +174,10 @@ export default function JobPortalMobilePage({handleScroll}) {
                             <span className="tag" onClick={()=>setIsFilterOpen(true)}>Experience</span>
                             <span className="tag" onClick={()=>setIsFilterOpen(true)}>Salary</span>
                             <span className="tag" onClick={()=>setIsFilterOpen(true)}>Role</span>
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Category</span>
                             <span className="tag" onClick={()=>setIsFilterOpen(true)}>Education</span>
+                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Location</span>
+                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Education</span>
+                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Freshness</span>
                         </div>
                     </div>
                 </div>

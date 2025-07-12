@@ -46,9 +46,9 @@ export default function FilterSheetModal({ isOpen, onDidDismiss }) {
                                 "Role",
                                 "Education",
                                 "Posted by",
+                                "Location",
                                 "Freshness",
                                 "Sort By",
-                                "Location",
                             ].map((item, i) => (
                                 <IonItem className={"filter_item_sheet_panel"} key={i} button lines="none">
                                     {item}

@@ -10,6 +10,7 @@ import matrimony6 from "../theme/images/matrimony-img-6.png";
 import FilterSheetModal from "../components/FilterSheetModal";
 import MatrimonyProfileCard from "../components/MatrimonyProfileCard";
 import JobDetailsSheetPopup from "../components/MatrimonialDetailSheetPopup";
+import MatrimonialFilterSheetModal from "../components/MatrimonialFilterSheetModal";
 
 const profiles = [
     {
@@ -172,13 +173,16 @@ export default function MatrimonialMobilePage({handleScroll}) {
                             <IonIcon icon={funnelOutline} slot="start"/>
                         </IonButton>
                         <div className="tags">
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Work mode</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Department</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Experience</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Salary</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Role</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Category</span>
+                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Religion</span>
+                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Caste</span>
+                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Community</span>
+                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Age Range</span>
                             <span className="tag" onClick={() => setIsFilterOpen(true)}>Education</span>
+                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Profession</span>
+                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Location</span>
+                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Marital Status</span>
+                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Manglik</span>
+                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Language</span>
                         </div>
                     </div>
                 </div>
@@ -193,7 +197,7 @@ export default function MatrimonialMobilePage({handleScroll}) {
                 isOpen={isDetailOpen}
                 onDidDismiss={() => setIsDetailOpen(false)}
                 matrimonialProfileDetail={matrimonialProfileDetail}/>
-            <FilterSheetModal
+            <MatrimonialFilterSheetModal
                 isOpen={isFilterOpen}
                 onDidDismiss={() => setIsFilterOpen(false)}
             />
