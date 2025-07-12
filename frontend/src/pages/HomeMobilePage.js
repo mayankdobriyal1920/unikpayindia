@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {IonContent, IonIcon, IonPage, IonRefresher, IonRefresherContent} from '@ionic/react';
 import { useSwipeable } from 'react-swipeable';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -112,6 +112,7 @@ export default function HomeMobilePage() {
     const [direction, setDirection] = useState('up');
     const [newsDetailsData, setNewsDetailsData] = useState(null);
     const [isDetailOpen, setIsDetailOpen] = useState(false);
+    const newsContentRef = useRef(null);
 
     const handlers = useSwipeable({
         onSwipedUp: () => {
@@ -153,6 +154,23 @@ export default function HomeMobilePage() {
             event.detail.complete();
         }, 2000);
     };
+
+    useEffect(() => {
+        const element = newsContentRef.current;
+        if (element) {
+            const computedStyles = getComputedStyle(element);
+            const lineHeight = parseFloat(computedStyles.lineHeight);
+
+            if (lineHeight) {
+                const heightLeft = element.clientHeight;
+                const lines = Math.floor(heightLeft / lineHeight);
+                element.style.display = "-webkit-box";
+                element.style.webkitBoxOrient = "vertical";
+                element.style.overflow = "hidden";
+                element.style.webkitLineClamp = lines.toString();
+            }
+        }
+    }, [newsContentRef,currentIndex]);
 
     const news = dummyNews[currentIndex];
 
@@ -199,7 +217,7 @@ export default function HomeMobilePage() {
                                     </div>
                                     <hr/>
                                     <h2>{news.title}</h2>
-                                    <p>{news.description}</p>
+                                    <p ref={newsContentRef}>{news.description}</p>
                                     <div className="news-footer">
                                         <span>{news.time} | {news.source}</span>
                                         <button onClick={()=>openDetailPanel(news)} className="view_news_button"> <IonIcon icon={eyeSharp}/> Read more</button>
