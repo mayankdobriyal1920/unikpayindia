@@ -28,8 +28,37 @@
         width: 80%;
     }
 
+    /* Mobile menu */
+
+    .with_login-menu-item-header-row {
+        align-items: center;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .with_login-menu-item.menu-names {
+        margin-left: 12px;
+    }
+    .with_login-menu-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: var(--font-size-4);
+        color: rgb(106 105 105);
+        margin-bottom: 30px;
+    }
+
+    .with_login-menu-item ion-icon {
+        font-size: var(--font-size-4);
+        color: var(--icon-color);
+    }
+    .with_login-menu-item span {
+        font-size: var(--font-size-4);
+        color: var(--font-color);
+    }
+
     .with_login-desktop-menu .with_login-menu-item {
-        height: 84px;
+        height: 70px;
         border-bottom: 2px solid transparent;
     }
     .with_login-desktop-menu .with_login-menu-item.active,.with_login-desktop-menu .with_login-menu-item:hover {
