@@ -11,12 +11,9 @@ import {
 } from "./CommonConstants";
 import createSocketConnection from "../socket/socket";
 const api = Axios.create({
-    baseURL: 'https://unikpayindia.com/api-ca-world/common/',
+    baseURL: 'http://77.37.45.199/api-ca-world/common/',
     withCredentials:true
 })
-
-
-
 
 
 export const actionToConnectSocketServer = () => async () => {

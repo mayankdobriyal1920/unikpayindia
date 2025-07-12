@@ -152,14 +152,14 @@ export default function MatrimonialDesktopPage({handleScroll}) {
 
                     {/* Job List */}
                     <section className="job-list-section">
-                        <div className="job-list-header">
-                            <div className="job-sort">
-                                <IonButton fill="clear" size="small">
-                                    <IonIcon icon={funnelOutline} slot="start" />
-                                    Sort by: Recommended
-                                </IonButton>
-                            </div>
-                        </div>
+                        {/*<div className="job-list-header">*/}
+                        {/*    <div className="job-sort">*/}
+                        {/*        <IonButton fill="clear" size="small">*/}
+                        {/*            <IonIcon icon={funnelOutline} slot="start" />*/}
+                        {/*            Sort by: Recommended*/}
+                        {/*        </IonButton>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <div className="job-list">
                             {profiles.map((profile) => (
                                 <MatrimonyProfileCard key={profile.id} profile={profile} />

@@ -36,10 +36,9 @@ const menuItems = [
     { label: 'Profile', icon: personSharp,pathName:'/dashboard/contact' },
 ];
 
-const HeaderAfterLoginComponent = ({pageId,hideHeader}) => {
+const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
-    const menuRef = useRef(null);
     const {pathname} = useLocation();
     const history = useHistory();
     const dispatch = useDispatch();

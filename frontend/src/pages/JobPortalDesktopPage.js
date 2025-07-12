@@ -145,14 +145,6 @@ export default function JobPortalDesktopPage({handleScroll}) {
 
                     {/* Job List */}
                     <section className="job-list-section">
-                        <div className="job-list-header">
-                            <div className="job-sort">
-                                <IonButton fill="clear" size="small">
-                                    <IonIcon icon={funnelOutline} slot="start" />
-                                    Sort by: Recommended
-                                </IonButton>
-                            </div>
-                        </div>
                         <div className="job-list">
                             {jobs.map((job) => (
                                 <JobCard key={job.id} job={job} handleJobItemClick={setJobDetailsData} />
@@ -162,7 +154,9 @@ export default function JobPortalDesktopPage({handleScroll}) {
 
                     {/* Job Details */}
                     <aside className="job-details-sidebar">
-                        <JobDetails jobDetailsData={jobDetailsData}/> {/* Replace with your details component */}
+                        <div className="job-detail-sidebar-content">
+                            <JobDetails jobDetailsData={jobDetailsData}/>
+                        </div>
                     </aside>
                 </div>
             </IonContent>

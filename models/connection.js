@@ -5,9 +5,9 @@ dotenv.config(); // Load environment variables from .env file
 // Initialize pool
 var pool = mysql.createPool({
     connectionLimit : 10,
-    host: process.env.DB_HOST || '178.16.138.111',
-    user: process.env.DB_USER || 'dbuser',
-    password: process.env.DB_PASSWORD || 'Pa$$W0rd@123$$',
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || 'CA@cool12345',
     database: process.env.DB_NAME || 'caworld',
     debug    :  false
 });

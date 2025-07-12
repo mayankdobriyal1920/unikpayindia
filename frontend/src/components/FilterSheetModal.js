@@ -23,7 +23,7 @@ export default function FilterSheetModal({ isOpen, onDidDismiss }) {
             breakpoints={[0, 0.85, 1]}
             handleBehavior="cycle"
         >
-            <IonHeader className="filter_sheet_header">
+            <IonHeader className="filter_sheet_header sheet_modal_header">
                 <IonToolbar>
                     <IonTitle className="filter_sheet_header_text">Filter jobs</IonTitle>
                     <IonButtons slot="end">

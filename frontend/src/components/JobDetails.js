@@ -8,43 +8,52 @@ import {
     IonLabel,
     IonList, IonRow, IonText,
 } from "@ionic/react";
-import {briefcaseOutline, cashOutline, locationOutline} from "ionicons/icons";
+import {
+    briefcaseOutline,
+    cashOutline,
+    informationCircleOutline,
+    informationOutline,
+    locationOutline, lockClosedOutline, star
+} from "ionicons/icons";
+import JobCard from "./JobCard";
 
 export default function JobDetails({jobDetailsData}){
     return (
-        <div className="job-detail-sidebar-content">
-            <div className="job-basic-info">
-                <IonList lines="none" className="job-basic-info-items">
-                    <IonItem>
-                        <IonIcon icon={briefcaseOutline} slot="start"/>
-                        <IonLabel>5 - 10 Years</IonLabel>
-                    </IonItem>
-                    <IonItem>
-                        <IonIcon icon={cashOutline} slot="start"/>
-                        <IonLabel>₹ 15-27.5 Lacs P.A</IonLabel>
-                    </IonItem>
-                    <IonItem>
-                        <IonIcon icon={locationOutline} slot="start"/>
-                        <IonLabel>Noida, Hyderabad</IonLabel>
-                    </IonItem>
-                </IonList>
+        <div className="job_detail_common_page">
+            {/* Basic Job Info */}
+            <div className="job-card">
+                <div className="company-icon">
+                    <img alt={"company"} src={jobDetailsData?.img_url}/>
+                </div>
+                <div className="job-info">
+                    <h3>{jobDetailsData.title}</h3>
+                    <div className="company-rating">
+                        {jobDetailsData.company} <IonIcon icon={star}/> {jobDetailsData.rating}
+                    </div>
+                    <div className="job-meta">
+                        <IonIcon icon={locationOutline}/> {jobDetailsData.location} &nbsp;|&nbsp;
+                        <IonIcon icon={lockClosedOutline}/> {jobDetailsData.experience}
+                        {jobDetailsData.salary && (
+                            <>
+                                &nbsp;|&nbsp; <IonIcon icon={cashOutline}/> {jobDetailsData.salary}
+                            </>
+                        )}
+                    </div>
+                    <div className="tags-row">
+                        {jobDetailsData.tags.map((tag, i) => (
+                            <span key={i} className="job-tag">{tag}</span>
+                        ))}
+                    </div>
+                    <div className="posted">{jobDetailsData.posted}</div>
+                </div>
             </div>
-            <hr/>
-            {/* Must Have Key Skills */}
-            <div className="job-skills">
-                <IonText color="medium"><h6>Must have key skills</h6></IonText>
-                <p>Typescript, Javascript, HTML, Backbone.js, React.js</p>
-
-                <IonText color="medium"><h6>Other key skills</h6></IonText>
-                <p>CSS, GIT, Rest APIs, JSON, JQuery</p>
-            </div>
-            <hr/>
             {/* Job Description */}
             <div className="job-description">
                 <IonText><h6>Job description</h6></IonText>
                 <p>Frontend Web Developer with strong experience in Backbone.js, React.js, Bootstrap, HTML5,
                     JavaScript and jQuery.</p>
-                <hr/>
+            </div>
+            <div className="job-key-responsiblities">
                 <IonText><h6>Key Responsibilities:</h6></IonText>
                 <ul>
                     <li>Develop and maintain user interfaces using React.js, Backbone.js, and jQuery</li>
@@ -55,7 +64,8 @@ export default function JobDetails({jobDetailsData}){
                     <li>Write clean, maintainable, and well-documented code</li>
                     <li>Debug and troubleshoot issues across browsers</li>
                 </ul>
-                <hr/>
+            </div>
+            <div className="job-requirement">
                 <IonText><h6>Requirements:</h6></IonText>
                 <ul>
                     <li>5+ years of professional front-end development experience</li>

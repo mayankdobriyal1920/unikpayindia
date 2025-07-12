@@ -38,9 +38,9 @@ const DashboardPage = () => {
     const [currentPath,setCurrentPath] = useState('home')
     const lastScrollTop = useRef(0);
     const [hideHeader, setHideHeader] = useState(false);
-    const [hideTabBar, setHideTabBar] = useState(false);
     const [showMoreSheet, setShowMoreSheet] = useState(false);
     const history = useHistory();
+    const menuRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 1000);
@@ -54,11 +54,9 @@ const DashboardPage = () => {
         if (scrollTop > lastScrollTop.current) {
             // Scrolling down
             setHideHeader(true);
-            setHideTabBar(true);
         } else {
             // Scrolling up
             setHideHeader(false);
-            setHideTabBar(false);
         }
 
         lastScrollTop.current = scrollTop <= 0 ? 0 : scrollTop;
@@ -72,12 +70,23 @@ const DashboardPage = () => {
         setCurrentPath(type)
         history.replace(path);
         setShowMoreSheet(false);
+        setHideHeader(false);
+        closeMenu();
     }
 
     const callFunctionToSetCurrentPath = (path) =>{
         setCurrentPath(path);
         setShowMoreSheet(false);
+        setHideHeader(false);
+        closeMenu();
     }
+
+    const closeMenu = () => {
+        const menu = menuRef.current;
+        if (menu) {
+            menu.close()
+        }
+    };
 
     return (
         <IonTabs>
@@ -85,7 +94,7 @@ const DashboardPage = () => {
                 <Route path="/dashboard/" render={() => (
                     <IonPage>
                         {/* Common header always visible */}
-                        <HeaderAfterLoginComponent hideHeader={hideHeader} pageId={"main-menu-content"} />
+                        <HeaderAfterLoginComponent menuRef={menuRef} hideHeader={hideHeader} pageId={"main-menu-content"} />
                         {/* Nested outlet for tab pages */}
                         <IonRouterOutlet id="main-menu-content">
                             <Route exact path="/dashboard/home" render={()=>(
