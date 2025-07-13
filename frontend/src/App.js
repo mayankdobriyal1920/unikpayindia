@@ -33,6 +33,7 @@ import NewsDetailPage from "./components/NewsDetailPage";
 import {Capacitor} from "@capacitor/core";
 import {NavigationBar} from "@mauricewegner/capacitor-navigation-bar";
 import {StatusBar, Style} from "@capacitor/status-bar";
+import appLogo from "./theme/images/site-small-logo-no-bg.png";
 
 setupIonicReact();
 
@@ -106,9 +107,14 @@ const App = () => {
             {(!userSession?.loading) ?
                 <React.Fragment>
                     {userInfo?.id ? <AppEnterMainPage/> : <PublicRoutes/>}
-                </React.Fragment>:''
+                </React.Fragment>
+                :
+                <div className={"splash_loading_screen"}>
+                    <div className={"splash_loading_screen_inner"}>
+                        <img alt={'logo'} src={appLogo}/>
+                    </div>
+                </div>
             }
-            <IonLoading className={"loading_loader_spinner_container"} isOpen={userSession?.loading} message={"Loading..."}/>
         </IonApp>
     );
 }

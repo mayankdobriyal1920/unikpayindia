@@ -104,6 +104,20 @@ input:focus{
     position: relative;
 }
 
+.loading_loader_spinner_container{
+    --spinner-color: var(--primary-color)!important;
+    font-size: var(--font-size-3);
+}
+.splash_loading_screen{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.splash_loading_screen .splash_loading_screen_inner {
+    margin: auto;
+    width: 30%;
+    height: auto;
+}
 .toggle-password {
     position: absolute;
     right: 1rem;
@@ -527,8 +541,8 @@ ion-tab-button ion-icon {
 
 .with_login-menu-item.version_no_section .version_no_section {
     width: 100%;
-    font-size: var(--font-size-3);
-    font-weight: 600;
+    font-size: var(--font-size-4);
+    font-weight: bold;
     color: var(--primary-color);
 }
 
