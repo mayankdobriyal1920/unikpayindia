@@ -147,7 +147,7 @@ export default function JobPortalDesktopPage({handleScroll}) {
                     <section className="job-list-section">
                         <div className="job-list">
                             {jobs.map((job) => (
-                                <JobCard key={job.id} job={job} handleJobItemClick={setJobDetailsData} />
+                                <JobCard key={job.id} job={job} selectedId={jobDetailsData?.id} handleJobItemClick={setJobDetailsData} />
                             ))}
                         </div>
                     </section>

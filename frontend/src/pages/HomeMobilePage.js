@@ -18,7 +18,7 @@ const dummyNews = [
             'The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday...',
         time: 'few hours ago',
         source: 'The CSR Journal',
-        imageUrl: imgNws1,
+        img_url: imgNws1,
     },
     {
         id: 2,
@@ -27,7 +27,7 @@ const dummyNews = [
             'Experts warn that the rising cost of essential goods is likely to affect household budgets The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States...',
         time: '1 day ago',
         source: 'The Financial Express',
-        imageUrl: imgNws2,
+        img_url: imgNws2,
     },
     {
         id: 3,
@@ -36,7 +36,7 @@ const dummyNews = [
             'Major technology companies announce massive layoffs as they struggle with declining revenues. Monsoon rains have led to severe flooding, displacing thousands of residents in multiple states. officials said on Saturday.\n\nNehal Modi, 46, was taken into custody on Friday, US authorities informed Indian officials, according to a report by news agency PTI. His next court appearance is scheduled for July 17, where he is expected to seek bail...',
         time: '3 days ago',
         source: 'Reuters',
-        imageUrl: imgNws3,
+        img_url: imgNws3,
     },
     {
         id: 4,
@@ -45,7 +45,7 @@ const dummyNews = [
             'Monsoon rains have led to severe flooding, displacing thousands of residents in multiple states...',
         time: '5 hours ago',
         source: 'NDTV',
-        imageUrl: imgNws4,
+        img_url: imgNws4,
     },
     {
         id: 5,
@@ -54,7 +54,7 @@ const dummyNews = [
             'The government\'s new tax reforms are expected to bring relief to some sectors but may add burden to small traders...',
         time: '2 days ago',
         source: 'Business Standard',
-        imageUrl: imgNws5,
+        img_url: imgNws5,
     },
     {
         id: 6,
@@ -63,7 +63,7 @@ const dummyNews = [
             'A Bengaluru-based startup has secured $50 million in its latest funding round to expand operations. The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday...',
         time: '10 hours ago',
         source: 'YourStory',
-        imageUrl: imgNws3,
+        img_url: imgNws3,
     },
     {
         id: 7,
@@ -72,7 +72,7 @@ const dummyNews = [
             'Doctors urge people to stay cautious as new variants emerge, stressing the need for vaccination and masks. Doctors urge people to stay cautious as new variants emerge, stressing the need for vaccination and masks...',
         time: '1 day ago',
         source: 'The Hindu',
-        imageUrl: imgNws3,
+        img_url: imgNws3,
     },
     {
         id: 8,
@@ -81,7 +81,7 @@ const dummyNews = [
             'The younger brother of fugitive diamantaire Nirav Modi has been arrested in the United States based on extradition requests submitted by the Enforcement Directorate (ED) and the Central Bureau of Investigation (CBI), officials said on Saturday...',
         time: '3 days ago',
         source: 'Times of India',
-        imageUrl: imgNws5,
+        img_url: imgNws5,
     },
     {
         id: 9,
@@ -90,7 +90,7 @@ const dummyNews = [
             'Equity benchmarks ended higher amid market volatility, driven by gains in IT and auto stocks. Equity benchmarks ended higher amid market volatility, driven by gains in IT and auto stocks...',
         time: 'few hours ago',
         source: 'Economic Times',
-        imageUrl: imgNws1,
+        img_url: imgNws1,
     },
     {
         id: 10,
@@ -99,7 +99,7 @@ const dummyNews = [
             'Aiming to boost employment, the government has launched a nationwide skill training initiative. Equity benchmarks ended higher amid market volatility, driven by gains in IT and auto stocks...',
         time: '2 days ago',
         source: 'Livemint',
-        imageUrl: imgNws2,
+        img_url: imgNws2,
     },
 ];
 
@@ -208,7 +208,7 @@ export default function HomeMobilePage() {
                                     y: 0
                                 }}
                                 transition={{ duration: 0.25 }}>
-                                <img className="news-image" src={news.imageUrl} alt={news.title} />
+                                <img className="news-image" src={news.img_url} alt={news.title} />
                                 <div className="news-content">
                                     <div className="news-sub-h-text">
                                         <div className="news-category">Finance</div>

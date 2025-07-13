@@ -2,9 +2,9 @@ import React from 'react';
 import { IonIcon } from '@ionic/react';
 import { heartOutline, locationOutline, briefcaseOutline } from 'ionicons/icons';
 
-export default function MatrimonyProfileCard({ profile,handleProfileItemClick }) {
+export default function MatrimonyProfileCard({ profile,handleProfileItemClick,selectedId }) {
     return (
-        <div className="matrimony-card" onClick={()=>handleProfileItemClick(profile)}>
+        <div className={`matrimony-card ${selectedId === profile?.id ? 'active' : ''}`} onClick={()=>handleProfileItemClick(profile)}>
             <img src={profile.profilePic} alt={profile.name} className="matrimony-card-img" />
 
             <div className="matrimony-card-info">

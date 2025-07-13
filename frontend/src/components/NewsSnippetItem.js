@@ -1,14 +1,10 @@
 import React from 'react';
 import moment from 'moment-timezone';
-import {useHistory} from "react-router-dom";
 
-export default function NewsSnippetItem({newsData}) {
-    const history = useHistory();
-    const handleClick = (id) => {
-        history.push(`/news-detail/${id}`);
-    };
+export default function NewsSnippetItem({newsData,handleListClick,selectedId}) {
+
     return (
-        <div onClick={()=>handleClick(newsData?.id)} className="news-snippet-item">
+        <div onClick={()=>handleListClick(newsData)} className={`news-snippet-item ${selectedId === newsData?.id ? 'active' : ''}`}>
             <img
                 src={newsData?.img_url}
                 alt="News"

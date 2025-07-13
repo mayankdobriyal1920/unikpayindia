@@ -3,9 +3,9 @@ import React from 'react';
 import { IonIcon } from '@ionic/react';
 import {star, locationOutline, briefcaseOutline, lockClosedOutline, cashOutline} from 'ionicons/icons';
 
-export default function JobCard({ job,handleJobItemClick }) {
+export default function JobCard({ job,handleJobItemClick,selectedId }) {
     return (
-        <div key={job.id} onClick={() => handleJobItemClick(job)} className="job-card">
+        <div key={job.id} onClick={() => handleJobItemClick(job)} className={`job-card ${selectedId === job?.id ? 'active' : ''}`}>
             <div className="company-icon">
                 <img alt={"company"} src={job?.img_url}/>
             </div>

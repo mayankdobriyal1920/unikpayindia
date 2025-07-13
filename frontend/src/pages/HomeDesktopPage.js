@@ -1,6 +1,5 @@
-import React from 'react';
-import { IonPage, IonContent } from '@ionic/react';
-import TopFeaturedNews from '../components/TopFeaturedNews';
+import React, {useState} from 'react';
+import {IonPage, IonContent} from '@ionic/react';
 import NewsFilterTabs from '../components/NewsFilterTabs';
 import NewsSnippetItem from '../components/NewsSnippetItem';
 import imgNws1 from '../theme/images/img-nws-1.png';
@@ -8,6 +7,7 @@ import imgNws2 from '../theme/images/img-nws-2.png';
 import imgNws3 from '../theme/images/img-nws-3.png';
 import imgNws4 from '../theme/images/img-nws-4.png';
 import imgNws5 from '../theme/images/img-nws-5.png';
+import NewsDetailCard from "../components/NewsDetailCard";
 
 const sampleData = [
     {
@@ -91,17 +91,30 @@ const sampleData = [
         content: 'Opinion: How small businesses can thrive in an AI-driven economy.'
     }
 ];
+
 export default function HomeDesktopPage({handleScroll}) {
+    const [newsDetailsData,setNewsDetailsData] = useState(sampleData[0]);
+
+    const handleListClick = (news)=>{
+        setNewsDetailsData(news);
+    }
+
     return (
         <IonPage>
             <IonContent onIonScroll={handleScroll} scrollEvents={true} fullscreen className="news-page page-content off-white-background-content">
-                <div className="news-wrapper">
-                    <TopFeaturedNews />
-                    <NewsFilterTabs />
-                    <div className="news-snippets-list">
-                        {sampleData.map((item) => (
-                            <NewsSnippetItem key={item.id} newsData={item} />
-                        ))}
+                <div className="news-wrapper two-grid-panel">
+                    <div className="news-snippets-list-outer">
+                        <NewsFilterTabs />
+                        <div className="news-snippets-list">
+                            {sampleData.map((item) => (
+                                <NewsSnippetItem key={item.id} selectedId={newsDetailsData?.id} newsData={item} handleListClick={handleListClick} />
+                            ))}
+                        </div>
+                    </div>
+                    <div className="news-snippets-detail">
+                        <div className="news-snippets-detail-inner">
+                            <NewsDetailCard newsDetailsData={newsDetailsData}/>
+                        </div>
                     </div>
                 </div>
             </IonContent>

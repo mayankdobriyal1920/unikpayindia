@@ -149,7 +149,7 @@ export default function MatrimonialDesktopPage({handleScroll}) {
                     <section className="job-list-section">
                         <div className="job-list">
                             {profiles.map((profile) => (
-                                <MatrimonyProfileCard key={profile.id} profile={profile} handleProfileItemClick={setMatrimonialProfileDetail} />
+                                <MatrimonyProfileCard key={profile.id} selectedId={matrimonialProfileDetail?.id} profile={profile} handleProfileItemClick={setMatrimonialProfileDetail} />
                             ))}
                         </div>
                     </section>

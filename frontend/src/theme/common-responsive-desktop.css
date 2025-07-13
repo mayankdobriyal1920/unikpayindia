@@ -24,10 +24,6 @@
     }
     .swiper-wrapper{padding-top:100px;}
 
-    .news-wrapper{
-        width: 80%;
-    }
-
     /* Mobile menu */
 
     .with_login-menu-item-header-row {
@@ -70,9 +66,10 @@
 
     /*NEWS PAGE */
     .news-wrapper {
-        max-width: 1440px;
-        margin: 0 auto;
+        max-width: 80%;
+        margin: 84px auto;
         padding: 5px 15px 15px 15px;
+        width: 80%;
     }
 
     .featured-news-card {
@@ -90,15 +87,32 @@
 
     .news-snippet-item {
         gap: 1.2rem;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
     }
 
     .news-thumbnail {
         width: 150px;
-        height: 100px;
+        height: 106px;
+        border-radius: 12px;
+    }
+
+    .news-snippets-list {
+        margin-top: 16px;
+        max-height: calc(100vh - 176px);
+        overflow-y: auto;
     }
 
     .news-title {
-        font-size: var(--font-size-3);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp:2;
+        text-overflow: ellipsis;
+        font-size: var(--font-size-4);
+        color: var(--font-color);
+        word-wrap: break-word;      /* old syntax, widely supported */
+        overflow-wrap: break-word;  /* modern syntax, does same thing */
     }
      /*fullpage news*/
     .news-detail-image-wrapper {
@@ -347,5 +361,66 @@
         margin: 0px auto 0px auto;
     }
 
+
+    .job-card {
+        border-left: 2px solid transparent;
+    }
+    .rfp-card {
+        border-left: 2px solid transparent;
+    }
+    .matrimony-card {
+        border-left: 2px solid transparent;
+    }
+    .news-snippet-item {
+        border-left: 2px solid transparent;
+    }
+
+    .news-snippets-detail {
+        max-height: calc(100vh - 115px);
+        overflow-y: auto;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 10px;
+        background: #ffffff;
+    }
+
+    .news-snippets-detail-inner {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        background: #ffffff;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin: 0 auto 0 auto;
+    }
+
+    .news-snippets-list{
+        margin: 0 auto;
+        margin-top: 16px;
+        padding: 5px 10px;
+    }
+
+    .job-card.active {
+        border-left: 2px solid var(--primary-color) !important;
+    }
+    .rfp-card.active {
+        border-left: 2px solid var(--primary-color) !important;
+    }
+    .matrimony-card.active {
+        border-left: 2px solid var(--primary-color) !important;
+    }
+    .news-snippet-item.active {
+        border-left: 2px solid var(--primary-color) !important;
+    }
+
+    .news-wrapper.two-grid-panel {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        height: 100vh;
+        margin: 0px auto 0px auto;
+        gap: 24px;
+        width: 80%;
+        padding-top: 100px;
+    }
 
 }

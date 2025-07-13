@@ -2,9 +2,9 @@ import React from 'react';
 import { IonIcon } from '@ionic/react';
 import {briefcaseOutline, calendarOutline, mailOutline} from 'ionicons/icons';
 
-export default function AssignmentDataCard({ assignment,handleDetailItemClick }) {
+export default function AssignmentDataCard({ assignment,handleDetailItemClick ,selectedId}) {
     return (
-        <div className="rfp-card" onClick={()=>handleDetailItemClick(assignment)}>
+        <div className={`rfp-card ${selectedId === assignment?.id ? 'active' : ''}`} onClick={()=>handleDetailItemClick(assignment)}>
             <div className="rfp-card-left">
                 <h4>{assignment.title}</h4>
                 <div className="rfp-details">

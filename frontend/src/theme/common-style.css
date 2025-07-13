@@ -724,18 +724,12 @@ ion-button{
     gap: 0.8rem;
     align-items: flex-start;
     border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 1rem;
 }
 
-.news-thumbnail {
-    width: 100px;
-    height: 100px;
-    border-radius: 12px;
-    object-fit: cover;
-}
 
 .news-snippet-content {
     flex: 1;
+    padding: 10px 0;
 }
 
 .news-category {
@@ -830,6 +824,17 @@ ion-checkbox {
     margin-bottom: 1rem;
 }
 
+.news-detail-source span {
+    font-size: var(--font-size-4);
+    color: var(--font-color-light);
+}
+
+.news-detail-source strong {
+    font-size: var(--font-size-4);
+    color: var(--font-color);
+    font-weight: bold;
+}
+
 .news-detail-source img {
     width: 40px;
     height: 40px;
@@ -838,7 +843,8 @@ ion-checkbox {
 
 .news-detail-content p {
     line-height: 1.6;
-    color: #333;
+    font-size: var(--font-size-3);
+    color: var(--font-color);
     text-align: justify;
 }
 

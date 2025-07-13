@@ -131,7 +131,7 @@ export default function AssignmentDesktopPage({handleScroll}) {
                     <section className="job-list-section">
                         <div className="job-list">
                             {rfpList.map((assignment) => (
-                                <AssignmentDataCard key={assignment.id} handleDetailItemClick={handleDetailItemClick}
+                                <AssignmentDataCard selectedId={assignmentDetail?.id} key={assignment.id} handleDetailItemClick={handleDetailItemClick}
                                                     assignment={assignment}/>
                             ))}
                         </div>
