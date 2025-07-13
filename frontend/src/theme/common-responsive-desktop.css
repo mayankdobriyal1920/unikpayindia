@@ -337,7 +337,11 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         border-radius: 12px;
     }
-
+    .membership-row {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
     .desktop-contain-feed {
         width: 50%;
         margin: 0px auto 0px auto;

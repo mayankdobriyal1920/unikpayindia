@@ -1591,36 +1591,64 @@ ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
     text-align: center;
 }
 
+.desktop-contain-membership {
+    text-align: center;
+    width: 50%;
+    margin: 96px auto;
+}
+
+.mobile-contain-membership {
+    padding: 24px 16px;
+    text-align: center;
+}
+
 .membership-title {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-    color: #1a1a1a;
+    font-size: var(--font-size-2);
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .membership-description {
-    font-size: 1rem;
-    color: #555;
+    font-size: var(--font-size-3);
+    color: var(--font-color-light);
     margin-bottom: 24px;
 }
 
-.membership-card {
-    margin-bottom: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.membership-card-custom {
+    background: #ffffff;
     border-radius: 12px;
+    padding: 24px 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    text-align: left;
 }
 
-.membership-amount {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #0070f3;
-    margin: 12px 0;
+.membership-type {
+    font-size: var(--font-size-3);
+    color: var(--font-color);
+    margin-top:0px;
+    font-weight: bold;
+}
+
+.membership-price {
+    font-size: var(--font-size-4);
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.membership-benefits {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 16px;
 }
 
 .join-now-button {
-    --background: #28a745;
-    --color: #fff;
-    border-radius: 8px;
+    --background: var(--primary-color);
+    --color: #ffffff;
+    font-size: var(--font-size-3);
     text-transform: none;
 }
+
 
 /*//////// MEMBER SHIP CSS /////////*/

@@ -337,7 +337,11 @@
     .filter-header-wrapper.sticky {
         transform: translateY(-70px); /* slide up */
     }
-
+    .membership-row {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
     .mobile-job-list-page .job-list{
         padding-top: 20px;
     }
