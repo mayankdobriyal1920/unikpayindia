@@ -15,7 +15,7 @@ import {
     homeSharp,
     briefcaseSharp,
     heartSharp,
-    notificationsSharp, clipboardSharp, calendarSharp, newspaperSharp, cashSharp, medalSharp,
+    notificationsSharp, clipboardSharp, calendarSharp, newspaperSharp, cashSharp, medalSharp, searchOutline,
 } from 'ionicons/icons';
 import appLogo from '../theme/images/logo-big.png';
 import {useHistory, useLocation} from "react-router";
@@ -127,16 +127,11 @@ const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef,setCurrentPath}) =
                                             </div>
                                         </div>
                                     </IonCol>
-                                    <IonCol size="8">
+                                    <IonCol size="9">
                                         <div className={"user_full_info"}>
                                             <div className="user_full_name">Mayank Dobriyal</div>
                                             <div className="user_full_email">mayankdobriyal1920@gmail.com</div>
                                             <div className="user_full_contact">+91-7017935899</div>
-                                        </div>
-                                    </IonCol>
-                                    <IonCol size="1">
-                                        <div className={"close_header_menu"}>
-                                            <IonIcon onClick={toggleMenu} icon={closeOutline}/>
                                         </div>
                                     </IonCol>
                                 </IonRow>
@@ -273,14 +268,8 @@ const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef,setCurrentPath}) =
                         </IonButtons>
                     )}
                     <IonButtons slot="end" className="with_login-icons">
-                        {/*<IonButton className="header_button_right">*/}
-                        {/*    <IonIcon icon={searchOutline}/>*/}
-                        {/*</IonButton>*/}
                         <IonButton className="header_button_right">
-                            <div className="notification-icon">
-                                <IonIcon icon={notificationsSharp} />
-                                <span className="notification-badge">3</span>  {/* Replace 3 with your dynamic count */}
-                            </div>
+                            <IonIcon icon={searchOutline}/>
                         </IonButton>
                     </IonButtons>
                 </IonToolbar>

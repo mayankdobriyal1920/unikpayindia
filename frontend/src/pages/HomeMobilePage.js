@@ -157,19 +157,22 @@ export default function HomeMobilePage() {
     useLayoutEffect(() => {
         const element = newsContentRef.current;
         if (element) {
-            const computedStyles = getComputedStyle(element);
-            const lineHeight = parseFloat(computedStyles.lineHeight);
-
-            if (lineHeight) {
-                const heightLeft = element.clientHeight;
-                const lines = Math.floor(heightLeft / lineHeight);
-                element.style.display = "-webkit-box";
-                element.style.webkitBoxOrient = "vertical";
-                element.style.overflow = "hidden";
-                element.style.webkitLineClamp = lines.toString();
-            }
+            // Delay to let layout settle
+            setTimeout(() => {
+                const computedStyles = getComputedStyle(element);
+                const lineHeight = parseFloat(computedStyles.lineHeight);
+                if (lineHeight) {
+                    const heightLeft = element.clientHeight;
+                    const lines = Math.floor(heightLeft / lineHeight);
+                    element.style.display = "-webkit-box";
+                    element.style.webkitBoxOrient = "vertical";
+                    element.style.overflow = "hidden";
+                    element.style.webkitLineClamp = lines.toString();
+                }
+            }, 50); // Small delay helps when fonts/images affect layout
         }
-    }, [newsContentRef,currentIndex]);
+    }, [newsContentRef, currentIndex]);
+
 
     const news = dummyNews[currentIndex];
 

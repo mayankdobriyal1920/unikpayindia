@@ -32,6 +32,12 @@ import NewsletterDesktopPage from "./NewsletterDesktopPage";
 import AssignmentMobilePage from "./AssignmentMobilePage";
 import AssignmentDesktopPage from "./AssignmentDesktopPage";
 import {useHistory} from "react-router-dom";
+import EventsDesktopPage from "./EventsDesktopPage";
+import EventsMobilePage from "./EventsMobilePage";
+import ContributeDesktopPage from "./ContributeDesktopPage";
+import ContributeMobilePage from "./ContributeMobilePage";
+import MembershipDesktopPage from "./MembershipDesktopPage";
+import MembershipMobilePage from "./MembershipMobilePage";
 
 const DashboardPage = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
@@ -154,9 +160,29 @@ const DashboardPage = () => {
                             <Route exact path="/dashboard/events" render={()=>(
                                 <>
                                     {(isMobile) ?
-                                        <NewsletterMobilePage handleScroll={handleScroll} />
+                                        <EventsMobilePage handleScroll={handleScroll} />
                                         :
-                                        <NewsletterDesktopPage handleScroll={handleScroll} />
+                                        <EventsDesktopPage handleScroll={handleScroll} />
+                                    }
+                                </>
+                            )} />
+
+                            <Route exact path="/dashboard/contribute" render={()=>(
+                                <>
+                                    {(isMobile) ?
+                                        <ContributeMobilePage handleScroll={handleScroll} />
+                                        :
+                                        <ContributeDesktopPage handleScroll={handleScroll} />
+                                    }
+                                </>
+                            )} />
+
+                            <Route exact path="/dashboard/membership" render={()=>(
+                                <>
+                                    {(isMobile) ?
+                                        <MembershipMobilePage handleScroll={handleScroll} />
+                                        :
+                                        <MembershipDesktopPage handleScroll={handleScroll} />
                                     }
                                 </>
                             )} />

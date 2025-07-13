@@ -522,7 +522,7 @@ ion-tab-button ion-icon {
 .with_login-menu-item.version_no_section {
     text-align: center;
     width: 100%;
-    margin-top:20px;
+    margin-bottom: 0.8rem!important;
 }
 
 .with_login-menu-item.version_no_section .version_no_section {
@@ -532,12 +532,18 @@ ion-tab-button ion-icon {
     color: var(--primary-color);
 }
 
+ion-button{
+    --background-activated: unset!important;
+    --background-focused: unset!important;
+    --background-hover: unset!important;
+    --background-focused-opacity: unset!important;
+    --background-activated-opacity: unset!important;
+    opacity: 1!important;
+}
 
 .logout_button_menu {
     width: 100%;
     --background: var(--primary-color);
-    --border-radius: 2rem;
-    height: 40px;
     font-size: var(--font-size-4);
 }
 
@@ -1164,16 +1170,15 @@ ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
 
 .close_job_detail_button{
     --background: #ffffff;
-    --font-size: var(--font-size-3);
-    font-size: var(--font-size-3);
+    --font-size: var(--font-size-5);
+    font-size: var(--font-size-5);
     --color: var(--font-color);
     --box-shadow: var(--common-box-shadow);
 }
 
 .apply_job_button{
     --background: var(--primary-color);
-    font-size: var(--font-size-4);
-    box-shadow: var(--common-box-shadow);
+    font-size: var(--font-size-5);
 }
 
 .job-basic-info-text{
@@ -1405,3 +1410,83 @@ ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
 }
 
 /*////// NEWS LETTER CSS ////////*/
+
+
+
+
+/*/////// EVENTS PAGE CSS /////////*/
+
+.mobile-contain-feed-events {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px;
+}
+
+.event-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.event-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.event-details {
+    padding: 16px;
+}
+
+.event-title {
+    margin: 0 0 8px;
+    font-size: var(--font-size-3);
+    color: var(--primary-color);
+}
+
+.event-description {
+    margin: 0 0 12px;
+    font-size: var(--font-size-4);
+    color: var(--font-color);
+}
+
+.event-date-time, .event-location {
+    margin: 4px 0;
+    font-size: var(--font-size-5);
+    color: #333333;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+}
+
+.event-date-time ion-icon, .event-location ion-icon{
+    margin-right: 5px!important;
+    font-size: var(--font-size-4);
+}
+
+.event-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.event-price {
+    font-size: var(--font-size-3);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.buy-now-button {
+    --background: var(--primary-color);
+    --color: #ffffff;
+    text-transform: none!important;
+}
+
+.buy-now-button:hover {
+    --background: var(--primary-color);
+}
+
+/*/////// EVENTS PAGE CSS /////////*/

@@ -1,11 +1,11 @@
 import React from 'react';
-import {IonPage, IonContent, IonButton, IonIcon} from '@ionic/react';
+import {IonPage, IonContent} from '@ionic/react';
 import newsLetter1 from '../theme/images/news-letter-1.png';
 import newsLetter2 from '../theme/images/news-letter-2.png';
 import newsLetter3 from '../theme/images/news-letter-3.png';
 import newsLetter4 from '../theme/images/news-letter-4.png';
 import newsLetter5 from '../theme/images/news-letter-5.png';
-import {downloadOutline} from "ionicons/icons";
+import NewsLetterCard from "../components/NewsLetterCard";
 
 const mockPosts = [
     {
@@ -81,24 +81,13 @@ const mockPosts = [
 ];
 
 
-export default function NewsletterMobilePage() {
+export default function NewsletterMobilePage({handleScroll}) {
     return (
         <IonPage>
-            <IonContent fullscreen className="feed-content page-content">
+            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="feed-content page-content">
                 <div className="feed-list">
                     {mockPosts.map(post => (
-                        <div className="feed-item" key={post.id}>
-                            <img src={post.image} alt={post.title} className="feed-image" />
-                            <div className="feed-text">
-                                <div className="feed-text-1-div">
-                                    <h2 className="feed-title">{post.title}</h2>
-                                    <p className="feed-caption">{post.caption}</p>
-                                </div>
-                                <IonButton expand="block" className="download-button" href={post.downloadLink}>
-                                    <IonIcon icon={downloadOutline}/>
-                                </IonButton>
-                            </div>
-                        </div>
+                        <NewsLetterCard key={post?.id} post={post}/>
                     ))}
                 </div>
             </IonContent>

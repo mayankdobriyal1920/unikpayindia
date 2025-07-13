@@ -189,7 +189,7 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        padding: 0 12px;
+        padding: 0 1rem;
         text-overflow: ellipsis;
         line-height: 1.5;
         font-size: var(--font-size-3);
