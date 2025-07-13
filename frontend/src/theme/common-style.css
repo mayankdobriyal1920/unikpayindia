@@ -553,6 +553,7 @@ ion-button{
     --background-focused-opacity: unset!important;
     --background-activated-opacity: unset!important;
     opacity: 1!important;
+    text-transform: none!important;
 }
 
 .logout_button_menu {

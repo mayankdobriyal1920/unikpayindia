@@ -17,7 +17,7 @@ export default function RaiseRFPModal({ isOpen, onDismiss }) {
     const [rfpType, setRfpType] = useState('Assignment');
 
     return (
-        <IonModal className="sheet_modal_header" isOpen={isOpen} onDidDismiss={onDismiss} breakpoints={[0, 0.5, 0.9]} initialBreakpoint={0.9}>
+        <IonModal className="sheet_modal_header" isOpen={isOpen} onDidDismiss={onDismiss} breakpoints={[0, 0.9]} initialBreakpoint={0.9}>
             <IonHeader className="job_detail_sheet_header sheet_modal_header">
                 <IonToolbar>
                     <IonTitle>Raise RFP</IonTitle>
