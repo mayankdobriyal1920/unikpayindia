@@ -330,14 +330,12 @@
         padding-top: 10px;
         background: #ffffff;
         border-bottom: 1px solid #ddd;
-
         transform: translateY(0); /* default position */
         transition: transform 0.3s ease-in-out, padding-top 0.3s ease-in-out;
     }
 
     .filter-header-wrapper.sticky {
         transform: translateY(-70px); /* slide up */
-        padding-top: 1rem; /* optional, will animate too */
     }
 
     .mobile-job-list-page .job-list{
