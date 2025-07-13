@@ -323,19 +323,23 @@
 
     .filter-header-wrapper {
         position: sticky;
+        top: -6px;
         width: 100%;
         z-index: 10;
-        top: -6px;
         display: flex;
         padding-top: 12px;
         background: #ffffff;
         border-bottom: 1px solid #ddd;
-        transition: transform 0.3s ease-in-out;
+
+        transform: translateY(0); /* default position */
+        transition: transform 0.3s ease-in-out, padding-top 0.3s ease-in-out;
     }
+
     .filter-header-wrapper.sticky {
-        top: -70px;
-        padding-top: 1rem;
+        transform: translateY(-70px); /* slide up */
+        padding-top: 1rem; /* optional, will animate too */
     }
+
     .mobile-job-list-page .job-list{
         padding-top: 20px;
     }
