@@ -555,7 +555,11 @@ ion-button{
     opacity: 1!important;
     text-transform: none!important;
 }
-
+.lazy-load-image-background.blur.lazy-load-image-loaded {
+    filter: blur(0);
+    height: auto !important;
+    transition: filter .1s;
+}
 .logout_button_menu {
     width: 100%;
     --background: var(--primary-color);
@@ -878,8 +882,8 @@ ion-tab-bar.hide_element {
 }
 .with_login-menu-button .profile-avatar {
     position: relative;
-    width: 42px;       /* adjust size */
-    height: 42px;
+    width: 40px;       /* adjust size */
+    height: 40px;
 }
 
 .with_login-menu-button .avatar-img {

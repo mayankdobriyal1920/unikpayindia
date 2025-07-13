@@ -236,7 +236,7 @@
     /*///// NEWS PAGE /////*/
 
     .header_button_right ion-icon{
-        font-size: var(--font-size-1);
+        font-size: 24px;
     }
     .with_login-menu-item.menu-names.active span {
         color: var(--primary-color);
@@ -370,7 +370,7 @@
     }
 
     .with_login-title_in_center_mob .with_login-logo-mob {
-        width: 105px;
+        width: 95px;
         margin: auto;
         height: auto;
     }
