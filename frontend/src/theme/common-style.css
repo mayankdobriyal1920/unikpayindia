@@ -1030,7 +1030,7 @@ ion-modal.sheet_modal_header ion-label.sc-ion-label{margin-bottom: 10px}
     color: #666;
 }
 
-.submit-btn {margin-top: 0px;background: var(--primary-color) !important;}
+.submit-btn {margin-top: 0;--background: var(--primary-color) !important;}
 .item-native{--padding-start: 0px !important;}
 ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
 :host(.button-solid){--background: var(--primary-color)}
