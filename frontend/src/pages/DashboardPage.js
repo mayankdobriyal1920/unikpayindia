@@ -4,21 +4,21 @@ import {
     IonTabBar,
     IonTabButton,
     IonIcon,
-    IonLabel, IonTabs, IonPage, IonModal, IonContent, IonButton
+    IonLabel, IonTabs, IonPage, IonModal, IonContent
 } from '@ionic/react';
-import {Route, Redirect } from 'react-router-dom';
+import {Route, Redirect,useLocation } from 'react-router-dom';
 
 
 import HomeDesktopPage from './HomeDesktopPage';
 import JobPortalMobilePage from './JobPortalMobilePage';
 import MatrimonialMobilePage from './MatrimonialMobilePage';
-import MagazinePage from './MagazinePage';
+import NewsletterMobilePage from './NewsletterMobilePage';
 import {
     briefcaseOutline,
     briefcaseSharp, calendarOutline, calendarSharp, cashOutline, cashSharp,
     clipboardOutline,
     clipboardSharp,
-    ellipsisHorizontalOutline, ellipsisHorizontalSharp,
+    ellipsisHorizontalSharp,
     heartOutline,
     heartSharp,
     homeOutline,
@@ -28,19 +28,24 @@ import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
 import JobPortalDesktopPage from "./JobPortalDesktopPage";
 import HomeMobilePage from "./HomeMobilePage";
 import MatrimonialDesktopPage from "./MatrimonialDesktopPage";
-import MagazineDesktopPage from "./MagazineDesktopPage";
+import NewsletterDesktopPage from "./NewsletterDesktopPage";
 import AssignmentMobilePage from "./AssignmentMobilePage";
 import AssignmentDesktopPage from "./AssignmentDesktopPage";
 import {useHistory} from "react-router-dom";
 
 const DashboardPage = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
-    const [currentPath,setCurrentPath] = useState('home')
+    const [currentPath,setCurrentPath] = useState('/dashboard/home')
     const lastScrollTop = useRef(0);
     const [hideHeader, setHideHeader] = useState(false);
     const [showMoreSheet, setShowMoreSheet] = useState(false);
     const history = useHistory();
     const menuRef = useRef(null);
+    const {pathname} = useLocation();
+
+    useEffect(() => {
+        setCurrentPath(pathname);
+    }, [pathname]);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 1000);
@@ -94,7 +99,7 @@ const DashboardPage = () => {
                 <Route path="/dashboard/" render={() => (
                     <IonPage>
                         {/* Common header always visible */}
-                        <HeaderAfterLoginComponent menuRef={menuRef} hideHeader={hideHeader} pageId={"main-menu-content"} />
+                        <HeaderAfterLoginComponent menuRef={menuRef} setCurrentPath={setCurrentPath} hideHeader={hideHeader} pageId={"main-menu-content"} />
                         {/* Nested outlet for tab pages */}
                         <IonRouterOutlet id="main-menu-content">
                             <Route exact path="/dashboard/home" render={()=>(
@@ -136,12 +141,22 @@ const DashboardPage = () => {
                                 </>
                             )} />
 
-                            <Route exact path="/dashboard/magazine" render={()=>(
+                            <Route exact path="/dashboard/newsletter" render={()=>(
                                 <>
                                     {(isMobile) ?
-                                        <MagazinePage handleScroll={handleScroll} />
+                                        <NewsletterMobilePage handleScroll={handleScroll} />
                                         :
-                                        <MagazineDesktopPage handleScroll={handleScroll} />
+                                        <NewsletterDesktopPage handleScroll={handleScroll} />
+                                    }
+                                </>
+                            )} />
+
+                            <Route exact path="/dashboard/events" render={()=>(
+                                <>
+                                    {(isMobile) ?
+                                        <NewsletterMobilePage handleScroll={handleScroll} />
+                                        :
+                                        <NewsletterDesktopPage handleScroll={handleScroll} />
                                     }
                                 </>
                             )} />
@@ -156,22 +171,22 @@ const DashboardPage = () => {
                 style={{display: !isMobile ? 'none' : ''}}
                 className={`custom-tabbar main-tab-bar`}
             >
-                <IonTabButton tab="home" className={"custom-ripple-color"} onClick={()=>callFunctionToSetCurrentPath('home')} href="/dashboard/home">
-                    <IonIcon icon={currentPath === 'home' ? homeSharp : homeOutline} />
+                <IonTabButton tab="home" className={"custom-ripple-color"} onClick={()=>callFunctionToSetCurrentPath('/dashboard/home')} href="/dashboard/home">
+                    <IonIcon icon={currentPath === '/dashboard/home' ? homeSharp : homeOutline} />
                     <IonLabel>Home</IonLabel>
                 </IonTabButton>
 
-                <IonTabButton tab="job" className={"custom-ripple-color"} onClick={()=>callFunctionToSetCurrentPath('job')} href="/dashboard/job-portal">
-                    <IonIcon icon={currentPath === 'job' ? briefcaseSharp : briefcaseOutline} />
+                <IonTabButton tab="job" className={"custom-ripple-color"} onClick={()=>callFunctionToSetCurrentPath('/dashboard/job-portal')} href="/dashboard/job-portal">
+                    <IonIcon icon={currentPath === '/dashboard/job-portal' ? briefcaseSharp : briefcaseOutline} />
                     <IonLabel>Job</IonLabel>
                 </IonTabButton>
 
-                <IonTabButton tab="assignments" className={"custom-ripple-color"} onClick={()=>callFunctionToSetCurrentPath('assignments')} href="/dashboard/assignments">
-                    <IonIcon icon={currentPath === 'assignments' ? clipboardSharp : clipboardOutline} />
+                <IonTabButton tab="assignments" className={"custom-ripple-color"} onClick={()=>callFunctionToSetCurrentPath('/dashboard/assignments')} href="/dashboard/assignments">
+                    <IonIcon icon={currentPath === '/dashboard/assignments' ? clipboardSharp : clipboardOutline} />
                     <IonLabel>Assignments</IonLabel>
                 </IonTabButton>
 
-                <IonTabButton tab="more" className={`custom-ripple-color ${(currentPath === 'matrimonial' || currentPath === 'events' || currentPath === 'newsletter' || currentPath === 'contribute') ? 'tab-selected' : ''}`} onClick={()=> callFunctionToOpenShowMoreSheet()}>
+                <IonTabButton tab="more" className={`custom-ripple-color ${(currentPath === '/dashboard/matrimonial' || currentPath === '/dashboard/events' || currentPath === '/dashboard/newsletter' || currentPath === '/dashboard/contribute') ? 'tab-selected' : ''}`} onClick={()=> callFunctionToOpenShowMoreSheet()}>
                     <IonIcon icon={ellipsisHorizontalSharp} />
                     <IonLabel>More</IonLabel>
                     <IonModal
@@ -182,31 +197,31 @@ const DashboardPage = () => {
                         className="more-sheet-modal">
                         <IonContent className="ion-padding">
                             <div className="more-sheet-grid">
-                                <div onClick={() => gotToPage('/dashboard/matrimonial', 'matrimonial')}
-                                     className={`more-sheet-item ${currentPath === 'matrimonial' ? 'active' : ''}`}>
+                                <div onClick={() => gotToPage('/dashboard/matrimonial', '/dashboard/matrimonial')}
+                                     className={`more-sheet-item ${currentPath === '/dashboard/matrimonial' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={currentPath === 'matrimonial' ? heartSharp: heartOutline}/>
+                                            <IonIcon icon={currentPath === '/dashboard/matrimonial' ? heartSharp: heartOutline}/>
                                         </div>
                                         <span>Matrimonial</span>
                                     </div>
-                                <div onClick={() => gotToPage('/dashboard/events', 'events')}
-                                     className={`more-sheet-item ${currentPath === 'events' ? 'active' : ''}`}>
+                                <div onClick={() => gotToPage('/dashboard/events', '/dashboard/events')}
+                                     className={`more-sheet-item ${currentPath === '/dashboard/events' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={currentPath === 'events' ? calendarSharp: calendarOutline}/>
+                                            <IonIcon icon={currentPath === '/dashboard/events' ? calendarSharp: calendarOutline}/>
                                         </div>
                                         <span>Events</span>
                                     </div>
-                                <div onClick={() => gotToPage('/dashboard/newsletter', 'newsletter')}
-                                     className={`more-sheet-item ${currentPath === 'newsletter' ? 'active' : ''}`}>
+                                <div onClick={() => gotToPage('/dashboard/newsletter', '/dashboard/newsletter')}
+                                     className={`more-sheet-item ${currentPath === '/dashboard/newsletter' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={currentPath === 'newsletter' ? newspaperSharp: newspaperOutline}/>
+                                            <IonIcon icon={currentPath === '/dashboard/newsletter' ? newspaperSharp: newspaperOutline}/>
                                         </div>
                                         <span>Newsletter</span>
                                     </div>
-                                <div onClick={() => gotToPage('/dashboard/contribute', 'contribute')}
-                                     className={`more-sheet-item ${currentPath === 'contribute' ? 'active' : ''}`}>
+                                <div onClick={() => gotToPage('/dashboard/contribute', '/dashboard/contribute')}
+                                     className={`more-sheet-item ${currentPath === '/dashboard/contribute' ? 'active' : ''}`}>
                                         <div className="more-tile">
-                                            <IonIcon icon={currentPath === 'contribute' ? cashSharp : cashOutline}/>
+                                            <IonIcon icon={currentPath === '/dashboard/contribute' ? cashSharp : cashOutline}/>
                                         </div>
                                         <span>Contribute</span>
                                     </div>

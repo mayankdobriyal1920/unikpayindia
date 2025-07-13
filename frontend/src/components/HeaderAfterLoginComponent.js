@@ -30,12 +30,12 @@ const menuItems = [
     { label: 'Assignments', icon: clipboardSharp,pathName:'/dashboard/assignments' },
     { label: 'Matrimonial', icon: heartSharp,pathName:'/dashboard/matrimonial' },
     { label: 'Events', icon: calendarSharp,pathName:'/dashboard/events' },
-    { label: 'Newsletter', icon: newspaperSharp,pathName:'/dashboard/magazine' },
+    { label: 'Newsletter', icon: newspaperSharp,pathName:'/dashboard/newsletter' },
     { label: 'Contribute', icon: cashSharp,pathName:'/dashboard/contribute' },
     { label: 'Membership', icon:medalSharp ,pathName:'/dashboard/membership' },
 ];
 
-const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef}) => {
+const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef,setCurrentPath}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
     const {pathname} = useLocation();
@@ -43,9 +43,10 @@ const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef}) => {
     const dispatch = useDispatch();
     const [presentAlert] = useIonAlert();
 
-    const goToPage =(page)=>{
+    const goToPage =(page,pathName)=>{
         history.replace(page);
         toggleMenu();
+        setCurrentPath(page);
     }
 
     useEffect(() => {
