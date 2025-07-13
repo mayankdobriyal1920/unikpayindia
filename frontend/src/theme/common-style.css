@@ -380,6 +380,12 @@ ion-toolbar.header-common-tab {
     font-size: var(--font-size-3);
     color: var(--font-color);
     transition: transform 0.3s ease;
+    --padding-bottom: 8px !important;
+    --padding-top: 8px !important;
+    --padding-left: 1.1rem !important;
+    --padding-right: 1.1rem !important;
+    --padding-start: 1.1rem !important;
+    --padding-end: 1.1rem !important;
 }
 
 .with_login-menu-button.open ion-icon {
@@ -412,10 +418,14 @@ ion-toolbar.header-common-tab {
 }
 
 
-
 .custom-tabbar {
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
     border-top: 1px solid #ddd;
+    --background: #ffffff!important;
+}
+
+ion-tab-button ion-icon {
+    font-size: var(--font-size-2)!important;
 }
 
 .with_login-desktop-menu .with_login-menu-item.active {

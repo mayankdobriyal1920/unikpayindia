@@ -32,6 +32,31 @@
         font-size: var(--font-size-4);
     }
 
+    ion-modal {
+        --height: calc(100% - (var(--ion-safe-area-top) + 10px))!important;
+    }
+    /* Target the modal content specifically */
+    ion-modal.more-sheet-modal ion-content {
+        --padding-bottom: 56px;
+    }
+
+    /* OR for scrollable areas inside the modal */
+    .more-sheet-modal{
+        margin-bottom: 3.12rem!important;
+    }
+
+    .header-ios ion-toolbar:last-of-type {
+        --border-width: 0!important;
+        --background: #ffffff!important;
+        --border: unset!important;
+        --padding-bottom: 0px !important;
+        --padding-top: 0px !important;
+        --padding-left: 0px !important;
+        --padding-right: 0px !important;
+        --padding-start: 0px !important;
+        --padding-end: 0px !important;
+    }
+
     .sudo_search_div_place_holder_search {
         display: flex;
         align-items: center;
@@ -242,6 +267,7 @@
         font-size: var(--font-size-4);
         align-self: flex-start;
         width: 8%!important;
+        --ripple-color: transparent!important;
     }
 
     .filter-header .tags {
@@ -294,11 +320,6 @@
         box-shadow: unset!important;
         border-bottom: 1px solid #cccccc!important;
     }
-
-    .more-sheet-modal {
-        margin-bottom: 56px!important;
-    }
-
 
     .filter-header-wrapper {
         position: sticky;
