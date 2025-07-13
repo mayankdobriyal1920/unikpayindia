@@ -988,7 +988,8 @@ span.swiper-pagination-bullet {
 
 /*//////////// ASSIGNMENTS MODAL //////////////*/
 ion-modal.sheet_modal_header ion-label.sc-ion-label{margin-bottom: 10px}
-
+.textarea-wrapper.sc-ion-textarea-md textarea.sc-ion-textarea-md {border:1px solid var(--ion-color-medium); padding:10px; font-size: 14px; margin-top: 5px;}
+.input-label-placement-start .native-wrapper.sc-ion-input-md{border:1px solid var(--ion-color-medium); padding:10px; font-size: 14px; margin-top: 5px;}
 .rfp-type-toggle {
     display: flex;
     gap: 10px;
@@ -1029,12 +1030,11 @@ ion-modal.sheet_modal_header ion-label.sc-ion-label{margin-bottom: 10px}
     color: #666;
 }
 
-.submit-btn {
-    margin-top: 0px;
-}
+.submit-btn {margin-top: 0px;background: var(--primary-color) !important;}
 .item-native{--padding-start: 0px !important;}
 ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
-
+:host(.button-solid){--background: var(--primary-color)}
+button.button-native{background: inherit !important;}
 /*//////////// ASSIGNMENTS MODAL //////////////*/
 
 
