@@ -44,7 +44,7 @@ export default function RaiseRFPModal({ isOpen, onDismiss }) {
 
                 <IonLabel>Minimum Price Offered</IonLabel>
                 <IonItem className={"ion-no-padding ion-margin-bottom"}>
-                    <IonButton fill="outline" expand="block">Attach PDF</IonButton>
+                    <IonButton className={"attach-pdf"} fill="outline" expand="block">Attach PDF</IonButton>
                 </IonItem>
 
                 <IonLabel>Email ID</IonLabel>

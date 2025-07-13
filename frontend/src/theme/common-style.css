@@ -988,8 +988,8 @@ span.swiper-pagination-bullet {
 
 /*//////////// ASSIGNMENTS MODAL //////////////*/
 ion-modal.sheet_modal_header ion-label.sc-ion-label{margin-bottom: 10px}
-.textarea-wrapper.sc-ion-textarea-md textarea.sc-ion-textarea-md {border:1px solid var(--ion-color-medium); padding:10px; font-size: 14px; margin-top: 5px;}
-.input-label-placement-start .native-wrapper.sc-ion-input-md{border:1px solid var(--ion-color-medium); padding:10px; font-size: 14px; margin-top: 5px;}
+.textarea-wrapper.sc-ion-textarea-md textarea.sc-ion-textarea-md {border:1px solid var(--ion-color-medium); padding:10px; font-size: 14px; margin-top: 5px; border-radius: 4px;}
+.input-label-placement-start .native-wrapper.sc-ion-input-md{border:1px solid var(--ion-color-medium); padding:10px; font-size: 14px; margin-top: 5px; border-radius: 4px}
 .rfp-type-toggle {
     display: flex;
     gap: 10px;
@@ -1006,7 +1006,7 @@ ion-modal.sheet_modal_header ion-label.sc-ion-label{margin-bottom: 10px}
 }
 
 .rfp-type-toggle button.active {
-    background: #222;
+    background: var(--primary-color);
     color: #fff;
 }
 
@@ -1030,8 +1030,9 @@ ion-modal.sheet_modal_header ion-label.sc-ion-label{margin-bottom: 10px}
     color: #666;
 }
 
-.submit-btn {margin-top: 0;--background: var(--primary-color) !important;}
+.submit-btn {margin-top: 0; --background: var(--primary-color) !important;}
 ion-label{font-size: var(--font-size-4); font-weight: 500}
+.attach-pdf{--border-color: var(--primary-color) !important; color: var(--primary-color)}
 
 /*//////////// ASSIGNMENTS MODAL //////////////*/
 
