@@ -13,7 +13,7 @@ export default function EventsCard({ event }) {
                 <p className="event-date-time"><IonIcon icon={calendarOutline}/> {event.dateTime}</p>
                 <p className="event-location"><IonIcon icon={locationOutline}/> {event.location}</p>
                 <div className="event-footer">
-                    <span className="event-price">{event.price}</span>
+                    <span className="event-price">₹{event.price}</span>
                     <IonButton size="small" className="buy-now-button">
                         Buy Now
                     </IonButton>

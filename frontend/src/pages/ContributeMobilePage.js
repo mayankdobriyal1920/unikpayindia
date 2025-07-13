@@ -1,12 +1,16 @@
 import React from 'react';
-import {IonPage, IonContent} from '@ionic/react';
+import { IonPage, IonContent} from '@ionic/react';
+import ContributeCard from "../components/ContributeCard";
 
-export default function ContributeMobilePage({handleScroll}) {
+export default function ContributeMobilePage() {
+
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="contribute-content page-content">
+            <IonContent
+                fullscreen
+                className="contribute-content page-content">
                 <div className="mobile-contain-contribute">
-
+                    <ContributeCard/>
                 </div>
             </IonContent>
         </IonPage>

@@ -14,7 +14,7 @@ const mockEvents = [
         title: 'Summer Fest 2025',
         image: events1,
         description: 'Join us for a fun-filled summer festival with live music and food.',
-        price: '$49',
+        price: '49',
         dateTime: 'July 21, 2025 | 6:00 PM',
         location: 'Central Park, New York'
     },
@@ -23,7 +23,7 @@ const mockEvents = [
         title: 'Winter Gala Night',
         image: events4,
         description: 'Dress up and dance the night away at our Winter Gala.',
-        price: '$99',
+        price: '99',
         dateTime: 'December 15, 2025 | 8:00 PM',
         location: 'Grand Ballroom, LA'
     },
@@ -32,7 +32,7 @@ const mockEvents = [
         title: 'Tech Conference 2025',
         image: events3,
         description: 'Learn about the latest trends in tech and innovation.',
-        price: '$199',
+        price: '199',
         dateTime: 'March 3, 2025 | 10:00 AM',
         location: 'Tech Center, San Francisco'
     },
@@ -41,7 +41,7 @@ const mockEvents = [
         title: 'Spring Music Festival',
         image: events2,
         description: 'Enjoy a day of music, food, and fun at the Spring Festival.',
-        price: '$59',
+        price: '59',
         dateTime: 'April 12, 2025 | 2:00 PM',
         location: 'Riverside Park, Chicago'
     },
@@ -50,7 +50,7 @@ const mockEvents = [
         title: 'Autumn Art Expo',
         image: events5,
         description: 'Explore contemporary art by local and international artists.',
-        price: '$25',
+        price: '25',
         dateTime: 'October 8, 2025 | 11:00 AM',
         location: 'Art Museum, Seattle'
     },
@@ -59,7 +59,7 @@ const mockEvents = [
         title: 'Charity Run 5K',
         image: events4,
         description: 'Run for a cause and support our local community.',
-        price: '$35',
+        price: '35',
         dateTime: 'September 5, 2025 | 7:00 AM',
         location: 'Downtown, Boston'
     },
@@ -77,7 +77,7 @@ const mockEvents = [
         title: 'Book Fair & Author Talk',
         image: events1,
         description: 'Meet your favorite authors and discover new reads.',
-        price: '$10',
+        price: '10',
         dateTime: 'May 22, 2025 | 1:00 PM',
         location: 'Community Library, Denver'
     },
@@ -86,7 +86,7 @@ const mockEvents = [
         title: 'Startup Pitch Night',
         image: events2,
         description: 'Watch emerging startups pitch their ideas to investors.',
-        price: '$79',
+        price: '79',
         dateTime: 'June 30, 2025 | 5:00 PM',
         location: 'Innovation Hub, San Diego'
     },
@@ -95,7 +95,7 @@ const mockEvents = [
         title: 'Outdoor Movie Night',
         image: events5,
         description: 'Bring your blanket and enjoy a movie under the stars.',
-        price: '$15',
+        price: '15',
         dateTime: 'July 10, 2025 | 8:30 PM',
         location: 'Sunset Park, Miami'
     }

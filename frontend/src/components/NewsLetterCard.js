@@ -12,7 +12,7 @@ export default function NewsLetterCard({post}) {
                     <h2 className="feed-title">{post.title}</h2>
                     <p className="feed-caption">{post.caption}</p>
                 </div>
-                <IonButton expand="block" className="download-button" href={post.downloadLink}>
+                <IonButton expand="block" className="download-button">
                     <IonIcon icon={downloadOutline}/>
                 </IonButton>
             </div>

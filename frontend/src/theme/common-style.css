@@ -63,6 +63,14 @@ hr{
     width: 11rem;
     margin: 2rem auto 2rem;
 }
+ion-input{
+    --highlight-color:var(--primary-color)!important;
+    --highlight-color-focused: var(--primary-color)!important;
+    --highlight-color-valid: var(--primary-color)!important;
+    --highlight-color-invalid: var(--primary-color)!important;
+    --highlight-color: var(--primary-color)!important;
+    border-bottom: 1px solid #cccccc!important;
+}
 .error-msg {
     color: red;
     font-size: var(--font-size-2);
@@ -1410,6 +1418,7 @@ ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
     margin: 0 0 8px;
     font-size: var(--font-size-3);
     color: var(--primary-color);
+    font-weight: bold;
 }
 
 .feed-caption {
@@ -1424,14 +1433,11 @@ ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
     font-weight: bold;
     font-size: var(--font-size-3);
     margin-left: auto;
-    margin-top: auto;
     --padding-top: 0px;
+    --box-shadow: none;
 }
 
 /*////// NEWS LETTER CSS ////////*/
-
-
-
 
 /*/////// EVENTS PAGE CSS /////////*/
 
@@ -1463,6 +1469,7 @@ ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
     margin: 0 0 8px;
     font-size: var(--font-size-3);
     color: var(--primary-color);
+    font-weight: bold;
 }
 
 .event-description {
@@ -1509,3 +1516,111 @@ ion-label.sc-ion-label-md-h{font-size: var(--font-size-4); font-weight: 500}
 }
 
 /*/////// EVENTS PAGE CSS /////////*/
+
+
+/*//////// CONTRIBUTE PAGE CSS ///////*/
+
+.mobile-contain-contribute {
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.desktop-contain-contribute {
+    text-align: center;
+    width: 50%;
+    margin: 96px auto;
+}
+
+.trust-badge {
+    width: 100%;
+    margin: 0 auto 16px;
+    border-radius: 12px;
+}
+
+.contribute-title {
+    font-size: var(--font-size-2);
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.contribute-description {
+    font-size: var(--font-size-4);
+    color: var(--font-color-light);
+    margin-bottom: 24px;
+}
+
+.amount-options {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.amount-options ion-button {
+    --background: var(--primary-color);
+    font-size: var(--font-size-4);
+    --color: #ffffff;
+}
+
+.amount-input {
+    margin-bottom: 24px;
+    --background: #ffffff;
+    --padding-start: 12px;
+    border-bottom: 1px solid #cccccc;
+    font-size: var(--font-size-3);
+    color: var(--font-color);
+}
+
+.donate-button {
+    --background: var(--primary-color);
+    font-size: var(--font-size-3);
+    --color: #ffffff;
+    text-transform: none;
+    border-radius: 8px;
+}
+
+/*//////// CONTRIBUTE PAGE CSS ///////*/
+
+
+/*//////// MEMBER SHIP CSS /////////*/
+
+.mobile-contain-membership {
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.membership-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.membership-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.membership-card {
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+.membership-amount {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0070f3;
+    margin: 12px 0;
+}
+
+.join-now-button {
+    --background: #28a745;
+    --color: #fff;
+    border-radius: 8px;
+    text-transform: none;
+}
+
+/*//////// MEMBER SHIP CSS /////////*/
