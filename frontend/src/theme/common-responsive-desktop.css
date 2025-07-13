@@ -45,11 +45,11 @@
     }
 
     .with_login-menu-item ion-icon {
-        font-size: var(--font-size-4);
-        color: var(--icon-color);
+        font-size: var(--font-size-3);
+        color: var(--font-color-light);
     }
     .with_login-menu-item span {
-        font-size: var(--font-size-4);
+        font-size: var(--font-size-3);
         color: var(--font-color);
     }
 
