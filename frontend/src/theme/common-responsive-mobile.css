@@ -236,8 +236,13 @@
     /*///// NEWS PAGE /////*/
 
     .header_button_right ion-icon{
-        font-size: 24px;
+        font-size: 22px;
     }
+
+    .header_button_right.active ion-icon{
+        color: var(--primary-color)!important;
+    }
+
     .with_login-menu-item.menu-names.active span {
         color: var(--primary-color);
     }

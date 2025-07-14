@@ -105,7 +105,7 @@ const DashboardPage = () => {
                 <Route path="/dashboard/" render={() => (
                     <IonPage>
                         {/* Common header always visible */}
-                        <HeaderAfterLoginComponent menuRef={menuRef} setCurrentPath={setCurrentPath} hideHeader={hideHeader} pageId={"main-menu-content"} />
+                        <HeaderAfterLoginComponent menuRef={menuRef} currentPath={currentPath} setCurrentPath={setCurrentPath} hideHeader={hideHeader} pageId={"main-menu-content"} />
                         {/* Nested outlet for tab pages */}
                         <IonRouterOutlet id="main-menu-content">
                             <Route exact path="/dashboard/home" render={()=>(

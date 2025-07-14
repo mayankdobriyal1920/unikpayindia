@@ -11,11 +11,14 @@ import {
 } from '@ionic/react';
 import {
     menuOutline,
-    closeOutline,
     homeSharp,
     briefcaseSharp,
     heartSharp,
-    notificationsSharp, clipboardSharp, calendarSharp, newspaperSharp, cashSharp, medalSharp, searchOutline,
+    clipboardSharp,
+    calendarSharp,
+    newspaperSharp,
+    cashSharp,
+    medalSharp,
 } from 'ionicons/icons';
 import appLogo from '../theme/images/logo-big.png';
 import {useHistory, useLocation} from "react-router";
@@ -35,7 +38,7 @@ const menuItems = [
     { label: 'Membership', icon:medalSharp ,pathName:'/dashboard/membership' },
 ];
 
-const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef,setCurrentPath}) => {
+const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef,setCurrentPath,currentPath}) => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
     const {pathname} = useLocation();
@@ -43,10 +46,13 @@ const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef,setCurrentPath}) =
     const dispatch = useDispatch();
     const [presentAlert] = useIonAlert();
 
-    const goToPage =(page,pathName)=>{
+    const goToPage =(page)=>{
         history.replace(page);
-        toggleMenu();
         setCurrentPath(page);
+        const menu = menuRef.current;
+        if (menu) {
+            menu?.close();
+        }
     }
 
     useEffect(() => {
@@ -268,9 +274,11 @@ const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef,setCurrentPath}) =
                         </IonButtons>
                     )}
                     <IonButtons slot="end" className="with_login-icons">
-                        <IonButton className="header_button_right">
-                            <IonIcon icon={searchOutline}/>
-                        </IonButton>
+                        {isMobile && (
+                            <IonButton onClick={() => goToPage('/dashboard/membership')} className={`header_button_right ${currentPath === '/dashboard/membership' ? 'active' : ''}`}>
+                                <IonIcon icon={medalSharp}/>
+                            </IonButton>
+                        )}
                     </IonButtons>
                 </IonToolbar>
             </IonHeader>
