@@ -1357,11 +1357,11 @@ ion-label{font-size: var(--font-size-4); font-weight: 500}
     color: var(--font-color);
     line-height: 22px;
     display: flex;
-    align-items: anchor-center;
+    align-items: center;
 }
 .job_detail_common_page ul li{
     display: flex;
-    align-items: anchor-center;
+    align-items: center;
 }
 .job_detail_common_page ul li ion-icon{
     margin-right: 6px;

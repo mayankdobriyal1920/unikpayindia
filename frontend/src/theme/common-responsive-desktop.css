@@ -363,16 +363,16 @@
 
 
     .job-card {
-        border-left: 2px solid transparent;
+        border-bottom: 2px solid transparent;
     }
     .rfp-card {
-        border-left: 2px solid transparent;
+        border-bottom: 2px solid transparent;
     }
     .matrimony-card {
-        border-left: 2px solid transparent;
+        border-bottom: 2px solid transparent;
     }
     .news-snippet-item {
-        border-left: 2px solid transparent;
+        border-bottom: 2px solid transparent;
     }
 
     .news-snippets-detail {
@@ -401,16 +401,16 @@
     }
 
     .job-card.active {
-        border-left: 2px solid var(--primary-color) !important;
+        border-bottom: 2px solid var(--primary-color) !important;
     }
     .rfp-card.active {
-        border-left: 2px solid var(--primary-color) !important;
+        border-bottom: 2px solid var(--primary-color) !important;
     }
     .matrimony-card.active {
-        border-left: 2px solid var(--primary-color) !important;
+        border-bottom: 2px solid var(--primary-color) !important;
     }
     .news-snippet-item.active {
-        border-left: 2px solid var(--primary-color) !important;
+        border-bottom: 2px solid var(--primary-color) !important;
     }
 
     .news-wrapper.two-grid-panel {
