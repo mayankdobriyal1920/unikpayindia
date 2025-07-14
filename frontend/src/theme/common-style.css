@@ -63,13 +63,11 @@ hr{
     width: 11rem;
     margin: 2rem auto 2rem;
 }
-ion-input{
+ion-input, ion-textarea{
     --highlight-color:var(--primary-color)!important;
     --highlight-color-focused: var(--primary-color)!important;
     --highlight-color-valid: var(--primary-color)!important;
     --highlight-color-invalid: var(--primary-color)!important;
-    --highlight-color: var(--primary-color)!important;
-    border-bottom: 1px solid #cccccc!important;
 }
 .error-msg {
     color: red;
