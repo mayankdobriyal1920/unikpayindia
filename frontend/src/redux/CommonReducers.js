@@ -23,7 +23,6 @@ export const userAuthDetailReducer = (state = {}, action) => {
         default:
             return state;
     }
-
 };
 
 export const userSessionReducer = (state = {}, action) => {
