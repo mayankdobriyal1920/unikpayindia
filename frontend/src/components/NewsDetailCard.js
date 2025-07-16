@@ -2,6 +2,7 @@ import React from 'react';
 import {IonIcon} from '@ionic/react';
 import testNewsImageIcon from '../theme/images/img-nws-2.png';
 import {
+    bookmarkOutline,
     chevronBackOutline,
     downloadOutline,
     shareSocialOutline
@@ -46,6 +47,9 @@ export default function NewsDetailCard({newsDetailsData,onDidDismiss}) {
                             <IonIcon icon={downloadOutline}/>
                         </button>
                         <button className="circle-btn">
+                            <IonIcon icon={bookmarkOutline}/>
+                        </button>
+                        <button className="circle-btn">
                             <IonIcon icon={shareSocialOutline}/>
                         </button>
                     </div>
@@ -54,13 +58,12 @@ export default function NewsDetailCard({newsDetailsData,onDidDismiss}) {
                 <div className="news-detail-overlay">
                     <div className="news-detail-category">{news.category}</div>
                     <h1 className="news-detail-title">{news.title}</h1>
-                    <p className="news-detail-meta">Trending • {news.time}</p>
                 </div>
             </div>
 
             <div className="news-detail-content">
                 <div className="news-detail-source">
-                    <strong>{news.source}</strong> <span>• {news.time}</span>
+                    <strong>{newsDetailsData.source}</strong> <span>• {newsDetailsData.time}</span>
                 </div>
                 <p>{news.content}</p>
                 {/* Repeat or add more paragraphs */}

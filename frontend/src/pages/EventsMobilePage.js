@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {IonPage, IonContent, IonButton, IonIcon} from '@ionic/react';
-import {calendarOutline, locationOutline} from "ionicons/icons";
+import {IonPage, IonContent} from '@ionic/react';
 import events1 from '../theme/images/events-1.png';
 import events2 from '../theme/images/events-2.png';
 import events3 from '../theme/images/events-3.png';
@@ -126,6 +125,7 @@ export default function EventsMobilePage({ handleScroll }) {
         }
         setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
     };
+
     return (
         <IonPage>
             <div className={`upcoming_events_filter_tabs ${isSticky ? "sticky" : ""}`}>

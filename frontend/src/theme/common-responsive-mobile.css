@@ -85,15 +85,71 @@
         position: relative;
     }
 
-    .news-menu {
+    .news-menu-container {
         display: flex;
-        justify-content: space-around;
+        background: #ffffff;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+        transform: translateY(0);
+        transition: transform 0.3s ease-in-out, padding-top 0.3s ease-in-out;
         position: fixed;
         width: 100%;
         height: 48px;
-        top:var(--header-bar-height);
+        align-items: center;
+        top: var(--header-bar-height);
         z-index: 9999;
-        background: #ffffff;
+    }
+
+    .news-menu-container .news-menu-header {
+        display: grid;
+        align-items: center;
+        gap: 0;
+        margin-left: 10px;
+        grid-template-columns: 10% auto;
+        width: 100%;
+    }
+
+
+    .news-menu-container .news-menu-header ion-button.filter-btn.active {
+        --color: var(--primary-color);
+    }
+    .news-menu-container .news-menu-header ion-button {
+        --color: var(--font-color);
+        align-self: flex-start;
+        --ripple-color: transparent !important;
+        --padding-bottom: 0px !important;
+        --padding-top: 0px !important;
+        --padding-start: 0px !important;
+        --padding-end: 0px !important;
+    }
+
+    .news-menu-container .news-menu-header ion-button ion-icon {
+        margin: auto;
+        font-size: var(--font-size-2);
+    }
+
+    .news-menu-container .news-menu-header .news-menu {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+
+    .news-menu-container .news-menu-header .news-menu .news-tab {
+        background: none;
+        border: none;
+        font-size: var(--font-size-3);
+        color: var(--heading-color);
+        padding: 8px 8px;
+        cursor: pointer;
+    }
+
+    .news-menu-container .news-menu-header .news-menu .news-tab.active {
+        color: var(--primary-color) !important;  /* Your theme color */
     }
 
     /* Mobile menu */
@@ -124,20 +180,6 @@
         font-size: var(--font-size-3);
         color: var(--font-color);
     }
-
-    .news-tab {
-        background: none;
-        border: none;
-        font-size: var(--font-size-3);
-        color: var(--heading-color);
-        padding: 8px 8px;
-        cursor: pointer;
-    }
-
-    .news-tab.active {
-        color: var(--primary-color);  /* Your theme color */
-        font-weight: bold;
-    }
     /* Container scroll snap */
 
     .news-card-stack {
@@ -145,23 +187,44 @@
         height: 100%;
         margin-top: 50px;
     }
-
-    .news-card {
+    .news_detail_card_section_text_info {
+        padding: 0 10px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .news_detail_card_section_text_info .add_banner_in_section {
+        overflow: hidden;
+        margin-top: auto;
+        height: 50px;
+        width: 100%;
+        border-radius: 4px;
+    }
+    .news_detail_card_section_text_info .add_banner_in_section img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .news-card-stack .news-card {
         position: absolute;
         height: 100%;
         width: 98%;
         overflow: hidden;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: 35% auto;
         margin: 2px 4px 4px 4px;
         box-shadow: 0px 3px 20px 0px #eaeaea;
         border-radius: 10px;
         border: 1px solid #ededed;
     }
 
-    .news-image {
+    .news-card-stack .news-card .news-image-content {
+        overflow: hidden;
+    }
+
+    .news-card-stack .news-card .news-image {
         width: 100%;
-        height: 30%;
+        height: 100%;
         object-fit: cover;
     }
 
@@ -176,9 +239,8 @@
     .news-content h2 {
         font-size: var(--font-size-2);
         font-weight: 600;
-        padding: 0 1rem;
         margin-bottom: 8px;
-        margin-top: 0px;
+        margin-top: 0;
         color: var(--heading-color);
     }
 
@@ -186,7 +248,6 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        padding: 0 1rem;
         text-overflow: ellipsis;
         line-height: 1.5;
         font-size: var(--font-size-3);
@@ -199,7 +260,6 @@
 
     .news-footer {
         font-size: var(--font-size-4);
-        padding: 0 1rem;
         margin-top: 22px;
         display: flex;
         color: #b4b4b4;
@@ -344,6 +404,7 @@
         z-index: 10;
         display: flex;
         background: #ffffff;
+        align-items: center;
         padding: 10px 0;
         border-bottom: 1px solid #ddd;
         transform: translateY(0); /* default position */

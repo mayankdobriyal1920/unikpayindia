@@ -1,5 +1,5 @@
 import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
-import {IonContent, IonIcon, IonPage, IonRefresher, IonRefresherContent} from '@ionic/react';
+import {IonButton, IonContent, IonIcon, IonPage, IonRefresher, IonRefresherContent} from '@ionic/react';
 import { useSwipeable } from 'react-swipeable';
 import { AnimatePresence, motion } from 'framer-motion';
 import imgNws1 from '../theme/images/img-nws-1.png';
@@ -7,7 +7,13 @@ import imgNws2 from '../theme/images/img-nws-2.png';
 import imgNws3 from '../theme/images/img-nws-3.png';
 import imgNws4 from '../theme/images/img-nws-4.png';
 import imgNws5 from '../theme/images/img-nws-5.png';
-import {bookmarkOutline, downloadOutline, eyeSharp} from "ionicons/icons";
+import addBannerImg from '../theme/images/ad-banner-1.png';
+import {
+    bookmarkOutline,
+    bookmarkSharp,
+    downloadOutline,
+    shareSocialOutline
+} from "ionicons/icons";
 import NewsDetailSheetModal from "../components/NewsDetailSheetModal";
 
 const dummyNews = [
@@ -103,7 +109,7 @@ const dummyNews = [
     },
 ];
 
-const categories = ['Trending', 'Opinion', 'Finance', 'Audit', 'Industry'];
+const categories = ['Trending', 'Opinion', 'Finance', 'Audit', 'Industry','Sports','Updates'];
 
 export default function HomeMobilePage() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -111,7 +117,16 @@ export default function HomeMobilePage() {
     const [direction, setDirection] = useState('up');
     const [newsDetailsData, setNewsDetailsData] = useState(null);
     const [isDetailOpen, setIsDetailOpen] = useState(false);
+    const [isBookMarkFilterActive, setIsBookMarkFilterActive] = useState(false);
+    const [showAd, setShowAd] = useState(false); // ✅ NEW STATE
     const newsContentRef = useRef(null);
+    const newsContentSectionRef = useRef(null);
+
+    const handleBookMarkFilter = () => {
+        setIsBookMarkFilterActive(!isBookMarkFilterActive);
+        setCurrentIndex(0);
+        setCategoryIndex(0);
+    }
 
     const handlers = useSwipeable({
         onSwipedUp: () => {
@@ -141,7 +156,7 @@ export default function HomeMobilePage() {
         trackMouse: true,
     });
 
-    const openDetailPanel = (jobDetail)=>{
+    const openDetailPanel = (jobDetail) => {
         setNewsDetailsData(jobDetail);
         setIsDetailOpen(true);
     }
@@ -154,11 +169,12 @@ export default function HomeMobilePage() {
         }, 2000);
     };
 
-    useLayoutEffect(() => {
-        const element = newsContentRef.current;
-        if (element) {
-            // Delay to let layout settle
-            setTimeout(() => {
+    // ✅ Dynamic clamp for lines (you can keep if needed)
+    useEffect(() => {
+        setShowAd(false);
+        setTimeout(() => {
+            const element = document.querySelector('.news_detail_card_p_content');
+            if(element) {
                 const computedStyles = getComputedStyle(element);
                 const lineHeight = parseFloat(computedStyles.lineHeight);
                 if (lineHeight) {
@@ -169,24 +185,35 @@ export default function HomeMobilePage() {
                     element.style.overflow = "hidden";
                     element.style.webkitLineClamp = lines.toString();
                 }
-            }, 50); // Small delay helps when fonts/images affect layout
-        }
-    }, [newsContentRef, currentIndex]);
+
+                const rect = element.getBoundingClientRect();
+                const spaceBelow = window.innerHeight - rect.bottom;
+                setShowAd(spaceBelow > 100);
+            }
+        }, 1000);
+    }, [currentIndex]);
 
     const news = dummyNews[currentIndex];
 
     return (
         <IonPage>
-            <div className="news-menu">
-                {categories.map((cat, index) => (
-                    <button
-                        key={cat}
-                        onClick={() => setCategoryIndex(index)}
-                        className={`news-tab ${index === categoryIndex ? 'active' : ''}`}
-                    >
-                        {cat}
-                    </button>
-                ))}
+            <div className="news-menu-container">
+                <div className="news-menu-header">
+                    <IonButton fill="clear" size="small" onClick={() => handleBookMarkFilter(true)}
+                               className={`filter-btn ${isBookMarkFilterActive ? 'active' : ''}`}>
+                        <IonIcon icon={isBookMarkFilterActive ? bookmarkSharp : bookmarkOutline} slot="start"/>
+                    </IonButton>
+                    <div className="news-menu">
+                        {categories.map((cat, index) => (
+                            <button
+                                key={cat}
+                                onClick={() => setCategoryIndex(index)}
+                                className={`news-tab ${index === categoryIndex ? 'active' : ''}`}>
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+                </div>
             </div>
             <IonContent fullscreen className="page-content">
                 <IonRefresher slot="fixed" disabled={currentIndex !== 0} onIonRefresh={handleRefresh}>
@@ -205,23 +232,32 @@ export default function HomeMobilePage() {
                                     y: 0
                                 }}
                                 transition={{duration: 0.25}}>
-                                <img className="news-image" src={news.img_url} alt={news.title}/>
+                                <div className="news-image-content">
+                                    <img className="news-image" src={news.img_url} alt={news.title}/>
+                                </div>
                                 <div className="news-content">
                                     <div className="news-sub-h-text">
-                                        <div className="news-category">Finance</div>
+                                        <div className="news-category" onClick={() => openDetailPanel(news)}>Read
+                                            More
+                                        </div>
                                         <div className="news-actions">
                                             <IonIcon icon={downloadOutline}></IonIcon>
                                             <IonIcon icon={bookmarkOutline}></IonIcon>
+                                            <IonIcon icon={shareSocialOutline}></IonIcon>
                                         </div>
                                     </div>
                                     <hr/>
-                                    <h2>{news.title}</h2>
-                                    <p ref={newsContentRef}>{news.description}</p>
-                                    <div className="news-footer">
-                                        <span>{news.time} | {news.source}</span>
-                                        <button onClick={() => openDetailPanel(news)} className="view_news_button">
-                                            <IonIcon icon={eyeSharp}/> Read more
-                                        </button>
+                                    <div ref={newsContentSectionRef} className={"news_detail_card_section_text_info"}>
+                                        <div className="news-detail-source">
+                                            <strong>{news.source}</strong> <span>• {news.time}</span>
+                                        </div>
+                                        <h2>{news.title}</h2>
+                                        <p ref={newsContentRef} className={"news_detail_card_p_content"}>{news.description}</p>
+                                        {showAd && (
+                                            <div className="add_banner_in_section">
+                                                <img src={addBannerImg} alt="Ad Banner"/>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </motion.div>

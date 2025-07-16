@@ -1710,7 +1710,7 @@ ion-input.rfp_form_input {
     top: var(--header-bar-height);
     width: 100%;
     z-index: 10;
-    padding: 10px 0;
+    padding: 10px;
     display: flex;
     background: #ffffff;
     border-bottom: 1px solid #ddd;
@@ -1741,11 +1741,14 @@ ion-input.rfp_form_input {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+.filter-header.in_news_feeds{
+    grid-template-columns: 10% auto!important;
+}
 
 .whatsapp_floating_button {
     background: #25D366; /* WhatsApp green */
     border-radius: 50%;
-    box-shadow: 0 0 15px #25D366, 0 0 20px #25D366, 0 0 40px #25D366;
+    box-shadow: 0 0 8px #25D36680;
     position: fixed;
     right: 18px;
     width: 45px;
@@ -1759,5 +1762,63 @@ ion-input.rfp_form_input {
 }
 .whatsapp_floating_button svg {
     margin: auto;
+}
+
+.bottom_date_picker {
+    max-width: 100%!important;
+}
+
+/*////// LOOKING FOR //////*/
+.looking-for-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.looking-for-page .looking-title {
+    font-weight: bold;
+    font-size: var(--font-size-2);
+    color: var(--font-color);
+    margin-bottom: 16px;
+    margin-top: 22px;
+}
+
+.looking-for-page .option-buttons {
+    display: flex;
+    gap: 16px;
+    margin: 35px 0;
+}
+
+.looking-for-page .option-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: var(--primary-color);
+    font-size: var(--font-size-3);
+    padding: 24px 24px;
+    margin: auto 20px;
+    font-weight: bold;
+    box-shadow: var(--common-box-shadow);
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.looking-for-page .option-card .option-icon {
+    color: var(--primary-color);
+    font-size: 100px;
+}
+
+.looking-for-page .description {
+    font-size: var(--font-size-3);
+    color: var(--font-color);
+    line-height: 16px;
+    padding: 0 20px;
+    margin-bottom: 24px;
+}
+
+.looking-for-page .rings-image img {
+    width: 120px;
+    height: auto;
 }
 /*//////// MEMBER SHIP CSS /////////*/
