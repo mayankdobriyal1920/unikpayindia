@@ -11,7 +11,7 @@ import {
     IonList,
     IonItem,
     IonCheckbox,
-    IonLabel,
+    IonLabel, IonRow, IonCol, IonFooter,
 } from '@ionic/react';
 
 const filters = [
@@ -78,8 +78,8 @@ export default function AssignmentsFilterSheetModal({ isOpen, onDidDismiss }) {
         <IonModal
             isOpen={isOpen}
             onDidDismiss={onDidDismiss}
-            initialBreakpoint={0.85}
-            breakpoints={[0, 0.85, 1]}
+            initialBreakpoint={1}
+            breakpoints={[0, 1]}
             handleBehavior="cycle"
         >
             <IonHeader className="filter_sheet_header sheet_modal_header">
@@ -123,14 +123,16 @@ export default function AssignmentsFilterSheetModal({ isOpen, onDidDismiss }) {
                 </div>
             </IonContent>
 
-            <div className="filter-footer">
-                <IonButton fill="clear" color="medium">
-                    Cancel
-                </IonButton>
-                <IonButton expand="block" color="primary">
-                    Apply
-                </IonButton>
-            </div>
+            <IonFooter className="job_detail_sheet_footer ion-padding">
+                <IonRow>
+                    <IonCol>
+                        <IonButton className="close_job_detail_button" expand="block" onClick={onDidDismiss}>Close</IonButton>
+                    </IonCol>
+                    <IonCol>
+                        <IonButton className="apply_job_button" expand="block">Apply</IonButton>
+                    </IonCol>
+                </IonRow>
+            </IonFooter>
         </IonModal>
     );
 }

@@ -47,6 +47,7 @@ const DashboardPage = () => {
     const [showMoreSheet, setShowMoreSheet] = useState(false);
     const history = useHistory();
     const menuRef = useRef(null);
+    const bottomTabSectionRef = useRef(null);
     const {pathname} = useLocation();
 
     useEffect(() => {
@@ -60,21 +61,16 @@ const DashboardPage = () => {
     }, []);
 
     const handleScroll = (event) => {
-        const scrollTop = event.detail.scrollTop;
+        const scrollTop = event.detail.scrollTop ?? 0;
+        const newScrollTop = scrollTop < 0 ? 0 : scrollTop;
 
-        if (scrollTop > lastScrollTop.current) {
-            // Scrolling down
+        if (newScrollTop > lastScrollTop.current + 2) {
             setHideHeader(true);
-        } else {
-            // Scrolling up
+        } else if (newScrollTop < lastScrollTop.current - 2) {
             setHideHeader(false);
         }
 
-        lastScrollTop.current = scrollTop <= 0 ? 0 : scrollTop;
-    }
-
-    const callFunctionToOpenShowMoreSheet = ()=>{
-        setShowMoreSheet(!showMoreSheet);
+        lastScrollTop.current = newScrollTop;
     }
     
     const gotToPage = (path,type)=>{
@@ -99,6 +95,15 @@ const DashboardPage = () => {
         }
     };
 
+    const callFunctionToOpenShowMoreSheet = () => {
+        const tabBarEl = document.querySelector('.main-tab-bar');
+        if (tabBarEl) {
+            const tabHeight = tabBarEl.getBoundingClientRect().height;
+            document.documentElement.style.setProperty('--tab-bar-height', `${tabHeight}px`);
+        }
+        setShowMoreSheet(!showMoreSheet);
+    };
+
     return (
         <IonTabs>
             <IonRouterOutlet>
@@ -113,7 +118,7 @@ const DashboardPage = () => {
                                     {(isMobile) ?
                                         <HomeMobilePage />
                                         :
-                                        <HomeDesktopPage handleScroll={handleScroll} />
+                                        <HomeDesktopPage />
                                     }
                                 </>
                             )} />
@@ -195,6 +200,7 @@ const DashboardPage = () => {
             <IonTabBar
                 slot="bottom"
                 style={{display: !isMobile ? 'none' : ''}}
+                ref={bottomTabSectionRef}
                 className={`custom-tabbar main-tab-bar`}
             >
                 <IonTabButton tab="home" className={"custom-ripple-color"} onClick={()=>callFunctionToSetCurrentPath('/dashboard/home')} href="/dashboard/home">
@@ -218,8 +224,8 @@ const DashboardPage = () => {
                     <IonModal
                         isOpen={showMoreSheet}
                         onDidDismiss={() => setShowMoreSheet(false)}
-                        breakpoints={[0, 0.17]}
-                        initialBreakpoint={0.17}
+                        breakpoints={[0, 0.2]}
+                        initialBreakpoint={0.2}
                         className="more-sheet-modal">
                         <IonContent className="ion-padding">
                             <div className="more-sheet-grid">

@@ -92,7 +92,7 @@ const sampleData = [
     }
 ];
 
-export default function HomeDesktopPage({handleScroll}) {
+export default function HomeDesktopPage() {
     const [newsDetailsData,setNewsDetailsData] = useState(sampleData[0]);
 
     const handleListClick = (news)=>{
@@ -101,7 +101,7 @@ export default function HomeDesktopPage({handleScroll}) {
 
     return (
         <IonPage>
-            <IonContent onIonScroll={handleScroll} scrollEvents={true} fullscreen className="news-page page-content off-white-background-content">
+            <IonContent fullscreen className="news-page page-content off-white-background-content">
                 <div className="news-wrapper two-grid-panel">
                     <div className="news-snippets-list-outer">
                         <NewsFilterTabs />

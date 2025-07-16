@@ -27,6 +27,7 @@ const allowedOrigins = [
         'http://192.168.1.9:3000',
         'http://192.168.1.12:3000',
         'http://77.37.45.199',
+        'https://caworld.org',
     ];
 
 // Middleware to parse the request body

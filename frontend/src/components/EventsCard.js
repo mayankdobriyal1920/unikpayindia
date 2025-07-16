@@ -6,7 +6,9 @@ import {calendarOutline, locationOutline} from "ionicons/icons";
 export default function EventsCard({ event }) {
     return (
         <div className="event-card" key={event.id}>
-            <img src={event.image} alt={event.title} className="event-image"/>
+            <div className="event-card-img">
+              <img src={event.image} alt={event.title} className="event-image"/>
+            </div>
             <div className="event-details">
                 <h2 className="event-title">{event.title}</h2>
                 <p className="event-description">{event.description}</p>

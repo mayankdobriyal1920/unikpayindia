@@ -2,14 +2,12 @@ import React from 'react';
 import { IonPage, IonContent} from '@ionic/react';
 import MemberShipCard from "../components/MemberShipCard";
 
-export default function MembershipDesktopPage({ handleScroll }) {
+export default function MembershipDesktopPage() {
 
     return (
         <IonPage>
             <IonContent
                 fullscreen
-                scrollEvents={true}
-                onIonScroll={handleScroll}
                 className="membership-content page-content"
             >
                 <div className="desktop-contain-membership">

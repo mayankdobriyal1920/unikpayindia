@@ -11,7 +11,7 @@ import {
 } from "./CommonConstants";
 import createSocketConnection from "../socket/socket";
 const api = Axios.create({
-    baseURL: 'http://77.37.45.199/api-ca-world/common/',
+    baseURL: 'https://caworld.org/api-ca-world/common/',
     withCredentials:true
 })
 

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {setupIonicReact, IonApp, IonRouterOutlet, IonLoading} from '@ionic/react';
 import '@ionic/react/css/core.css';
 
@@ -78,8 +78,15 @@ const PublicRoutes = () => {
 
 const App = () => {
     const dispatch = useDispatch();
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
     const userSession = useSelector((state) => state.userSession);
     const {userInfo} = useSelector((state) => state.userAuthDetail);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 1000);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         dispatch(actionToGetUserSessionData());
@@ -95,12 +102,18 @@ const App = () => {
     },[])
 
     useEffect(()=>{
-        const setAppHeight = () => {
-            document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
-        };
-        window.addEventListener('resize', setAppHeight);
-        setAppHeight();
-    },[])
+        if(!Capacitor.isNativePlatform()){
+            if(isMobile) {
+                document.documentElement.style.setProperty('--font-size-1', `20px`);
+                document.documentElement.style.setProperty('--font-size-2', `18px`);
+                document.documentElement.style.setProperty('--font-size-3', `14px`);
+                document.documentElement.style.setProperty('--font-size-4', `12px`);
+                document.documentElement.style.setProperty('--font-size-5', `10px`);
+                document.documentElement.style.setProperty('--font-size-6', `8px`);
+                document.documentElement.style.setProperty('--font-size-7', `6px`);
+            }
+        }
+    },[isMobile])
 
     return (
         <IonApp>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {IonPage, IonContent, IonButton, IonIcon} from '@ionic/react';
 import {calendarOutline, locationOutline} from "ionicons/icons";
 import events1 from '../theme/images/events-1.png';
@@ -7,6 +7,7 @@ import events3 from '../theme/images/events-3.png';
 import events4 from '../theme/images/events-4.png';
 import events5 from '../theme/images/events-5.png';
 import EventsCard from "../components/EventsCard";
+import EventsFilterTabs from "../components/EventsFilterTabs";
 
 const mockEvents = [
     {
@@ -104,14 +105,39 @@ const mockEvents = [
 
 
 export default function EventsMobilePage({ handleScroll }) {
+    const [eventTypeFilter,setEventTypeFilter] = useState('upcoming');
+    const [isSticky, setIsSticky] = useState(false);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
+
+    const handleSetEventTypeFilter = (type)=>{
+        setEventTypeFilter(type);
+    }
+
+    const callFunctionToHandleScroll = (event) => {
+        handleScroll(event);
+        const scrollTop = event.detail.scrollTop;
+
+        if (scrollTop < lastScrollTop) {
+            // Scrolling UP → stick
+            setIsSticky(false);
+        } else {
+            // Scrolling DOWN → unstick
+            setIsSticky(true);
+        }
+        setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
+    };
     return (
         <IonPage>
             <IonContent
                 fullscreen
                 scrollEvents={true}
-                onIonScroll={handleScroll}
+                onIonScroll={callFunctionToHandleScroll}
                 className="events-content page-content"
             >
+                <div className={`upcoming_events_filter_tabs ${isSticky ? "sticky" : ""}`}>
+                    <EventsFilterTabs handleSetEventTypeFilter={handleSetEventTypeFilter}
+                                      eventTypeFilter={eventTypeFilter}/>
+                </div>
                 <div className="mobile-contain-feed-events">
                     {mockEvents.map(event => (
                         <EventsCard key={event?.id} event={event}/>

@@ -40,11 +40,6 @@
         --padding-bottom: 56px;
     }
 
-    /* OR for scrollable areas inside the modal */
-    .more-sheet-modal{
-        margin-bottom: 3.12rem!important;
-    }
-
     .header-ios ion-toolbar:last-of-type {
         --border-width: 0!important;
         --background: #ffffff!important;
@@ -93,9 +88,10 @@
     .news-menu {
         display: flex;
         justify-content: space-around;
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 48px;
+        top:var(--header-bar-height);
         z-index: 9999;
         background: #ffffff;
     }
@@ -165,7 +161,8 @@
 
     .news-image {
         width: 100%;
-        height: 260px;
+        height: 30%;
+        object-fit: cover;
     }
 
     .news-content {
@@ -262,7 +259,6 @@
         align-items: center;
         gap: 8px; /* Space between icon and tags */
         flex-wrap: wrap; /* Wrap on small screens */
-        margin-bottom: 16px;
         margin-left:1rem ;
         width: 100%;
     }
@@ -332,8 +328,9 @@
         width: 100%;
         z-index: 10;
         display: flex;
-        padding-top: 10px;
         background: #ffffff;
+        padding-bottom: 10px;
+        padding-top: 6px;
         border-bottom: 1px solid #ddd;
         transform: translateY(0); /* default position */
         transition: transform 0.3s ease-in-out, padding-top 0.3s ease-in-out;
@@ -341,6 +338,7 @@
 
     .filter-header-wrapper.sticky {
         transform: translateY(-70px); /* slide up */
+        padding-top: 10px;
     }
     .membership-row {
         display: flex;
@@ -494,16 +492,14 @@
         right: 12px;
         cursor: pointer;
     }
-    /*///// MATRIMONIAL PAGE //////*/c
+    /*///// MATRIMONIAL PAGE //////*/
 
 
     /*/////// Mobile more tabs //////////*/
-
     .more-sheet-modal {
         border-radius: 18px 18px 0 0;
-        bottom: 56px;
+        bottom: var(--tab-bar-height);
     }
-
 
     .ion-modal {
         animation: slideUp 0.3s ease forwards;
@@ -569,6 +565,17 @@
     /*.more-sheet-modal::part(handle){*/
     /*    display: none;*/
     /*}*/
+
+    .submenu {
+        margin-left: 22px;
+    }
+    .submenu-item {
+        cursor: pointer;
+        font-size: var(--font-size-4);
+    }
+    .menu-names.active {
+        font-weight: bold;
+    }
 
     /*/////// Mobile more tabs //////////*/
 

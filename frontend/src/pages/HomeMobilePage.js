@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {IonContent, IonIcon, IonPage, IonRefresher, IonRefresherContent} from '@ionic/react';
 import { useSwipeable } from 'react-swipeable';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -173,30 +173,38 @@ export default function HomeMobilePage() {
         }
     }, [newsContentRef, currentIndex]);
 
+    useEffect(() => {
+        setTimeout(()=>{
+            const tabBarEl = document.querySelector('.main_app_header');
+            if (tabBarEl) {
+                const tabHeight = tabBarEl.getBoundingClientRect().height;
+                document.documentElement.style.setProperty('--header-bar-height', `${tabHeight}px`);
+            }
+        },500)
+    }, []);
+
 
     const news = dummyNews[currentIndex];
 
     return (
         <IonPage>
+            <div className="news-menu">
+                {categories.map((cat, index) => (
+                    <button
+                        key={cat}
+                        onClick={() => setCategoryIndex(index)}
+                        className={`news-tab ${index === categoryIndex ? 'active' : ''}`}
+                    >
+                        {cat}
+                    </button>
+                ))}
+            </div>
             <IonContent fullscreen className="page-content">
                 <IonRefresher slot="fixed" disabled={currentIndex !== 0} onIonRefresh={handleRefresh}>
-                    <IonRefresherContent pullingText="Pull to refresh" refreshingSpinner="circles" />
+                    <IonRefresherContent pullingText="Pull to refresh" refreshingSpinner="circles"/>
                 </IonRefresher>
-
-                <div className="news-feed-page" {...handlers}>
-                    <div className="news-menu">
-                        {categories.map((cat, index) => (
-                            <button
-                                key={cat}
-                                onClick={()=>setCategoryIndex(index)}
-                                className={`news-tab ${index === categoryIndex ? 'active' : ''}`}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
-
-                    <div className="news-card-stack">
+                <div className="news-feed-page">
+                    <div className="news-card-stack" {...handlers}>
                         <AnimatePresence mode="popLayout">
                             <motion.div
                                 key={news.id}
@@ -207,8 +215,8 @@ export default function HomeMobilePage() {
                                 animate={{
                                     y: 0
                                 }}
-                                transition={{ duration: 0.25 }}>
-                                <img className="news-image" src={news.img_url} alt={news.title} />
+                                transition={{duration: 0.25}}>
+                                <img className="news-image" src={news.img_url} alt={news.title}/>
                                 <div className="news-content">
                                     <div className="news-sub-h-text">
                                         <div className="news-category">Finance</div>
@@ -222,7 +230,9 @@ export default function HomeMobilePage() {
                                     <p ref={newsContentRef}>{news.description}</p>
                                     <div className="news-footer">
                                         <span>{news.time} | {news.source}</span>
-                                        <button onClick={()=>openDetailPanel(news)} className="view_news_button"> <IonIcon icon={eyeSharp}/> Read more</button>
+                                        <button onClick={() => openDetailPanel(news)} className="view_news_button">
+                                            <IonIcon icon={eyeSharp}/> Read more
+                                        </button>
                                     </div>
                                 </div>
                             </motion.div>
@@ -232,7 +242,7 @@ export default function HomeMobilePage() {
             </IonContent>
             <NewsDetailSheetModal isOpen={isDetailOpen}
                                   newsDetailsData={newsDetailsData}
-                                  onDidDismiss={() => setIsDetailOpen(false)} />
+                                  onDidDismiss={() => setIsDetailOpen(false)}/>
         </IonPage>
     );
 }
