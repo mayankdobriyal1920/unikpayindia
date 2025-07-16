@@ -172,26 +172,33 @@ export default function HomeMobilePage() {
     // ✅ Dynamic clamp for lines (you can keep if needed)
     useEffect(() => {
         setShowAd(false);
-        setTimeout(() => {
-            const element = document.querySelector('.news_detail_card_p_content');
-            if(element) {
-                const computedStyles = getComputedStyle(element);
-                const lineHeight = parseFloat(computedStyles.lineHeight);
-                if (lineHeight) {
-                    const heightLeft = element.clientHeight;
-                    const lines = Math.floor(heightLeft / lineHeight);
-                    element.style.display = "-webkit-box";
-                    element.style.webkitBoxOrient = "vertical";
-                    element.style.overflow = "hidden";
-                    element.style.webkitLineClamp = lines.toString();
-                }
+        const element = document.querySelector('.news_detail_card_p_content');
+        if (!element) return;
 
-                const rect = element.getBoundingClientRect();
-                const spaceBelow = window.innerHeight - rect.bottom;
-                setShowAd(spaceBelow > 100);
+        const updateClamp = () => {
+            const computedStyles = getComputedStyle(element);
+            const lineHeight = parseFloat(computedStyles.lineHeight);
+            if (lineHeight) {
+                const heightLeft = element.clientHeight;
+                const lines = Math.floor(heightLeft / lineHeight);
+                element.style.display = "-webkit-box";
+                element.style.webkitBoxOrient = "vertical";
+                element.style.overflow = "hidden";
+                element.style.webkitLineClamp = lines.toString();
             }
-        }, 1000);
+            const rect = element.getBoundingClientRect();
+            const spaceBelow = window.innerHeight - rect.bottom;
+            setShowAd(spaceBelow > 100);
+        };
+
+        const resizeObserver = new ResizeObserver(updateClamp);
+        resizeObserver.observe(element);
+
+        updateClamp();
+
+        return () => resizeObserver.disconnect();
     }, [currentIndex]);
+
 
     const news = dummyNews[currentIndex];
 
