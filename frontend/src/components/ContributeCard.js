@@ -4,6 +4,7 @@ import trustImg from '../theme/images/80g-trust.png';
 
 export default function ContributeCard() {
     const [amount, setAmount] = useState('');
+    const [panCard, setPanCard] = useState('');
 
     const handleDonate = () => {
         console.log(`Donating: ₹${amount}`);
@@ -12,11 +13,13 @@ export default function ContributeCard() {
 
     return (
         <>
-            <img
-                src={trustImg}
-                alt="80G Registered Trust"
-                className="trust-badge"
-            />
+            {/*<div className={"contribute_img_section"}>*/}
+            {/*    <img*/}
+            {/*        src={trustImg}*/}
+            {/*        alt="80G Registered Trust"*/}
+            {/*        className="trust-badge"*/}
+            {/*    />*/}
+            {/*</div>*/}
             <h1 className="contribute-title">Support Our Trust</h1>
             <p className="contribute-description">
                 Your contribution helps us continue our work. Donations are eligible for tax
@@ -34,6 +37,14 @@ export default function ContributeCard() {
                 value={amount}
                 placeholder="Enter custom amount"
                 onIonChange={e => setAmount(e.detail.value)}
+                className="amount-input"
+            />
+
+            <IonInput
+                type="text"
+                value={panCard}
+                placeholder="Enter pan card number"
+                onIonChange={e => setPanCard(e.detail.value)}
                 className="amount-input"
             />
 

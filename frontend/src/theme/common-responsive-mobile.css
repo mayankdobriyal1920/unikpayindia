@@ -255,20 +255,35 @@
     }
 
     .filter-header {
-        display: flex;
+        display: grid;
         align-items: center;
-        gap: 8px; /* Space between icon and tags */
-        flex-wrap: wrap; /* Wrap on small screens */
-        margin-left:1rem ;
+        gap: 8px;
+        margin-left: 1rem;
+        grid-template-columns: 10% auto;
+        width: 100%;
+    }
+
+    .filter-header.assignment_filter_wraper {
+        display: grid;
+        align-items: center;
+        gap: 3px;
+        margin-left: 10px;
+        grid-template-columns: 10% 10% auto;
         width: 100%;
     }
 
     .filter-header ion-button {
         --color: var(--font-color);
-        font-size: var(--font-size-4);
         align-self: flex-start;
-        width: 8%!important;
         --ripple-color: transparent!important;
+        --padding-bottom: 0px!important;
+        --padding-top: 0px!important;
+        --padding-start: 0px!important;
+        --padding-end: 0px!important;
+    }
+    .filter-header ion-button ion-icon{
+        margin: auto;
+        font-size: var(--font-size-2);
     }
 
     .filter-header .tags {
@@ -278,7 +293,6 @@
         gap: 8px;
         -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
         scrollbar-width: none;  /* Firefox hide scrollbar */
-        width: 85%;
     }
 
     .filter-header .tags::-webkit-scrollbar {
@@ -286,15 +300,16 @@
     }
 
     .filter-header .tag {
-        flex: 0 0 auto;         /* Prevent tags from shrinking */
+        flex: 0 0 auto;
         display: inline-block;
-        background: #f0f0f0;
+        background: #ffffff;
         color: var(--font-color);
         font-size: var(--font-size-4);
-        padding: 6px 12px;
+        padding: 5px 12px;
         border-radius: 20px;
+        border: 1px solid #cccccc;
         cursor: pointer;
-        white-space: nowrap;    /* Prevent text wrap */
+        white-space: nowrap;
         transition: background 0.3s;
     }
 
@@ -324,13 +339,12 @@
 
     .filter-header-wrapper {
         position: sticky;
-        top: -6px;
+        top: var(--header-bar-height);
         width: 100%;
         z-index: 10;
         display: flex;
         background: #ffffff;
-        padding-bottom: 10px;
-        padding-top: 6px;
+        padding: 10px 0;
         border-bottom: 1px solid #ddd;
         transform: translateY(0); /* default position */
         transition: transform 0.3s ease-in-out, padding-top 0.3s ease-in-out;
@@ -338,7 +352,6 @@
 
     .filter-header-wrapper.sticky {
         transform: translateY(-70px); /* slide up */
-        padding-top: 10px;
     }
     .membership-row {
         display: flex;

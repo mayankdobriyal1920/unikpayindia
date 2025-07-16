@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {useState, useEffect, useRef, useLayoutEffect} from 'react';
 import {
     IonHeader,
     IonToolbar,
@@ -28,18 +28,18 @@ import userInitialImg from '../theme/images/user_initial.png';
 
 
 const menuItems = [
-    { label: 'Home', pathName: 'https://www.aicas.in/index.html' },
-    { label: 'About AICAS', pathName: 'https://www.aicas.in/about.html' },
+    { label: 'Home', pathName:'/dashboard/home' },
+    { label: 'About AICAS', pathName:'/dashboard/about-us' },
     { label: 'Become a Member', pathName: '/dashboard/membership' },
     {
         label: 'Initiatives',
         children: [
-            { label: 'CFO World', pathName: 'https://www.aicas.in/index.html' },
-            { label: 'FICAF', pathName: 'https://www.aicas.in/index.html' },
-            { label: 'Committees', pathName: 'https://www.aicas.in/index.html' },
+            { label: 'CFO World', pathName:'/dashboard/cfoworld' },
+            { label: 'FICAF', pathName:'/dashboard/ficaf' },
+            { label: 'Committees', pathName:'/dashboard/committees' },
         ],
     },
-    { label: 'Contact Us', pathName: 'https://www.aicas.in/index.html' },
+    { label: 'Contact Us', pathName:'/dashboard/contact-us' },
 ];
 
 const menuDesktopItems = [
@@ -130,6 +130,16 @@ const HeaderAfterLoginComponent = ({pageId,hideHeader,menuRef,setCurrentPath}) =
             ],
         });
     }
+
+    useLayoutEffect(() => {
+        setTimeout(()=>{
+            const tabBarEl = document.querySelector('.main_app_header');
+            if (tabBarEl) {
+                const tabHeight = tabBarEl.getBoundingClientRect().height;
+                document.documentElement.style.setProperty('--header-bar-height', `${tabHeight}px`);
+            }
+        },500)
+    }, []);
 
     return (
         <>

@@ -173,17 +173,6 @@ export default function HomeMobilePage() {
         }
     }, [newsContentRef, currentIndex]);
 
-    useEffect(() => {
-        setTimeout(()=>{
-            const tabBarEl = document.querySelector('.main_app_header');
-            if (tabBarEl) {
-                const tabHeight = tabBarEl.getBoundingClientRect().height;
-                document.documentElement.style.setProperty('--header-bar-height', `${tabHeight}px`);
-            }
-        },500)
-    }, []);
-
-
     const news = dummyNews[currentIndex];
 
     return (

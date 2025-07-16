@@ -109,7 +109,7 @@ const rfpList = [
     }
 ];
 
-export default function AssignmentDesktopPage({handleScroll}) {
+export default function AssignmentDesktopPage() {
     const [assignmentDetail, setAssignmentDetail] = useState(rfpList[0]);
     const [showRaiseRFP, setShowRaiseRFP] = useState(false);
 
@@ -119,7 +119,7 @@ export default function AssignmentDesktopPage({handleScroll}) {
 
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll}
+            <IonContent fullscreen
                         className="job-portal-desktop page-content">
                 <div className="job-portal-container three-panel-grid">
                     {/* Filter Sidebar */}

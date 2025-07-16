@@ -134,11 +134,11 @@ const profiles = [
     },
 ];
 
-export default function MatrimonialDesktopPage({handleScroll}) {
+export default function MatrimonialDesktopPage() {
     const [matrimonialProfileDetail, setMatrimonialProfileDetail] = useState(profiles[0]);
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="job-portal-desktop page-content">
+            <IonContent fullscreen className="job-portal-desktop page-content">
                 <div className="job-portal-container three-panel-grid">
                     {/* Filter Sidebar */}
                     <aside className="filter-sidebar">

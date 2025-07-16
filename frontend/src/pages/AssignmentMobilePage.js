@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { IonPage, IonContent, IonIcon, IonButton } from "@ionic/react";
-import {add, funnelOutline} from "ionicons/icons";
+import {add, addCircleSharp, funnelOutline} from "ionicons/icons";
 import AssignmentDataCard from "../components/AssignmentDataCard";
 import AssignmentsFilterSheetModal from "../components/AssignmentsFilterSheetModal";
 import AssignmentsDetailSheetPopup from "../components/AssignmentsDetailSheetPopup";
@@ -138,31 +138,31 @@ export default function AssignmentMobilePage({handleScroll}) {
 
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll}
-                        className="mobile-job-list-page page-content">
-                <div className={`filter-header-wrapper ${isSticky ? "sticky" : ""}`}>
-                    <div className="filter-header">
-                        <IonButton fill="clear" size="small" onClick={() => setIsFilterOpen(true)}
-                                   className="filter-btn">
-                            <IonIcon icon={funnelOutline} slot="start"/>
-                        </IonButton>
-                        <div className="tags">
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Assignment Type</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Location</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Minimum Price</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Scope of Work</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Days Left</span>
-                        </div>
+            <div className={`filter-header-wrapper ${isSticky ? "sticky" : ""}`}>
+                <div className="filter-header assignment_filter_wraper">
+                    <IonButton fill="clear" size="small" onClick={() => setShowRaiseRFP(true)} className={"filter-btn add_assignment_button"}>
+                        <IonIcon icon={addCircleSharp}></IonIcon>
+                    </IonButton>
+                    <IonButton fill="clear" size="small" onClick={() => setIsFilterOpen(true)} className="filter-btn">
+                        <IonIcon icon={funnelOutline}/>
+                    </IonButton>
+                    <div className="tags">
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Assignment Type</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Location</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Minimum Price</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Scope of Work</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Days Left</span>
                     </div>
                 </div>
-
+            </div>
+            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll}
+                        className="mobile-job-list-page page-content">
                 <div className="matrimony-list">
                     {rfpList.map((assignment) => (
                         <AssignmentDataCard key={assignment.id} handleDetailItemClick={handleDetailItemClick}
                                             assignment={assignment}/>
                     ))}
                 </div>
-                <button onClick={()=>setShowRaiseRFP(true)} className={"add_assignment_button"}><IonIcon icon={add}></IonIcon></button>
             </IonContent>
             <AssignmentsDetailSheetPopup
                 isOpen={isDetailOpen}
@@ -172,7 +172,7 @@ export default function AssignmentMobilePage({handleScroll}) {
                 isOpen={isFilterOpen}
                 onDidDismiss={() => setIsFilterOpen(false)}
             />
-            <RaiseRFPModal isOpen={showRaiseRFP} onDismiss={() => setShowRaiseRFP(false)} />
+            <RaiseRFPModal isOpen={showRaiseRFP} onDismiss={() => setShowRaiseRFP(false)}/>
         </IonPage>
     );
 }

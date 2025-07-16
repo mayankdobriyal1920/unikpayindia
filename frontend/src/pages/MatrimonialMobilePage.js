@@ -163,32 +163,34 @@ export default function MatrimonialMobilePage({handleScroll}) {
 
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll}
-                        className="mobile-job-list-page page-content">
-                <div className={`filter-header-wrapper ${isSticky ? "sticky" : ""}`}>
-                    <div className="filter-header">
-                        <IonButton fill="clear" size="small" onClick={() => setIsFilterOpen(true)}
-                                   className="filter-btn">
-                            <IonIcon icon={funnelOutline} slot="start"/>
-                        </IonButton>
-                        <div className="tags">
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Religion</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Caste</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Community</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Age Range</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Education</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Profession</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Location</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Marital Status</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Manglik</span>
-                            <span className="tag" onClick={() => setIsFilterOpen(true)}>Language</span>
-                        </div>
+            <div className={`filter-header-wrapper ${isSticky ? "sticky" : ""}`}>
+                <div className="filter-header">
+                    <IonButton fill="clear" size="small" onClick={() => setIsFilterOpen(true)}
+                               className="filter-btn">
+                        <IonIcon icon={funnelOutline} slot="start"/>
+                    </IonButton>
+                    <div className="tags">
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Religion</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Caste</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Community</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Age Range</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Education</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Profession</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Location</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Marital Status</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Manglik</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Language</span>
                     </div>
                 </div>
+            </div>
+            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll}
+                        className="mobile-job-list-page page-content">
 
                 <div className="matrimony-list">
                     {profiles.map((profile) => (
-                        <MatrimonyProfileCard key={profile.id} handleProfileItemClick={openMatrimonialProfileDetailPanel} profile={profile}/>
+                        <MatrimonyProfileCard key={profile.id}
+                                              handleProfileItemClick={openMatrimonialProfileDetailPanel}
+                                              profile={profile}/>
                     ))}
                 </div>
             </IonContent>

@@ -38,6 +38,11 @@ import ContributeDesktopPage from "./ContributeDesktopPage";
 import ContributeMobilePage from "./ContributeMobilePage";
 import MembershipDesktopPage from "./MembershipDesktopPage";
 import MembershipMobilePage from "./MembershipMobilePage";
+import AboutUsPage from "./AboutUsPage";
+import CfoworldPage from "./CfoworldPage";
+import FicafPage from "./FicafPage";
+import CommitteesPage from "./CommitteesPage";
+import ContactUsPage from "./ContactUsPage";
 
 const DashboardPage = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
@@ -127,7 +132,7 @@ const DashboardPage = () => {
                                     {(isMobile) ?
                                         <JobPortalMobilePage handleScroll={handleScroll} />
                                         :
-                                        <JobPortalDesktopPage handleScroll={handleScroll} />
+                                        <JobPortalDesktopPage />
                                     }
                                 </>
                             )} />
@@ -137,7 +142,7 @@ const DashboardPage = () => {
                                     {(isMobile) ?
                                         <MatrimonialMobilePage handleScroll={handleScroll} />
                                         :
-                                        <MatrimonialDesktopPage handleScroll={handleScroll} />
+                                        <MatrimonialDesktopPage />
                                     }
                                 </>
                             )} />
@@ -147,7 +152,7 @@ const DashboardPage = () => {
                                     {(isMobile) ?
                                         <AssignmentMobilePage handleScroll={handleScroll} />
                                         :
-                                        <AssignmentDesktopPage handleScroll={handleScroll} />
+                                        <AssignmentDesktopPage />
                                     }
                                 </>
                             )} />
@@ -157,7 +162,7 @@ const DashboardPage = () => {
                                     {(isMobile) ?
                                         <NewsletterMobilePage handleScroll={handleScroll} />
                                         :
-                                        <NewsletterDesktopPage handleScroll={handleScroll} />
+                                        <NewsletterDesktopPage />
                                     }
                                 </>
                             )} />
@@ -167,7 +172,7 @@ const DashboardPage = () => {
                                     {(isMobile) ?
                                         <EventsMobilePage handleScroll={handleScroll} />
                                         :
-                                        <EventsDesktopPage handleScroll={handleScroll} />
+                                        <EventsDesktopPage/>
                                     }
                                 </>
                             )} />
@@ -177,7 +182,7 @@ const DashboardPage = () => {
                                     {(isMobile) ?
                                         <ContributeMobilePage handleScroll={handleScroll} />
                                         :
-                                        <ContributeDesktopPage handleScroll={handleScroll} />
+                                        <ContributeDesktopPage/>
                                     }
                                 </>
                             )} />
@@ -187,10 +192,16 @@ const DashboardPage = () => {
                                     {(isMobile) ?
                                         <MembershipMobilePage handleScroll={handleScroll} />
                                         :
-                                        <MembershipDesktopPage handleScroll={handleScroll} />
+                                        <MembershipDesktopPage />
                                     }
                                 </>
                             )} />
+
+                            <Route exact path="/dashboard/about-us" render={()=>(<AboutUsPage />)} />
+                            <Route exact path="/dashboard/cfoworld" render={()=>(<CfoworldPage />)} />
+                            <Route exact path="/dashboard/ficaf" render={()=>(<FicafPage />)} />
+                            <Route exact path="/dashboard/committees" render={()=>(<CommitteesPage />)} />
+                            <Route exact path="/dashboard/contact-us" render={()=>(<ContactUsPage />)} />
                             <Redirect exact from="/dashboard" to="/dashboard/home" />
                         </IonRouterOutlet>
                     </IonPage>
@@ -231,33 +242,37 @@ const DashboardPage = () => {
                             <div className="more-sheet-grid">
                                 <div onClick={() => gotToPage('/dashboard/matrimonial', '/dashboard/matrimonial')}
                                      className={`more-sheet-item ${currentPath === '/dashboard/matrimonial' ? 'active' : ''}`}>
-                                        <div className="more-tile">
-                                            <IonIcon icon={currentPath === '/dashboard/matrimonial' ? heartSharp: heartOutline}/>
-                                        </div>
-                                        <span>Matrimonial</span>
+                                    <div className="more-tile">
+                                        <IonIcon
+                                            icon={currentPath === '/dashboard/matrimonial' ? heartSharp : heartOutline}/>
                                     </div>
+                                    <span>Matrimonial</span>
+                                </div>
                                 <div onClick={() => gotToPage('/dashboard/events', '/dashboard/events')}
                                      className={`more-sheet-item ${currentPath === '/dashboard/events' ? 'active' : ''}`}>
-                                        <div className="more-tile">
-                                            <IonIcon icon={currentPath === '/dashboard/events' ? calendarSharp: calendarOutline}/>
-                                        </div>
-                                        <span>Events</span>
+                                    <div className="more-tile">
+                                        <IonIcon
+                                            icon={currentPath === '/dashboard/events' ? calendarSharp : calendarOutline}/>
                                     </div>
+                                    <span>Events</span>
+                                </div>
                                 <div onClick={() => gotToPage('/dashboard/newsletter', '/dashboard/newsletter')}
                                      className={`more-sheet-item ${currentPath === '/dashboard/newsletter' ? 'active' : ''}`}>
-                                        <div className="more-tile">
-                                            <IonIcon icon={currentPath === '/dashboard/newsletter' ? newspaperSharp: newspaperOutline}/>
-                                        </div>
-                                        <span>Newsletter</span>
+                                    <div className="more-tile">
+                                        <IonIcon
+                                            icon={currentPath === '/dashboard/newsletter' ? newspaperSharp : newspaperOutline}/>
                                     </div>
+                                    <span>Newsletter</span>
+                                </div>
                                 <div onClick={() => gotToPage('/dashboard/contribute', '/dashboard/contribute')}
                                      className={`more-sheet-item ${currentPath === '/dashboard/contribute' ? 'active' : ''}`}>
-                                        <div className="more-tile">
-                                            <IonIcon icon={currentPath === '/dashboard/contribute' ? cashSharp : cashOutline}/>
-                                        </div>
-                                        <span>Contribute</span>
+                                    <div className="more-tile">
+                                        <IonIcon
+                                            icon={currentPath === '/dashboard/contribute' ? cashSharp : cashOutline}/>
                                     </div>
+                                    <span>Contribute</span>
                                 </div>
+                            </div>
                         </IonContent>
                     </IonModal>
                 </IonTabButton>

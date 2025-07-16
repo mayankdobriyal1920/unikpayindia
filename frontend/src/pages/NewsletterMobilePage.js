@@ -1,11 +1,12 @@
-import React from 'react';
-import {IonPage, IonContent} from '@ionic/react';
+import React, {useState} from 'react';
+import {IonPage, IonContent, IonButton, IonIcon} from '@ionic/react';
 import newsLetter1 from '../theme/images/news-letter-1.png';
 import newsLetter2 from '../theme/images/news-letter-2.png';
 import newsLetter3 from '../theme/images/news-letter-3.png';
 import newsLetter4 from '../theme/images/news-letter-4.png';
 import newsLetter5 from '../theme/images/news-letter-5.png';
 import NewsLetterCard from "../components/NewsLetterCard";
+import {funnelOutline} from "ionicons/icons";
 
 const mockPosts = [
     {
@@ -81,10 +82,54 @@ const mockPosts = [
 ];
 
 
+
+
 export default function NewsletterMobilePage({handleScroll}) {
+    const [isSticky, setIsSticky] = useState(false);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [filterOption, setFilterOption] = useState(2025);
+    const callFunctionToHandleScroll = (event) => {
+        handleScroll(event);
+        const scrollTop = event.detail.scrollTop;
+
+        if (scrollTop < lastScrollTop) {
+            // Scrolling UP → stick
+            setIsSticky(false);
+        } else {
+            // Scrolling DOWN → unstick
+            setIsSticky(true);
+        }
+
+        setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
+    };
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="feed-content page-content">
+            <div className={`filter-header-wrapper ${isSticky ? "sticky" : ""}`}>
+                <div className="filter-header in_news_feeds">
+                    <div className="tags">
+                        <span className={`tag ${filterOption === 2025 ? 'active' : ''}`}
+                              onClick={() => setFilterOption(2025)}>2025</span>
+                        <span className={`tag ${filterOption === 2024 ? 'active' : ''}`}
+                              onClick={() => setFilterOption(2024)}>2024</span>
+                        <span className={`tag ${filterOption === 2023 ? 'active' : ''}`}
+                              onClick={() => setFilterOption(2023)}>2023</span>
+                        <span className={`tag ${filterOption === 2022 ? 'active' : ''}`}
+                              onClick={() => setFilterOption(2022)}>2022</span>
+                        <span className={`tag ${filterOption === 2021 ? 'active' : ''}`}
+                              onClick={() => setFilterOption(2021)}>2021</span>
+                        <span className={`tag ${filterOption === 2020 ? 'active' : ''}`}
+                              onClick={() => setFilterOption(2020)}>2020</span>
+                        <span className={`tag ${filterOption === 2019 ? 'active' : ''}`}
+                              onClick={() => setFilterOption(2019)}>2019</span>
+                        <span className={`tag ${filterOption === 2018 ? 'active' : ''}`}
+                              onClick={() => setFilterOption(2018)}>2018</span>
+                        <span className={`tag ${filterOption === 2017 ? 'active' : ''}`}
+                              onClick={() => setFilterOption(2017)}>2017</span>
+                    </div>
+                </div>
+            </div>
+            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll}
+                        className="feed-content page-content">
                 <div className="feed-list">
                     {mockPosts.map(post => (
                         <NewsLetterCard key={post?.id} post={post}/>

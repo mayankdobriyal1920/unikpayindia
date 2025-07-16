@@ -162,29 +162,29 @@ export default function JobPortalMobilePage({handleScroll}) {
 
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll} className="mobile-job-list-page page-content">
-                <div className={`filter-header-wrapper ${isSticky ? "sticky" : ""}`}>
-                    <div className="filter-header">
-                        <IonButton fill="clear" size="small" onClick={()=>setIsFilterOpen(true)} className="filter-btn">
-                            <IonIcon icon={funnelOutline} slot="start"/>
-                        </IonButton>
-                        <div className="tags">
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Work mode</span>
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Department</span>
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Experience</span>
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Salary</span>
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Role</span>
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Education</span>
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Location</span>
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Education</span>
-                            <span className="tag" onClick={()=>setIsFilterOpen(true)}>Freshness</span>
-                        </div>
+            <div className={`filter-header-wrapper ${isSticky ? "sticky" : ""}`}>
+                <div className="filter-header">
+                    <IonButton fill="clear" size="small" onClick={() => setIsFilterOpen(true)} className="filter-btn">
+                        <IonIcon icon={funnelOutline} slot="start"/>
+                    </IonButton>
+                    <div className="tags">
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Work mode</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Department</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Experience</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Salary</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Role</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Education</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Location</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Education</span>
+                        <span className="tag" onClick={() => setIsFilterOpen(true)}>Freshness</span>
                     </div>
                 </div>
-
+            </div>
+            <IonContent fullscreen scrollEvents={true} onIonScroll={callFunctionToHandleScroll}
+                        className="mobile-job-list-page page-content">
                 <div className="job-list">
                     {jobs.map(job => (
-                        <JobCard key={job?.id} job={job} handleJobItemClick={openJobDetailPanel} />
+                        <JobCard key={job?.id} job={job} handleJobItemClick={openJobDetailPanel}/>
                     ))}
                 </div>
             </IonContent>
@@ -194,7 +194,7 @@ export default function JobPortalMobilePage({handleScroll}) {
             />
             <JobDetailsSheetPopup isOpen={isDetailOpen}
                                   jobDetailsData={jobDetailsData}
-                                  onDidDismiss={() => setIsDetailOpen(false)} />
+                                  onDidDismiss={() => setIsDetailOpen(false)}/>
         </IonPage>
     );
 }

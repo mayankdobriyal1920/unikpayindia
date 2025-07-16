@@ -128,16 +128,16 @@ export default function EventsMobilePage({ handleScroll }) {
     };
     return (
         <IonPage>
+            <div className={`upcoming_events_filter_tabs ${isSticky ? "sticky" : ""}`}>
+                <EventsFilterTabs handleSetEventTypeFilter={handleSetEventTypeFilter}
+                                  eventTypeFilter={eventTypeFilter}/>
+            </div>
             <IonContent
                 fullscreen
                 scrollEvents={true}
                 onIonScroll={callFunctionToHandleScroll}
                 className="events-content page-content"
             >
-                <div className={`upcoming_events_filter_tabs ${isSticky ? "sticky" : ""}`}>
-                    <EventsFilterTabs handleSetEventTypeFilter={handleSetEventTypeFilter}
-                                      eventTypeFilter={eventTypeFilter}/>
-                </div>
                 <div className="mobile-contain-feed-events">
                     {mockEvents.map(event => (
                         <EventsCard key={event?.id} event={event}/>

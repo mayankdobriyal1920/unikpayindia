@@ -101,13 +101,11 @@ const mockEvents = [
     }
 ];
 
-export default function EventsDesktopPage({ handleScroll }) {
+export default function EventsDesktopPage() {
     return (
         <IonPage>
             <IonContent
                 fullscreen
-                scrollEvents={true}
-                onIonScroll={handleScroll}
                 className="events-content page-content"
             >
                 <div className="desktop-contain-feed-newsletter">

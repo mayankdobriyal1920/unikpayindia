@@ -82,10 +82,10 @@ const mockPosts = [
 ];
 
 
-export default function NewsletterDesktopPage({handleScroll}) {
+export default function NewsletterDesktopPage() {
     return (
         <IonPage>
-            <IonContent fullscreen scrollEvents={true} onIonScroll={handleScroll} className="feed-content page-content">
+            <IonContent fullscreen className="feed-content page-content">
                 <div className="desktop-contain-feed-newsletter">
                     <div className="feed-list desktop-contain-feed">
                         {mockPosts.map(post => (
