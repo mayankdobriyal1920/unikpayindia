@@ -86,10 +86,9 @@ export const insertCommonApiCall = (body) => {
     return new Promise((resolve, reject) => {
         // Construct the query with placeholders
         const query = `
-            INSERT INTO ${tableName} (${column.toString()})
-            VALUES (${alias.toString()});
+            INSERT INTO ${tableName} (${column.join(', ')})
+            VALUES (${alias.join(', ')});
         `;
-
         // Execute the query
         pool.query(query, values, (error) => {
             if (error) {

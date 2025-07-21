@@ -1,15 +1,24 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
+import Razorpay from 'razorpay';
+import crypto from 'crypto';
 import {
     actionToSendOtpApiCall,
     actionToVerifyLoginUserOtpApiCall,
-    actionToGetCurrentUserProfileDataApiCall
+    actionToGetCurrentUserProfileDataApiCall, actionToInsertOrderDetailsApiCall, actionToGetTransactionDetailsApiCall
 } from "../models/commonModel.js";
 import {
     callFunctionToSendOtp,
     createNewSessionWithUserDataAndRole,
-    deleteOldSessionFileFromSessionStore
+    deleteOldSessionFileFromSessionStore, updateCommonApiCall
 } from "../models/helpers/commonModelHelper.js";
+
+const razorpayInstance = new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET
+});
+
+
 
 
 const commonRouter = express.Router();
@@ -177,6 +186,77 @@ commonRouter.post(
                 message: 'User logged out',
             });
         });
+    })
+);
+
+commonRouter.post('/actionToGetTransactionDetailsApiCall',
+    expressAsyncHandler(async (req, res) => {
+        const userId = req?.session?.userSessionData?.id;
+
+        if (!userId) {
+            return res.status(401).json({ error: 'Unauthorized access' });
+        }
+
+        const responseData = await actionToGetTransactionDetailsApiCall(userId);
+        res.status(200).send(responseData);
+    })
+);
+
+commonRouter.post('/actionToSendPaymentRequestApiCall', expressAsyncHandler(async (req, res) => {
+
+    const { amount, mobileNumber, operator, circle,user_id} = req.body;
+
+    const options = {
+        amount: amount * 100,
+        currency: 'INR',
+        receipt: `rcpt_${Date.now()}`,
+        notes: { mobile:mobileNumber, operator,circle }
+    };
+
+    try {
+        const order = await razorpayInstance.orders.create(options);
+
+
+        const dbRes = await actionToInsertOrderDetailsApiCall(order, user_id);
+        res.json({ success: true, order ,dbRes}); // send back something for now
+    } catch (err) {
+        res.status(500).json({ success: false, error: err.message });
+    }
+}));
+
+commonRouter.post(
+    '/actionToVarifyRechargePaymentApiCall',
+    expressAsyncHandler(async (req, res) => {
+        try {
+            const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
+
+            const generated_signature = crypto
+                .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET) // Replace with process.env.SECRET_KEY in production
+                .update(`${razorpay_order_id}|${razorpay_payment_id}`)
+                .digest('hex');
+
+            if (generated_signature === razorpay_signature) {
+                // ✅ Update DB on successful verification
+                await updateCommonApiCall({
+                    tableName: 'transaction',
+                    column: ['transaction_id=?','signature_id=?', 'status=?','completed_at=?'],
+                    value: [razorpay_payment_id, razorpay_signature,'success', new Date() ],
+                    whereCondition: `order_id = '${razorpay_order_id}'`
+                });
+                return res.json({ success: true, message: 'Payment verified successfully' });
+            } else {
+                await updateCommonApiCall({
+                    tableName: 'transaction',
+                    column: ['transaction_id=?','signature_id=?', 'status=?','completed_at=?'],
+                    value: [razorpay_payment_id, razorpay_signature,'failed', new Date()],
+                    whereCondition: `order_id = '${razorpay_order_id}'`
+                });
+                return res.status(400).json({ success: false, message: 'Payment verification failed' });
+            }
+        } catch (error) {
+            console.error('Error verifying payment:', error);
+            return res.status(500).json({ success: false, message: 'Internal server error' });
+        }
     })
 );
 

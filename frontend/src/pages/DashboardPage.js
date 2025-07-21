@@ -48,9 +48,19 @@ import QRCodePartPage from "../components/DashBoardPage/QRCodePartPage";
 import TravelPartPage from "../components/DashBoardPage/TravelPartPage";
 import PGPartPage from "../components/DashBoardPage/PGPartPage";
 import FastTagPartPage from "../components/DashBoardPage/FastTagPartPage";
+import PaymentTransactionSuccessModal from "../components/DashBoardPage/PaymentTransactionSuccessModal";
+import {useDispatch, useSelector} from "react-redux";
+import {actionToGetTransactionDetails} from "../redux/CommonAction";
 
 export default function DashboardPage(){
     const { path } = useRouteMatch();
+    const dispatch = useDispatch();
+    const {userInfo} = useSelector((state) => state.userAuthDetail)
+
+    React.useEffect(()=>{
+        dispatch(actionToGetTransactionDetails(userInfo.id))
+    },[userInfo])
+
     return(
         <IonPage className="UnikPayIndia">
             <HeaderAfterLoginComponent/>
@@ -98,6 +108,7 @@ export default function DashboardPage(){
                         </Switch>
                     </div>
                 </div>
+                <PaymentTransactionSuccessModal />
             </IonContent>
         </IonPage>
     )

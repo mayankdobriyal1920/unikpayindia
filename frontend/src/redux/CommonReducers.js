@@ -7,7 +7,11 @@ import {
     USER_SIGNIN_REQUEST,
     USER_SIGNIN_SUCCESS,
     USER_SIGNOUT,
-    USER_GET_OTP_REQUEST, USER_SIGNUP_SIGNIN_ERROR, OPEN_CLOSE_SIDE_BAR_MENU,
+    USER_GET_OTP_REQUEST,
+    USER_SIGNUP_SIGNIN_ERROR,
+    OPEN_CLOSE_SIDE_BAR_MENU,
+    OPEN_CLOSE_PAYMENT_TRANSACTION_MODAL,
+    ALL_TRANSACTION_DETAIL_LIST, ALL_TRANSACTION_DETAIL_LIST_REQUEST, ALL_TRANSACTION_DETAIL_LIST_SUCCESS,
 } from "./CommonConstants";
 
 export const userAuthDetailReducer = (state = {}, action) => {
@@ -24,6 +28,26 @@ export const userAuthDetailReducer = (state = {}, action) => {
             return state;
     }
 };
+
+export const paymentTransactionDetailsListReducer = (state={}, action) =>{
+    switch(action.type){
+        case ALL_TRANSACTION_DETAIL_LIST_REQUEST:
+            return {loading:true, transactionDetails:[]}
+        case ALL_TRANSACTION_DETAIL_LIST_SUCCESS:
+            return {loading:false, transactionDetails: action.payload}
+        default:
+            return state
+    }
+}
+
+export const paymentTransactionStatusModalReducer = (state={}, action) =>{
+    switch(action.type){
+        case OPEN_CLOSE_PAYMENT_TRANSACTION_MODAL:
+            return action.payload;
+        default:
+            return state;
+    }
+}
 
 export const userSessionReducer = (state = {}, action) => {
     switch (action.type) {
