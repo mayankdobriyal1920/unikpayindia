@@ -74,8 +74,8 @@ export const actionToInsertOrderDetailsApiCall = async (data, user_id) => {
     const notes = data.notes || {};
 
     const orderData = {
-        column: ['order_id', 'amount', 'user_id', 'end_user_phone', 'operator', 'circle','status'],
-        alias: ['?', '?', '?', '?', '?', '?','?'],
+        column: ['order_id', 'amount', 'user_id', 'end_user_phone', 'operator', 'circle','status','transactionType'],
+        alias: ['?', '?', '?', '?', '?', '?','?','?'],
         tableName: 'transaction',
         values: [
             data.id,
@@ -85,6 +85,7 @@ export const actionToInsertOrderDetailsApiCall = async (data, user_id) => {
             notes.operator,
             notes.circle,
             'pending',
+            'mobile_recharge'
         ],
     };
 
@@ -95,4 +96,23 @@ export const actionToInsertOrderDetailsApiCall = async (data, user_id) => {
         console.error("Failed to insert order:", error);
     }
 };
+
+
+export const actionToInsertDthOrderDetailsApiCall = async(payload, status) => {
+    const orderData = {
+        column: ['order_id', 'amount', 'user_id', 'operator', 'status','transactionType', 'customer_id','transaction_id','signature_id','completed_at'],
+        alias: ['?', '?', '?', '?', '?', '?','?','?','?','?'],
+        tableName: 'transaction',
+        values: [
+            payload.razorpay_order_id,payload.amount, payload.user_id,payload.operator, status,'dth_recharge',payload.customerId, payload.razorpay_payment_id, payload.razorpay_signature, new Date()
+        ],
+    };
+
+    try {
+        const insertRes = await insertCommonApiCall(orderData);
+        return insertRes
+    } catch (error) {
+        console.error("Failed to insert order:", error);
+    }
+}
 

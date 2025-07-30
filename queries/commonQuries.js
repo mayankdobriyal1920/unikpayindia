@@ -21,7 +21,7 @@ export const loginUserQuery = () => {
 };
 
 export const actionToGetTransactionDetailsApiCallQuery = () => {
-    return `SELECT id, amount, status, end_user_phone, operator, circle, order_id, completed_at, transaction_id, signature_id FROM transaction WHERE user_id = ? AND status IN ('success', 'failed') ORDER BY completed_at DESC`
+    return `SELECT id, amount, status, end_user_phone, operator, circle, order_id, completed_at, transaction_id, signature_id, transactionType, customer_id FROM transaction WHERE user_id = ? AND status IN ('success', 'failed') ORDER BY completed_at DESC`
 
 }
 

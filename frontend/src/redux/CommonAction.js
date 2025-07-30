@@ -17,6 +17,7 @@ const api = Axios.create({
     baseURL: 'https://unikpayindia.com/api-call-unikpay/common/',
     withCredentials:true
 })
+let RAZORPAY_KEY_ID = 'rzp_test_ciDUUa1LW3H7NV'
 
 export const actionToConnectSocketServer = () => async () => {
     const socket = createSocketConnection();
@@ -104,7 +105,7 @@ export const actionToSendPaymentRequest = (payload, resetCustomFields) => async 
         }
 
         const options = {
-            key: 'rzp_test_ciDUUa1LW3H7NV', // replace with your actual Razorpay key
+            key: RAZORPAY_KEY_ID, // replace with your actual Razorpay key
             amount: data.order.amount,
             currency: "INR",
             name: "Mobile Recharge",
@@ -153,7 +154,7 @@ export const actionToSendPaymentRequest = (payload, resetCustomFields) => async 
                     } else {
                         transactionObj.status = "failed"
                         details.message('❌ Payment verification failed.');
-                        details.success("failed")
+                        details.status = "failed"
                     }
                     resetCustomFields();
 
@@ -181,6 +182,78 @@ export const actionToSendPaymentRequest = (payload, resetCustomFields) => async 
         resetCustomFields();
     }
 };
+
+export const actionToMakeDthRechargePayment = (payload,resetDthObject) => async(dispatch,getState) =>{
+    try {
+        const {transactionDetails} = getState().paymentTransactionDetailsList;
+        const { userInfo } = getState().userAuthDetail;
+        payload.user_id = userInfo.id;
+        const { data } = await api.post(`actionToMakeDthPaymentRequestApiCall`, payload);
+        if(data.success){
+            const options = {
+                key: RAZORPAY_KEY_ID,
+                amount: data.order.amount,
+                currency: 'INR',
+                name: 'DTH Recharge',
+                description: 'Payment for recharge',
+                order_id: data.order.id,
+                handler: async (response) => {
+                    const res = await api.post('actionToVerifyDthPaymentApiCall', {
+                        ...response,
+                        ...payload
+                    });
+
+                    //// OBJECT FOR TRANSACTION MODAL /////
+                    let details = {
+                        status: "success",
+                        message: `✅ ${res.data.message}`,
+                        amount: data.order.amount / 100, // in ₹
+                        transactionId: response?.razorpay_payment_id,
+                        orderId: response?.razorpay_order_id,
+                        date: new Date().toLocaleString(),
+                        paidBy: userInfo.name,
+                        customerId: payload.customerId,
+                    }
+
+                    //// OBJECT FOR TRANSACTION LIST UPDATE /////
+                    let transactionObj = {
+                        amount: data.order.amount / 100,
+                        customerId: payload.customerId,
+                        operator: payload.operator,
+                        order_id: response?.razorpay_order_id,
+                        completed_at: new Date(),
+                        transaction_id: response?.razorpay_payment_id,
+                        signature_id: response.razorpay_signature,
+                        transactionType: 'dth_recharge'
+                    }
+                    console.log(res.data,"res.data")
+                    if (res.data.status) {
+                        transactionObj.status = "success"
+                        resetDthObject(); // only reset on success
+                    } else {
+                        transactionObj.status = "failed"
+                        details.status = "failed"
+                    }
+                    dispatch({type:OPEN_CLOSE_PAYMENT_TRANSACTION_MODAL,payload:{isOpen:true, transaction:details}})
+
+                    let transactionDetailsClone = [...transactionDetails];
+                    transactionDetailsClone.push(transactionObj)
+                    dispatch({type:ALL_TRANSACTION_DETAIL_LIST_SUCCESS, payload:transactionDetailsClone});
+                },
+                prefill: {
+                    name: userInfo.name,
+                    email: "test@example.com",
+                    contact: payload.mobileNumber,
+                },
+            };
+
+            const rzp = new window.Razorpay(options);
+            rzp.open();
+        }
+    }catch(e){
+        console.log(e)
+    }
+}
 
 
 export const actionToOpenCloseSideBarMenu = (action) => async (dispatch) => {

@@ -5,7 +5,10 @@ import crypto from 'crypto';
 import {
     actionToSendOtpApiCall,
     actionToVerifyLoginUserOtpApiCall,
-    actionToGetCurrentUserProfileDataApiCall, actionToInsertOrderDetailsApiCall, actionToGetTransactionDetailsApiCall
+    actionToGetCurrentUserProfileDataApiCall,
+    actionToInsertOrderDetailsApiCall,
+    actionToGetTransactionDetailsApiCall,
+    actionToInsertDthOrderDetailsApiCall
 } from "../models/commonModel.js";
 import {
     callFunctionToSendOtp,
@@ -260,4 +263,57 @@ commonRouter.post(
     })
 );
 
+commonRouter.post(
+    '/actionToMakeDthPaymentRequestApiCall',
+    expressAsyncHandler(async(req,res)=>{
+        try{
+            const { amount } = req.body;
+            const options = {
+                amount: parseInt(amount) * 100,
+                currency: 'INR',
+                receipt: 'order_rcpt_' + Date.now(),
+            };
+            const order = await razorpayInstance.orders.create(options);
+            console.log('order',order)
+            return res.json({success: true, order });
+        }catch(e){
+            return res.status(500).json({ success: false, message: 'Internal server error' });
+        }
+    })
+ )
+
+commonRouter.post('/actionToVerifyDthPaymentApiCall',
+    expressAsyncHandler(async(req, res) =>{
+        try{
+            const {
+                razorpay_order_id,
+                razorpay_payment_id,
+                razorpay_signature,
+            } = req.body;
+
+            const generatedSignature = crypto
+                .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
+                .update(razorpay_order_id + '|' + razorpay_payment_id)
+                .digest('hex');
+
+            if (generatedSignature !== razorpay_signature) {
+                await actionToInsertDthOrderDetailsApiCall(req.body, 'failed');
+                return res.status(400).json({ message: 'Payment failed due to invalid signature' , status:false});
+            }
+
+            // Save details to database (optional)
+            await actionToInsertDthOrderDetailsApiCall(req.body, 'success');
+            // Recharge logic will be added here later
+            return res.status(200).json({
+                message: 'Payment successful. Recharge will be processed soon.',
+                details: "Payment successful",
+                status: true
+            });
+
+        }catch(e){
+            console.error(err);
+            return res.status(500).json({ message: 'Recharge API error.' });
+        }
+    })
+)
 export default commonRouter;
