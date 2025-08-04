@@ -8,7 +8,9 @@ import {
     actionToGetCurrentUserProfileDataApiCall,
     actionToInsertOrderDetailsApiCall,
     actionToGetTransactionDetailsApiCall,
-    actionToInsertDthOrderDetailsApiCall
+    actionToInsertDthOrderDetailsApiCall,
+    actionToInsertLPGOrderDetailsApiCall,
+    actionToGetLpgBookingTransactionDetailApiCall
 } from "../models/commonModel.js";
 import {
     callFunctionToSendOtp,
@@ -205,6 +207,18 @@ commonRouter.post('/actionToGetTransactionDetailsApiCall',
     })
 );
 
+commonRouter.post('/actionToGetLpgBookingTransactionDetailApiCall',
+    expressAsyncHandler(async(req, res) =>{
+        const userId = req?.session?.userSessionData?.id;
+        if (!userId) {
+            return res.status(401).json({ error: 'Unauthorized access' });
+        }
+
+        const responseData = await actionToGetLpgBookingTransactionDetailApiCall(userId);
+        res.status(200).send(responseData);
+    })
+)
+
 commonRouter.post('/actionToSendPaymentRequestApiCall', expressAsyncHandler(async (req, res) => {
 
     const { amount, mobileNumber, operator, circle,user_id} = req.body;
@@ -264,7 +278,7 @@ commonRouter.post(
 );
 
 commonRouter.post(
-    '/actionToMakeDthPaymentRequestApiCall',
+    '/actionToMakePaymentRequestApiCall',
     expressAsyncHandler(async(req,res)=>{
         try{
             const { amount } = req.body;
@@ -274,7 +288,6 @@ commonRouter.post(
                 receipt: 'order_rcpt_' + Date.now(),
             };
             const order = await razorpayInstance.orders.create(options);
-            console.log('order',order)
             return res.json({success: true, order });
         }catch(e){
             return res.status(500).json({ success: false, message: 'Internal server error' });
@@ -307,6 +320,55 @@ commonRouter.post('/actionToVerifyDthPaymentApiCall',
             return res.status(200).json({
                 message: 'Payment successful. Recharge will be processed soon.',
                 details: "Payment successful",
+                status: true
+            });
+
+        }catch(e){
+            console.error(err);
+            return res.status(500).json({ message: 'Recharge API error.' });
+        }
+    })
+)
+
+commonRouter.post('/actionToVerifyLpgPaymentRequestApiCall',
+    expressAsyncHandler(async(req, res)=>{
+        // Check if the session exists and the user is logged in
+        try{
+            const {
+                razorpay_order_id,
+                razorpay_payment_id,
+                razorpay_signature,
+                preferredDate,
+                timeSlot
+            } = req.body;
+
+            const generatedSignature = crypto
+                .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
+                .update(razorpay_order_id + '|' + razorpay_payment_id)
+                .digest('hex');
+
+            if (generatedSignature !== razorpay_signature) {
+                await actionToInsertLPGOrderDetailsApiCall(req.body, 'Failed');
+                return res.status(400).json({ message: 'LPG gas booking payment failed due to invalid signature.' , status:false});
+            }
+
+            // Save details to database (optional)
+            await actionToInsertLPGOrderDetailsApiCall(req.body, 'Paid');
+            // Recharge logic will be added here later
+
+            // Build delivery message part
+            let deliveryMsg = '';
+            if (preferredDate) {
+                deliveryMsg += ` Delivery scheduled on ${req.body.preferredDate}`;
+                if (timeSlot) {
+                    deliveryMsg += ` during ${timeSlot}.`;
+                } else {
+                    deliveryMsg += '.';
+                }
+            }
+            return res.status(200).json({
+                message: 'Payment successful.',
+                details: `Your gas booking has been confirmed successfully. ${deliveryMsg}`,
                 status: true
             });
 

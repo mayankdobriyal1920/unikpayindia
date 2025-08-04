@@ -11,7 +11,10 @@ import {
     USER_SIGNUP_SIGNIN_ERROR,
     OPEN_CLOSE_SIDE_BAR_MENU,
     OPEN_CLOSE_PAYMENT_TRANSACTION_MODAL,
-    ALL_TRANSACTION_DETAIL_LIST, ALL_TRANSACTION_DETAIL_LIST_REQUEST, ALL_TRANSACTION_DETAIL_LIST_SUCCESS,
+    ALL_TRANSACTION_DETAIL_LIST,
+    ALL_TRANSACTION_DETAIL_LIST_REQUEST,
+    ALL_TRANSACTION_DETAIL_LIST_SUCCESS,
+    LPG_BOOKING_TRANSACTION_HISTORY_REQUEST, LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS,
 } from "./CommonConstants";
 
 export const userAuthDetailReducer = (state = {}, action) => {
@@ -89,3 +92,14 @@ export const openCloseSideBarMenuReducer = (state = {}, action) => {
             return state;
     }
 };
+
+export const lpgBookingTransactionHistoryReducer = (state= {}, action) => {
+    switch(action.type) {
+        case LPG_BOOKING_TRANSACTION_HISTORY_REQUEST:
+            return {isLoading:true, lpgTransactionBooking:[]}
+        case LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS:
+            return {isLoading:false, lpgTransactionBooking: action.payload}
+        default:
+            return state;
+    }
+}

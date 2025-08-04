@@ -1,6 +1,7 @@
 import { createStore, compose, applyMiddleware,combineReducers } from 'redux';
 import {thunk} from 'redux-thunk';
 import {
+    lpgBookingTransactionHistoryReducer,
     openCloseSideBarMenuReducer, paymentTransactionDetailsListReducer, paymentTransactionStatusModalReducer,
     signupSigninFormErrorReducer,
     userAuthDetailReducer,
@@ -15,7 +16,8 @@ const initialState = {
     signupSigninFormError: {},
     openCloseSideBarMenu: {isOpen:false},
     paymentTransactionStatusModal:{isOpen:false, transaction:null},
-    paymentTransactionDetailsList:{loading:false, transactionDetails:[]}
+    paymentTransactionDetailsList:{loading:false, transactionDetails:[]},
+    lpgBookingTransactionHistory:{isLoading:false, lpgTransactionBooking:[]}
 }
 export const rootReducer = combineReducers({
     userSession: userSessionReducer,
@@ -24,7 +26,8 @@ export const rootReducer = combineReducers({
     userAuthDetail: userAuthDetailReducer,
     userOtpDetails: userOtpReducer,
     paymentTransactionStatusModal:paymentTransactionStatusModalReducer,
-    paymentTransactionDetailsList:paymentTransactionDetailsListReducer
+    paymentTransactionDetailsList:paymentTransactionDetailsListReducer,
+    lpgBookingTransactionHistory:lpgBookingTransactionHistoryReducer
 });
 
 declare global {

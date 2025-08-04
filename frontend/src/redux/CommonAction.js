@@ -11,6 +11,8 @@ import {
     OPEN_CLOSE_SIDE_BAR_MENU,
     OPEN_CLOSE_PAYMENT_TRANSACTION_MODAL,
     ALL_TRANSACTION_DETAIL_LIST_SUCCESS,
+    LPG_BOOKING_TRANSACTION_HISTORY_REQUEST,
+    LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS,
 } from "./CommonConstants";
 import createSocketConnection from "../socket/socket";
 const api = Axios.create({
@@ -188,7 +190,7 @@ export const actionToMakeDthRechargePayment = (payload,resetDthObject) => async(
         const {transactionDetails} = getState().paymentTransactionDetailsList;
         const { userInfo } = getState().userAuthDetail;
         payload.user_id = userInfo.id;
-        const { data } = await api.post(`actionToMakeDthPaymentRequestApiCall`, payload);
+        const { data } = await api.post(`actionToMakePaymentRequestApiCall`, payload);
         if(data.success){
             const options = {
                 key: RAZORPAY_KEY_ID,
@@ -281,5 +283,88 @@ export const actionToVerifyLoginUserOtp = (phone,otp) => async (dispatch) => {
                     ? error.response.data.message
                     : error.message,
         });
+    }
+}
+
+export const actionToSendGasBookingRequest = (payload) => async(dispatch, getState) =>{
+    try {
+        const { userInfo } = getState().userAuthDetail;
+        const {lpgTransactionBooking} = getState().lpgBookingTransactionHistory;
+        payload.user_id = userInfo.id;
+        const { data } = await api.post(`actionToMakePaymentRequestApiCall`, payload);
+        if(data.success){
+            const options = {
+                key: RAZORPAY_KEY_ID,
+                amount: data.order.amount,
+                currency: 'INR',
+                name: 'LPG Booking',
+                description: 'Payment for LPG booking',
+                order_id: data.order.id,
+                handler: async (response) => {
+                    console.log("response", response)
+                    const res = await api.post('actionToVerifyLpgPaymentRequestApiCall', {
+                        ...response,
+                        ...payload
+                    });
+
+
+                    //// OBJECT FOR TRANSACTION MODAL /////
+                    let details = {
+                        status: "success",
+                        message: `✅ ${res.data.message}`,
+                        amount: data.order.amount / 100, // in ₹
+                        transactionId: response?.razorpay_payment_id,
+                        orderId: response?.razorpay_order_id,
+                        date: new Date().toLocaleString(),
+                        paidBy: userInfo.name,
+                    }
+
+                    //// OBJECT FOR TRANSACTION LIST UPDATE /////
+                    let transactionObj = {
+                        amount: data.order.amount / 100,
+                        consumerNumber: payload.consumerNumber,
+                        provider: payload.provider,
+                        order_id: response?.razorpay_order_id,
+                        created_at: new Date(),
+                        transaction_id: response?.razorpay_payment_id,
+                        signature_id: response.razorpay_signature,
+                    }
+                    if (res.data.status) {
+                        details.status = "success"
+                        transactionObj.payment_status = "Paid"
+                    } else {
+                        transactionObj.payment_status = "Failed"
+                        details.status = "failed"
+                    }
+                    dispatch({type:OPEN_CLOSE_PAYMENT_TRANSACTION_MODAL,payload:{isOpen:true, transaction:details}})
+
+                    let transactionDetailsClone = [...lpgTransactionBooking];
+                    transactionDetailsClone.push(transactionObj)
+                    dispatch({type:LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS, payload:transactionDetailsClone});
+                },
+                prefill: {
+                    name: userInfo.name,
+                    email: "test@example.com",
+                    contact: payload.mobile,
+                },
+            };
+
+            const rzp = new window.Razorpay(options);
+            rzp.open();
+        }
+    }catch(e){
+        console.log(e)
+    }
+}
+
+
+export const actionToGetLpgBookingTransactionDetails = () =>async(dispatch, getState) =>{
+    const { userInfo } = getState().userAuthDetail;
+    dispatch({type:LPG_BOOKING_TRANSACTION_HISTORY_REQUEST})
+    try{
+        const { data } = await api.post(`actionToGetLpgBookingTransactionDetailApiCall`, {userId:userInfo.id});
+        dispatch({type:LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS, payload:data})
+    }catch(e){
+        console.log(e)
     }
 }

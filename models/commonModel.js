@@ -1,5 +1,6 @@
 import pool from "./connection.js";
 import {
+    actionToGetLpgBookingTransactionDetailQuery,
     actionToGetTransactionDetailsApiCallQuery,
     checkMobNumberAlreadyExistQuery,
     getUserByIdQuery,
@@ -116,3 +117,33 @@ export const actionToInsertDthOrderDetailsApiCall = async(payload, status) => {
     }
 }
 
+
+export const actionToInsertLPGOrderDetailsApiCall = async(payload, status) => {
+    const orderData = {
+        column: ['order_id', 'amount', 'user_id', 'provider', 'payment_status','booking_type', 'consumer_number','transaction_id','signature_id','created_at','mobile_number', 'address','preferred_date','time_slot'],
+        alias: ['?', '?', '?', '?', '?', '?','?','?','?','?','?','?','?','?'],
+        tableName: 'lpg_bookings_transaction',
+        values: [
+            payload.razorpay_order_id,payload.amount, payload.user_id,payload.provider, status, payload.bookingType,payload.consumerNumber, payload.razorpay_payment_id, payload.razorpay_signature, new Date(), payload.mobile,payload.address, payload.preferredDate, payload.timeSlot
+        ],
+    };
+
+    try {
+        const insertRes = await insertCommonApiCall(orderData);
+        return insertRes
+    } catch (error) {
+        console.error("Failed to insert order:", error);
+    }
+}
+
+export const actionToGetLpgBookingTransactionDetailApiCall = async(user_id) => {
+    return new Promise(function(resolve, reject) {
+        const query = actionToGetLpgBookingTransactionDetailQuery();
+        pool.query(query,[user_id], (error, results) => {
+            if (error) {
+                reject(error)
+            }
+            resolve(results);
+        })
+    })
+}

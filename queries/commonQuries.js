@@ -25,6 +25,12 @@ export const actionToGetTransactionDetailsApiCallQuery = () => {
 
 }
 
+export const actionToGetLpgBookingTransactionDetailQuery = () =>{
+    return `
+        SELECT id, amount, payment_status, mobile_number, transaction_id, created_at, preferred_date,booking_type, provider, consumer_number FROM lpg_bookings_transaction WHERE user_id = ?
+    `
+}
+
 
 export const checkMobNumberAlreadyExistQuery = () => {
     return `
