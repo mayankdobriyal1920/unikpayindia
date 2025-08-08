@@ -31,6 +31,13 @@ export const actionToGetLpgBookingTransactionDetailQuery = () =>{
     `
 }
 
+export const actionToGetTransactionHistoryRequestQuery = () => {
+    return `
+        SELECT id, amount, status, email_id, transaction_id, completed_at, policy_number,transactionType,dob
+        FROM transaction WHERE user_id =  ? AND transactionType =  ?
+    `
+}
+
 
 export const checkMobNumberAlreadyExistQuery = () => {
     return `

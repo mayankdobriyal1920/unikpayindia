@@ -14,7 +14,9 @@ import {
     ALL_TRANSACTION_DETAIL_LIST,
     ALL_TRANSACTION_DETAIL_LIST_REQUEST,
     ALL_TRANSACTION_DETAIL_LIST_SUCCESS,
-    LPG_BOOKING_TRANSACTION_HISTORY_REQUEST, LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS,
+    LPG_BOOKING_TRANSACTION_HISTORY_REQUEST,
+    LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS,
+    LIC_PAYMENT_TRANSACTION_DETAILS_REQUEST, LIC_PAYMENT_TRANSACTION_DETAILS_SUCCESS,
 } from "./CommonConstants";
 
 export const userAuthDetailReducer = (state = {}, action) => {
@@ -99,6 +101,17 @@ export const lpgBookingTransactionHistoryReducer = (state= {}, action) => {
             return {isLoading:true, lpgTransactionBooking:[]}
         case LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS:
             return {isLoading:false, lpgTransactionBooking: action.payload}
+        default:
+            return state;
+    }
+}
+
+export const licPaymentTransactionHistoryReducer = (state ={}, action) => {
+    switch(action.type){
+        case LIC_PAYMENT_TRANSACTION_DETAILS_REQUEST:
+            return {isLoading:true, licTransactionHistory:[]}
+        case LIC_PAYMENT_TRANSACTION_DETAILS_SUCCESS:
+            return {isLoading:false, licTransactionHistory: action.payload};
         default:
             return state;
     }

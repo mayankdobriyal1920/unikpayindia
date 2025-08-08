@@ -10,7 +10,8 @@ import {
     actionToGetTransactionDetailsApiCall,
     actionToInsertDthOrderDetailsApiCall,
     actionToInsertLPGOrderDetailsApiCall,
-    actionToGetLpgBookingTransactionDetailApiCall
+    actionToGetLpgBookingTransactionDetailApiCall,
+    actionToInsertLicPaymentTransactionApi, actionToGetTransactionHistoryApiCall,
 } from "../models/commonModel.js";
 import {
     callFunctionToSendOtp,
@@ -353,7 +354,7 @@ commonRouter.post('/actionToVerifyLpgPaymentRequestApiCall',
             }
 
             // Save details to database (optional)
-            await actionToInsertLPGOrderDetailsApiCall(req.body, 'Paid');
+            await actionToInsertLPGOrderDetailsApiCall(req.body, 'Success');
             // Recharge logic will be added here later
 
             // Build delivery message part
@@ -376,6 +377,63 @@ commonRouter.post('/actionToVerifyLpgPaymentRequestApiCall',
             console.error(err);
             return res.status(500).json({ message: 'Recharge API error.' });
         }
+    })
+)
+
+////// LIC POLICY PAYMENT ///////
+commonRouter.post(
+    '/actionToInitiateLicPolicyPaymentRequestApiCall',
+    expressAsyncHandler(async(req,res)=>{
+        try{
+            const { amount } = req.body;
+            const options = {
+                amount: parseInt(amount) * 100,
+                currency: 'INR',
+                receipt: 'lic_rcpt_' + Date.now(),
+            };
+            const order = await razorpayInstance.orders.create(options);
+            return res.status(200).json({success: true, order });
+        }catch(e){
+            return res.status(500).json({ success: false, message: 'Internal server error' });
+        }
+    })
+)
+
+commonRouter.post('/actionToVerifyLicPaymentRequestApiCall',
+    expressAsyncHandler(async(req, res)=>{
+        try{
+            const { razorpay_order_id, razorpay_payment_id, razorpay_signature, policyNumber } = req.body;
+            const body = razorpay_order_id + "|" + razorpay_payment_id;
+            const expectedSignature = crypto.createHmac("sha256", process.env.RAZORPAY_KEY_SECRET)
+                .update(body)
+                .digest("hex");
+
+
+            if (expectedSignature === razorpay_signature) {
+                await actionToInsertLicPaymentTransactionApi(req.body, 'success')
+                res.status(200).json({ status: true, message: 'Payment verified' });
+            } else {
+                await actionToInsertLicPaymentTransactionApi(req.body, 'failed')
+                res.status(400).json({ status: false, message: 'Payment verification failed' });
+            }
+
+        }catch(e){
+            console.error(err);
+            return res.status(500).json({ message: 'Recharge API error.' });
+        }
+    })
+)
+
+commonRouter.post('/actionToGetTransactionHistoryApiCall',
+    expressAsyncHandler(async(req, res) =>{
+        const userId = req?.session?.userSessionData?.id;
+        console.log("req", req.body)
+        if (!userId) {
+            return res.status(401).json({ error: 'Unauthorized access' });
+        }
+
+        const responseData = await actionToGetTransactionHistoryApiCall(userId, req.body?.type);
+        res.status(200).send(responseData);
     })
 )
 export default commonRouter;

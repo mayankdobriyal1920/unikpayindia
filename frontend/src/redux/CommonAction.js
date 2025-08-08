@@ -13,6 +13,8 @@ import {
     ALL_TRANSACTION_DETAIL_LIST_SUCCESS,
     LPG_BOOKING_TRANSACTION_HISTORY_REQUEST,
     LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS,
+    LIC_PAYMENT_TRANSACTION_DETAILS_SUCCESS,
+    LIC_PAYMENT_TRANSACTION_DETAILS_REQUEST,
 } from "./CommonConstants";
 import createSocketConnection from "../socket/socket";
 const api = Axios.create({
@@ -364,6 +366,87 @@ export const actionToGetLpgBookingTransactionDetails = () =>async(dispatch, getS
     try{
         const { data } = await api.post(`actionToGetLpgBookingTransactionDetailApiCall`, {userId:userInfo.id});
         dispatch({type:LPG_BOOKING_TRANSACTION_HISTORY_SUCCESS, payload:data})
+    }catch(e){
+        console.log(e)
+    }
+}
+
+export const actionToInitiateLicPolicyPayment = (payload,resetFunction) => async(dispatch, getState) => {
+    const { userInfo } = getState().userAuthDetail;
+    const {licTransactionHistory} = getState().licPaymentTransactionHistory;
+    payload.user_id = userInfo.id;
+    const { data } = await api.post(`actionToInitiateLicPolicyPaymentRequestApiCall`, payload);
+    if(data.success){
+        const options = {
+            key: RAZORPAY_KEY_ID,
+            amount: data.order.amount,
+            currency: 'INR',
+            name: 'LIC Premium',
+            description: `Payment for Policy ${payload.policyNumber}`,
+            order_id: data.order.id,
+            handler: async (response) => {
+                console.log("response", response)
+                const res = await api.post('actionToVerifyLicPaymentRequestApiCall', {
+                    ...response,
+                    ...payload
+                });
+
+                //// OBJECT FOR TRANSACTION MODAL /////
+                let details = {
+                    status: "success",
+                    message: `✅ ${res.data.message}`,
+                    amount: data.order.amount / 100, // in ₹
+                    transactionId: response?.razorpay_payment_id,
+                    orderId: response?.razorpay_order_id,
+                    date: new Date().toLocaleString(),
+                    paidBy: userInfo.name,
+                }
+
+                //// OBJECT FOR TRANSACTION LIST UPDATE /////
+                let transactionObj = {
+                    amount: data.order.amount / 100,
+                    policy_number: payload.policyNumber,
+                    type: 'lic_policy',
+                    dob:payload.dob,
+                    email:payload.email,
+                    order_id: response?.razorpay_order_id,
+                    completed_at: new Date(),
+                    transaction_id: response?.razorpay_payment_id,
+                    signature_id: response.razorpay_signature,
+                }
+
+                if (res.data.status) {
+                    details.status = "success"
+                    transactionObj.status = "success"
+                } else {
+                    transactionObj.status = "failed"
+                    details.status = "failed"
+                }
+                dispatch({type:OPEN_CLOSE_PAYMENT_TRANSACTION_MODAL,payload:{isOpen:true, transaction:details}})
+                resetFunction()
+                let transactionDetailsClone = [...licTransactionHistory];
+                transactionDetailsClone.push(transactionObj)
+                dispatch({type:LIC_PAYMENT_TRANSACTION_DETAILS_SUCCESS, payload:transactionDetailsClone});
+            },
+            prefill: {
+                name: userInfo.name,
+                email: "test@example.com",
+                contact: payload.mobile,
+            },
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+    }
+}
+
+export const actionToGetLicPaymentHistory = (type) => async(dispatch, getState) =>{
+    const { userInfo } = getState().userAuthDetail;
+    dispatch({type:LPG_BOOKING_TRANSACTION_HISTORY_REQUEST})
+    try{
+        dispatch({type:LIC_PAYMENT_TRANSACTION_DETAILS_REQUEST})
+        const { data } = await api.post(`actionToGetTransactionHistoryApiCall`, {userId:userInfo.id, type});
+        dispatch({type:LIC_PAYMENT_TRANSACTION_DETAILS_SUCCESS, payload:data})
     }catch(e){
         console.log(e)
     }

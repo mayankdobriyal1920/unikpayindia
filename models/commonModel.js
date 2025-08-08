@@ -1,7 +1,7 @@
 import pool from "./connection.js";
 import {
     actionToGetLpgBookingTransactionDetailQuery,
-    actionToGetTransactionDetailsApiCallQuery,
+    actionToGetTransactionDetailsApiCallQuery, actionToGetTransactionHistoryRequestQuery,
     checkMobNumberAlreadyExistQuery,
     getUserByIdQuery,
     loginUserQuery,
@@ -110,8 +110,7 @@ export const actionToInsertDthOrderDetailsApiCall = async(payload, status) => {
     };
 
     try {
-        const insertRes = await insertCommonApiCall(orderData);
-        return insertRes
+        return await insertCommonApiCall(orderData)
     } catch (error) {
         console.error("Failed to insert order:", error);
     }
@@ -129,8 +128,26 @@ export const actionToInsertLPGOrderDetailsApiCall = async(payload, status) => {
     };
 
     try {
-        const insertRes = await insertCommonApiCall(orderData);
-        return insertRes
+        return await insertCommonApiCall(orderData)
+    } catch (error) {
+        console.error("Failed to insert order:", error);
+    }
+}
+
+export const actionToInsertLicPaymentTransactionApi = async(payload, status) =>{
+    const orderData = {
+        column: ['order_id', 'amount', 'user_id', 'policy_number', 'status','transactionType','transaction_id','signature_id','completed_at',
+            'email_id','dob'],
+        alias: ['?', '?', '?', '?', '?', '?','?','?','?','?','?'],
+        tableName: 'transaction',
+        values: [
+            payload.razorpay_order_id,payload.amount, payload.user_id,payload.policyNumber, status,'lic_policy', payload.razorpay_payment_id,
+            payload.razorpay_signature, new Date(), payload.email,payload.dob
+        ],
+    };
+
+    try {
+        return await insertCommonApiCall(orderData)
     } catch (error) {
         console.error("Failed to insert order:", error);
     }
@@ -140,6 +157,17 @@ export const actionToGetLpgBookingTransactionDetailApiCall = async(user_id) => {
     return new Promise(function(resolve, reject) {
         const query = actionToGetLpgBookingTransactionDetailQuery();
         pool.query(query,[user_id], (error, results) => {
+            if (error) {
+                reject(error)
+            }
+            resolve(results);
+        })
+    })
+}
+export const actionToGetTransactionHistoryApiCall = async(user_id, type) => {
+    return new Promise(function(resolve, reject) {
+        const query = actionToGetTransactionHistoryRequestQuery();
+        pool.query(query,[user_id, type], (error, results) => {
             if (error) {
                 reject(error)
             }
