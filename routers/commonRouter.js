@@ -24,9 +24,6 @@ const razorpayInstance = new Razorpay({
     key_secret: process.env.RAZORPAY_KEY_SECRET
 });
 
-
-
-
 const commonRouter = express.Router();
 let storeUserPhoneOtbObj = {};
 

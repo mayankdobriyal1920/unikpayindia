@@ -5,8 +5,6 @@ RUN `nohup npm start` to build server parmanently
 
 vps pass - x-ignO993mjUQGmww.0Q
 
-tuition
-MndN26!%ks1q
 
 location /api-call-tutor {
 	proxy_pass http://localhost:4001;
