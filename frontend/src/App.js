@@ -57,7 +57,6 @@ const AppEnterMainPage = () => {
                 <Route path="/dashboard-complaint" component={ComplaintPage}/>
                 <Route path="/dashboard-commission-and-charge" component={CommissionAndChargePage}/>
                 <Route path="/dashboard-setting" component={SettingPage}/>
-
                 <Redirect  exact from="/"  to="/dashboard-home" />
                 <Route render={() => <Redirect to="/dashboard-home" />} />
             </IonRouterOutlet>
@@ -94,7 +93,7 @@ const App = () => {
                     {userInfo?.id ? <AppEnterMainPage/> : <PublicRoutes/>}
                 </React.Fragment>:''
             }
-            <IonLoading className={"loading_loader_spinner_container"} isOpen={userSession?.loading} message={"Loading..."}/>
+            <IonLoading className={"loading_loader_spinner_container"} isOpen={userSession?.loading && !userInfo?.id} message={"Loading..."}/>
         </IonApp>
     );
 }

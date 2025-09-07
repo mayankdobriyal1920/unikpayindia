@@ -1,7 +1,7 @@
 import usericon from "../theme/images/user-icon.jpg";
 import {IonHeader} from "@ionic/react";
 import React from "react";
-import {actionToOpenCloseSideBarMenu} from "../redux/CommonAction";
+import {actionToLogoutUserSession, actionToOpenCloseSideBarMenu} from "../redux/CommonAction";
 import {useDispatch, useSelector} from "react-redux";
 
 export default function HeaderAfterLoginComponent(){
@@ -10,6 +10,10 @@ export default function HeaderAfterLoginComponent(){
 
     const callToOpenCloseSideBarMenu = (action)=>{
         dispatch(actionToOpenCloseSideBarMenu(action));
+    }
+
+    const actionToLogoutSession = ()=>{
+        dispatch(actionToLogoutUserSession());
     }
 
     return (
@@ -132,7 +136,7 @@ export default function HeaderAfterLoginComponent(){
                                 <a className="dropdown-item" href="#"><i
                                     className="fa fa-sliders-h me-1"></i> Account Settings
                                 </a>
-                                <a className="dropdown-item" href="#"><i
+                                <a className="dropdown-item" onClick={()=>actionToLogoutSession()}><i
                                     className="fa fa-sliders-h me-1"></i>  Sign Out
                                 </a>
                             </div>

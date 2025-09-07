@@ -53,7 +53,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {actionToGetTransactionDetails} from "../redux/CommonAction";
 
 export default function DashboardPage(){
-    const { path } = useRouteMatch();
+    const path = `/dashboard-home`;
     const dispatch = useDispatch();
     const {userInfo} = useSelector((state) => state.userAuthDetail)
 
