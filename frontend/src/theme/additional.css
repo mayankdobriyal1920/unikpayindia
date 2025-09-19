@@ -17,9 +17,9 @@ textarea{
     --display: flex;
     display: flex;
 }
-body{
-    --background: var(--theme-background-color)!important;
-}
+/*body{*/
+/*    --background: var(--theme-background-color)!important;*/
+/*}*/
 ion-content{
     --background: unset!important;
 }

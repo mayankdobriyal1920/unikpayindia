@@ -35,6 +35,9 @@ import ManageFundsPage from "./pages/ManageFundsPage";
 import ReportsPage from "./pages/ReportsPage";
 import BusinessSummeryPage from "./pages/BusinessSummeryPage";
 import StatementsPage from "./pages/StatementsPage";
+import DistributorDashboardPage from "./pages/DistributorDashboardPage";
+import DistributorAgentDetail from "./pages/DistributorAgentDetail";
+import DistributorAgentReport from "./pages/DistributorAgentReport";
 import './css/common.css';
 setupIonicReact();
 
@@ -81,15 +84,15 @@ const MasterDistributorRoutes = () => (
 const LocalDistributorRoutes = () => (
     <IonReactRouter>
         <IonRouterOutlet>
-            <Route path="/dashboard-home" component={DashboardPage}/>
-            <Route path="/dashboard-business-summery" component={BusinessSummeryPage}/>
-            <Route path="/dashboard-reports" component={ReportsPage}/>
+            <Route path="/dashboard-home" component={DistributorDashboardPage}/>
+            <Route path="/distributor-agent-detail" component={DistributorAgentDetail}/>
             <Route path="/dashboard-manage-funds" component={ManageFundsPage}/>
-            <Route path="/dashboard-pending-refunds" component={PendingRefundsPage}/>
             <Route path="/dashboard-money-request" component={MoneyRequestPage}/>
             <Route path="/dashboard-statements" component={StatementsPage}/>
-            <Route path="/dashboard-complaint" component={ComplaintPage}/>
-            <Route path="/dashboard-commission-and-charge" component={CommissionAndChargePage}/>
+            <Route path="/dashboard-business-summery" component={BusinessSummeryPage}/>
+            <Route path="/distributor-agent-report" component={DistributorAgentReport}/>
+            <Route path="/dashboard-reports" component={ReportsPage}/>
+
             <Route path="/dashboard-setting" component={SettingPage}/>
             <Redirect exact from="/" to="/dashboard-home" />
             <Route render={() => <Redirect to="/dashboard-home" />} />

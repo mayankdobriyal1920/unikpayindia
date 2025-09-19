@@ -28,6 +28,13 @@ export default function DashBoardEntryActionButtonPartPage() {
     return (
         <div className="row">
             <div className="col-lg-9 ">
+                <div className="left-content mt-4 mb-3">
+                    <h3 className="content-title  mt-2">Welcome Back,</h3>
+                    <div className="d-flex p-0">
+                        <i className="fa-solid fa-house"></i>
+                        <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
+                    </div>
+                </div>
                 <div className="upi-style-icon white-bgcolor boxShadow">
                     <div className="row retailer-das mb-4">
                         <div className="col-2 text-center ">
@@ -287,9 +294,16 @@ export default function DashBoardEntryActionButtonPartPage() {
                 </div>
             </div>
             <div className="col-lg-3">
+                <div className="left-content mt-4 mb-3">
+                    <h3 className="content-title  mt-2">My Business</h3>
+                    <div className="d-flex p-0">
+
+                        <p className="text-muted mb-0 hover-cursor"> Summary </p>
+                    </div>
+                </div>
                 <div className="upi-home-right">
                     <div className="underBox">
-                        <div className="row ">
+                        {/*<div className="row ">
                             <div className="col-12 ">
                                 <div className="my-buss-sum d-inline-flex align-items-center mb-3">
                                     <img src={myBusinessIcon} alt="icon" className="mr-2 "/>
@@ -300,11 +314,41 @@ export default function DashBoardEntryActionButtonPartPage() {
 
                                 </div>
                             </div>
-                        </div>
+                        </div>*/}
                         <div className="row">
+                            <div className="col-12 mb-3">
+                                <div className="bg-white rounded-xl newstyle-dashome border-purple-500">
+                                    <p className="text-gray-500">Money Transfer</p>
+                                    <h3 className="text-lg font-bold">₹43,565</h3>
+                                </div>
+                            </div>
+
+                            <div className="col-12 mb-3">
+                                <div className="bg-white p-2 pl-3 pr-3 rounded-xl newstyle-dashome border-purple-500">
+                                    <p className="text-gray-500">Utilities/Bill</p>
+                                    <h3 className="text-lg font-bold">₹199</h3>
+                                </div>
+                            </div>
+
+                            <div className="col-12 mb-3">
+                                <div className="bg-white p-2 pl-3 pr-3 rounded-xl newstyle-dashome border-purple-500">
+                                    <p className="text-gray-500">Flight</p>
+                                    <h3 className="text-lg font-bold">₹565</h3>
+                                </div>
+                            </div>
+
+                            <div className="col-12 mb-3">
+                                <div className="bg-white p-2 pl-3 pr-3 rounded-xl newstyle-dashome border-purple-500">
+                                    <p className="text-gray-500">Credit Card Bill</p>
+                                    <h3 className="text-lg font-bold">₹199</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                        {/*<div className="row">
                             <div className="col-6">
                                 <div className="d-flex align-items-center">
-                                    <div className="flex-fill">
+                                <div className="flex-fill">
                                         <div className="MoneyTransfer mr-2 text-center">
                                             <h5>Money Transfer</h5>
                                             <p className="yellow-color">₹ 43,565.00</p>
@@ -337,7 +381,7 @@ export default function DashBoardEntryActionButtonPartPage() {
                                 </div>
                             </div>
 
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
                 <div className="upi-home-right">

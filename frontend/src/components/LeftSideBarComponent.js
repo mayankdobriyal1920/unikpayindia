@@ -6,6 +6,7 @@ import {actionToOpenCloseSideBarMenu} from "../redux/CommonAction";
 
 
 export default function LeftSideBarComponent(){
+    const { userInfo } = useSelector((state) => state.userAuthDetail);
     const history = useHistory();
     const {isOpen} = useSelector((state) => state.openCloseSideBarMenu);
     const menuRef = useRef(null);
@@ -47,6 +48,85 @@ export default function LeftSideBarComponent(){
             <div className="simplebar-wrapper">
                 <ul className="metismenu" id="menu">
                     {/*<li className="nav-label first">Main Menu</li>*/}
+
+                    {userInfo.role === 3 && (
+                        <li className="">
+                            <a className="has-arrow" onClick={() => goToPage('/dashboard-home')} aria-expanded="false">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                    )}
+                    {userInfo.role === 3 && (
+                        <li>
+                            <a className="ai-icon" onClick={()=>goToPage('/distributor-agent-detail')} aria-expanded="false">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Agent Details</span>
+                            </a>
+                           {/* <ul aria-expanded="false" className="mm-collapse">
+                                <li className="mm-active">
+                                    <a onClick={()=>goToPage('/dashboard-home')} className="mm-active">Users Registration</a>
+                                </li>
+                                <li><a onClick={()=>goToPage('/dashboard-home')}>Agent List</a></li>
+                                <li><a onClick={()=>goToPage('/dashboard-home')}>Request ON/OFF</a></li>
+                            </ul>*/}
+                        </li>
+                    )}
+
+                    {userInfo.role === 3 && (
+                        <li>
+                            <a className="ai-icon" onClick={()=>goToPage('/dashboard-manage-funds')} aria-expanded="false">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Manage Fund</span>
+                            </a>
+                        </li>
+                    )}
+
+                    {userInfo.role === 3 && (
+                        <li>
+                            <a className="ai-icon" onClick={()=>goToPage('/dashboard-money-request')} aria-expanded="false">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Money Request</span>
+                            </a>
+                        </li>
+                    )}
+
+                    {userInfo.role === 3 && (
+                        <li>
+                            <a className="ai-icon" onClick={()=>goToPage('/dashboard-statements')} aria-expanded="false">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Statements</span>
+                            </a>
+                        </li>
+                    )}
+
+                    {userInfo.role === 3 && (
+                        <li>
+                            <a className="ai-icon" onClick={()=>goToPage('/dashboard-business-summery')} aria-expanded="false">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Business Summary</span>
+                            </a>
+                        </li>
+                    )}
+
+                    {userInfo.role === 3 && (
+                        <li>
+                            <a className="ai-icon" onClick={()=>goToPage('/distributor-agent-report')} aria-expanded="false">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Agent Report</span>
+                            </a>
+                        </li>
+                    )}
+
+                    {userInfo.role === 3 && (
+                        <li>
+                            <a className="ai-icon" onClick={()=>goToPage('/dashboard-setting')} aria-expanded="false">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Setting</span>
+                            </a>
+                        </li>
+                    )}
+
                     <li className="">
                         <a className="has-arrow" onClick={() => goToPage('/dashboard-home')} aria-expanded="false">
                             <i className="fa-solid fa-house"></i>
@@ -121,7 +201,7 @@ export default function LeftSideBarComponent(){
                 <div className="LetsConnect pl-3">
                     <h6 className="mt-0 text-center">Lets Connect</h6>
                 </div>
-                <div className="LetsConnect text-center  green-Bg pl-3">
+                <div className="LetsConnect text-center mt-2  green-Bg pl-3">
                     <h6 className="mt-0 ">Your Distributor</h6>
                 </div>
                 <div className="Your-Distri text-center">

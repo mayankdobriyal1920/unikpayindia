@@ -52,7 +52,7 @@ import PaymentTransactionSuccessModal from "../components/DashBoardPage/PaymentT
 import {useDispatch, useSelector} from "react-redux";
 import {actionToGetTransactionDetails} from "../redux/CommonAction";
 
-export default function DashboardPage(){
+export default function DistributorDashboardPage(){
     const path = `/dashboard-home`;
     const dispatch = useDispatch();
     const {userInfo} = useSelector((state) => state.userAuthDetail)
@@ -73,27 +73,15 @@ export default function DashboardPage(){
                                 <h6 className="crypto mt-0">Live Updates</h6>
                                 <p className="retailer_p pl-2 mb-0">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
                             </div>
-
                             {/*<div className="col-xl-12 col-md-12 col-lg-12 d-flex d-block  my-3 page-header-breadcrumb">
                                 <div className="left-content">
-                                    <h3 className="content-title  mt-2">Welcome Back,</h3>
+                                    <h3 className="content-title  mt-2">Welcome Back, Distrubutor</h3>
                                     <div className="d-flex p-0">
                                         <i className="fa-solid fa-house"></i>
                                         <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
                                     </div>
                                 </div>
-                                <div className="left-content float-right">
-                                    <h3 className="content-title  mt-2">My Business</h3>
-                                    <div className="d-flex p-0">
-
-                                        <p className="text-muted mb-0 hover-cursor">Summary </p>
-                                    </div>
-                                </div>
-
                             </div>*/}
-                        </div>
-                        <div className="row">
-
                         </div>
                         <Switch>
                             <Route exact path={`${path}/action`} component={DashBoardEntryActionButtonPartPage} />
