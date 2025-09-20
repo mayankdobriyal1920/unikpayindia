@@ -75,7 +75,7 @@ export default function DistributorDashboardPage(){
                             </div>
                             {/*<div className="col-xl-12 col-md-12 col-lg-12 d-flex d-block  my-3 page-header-breadcrumb">
                                 <div className="left-content">
-                                    <h3 className="content-title  mt-2">Welcome Back, Distrubutor</h3>
+                                    <h3 className="content-title  mt-2">Welcome Back, distrubutor</h3>
                                     <div className="d-flex p-0">
                                         <i className="fa-solid fa-house"></i>
                                         <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>

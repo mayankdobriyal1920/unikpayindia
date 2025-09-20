@@ -38,6 +38,7 @@ import StatementsPage from "./pages/StatementsPage";
 import DistributorDashboardPage from "./pages/DistributorDashboardPage";
 import DistributorAgentDetail from "./pages/DistributorAgentDetail";
 import DistributorAgentReport from "./pages/DistributorAgentReport";
+import AgentManageFund from "./pages/AgentManageFund";
 import './css/common.css';
 setupIonicReact();
 
@@ -91,6 +92,7 @@ const LocalDistributorRoutes = () => (
             <Route path="/dashboard-statements" component={StatementsPage}/>
             <Route path="/dashboard-business-summery" component={BusinessSummeryPage}/>
             <Route path="/distributor-agent-report" component={DistributorAgentReport}/>
+            <Route path="/agent-manage-fund" component={AgentManageFund}/>
             <Route path="/dashboard-reports" component={ReportsPage}/>
 
             <Route path="/dashboard-setting" component={SettingPage}/>

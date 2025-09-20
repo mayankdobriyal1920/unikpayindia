@@ -111,6 +111,15 @@ export default function LeftSideBarComponent(){
 
                     {userInfo.role === 3 && (
                         <li>
+                            <a className="ai-icon" onClick={()=>goToPage('/agent-manage-fund')} aria-expanded="false">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Agent Manage Fund</span>
+                            </a>
+                        </li>
+                    )}
+
+                    {userInfo.role === 3 && (
+                        <li>
                             <a className="ai-icon" onClick={()=>goToPage('/distributor-agent-report')} aria-expanded="false">
                                 <i className="fa-solid fa-file-pen"></i>
                                 <span className="nav-text">Agent Report</span>
