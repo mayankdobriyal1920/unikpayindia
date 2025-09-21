@@ -48,6 +48,46 @@ export default function LeftSideBarComponent(){
             <div className="simplebar-wrapper">
                 <ul className="metismenu" id="menu">
                     {/*<li className="nav-label first">Main Menu</li>*/}
+                    {userInfo.role === 2 && (
+                        <li className="">
+                            <a className="has-arrow" onClick={() => goToPage('/dashboard-home')} aria-expanded="false">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                    )}
+                    {userInfo.role === 2 && (
+                        <li className="">
+                            <a className="has-arrow" onClick={() => goToPage('/md-business-summery')} aria-expanded="false">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="nav-text">Business Summary</span>
+                            </a>
+                        </li>
+                    )}
+                    {userInfo.role === 2 && (
+                        <li className="">
+                            <a className="has-arrow" onClick={() => goToPage('/distributor-details')} aria-expanded="false">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="nav-text">Distributor Details</span>
+                            </a>
+                        </li>
+                    )}
+                    {userInfo.role === 2 && (
+                        <li className="">
+                            <a className="has-arrow" onClick={() => goToPage('/master-retailer-list')} aria-expanded="false">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="nav-text">Retailer List</span>
+                            </a>
+                        </li>
+                    )}
+                    {userInfo.role === 2 && (
+                        <li className="">
+                            <a className="has-arrow" onClick={() => goToPage('/master-manage-fund')} aria-expanded="false">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="nav-text">Manage Funds</span>
+                            </a>
+                        </li>
+                    )}
 
                     {userInfo.role === 3 && (
                         <li className="">

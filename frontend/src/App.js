@@ -39,6 +39,10 @@ import DistributorDashboardPage from "./pages/DistributorDashboardPage";
 import DistributorAgentDetail from "./pages/DistributorAgentDetail";
 import DistributorAgentReport from "./pages/DistributorAgentReport";
 import AgentManageFund from "./pages/AgentManageFund";
+import MDBusinessSummeryPage from "./pages/MDBusinessSummeryPage";
+import DistributorDetails from "./pages/DistributorDetails";
+import MasterRetailerList from "./pages/MasterRetailerList";
+import MasterManageFund from "./pages/MasterManageFund";
 import './css/common.css';
 setupIonicReact();
 
@@ -67,7 +71,10 @@ const MasterDistributorRoutes = () => (
     <IonReactRouter>
         <IonRouterOutlet>
             <Route path="/dashboard-home" component={DashboardPage}/>
-            <Route path="/dashboard-business-summery" component={BusinessSummeryPage}/>
+            <Route path="/md-business-summery" component={MDBusinessSummeryPage}/>
+            <Route path="/distributor-details" component={DistributorDetails}/>
+            <Route path="/master-retailer-list" component={MasterRetailerList}/>
+            <Route path="/master-manage-fund" component={MasterManageFund}/>
             <Route path="/dashboard-reports" component={ReportsPage}/>
             <Route path="/dashboard-manage-funds" component={ManageFundsPage}/>
             <Route path="/dashboard-pending-refunds" component={PendingRefundsPage}/>
