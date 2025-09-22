@@ -43,6 +43,8 @@ import MDBusinessSummeryPage from "./pages/MDBusinessSummeryPage";
 import DistributorDetails from "./pages/DistributorDetails";
 import MasterRetailerList from "./pages/MasterRetailerList";
 import MasterManageFund from "./pages/MasterManageFund";
+import MasterMoneyRequest from "./pages/MasterMoneyRequest";
+import MasterManageFundWithdraw from "./pages/MasterManageFundWithdraw";
 import './css/common.css';
 setupIonicReact();
 
@@ -75,6 +77,8 @@ const MasterDistributorRoutes = () => (
             <Route path="/distributor-details" component={DistributorDetails}/>
             <Route path="/master-retailer-list" component={MasterRetailerList}/>
             <Route path="/master-manage-fund" component={MasterManageFund}/>
+            <Route path="/master-managefund-withdraw" component={MasterManageFundWithdraw}/>
+            <Route path="/master-money-request" component={MasterMoneyRequest}/>
             <Route path="/dashboard-reports" component={ReportsPage}/>
             <Route path="/dashboard-manage-funds" component={ManageFundsPage}/>
             <Route path="/dashboard-pending-refunds" component={PendingRefundsPage}/>

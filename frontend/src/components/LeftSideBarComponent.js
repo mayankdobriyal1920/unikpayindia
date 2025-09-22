@@ -82,12 +82,28 @@ export default function LeftSideBarComponent(){
                     )}
                     {userInfo.role === 2 && (
                         <li className="">
-                            <a className="has-arrow" onClick={() => goToPage('/master-manage-fund')} aria-expanded="false">
+                            <a className="has-arrow">
                                 <i className="fa-solid fa-house"></i>
                                 <span className="nav-text">Manage Funds</span>
                             </a>
+                            <ul aria-expanded="false" className="mm-collapse">
+                                <li className="mm-active">
+                                    <a onClick={()=>goToPage('/master-manage-fund')} className="mm-active">Credit Money</a>
+                                </li>
+                                <li><a onClick={()=>goToPage('/master-managefund-withdraw')}>Withdraw Money</a></li>
+                            </ul>
                         </li>
                     )}
+
+                    {userInfo.role === 2 && (
+                        <li className="">
+                            <a className="has-arrow" onClick={() => goToPage('/master-money-request')} aria-expanded="false">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="nav-text">Money Request</span>
+                            </a>
+                        </li>
+                    )}
+
 
                     {userInfo.role === 3 && (
                         <li className="">

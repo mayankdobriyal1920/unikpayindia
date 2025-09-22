@@ -4,7 +4,7 @@ import usericon from "../theme/images/user-icon.jpg";
 import LeftSideBarComponent from "../components/LeftSideBarComponent";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
 
-export default function MasterManageFund(){
+export default function MasterManageFundWithdraw(){
     return(
         <IonPage className="UnikPayIndia">
             <HeaderAfterLoginComponent/>
@@ -20,10 +20,10 @@ export default function MasterManageFund(){
                         </div>
                         <div className="d-md-flex d-block align-items-center justify-content-between my-3 page-header-breadcrumb">
                             <div className="left-content">
-                                <h3 className="content-title  mt-2">Manage Funds</h3>
+                                <h3 className="content-title  mt-2">Withdrawal Money</h3>
                                 <div className="d-flex p-0">
                                     <i className="fa-solid fa-house"></i>
-                                    <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Manage Funds</p>
+                                    <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Withdrawal Money</p>
                                 </div>
                             </div>
                         </div>
@@ -35,11 +35,11 @@ export default function MasterManageFund(){
                                         <ul className="nav nav-pills light" role="tablist">
                                             <li className=" nav-item" role="presentation">
                                                 <a href="#credit-history" className="nav-link active" data-bs-toggle="tab"
-                                                   aria-expanded="false" aria-selected="true" role="tab">Credit Money</a>
+                                                   aria-expanded="false" aria-selected="true" role="tab">Withdrawal Money</a>
                                             </li>
                                             <li className="nav-item" role="presentation">
                                                 <a href="#debit-history" className="nav-link" data-bs-toggle="tab"
-                                                   aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Credit History</a>
+                                                   aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Withdrawal History</a>
                                             </li>
 
 

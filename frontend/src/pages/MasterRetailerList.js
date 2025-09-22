@@ -48,10 +48,7 @@ export default function masterRetailerList(){
 
                                                         </select>
                                                     </div>
-                                                    <div className="form-group col-3">
-                                                        <input type="date" className="form-control form-control-md"
-                                                               value="2025-04-14"/>
-                                                    </div>
+
 
                                                     <div className="form-group col-2">
                                                         <div className="dmt-trasno btn-group d-flex" role="group">
