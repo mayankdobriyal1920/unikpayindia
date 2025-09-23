@@ -215,50 +215,6 @@ export default function ReportsPage(){
 
                                                     </div>*/}
                                                     </div>
-
-                                                    <div className="row d-flex pagination_retailer mt-3 m-auto">
-                                                        <div className="col-6 d-flex pt-2">
-                                                            <p className="mr-2 pb-0">Show result:</p>
-                                                            <select className="form-select"  aria-label="Default select example">
-                                                                <option selected>1
-                                                                </option>
-                                                                <option value="1">2</option>
-                                                                <option value="2">3</option>
-                                                                <option value="3">4</option>
-                                                            </select>
-                                                        </div>
-                                                        <div className="col-6 text-end retailer-pagination">
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul className="pagination float-right">
-                                                                    <li className="page-item">
-                                                                        <a className="page-link" href="#" aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span className="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li className="page-item">
-                                                                        <a className="page-link" href="#">1</a>
-                                                                    </li>
-                                                                    <li className="page-item"><a
-                                                                        className="page-link" href="#">2</a>
-                                                                    </li>
-                                                                    <li className="page-item"><a
-                                                                        className="page-link" href="#">3</a>
-                                                                    </li>
-                                                                    <li className="page-item">
-                                                                        <a className="page-link" href="#"
-                                                                           aria-label="Next">
-                                                                                    <span
-                                                                                        aria-hidden="true">&raquo;</span>
-                                                                            <span
-                                                                                className="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-
                                                     <div className="row m-auto">
                                                         <div className="col-12 mt-3">
                                                             <div className="Recent-Trans retailer-addfund align-items-center">
@@ -305,6 +261,48 @@ export default function ReportsPage(){
                                                                     </table>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="row d-flex pagination_retailer mt-3 m-auto">
+                                                        <div className="col-6 d-flex pt-2">
+                                                            <p className="mr-2 pb-0">Show result:</p>
+                                                            <select className="form-select"  aria-label="Default select example">
+                                                                <option selected>1
+                                                                </option>
+                                                                <option value="1">2</option>
+                                                                <option value="2">3</option>
+                                                                <option value="3">4</option>
+                                                            </select>
+                                                        </div>
+                                                        <div className="col-6 text-end retailer-pagination">
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul className="pagination float-right">
+                                                                    <li className="page-item">
+                                                                        <a className="page-link" href="#" aria-label="Previous">
+                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                            <span className="sr-only">Previous</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li className="page-item">
+                                                                        <a className="page-link" href="#">1</a>
+                                                                    </li>
+                                                                    <li className="page-item"><a
+                                                                        className="page-link" href="#">2</a>
+                                                                    </li>
+                                                                    <li className="page-item"><a
+                                                                        className="page-link" href="#">3</a>
+                                                                    </li>
+                                                                    <li className="page-item">
+                                                                        <a className="page-link" href="#"
+                                                                           aria-label="Next">
+                                                                                    <span
+                                                                                        aria-hidden="true">&raquo;</span>
+                                                                            <span
+                                                                                className="sr-only">Next</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
                                                         </div>
                                                     </div>
                                                 </div>

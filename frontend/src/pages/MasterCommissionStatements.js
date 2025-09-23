@@ -4,7 +4,7 @@ import usericon from "../theme/images/user-icon.jpg";
 import LeftSideBarComponent from "../components/LeftSideBarComponent";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
 
-export default function MasterManageFundWithdraw(){
+export default function MasterCommissionStatements(){
     return(
         <IonPage className="UnikPayIndia">
             <HeaderAfterLoginComponent/>
@@ -20,10 +20,10 @@ export default function MasterManageFundWithdraw(){
                         </div>
                         <div className="d-md-flex d-block align-items-center justify-content-between my-3 page-header-breadcrumb">
                             <div className="left-content">
-                                <h3 className="content-title  mt-2">Withdrawal Money</h3>
+                                <h3 className="content-title  mt-2">Account Statements</h3>
                                 <div className="d-flex p-0">
                                     <i className="fa-solid fa-house"></i>
-                                    <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Withdrawal Money</p>
+                                    <p className="text-muted mb-0 hover-cursor">&nbsp;/Master Distributor /Account Statements</p>
                                 </div>
                             </div>
                         </div>
@@ -34,63 +34,25 @@ export default function MasterManageFundWithdraw(){
                                     <div className="card-body card-tabs-new">
                                         <ul className="nav nav-pills light" role="tablist">
                                             <li className=" nav-item" role="presentation">
-                                                <a href="#credit-history" className="nav-link active" data-bs-toggle="tab"
-                                                   aria-expanded="false" aria-selected="true" role="tab">Withdrawal Money</a>
+                                                <a href="#commission-statements" className="nav-link active" data-bs-toggle="tab"
+                                                   aria-expanded="false" aria-selected="true" role="tab">Commission Statements</a>
                                             </li>
                                             <li className="nav-item" role="presentation">
-                                                <a href="#debit-history" className="nav-link" data-bs-toggle="tab"
-                                                   aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Withdrawal History</a>
+                                                <a href="#transfer-wallet" className="nav-link" data-bs-toggle="tab"
+                                                   aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Transfer To Wallet</a>
                                             </li>
+
 
 
                                         </ul>
                                         <div className="tab-content white-bgcolor">
-                                            <div id="credit-history" className="tab-pane active show bsstdmt" role="tabpanel">
+                                            <div id="commission-statements" className="tab-pane active show bsstdmt" role="tabpanel">
                                                 <div className="">
 
                                                     <form>
-                                                        <div className="form-row mt-5 m-auto">
-                                                            <div className="form-group col-6">
-                                                                <select className="form-control form-select form-select-md" aria-label="Default select example">
-                                                                    <option>Select Member</option>
-                                                                    <option value="1"><b>AMJAD MOBILE REPAIRING : 9540122184 : QPR5589</b></option>
-                                                                    <option value="2">HARIOM TELECOM CENTRE : 9818872979 : QPR5460</option>
 
-                                                                </select>
-                                                            </div>
-
-                                                        </div>
 
                                                         <div className="form-row mt-5 m-auto">
-                                                            <div className="form-group col-6">
-                                                                <input type="text" placeholder="Amount" className="form-control form-control-md"/>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="form-row mt-5 m-auto">
-                                                            <div className="form-group col-6">
-                                                                <input type="text" placeholder="Remarks" className="form-control form-control-md"/>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div id="debit-history" className="tab-pane" role="tabpanel">
-                                                <div className="">
-
-                                                    <form>
-                                                        <div className="form-row mt-5 m-auto">
-                                                            <div className="form-group col-6">
-                                                                <select className="form-control form-select form-select-md" aria-label="Default select example">
-                                                                    <option>Outlet</option>
-                                                                    <option value="1"><b>AMJAD MOBILE REPAIRING : 9540122184 : QPR5589</b></option>
-                                                                    <option value="2">HARIOM TELECOM CENTRE : 9818872979 : QPR5460</option>
-
-                                                                </select>
-                                                            </div>
-
                                                             <div className="form-group col-3">
                                                                 <input type="date" className="form-control form-control-md" value="2025-04-14"/>
                                                             </div>
@@ -101,38 +63,57 @@ export default function MasterManageFundWithdraw(){
 
 
 
-
-
-                                                        </div>
-
-                                                        <div className="form-row mt-5 m-auto">
-
-                                                            <div className="form-group col-6">
-                                                                <input type="text" placeholder="Transaction No" className="form-control form-control-md"/>
-                                                            </div>
-
-
                                                             <div className="form-group col-3">
-                                                                <input type="text" placeholder="Ref Number" className="form-control form-control-md"/>
+                                                                <input type="text" placeholder="Global Search" className="form-control form-control-md"/>
                                                             </div>
-
-
-
                                                             <div className="form-group col-3">
                                                                 <div className="dmt-trasno btn-group d-flex" role="group">
                                                                     <button type="button" className="btn btn-width btn-success mr-2">Search  </button>
                                                                     <button type="button" className="btn btn-width btn-secondary">Export  </button>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
 
 
                                                     </form>
+                                                    <div className="row m-auto">
+                                                        {/*<h6 className="green-color bsst-dmt mb-2">DMT Transactions</h6>*/}
+                                                        <div className="col-md-3">
+                                                            <div className="border rounded p-2 bg-purple ">
+                                                                <h5 className="white-color">1</h5>
+                                                                <h6 className="white-color">Transcation</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-3">
+                                                            <div className="border rounded p-2 bgred-color">
+                                                                <h5>₹ 28,500.00</h5>
+                                                                <h6>Credit Amount</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-md-2">
+                                                            <div className="border rounded p-2 bg-purple ">
+                                                                <h5 className="white-color">158.75</h5>
+                                                                <h6 className="white-color">Debit Amount</h6>
+                                                            </div>
+
+                                                        </div>
+                                                        <div className="col-md-2">
+                                                            <div className="border rounded p-2 bgred-color">
+                                                                <h5>14.25</h5>
+                                                                <h6>Charge</h6>
+                                                            </div>
+
+                                                        </div>
+                                                        <div className="col-md-2">
+                                                            <div className="border rounded p-2 bg-purple ">
+                                                                <h5 className="white-color">0</h5>
+                                                                <h6 className="white-color">TDS Amount</h6>
+                                                            </div>
+
+                                                        </div>
 
 
-
+                                                    </div>
                                                     <div className="row m-auto">
                                                         <div className="col-12 mt-3">
                                                             <div className="Recent-Trans retailer-addfund align-items-center">
@@ -141,21 +122,31 @@ export default function MasterManageFundWithdraw(){
                                                                         <thead>
                                                                         <tr className="LightBlue-BgColor">
                                                                             <th scope="col">S#</th>
-                                                                            <th scope="col" className="text-end">Date#</th>
-                                                                            <th scope="col" className="text-end">Txn Ref No </th>
-                                                                            <th scope="col" className="text-end">Reciver Name </th>
-                                                                            <th scope="col" className="text-end"> Amount </th>
-                                                                            <th scope="col" className="text-end">Remarks</th>
+                                                                            <th scope="col" className="text-end">Added Date</th>
+                                                                            <th scope="col" className="text-end">Naration</th>
+                                                                            <th scope="col" className="text-end">Amount(CR)</th>
+                                                                            <th scope="col" className="text-end"> Amount(DR) </th>
+                                                                            <th scope="col" className="text-end">Charge</th>
+
+                                                                            <th scope="col" className="text-end">TDS</th>
+                                                                            <th scope="col" className="text-end">Balance</th>
+
                                                                         </tr>
                                                                         </thead>
                                                                         <tbody>
                                                                         <tr className="table-bordered ">
                                                                             <th scope="row">1</th>
-                                                                            <td className="text-end">2025-09-20T19:28:14 </td>
-                                                                            <td className="text-end">Account Credited By#20092521452821 ,MUSKAN ENTERPRISES | 6204195516 | QPD995 ,WALLET ,Dghhh</td>
-                                                                            <td className="text-end green-color">50,000.00</td>
-                                                                            <td className="text-end red-color">0.00</td>
-                                                                            <td className="text-end red-color">0.00</td>
+                                                                            <td className="text-end">19092521373358 </td>
+                                                                            <td className="text-end">19/09/2025 05:11:22 PM</td>
+                                                                            <td className="text-end">Alam Singh 9211562672</td>
+                                                                            <td className="text-end">ANURAG LUTHRA
+                                                                                42220193215
+                                                                                SBIN0000001
+                                                                                IMPS</td>
+                                                                            <td className="text-end">2,753.00</td>
+
+                                                                            <td className="text-end">7.43</td>
+                                                                            <td className="text-end">0.00 </td>
 
 
 
@@ -213,9 +204,52 @@ export default function MasterManageFundWithdraw(){
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div id="transfer-wallet" className="tab-pane" role="tabpanel">
+                                                <div className="">
+
+                                                    <div className="row mx-auto mb-3">
+                                                        <div className="col-3">
+                                                            <div className="border rounded p-2 bg-purple ">
+                                                                <h5 className="white-color">287.9</h5>
+                                                                <h6 className="white-color">Main Wallet Balance</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-3">
+                                                            <div className="border rounded p-2 bg-purple ">
+                                                                <h5 className="white-color">597.935</h5>
+                                                                <h6 className="white-color">Commission Balance</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <form>
 
 
+                                                        <div className="form-row mt-5 mx-auto">
+                                                            <div className="form-group col-4">
+                                                                <input type="text" placeholder="Amount"
+                                                                       className="form-control form-control-md"/>
+                                                            </div>
+                                                            <div className="form-group col-4">
+                                                                <input type="text" placeholder="Remarks"
+                                                                       className="form-control form-control-md"/>
+                                                            </div>
+                                                        </div>
 
+                                                        <div className="form-group mx-auto col-3">
+                                                            <div className="dmt-trasno btn-group d-flex" role="group">
+                                                                <button type="button"
+                                                                        className="btn btn-width btn-success mr-2">Submit
+                                                                </button>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </form>
+
+
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>

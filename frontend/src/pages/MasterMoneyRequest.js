@@ -34,23 +34,23 @@ export default function MasterMoneyRequest(){
                                     <div className="card-body card-tabs-new">
                                         <ul className="nav nav-pills light" role="tablist">
                                             <li className=" nav-item" role="presentation">
-                                                <a href="#credit-history" className="nav-link active" data-bs-toggle="tab"
+                                                <a href="#pending-cashrequest" className="nav-link active" data-bs-toggle="tab"
                                                    aria-expanded="false" aria-selected="true" role="tab">Pending Cash Request </a>
                                             </li>
                                             <li className="nav-item" role="presentation">
-                                                <a href="#debit-history" className="nav-link" data-bs-toggle="tab"
+                                                <a href="#cash-request" className="nav-link" data-bs-toggle="tab"
                                                    aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">All Cash Request</a>
                                             </li>
 
                                             <li className="nav-item" role="presentation">
-                                                <a href="#debit-history" className="nav-link" data-bs-toggle="tab"
+                                                <a href="#bank-details" className="nav-link" data-bs-toggle="tab"
                                                    aria-expanded="false" aria-selected="false" role="tab" tabIndex="-1">Bank Details</a>
                                             </li>
 
 
                                         </ul>
                                         <div className="tab-content white-bgcolor">
-                                            <div id="credit-history" className="tab-pane active show bsstdmt" role="tabpanel">
+                                            <div id="pending-cashrequest" className="tab-pane active show bsstdmt" role="tabpanel">
                                                 <div className="">
 
                                                     <form>
@@ -179,7 +179,7 @@ export default function MasterMoneyRequest(){
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div id="debit-history" className="tab-pane" role="tabpanel">
+                                            <div id="cash-request" className="tab-pane" role="tabpanel">
                                                 <div className="">
 
                                                     <form>
@@ -323,6 +323,113 @@ export default function MasterMoneyRequest(){
                                                             </nav>
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="bank-details" className="tab-pane" role="tabpanel">
+                                                <div className="">
+
+                                                    <div className="row m-auto">
+                                                        <div className="col-6 mt-3">
+                                                            <div className="Recent-Trans retailer-addfund align-items-center">
+                                                                <h5 className="mb-3">AU SMALL FINANCE BANK (NEW):</h5>
+                                                                <div className="table-responsive">
+                                                                    <table className="table border-dashed table-responsive-sm">
+                                                                        <thead>
+                                                                        <tr className="LightBlue-BgColor">
+
+                                                                            <th scope="col" className="text-end"><b>Account Holder Name</b></th>
+                                                                            <th scope="col" className="text-end"><b>GOODLUCK TECHNOLOGIES PVT LTD.</b></th>
+
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">Bank Name</td>
+                                                                            <td className="text-end">AU SMALL FINANCE BANK (NEW)</td>
+                                                                        </tr>
+
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">Account Number</td>
+                                                                            <td className="text-end">2402421163589434</td>
+                                                                        </tr>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">IFSC Code</td>
+                                                                            <td className="text-end">:</td>
+                                                                        </tr>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">Branch</td>
+                                                                            <td className="text-end">:</td>
+                                                                        </tr>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">PAN</td>
+                                                                            <td className="text-end">AAKCG8655N</td>
+                                                                        </tr>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">GSTIN</td>
+                                                                            <td className="text-end">07AAKCG8655N1ZS</td>
+                                                                        </tr>
+
+
+
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-6 mt-3">
+                                                            <div className="Recent-Trans retailer-addfund align-items-center">
+                                                                <h5 className="mb-3">AU SMALL FINANCE BANK (NEW):</h5>
+                                                                <div className="table-responsive">
+                                                                    <table className="table border-dashed table-responsive-sm">
+                                                                        <thead>
+                                                                        <tr className="LightBlue-BgColor">
+
+                                                                            <th scope="col" className="text-end"><b>Account Holder Name</b></th>
+                                                                            <th scope="col" className="text-end"><b>GOODLUCK TECHNOLOGIES PVT LTD.</b></th>
+
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">Bank Name</td>
+                                                                            <td className="text-end">AU SMALL FINANCE BANK (NEW)</td>
+                                                                        </tr>
+
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">Account Number</td>
+                                                                            <td className="text-end">2402421163589434</td>
+                                                                        </tr>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">IFSC Code</td>
+                                                                            <td className="text-end">:</td>
+                                                                        </tr>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">Branch</td>
+                                                                            <td className="text-end">:</td>
+                                                                        </tr>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">PAN</td>
+                                                                            <td className="text-end">AAKCG8655N</td>
+                                                                        </tr>
+                                                                        <tr className="table-bordered ">
+                                                                            <td scope="row">GSTIN</td>
+                                                                            <td className="text-end">07AAKCG8655N1ZS</td>
+                                                                        </tr>
+
+
+
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
 

@@ -45,6 +45,17 @@ import MasterRetailerList from "./pages/MasterRetailerList";
 import MasterManageFund from "./pages/MasterManageFund";
 import MasterMoneyRequest from "./pages/MasterMoneyRequest";
 import MasterManageFundWithdraw from "./pages/MasterManageFundWithdraw";
+import MasterQrReport from "./pages/MasterQrReport";
+import MasterPgReport from "./pages/MasterPgReport";
+import MasterAccountStatements from "./pages/MasterAccountStatements";
+import MasterDistributorStatements from "./pages/MasterDistributorStatements";
+import MasterCommissionStatements from "./pages/MasterCommissionStatements";
+import MasterUserMoneyTrans from "./pages/MasterUserMoneyTrans";
+import MasterRechargeUtility from "./pages/MasterRechargeUtility";
+import MasterCreditCard from "./pages/MasterCreditCard";
+import MasterCreditDebitReport from "./pages/MasterCreditDebitReport";
+import MasterAepsTransaction from "./pages/MasterAepsTransaction";
+
 import './css/common.css';
 setupIonicReact();
 
@@ -79,13 +90,19 @@ const MasterDistributorRoutes = () => (
             <Route path="/master-manage-fund" component={MasterManageFund}/>
             <Route path="/master-managefund-withdraw" component={MasterManageFundWithdraw}/>
             <Route path="/master-money-request" component={MasterMoneyRequest}/>
-            <Route path="/dashboard-reports" component={ReportsPage}/>
-            <Route path="/dashboard-manage-funds" component={ManageFundsPage}/>
-            <Route path="/dashboard-pending-refunds" component={PendingRefundsPage}/>
-            <Route path="/dashboard-money-request" component={MoneyRequestPage}/>
-            <Route path="/dashboard-statements" component={StatementsPage}/>
-            <Route path="/dashboard-complaint" component={ComplaintPage}/>
-            <Route path="/dashboard-commission-and-charge" component={CommissionAndChargePage}/>
+            <Route path="/master-qr-report" component={MasterQrReport}/>
+            <Route path="/master-pg-report" component={MasterPgReport}/>
+            <Route path="/master-account-statements" component={MasterAccountStatements}/>
+            <Route path="/master-distributor-statements" component={MasterDistributorStatements}/>
+            <Route path="/master-commission-statements" component={MasterCommissionStatements}/>
+            <Route path="/master-usermoney-transaction" component={MasterUserMoneyTrans}/>
+            <Route path="/master-recharge-utility" component={MasterRechargeUtility}/>
+            <Route path="/master-credit-card" component={MasterCreditCard}/>
+            <Route path="/master-creditdebit-report" component={MasterCreditDebitReport}/>
+            <Route path="/master-aeps-transaction" component={MasterAepsTransaction}/>
+
+
+
             <Route path="/dashboard-setting" component={SettingPage}/>
             <Redirect exact from="/" to="/dashboard-home" />
             <Route render={() => <Redirect to="/dashboard-home" />} />

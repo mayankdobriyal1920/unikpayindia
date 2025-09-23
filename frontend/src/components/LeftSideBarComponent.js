@@ -104,6 +104,55 @@ export default function LeftSideBarComponent(){
                         </li>
                     )}
 
+                    {userInfo.role === 2 && (
+                        <li className="">
+                            <a className="has-arrow">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="nav-text">Reports</span>
+                            </a>
+                            <ul aria-expanded="false" className="mm-collapse">
+                                <li className="mm-active">
+                                    <a onClick={()=>goToPage('/master-qr-report')} className="mm-active">QR Report</a>
+                                </li>
+                                <li><a onClick={()=>goToPage('/master-pg-report')}>PG Report</a></li>
+                            </ul>
+                        </li>
+                    )}
+                    {userInfo.role === 2 && (
+                        <li>
+                            <a className="ai-icon">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Statements</span>
+                            </a>
+                            <ul aria-expanded="false" className="mm-collapse">
+                                <li className="mm-active">
+                                    <a onClick={()=>goToPage('/master-account-statements')} className="mm-active">Account Statements</a>
+                                </li>
+                                <li><a onClick={()=>goToPage('/master-distributor-statements')}>Distributor Statements</a></li>
+                                <li><a onClick={()=>goToPage('/master-commission-statements')}>Commission Statements</a></li>
+                            </ul>
+                        </li>
+                    )}
+
+                    {userInfo.role === 2 && (
+                        <li>
+                            <a className="ai-icon">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">User Reports</span>
+                            </a>
+                            <ul aria-expanded="false" className="mm-collapse">
+
+                                <li><a onClick={()=>goToPage('/master-usermoney-transaction')}>Money Transaction</a></li>
+                                <li><a onClick={()=>goToPage('/master-recharge-utility')}>Recharge/Utility</a></li>
+                                <li><a onClick={()=>goToPage('/master-credit-card')}>Credit Card</a></li>
+                                <li><a onClick={()=>goToPage('/master-creditdebit-report')}>Manage Funds</a></li>
+                                <li><a onClick={()=>goToPage('/master-aeps-transaction')}>AEPS Transaction</a></li>
+                                <li><a onClick={()=>goToPage('/master-distributor-statements')}>AEPS Statements</a></li>
+                                <li><a onClick={()=>goToPage('/master-distributor-statements')}>Account Statements</a></li>
+
+                            </ul>
+                        </li>
+                    )}
 
                     {userInfo.role === 3 && (
                         <li className="">

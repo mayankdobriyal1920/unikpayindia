@@ -28,8 +28,8 @@ export default function DistributorDetails(){
                         </div>
                         <div className="row main-retailer-report ShowTrans">
                             <div className="col-2 float-right">
-                                <div className="agent-add-user"><h6
-                                    className="mt-0 ">Add User</h6>
+                                <div className="agent-add-user">
+                                    <h6 className="mt-0 text-center">Add User</h6>
                                 </div>
                             </div>
                             <div className="col-xl-12">
