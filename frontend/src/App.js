@@ -41,6 +41,7 @@ import DistributorAgentReport from "./pages/DistributorAgentReport";
 import AgentManageFund from "./pages/AgentManageFund";
 import MDBusinessSummeryPage from "./pages/MDBusinessSummeryPage";
 import DistributorDetails from "./pages/DistributorDetails";
+import MdDistributorDetails from "./pages/MdDistributorDetails";
 import MasterRetailerList from "./pages/MasterRetailerList";
 import MasterManageFund from "./pages/MasterManageFund";
 import MasterMoneyRequest from "./pages/MasterMoneyRequest";
@@ -55,6 +56,8 @@ import MasterRechargeUtility from "./pages/MasterRechargeUtility";
 import MasterCreditCard from "./pages/MasterCreditCard";
 import MasterCreditDebitReport from "./pages/MasterCreditDebitReport";
 import MasterAepsTransaction from "./pages/MasterAepsTransaction";
+
+import MdDashboard from "./pages/MdDashboard";
 
 import './css/common.css';
 setupIonicReact();
@@ -83,9 +86,9 @@ const SuperAdminRoutes = () => (
 const MasterDistributorRoutes = () => (
     <IonReactRouter>
         <IonRouterOutlet>
-            <Route path="/dashboard-home" component={DashboardPage}/>
+            <Route path="/md-dashboard" component={MdDashboard}/>
             <Route path="/md-business-summery" component={MDBusinessSummeryPage}/>
-            <Route path="/distributor-details" component={DistributorDetails}/>
+            <Route path="/md-distributor-details" component={MdDistributorDetails}/>
             <Route path="/master-retailer-list" component={MasterRetailerList}/>
             <Route path="/master-manage-fund" component={MasterManageFund}/>
             <Route path="/master-managefund-withdraw" component={MasterManageFundWithdraw}/>
