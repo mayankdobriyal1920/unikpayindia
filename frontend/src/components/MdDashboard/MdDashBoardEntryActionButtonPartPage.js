@@ -1,4 +1,7 @@
 import React from 'react';
+import CreateDistrubutorIcon from "../../theme/images/md-icons/create-distrubutor.svg";
+
+
 import MoneTransfer from "../../theme/images/retailer-icons/MoneyTransfer.svg";
 import PPIWallet from "../../theme/images/retailer-icons/PPI-Wallet.svg";
 import multiwallet from "../../theme/images/retailer-icons/multi-wallet-icon.svg";
@@ -39,8 +42,8 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                     <div className="row retailer-das mb-4">
                         <div className="col-2 text-center ">
                             <a onClick={()=>goToPage('/md-dashboard/create-user')}>
-                                <div className="retailer-das-icon animate-bel">
-                                    <img src={MoneTransfer} className=""/>
+                                <div className="retailer-das-icoKn animate-bel">
+                                    <img src={CreateDistrubutorIcon} className=""/>
                                 </div>
                                 <h5 className="mt-0">Create Distributor</h5>
                             </a>
