@@ -27,7 +27,7 @@ export default function MdDashBoardEntryActionButtonPartPage() {
     }
     return (
         <div className="row">
-            <div className="col-lg-9 ">
+            <div className="col-lg-12 col-12 ">
                 <div className="left-content mt-4 mb-3">
                     <h3 className="content-title  mt-2">Welcome Back,</h3>
                     <div className="d-flex p-0">
@@ -38,21 +38,14 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                 <div className="upi-style-icon white-bgcolor boxShadow">
                     <div className="row retailer-das mb-4">
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/dashboard-home/money-transfer')}>
+                            <a onClick={()=>goToPage('/md-dashboard/create-user')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={MoneTransfer} className=""/>
                                 </div>
                                 <h5 className="mt-0">Create Distributor</h5>
                             </a>
                         </div>
-                        <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/master-manage-fund')}>
-                                <div className="retailer-das-icon animate-bel">
-                                    <img src={PPIWallet} className=""/>
-                                </div>
-                                <h5 className="mt-0">Credit Money</h5>
-                            </a>
-                        </div>
+
                         <div className="col-2 text-center ">
                             <a onClick={()=>goToPage('/master-managefund-withdraw')}>
                                 <div className="retailer-das-icon animate-bel">
@@ -62,7 +55,7 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                             </a>
                         </div>
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/dashboard-home/aeps')}>
+                            <a onClick={()=>goToPage('/md-dashboard/mdupi-funds')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={AEpsIcon} className=""/>
                                 </div>
@@ -79,7 +72,7 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                         </div>
 
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/dashboard-home/gas')}>
+                            <a onClick={()=>goToPage('/md-dashboard/mdadd-funds')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={GasIcon} className=""/>
                                 </div>
@@ -87,17 +80,19 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                             </a>
                         </div>
 
-
-                    </div>
-                    <div className="row retailer-das mb-4">
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/dashboard-home/dth')}>
+                            <a onClick={()=>goToPage('/md-dashboard/mdqr-code')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={DTHIcon} className=""/>
                                 </div>
                                 <h5 className="mt-0">QR Code</h5>
                             </a>
                         </div>
+
+
+                    </div>
+                    <div className="row retailer-das mb-4">
+
 
                         <div className="col-2 text-center ">
                             <a onClick={()=>goToPage('/dashboard-home/bill-cms-offline')}>
@@ -139,8 +134,6 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                                 <h5 className="mt-0">Virtual Transaction</h5>
                             </a>
                         </div>
-                    </div>
-                    <div className="row retailer-das mb-4">
                         <div className="col-2 text-center ">
                             <a onClick={()=>goToPage('/master-money-request')}>
                                 <div className="retailer-das-icon animate-bel">
@@ -149,9 +142,8 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                                 <h5 className="mt-0">Pending Requests</h5>
                             </a>
                         </div>
-
-
                     </div>
+
 
                 </div>
                 <div className="row">
@@ -243,7 +235,7 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                     </div>
                 </div>
             </div>
-            <div className="col-lg-3">
+            {/*<div className="col-lg-3">
                 <div className="left-content mt-4 mb-3">
                     <h3 className="content-title  mt-2">My Business</h3>
                     <div className="d-flex p-0">
@@ -253,7 +245,7 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                 </div>
                 <div className="upi-home-right">
                     <div className="underBox">
-                        {/*<div className="row ">
+                        <div className="row ">
                             <div className="col-12 ">
                                 <div className="my-buss-sum d-inline-flex align-items-center mb-3">
                                     <img src={myBusinessIcon} alt="icon" className="mr-2 "/>
@@ -264,7 +256,7 @@ export default function MdDashBoardEntryActionButtonPartPage() {
 
                                 </div>
                             </div>
-                        </div>*/}
+                        </div>
                         <div className="row">
                             <div className="col-12 mb-3">
                                 <div className="bg-white rounded-xl newstyle-dashome border-purple-500">
@@ -295,7 +287,7 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                             </div>
 
                         </div>
-                        {/*<div className="row">
+                        <div className="row">
                             <div className="col-6">
                                 <div className="d-flex align-items-center">
                                 <div className="flex-fill">
@@ -331,7 +323,7 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                                 </div>
                             </div>
 
-                        </div>*/}
+                        </div>
                     </div>
                 </div>
                 <div className="upi-home-right">
@@ -385,7 +377,7 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                     </div>
 
                 </div>
-            </div>
+            </div>*/}
         </div>
     )
 }

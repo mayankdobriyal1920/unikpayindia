@@ -40,7 +40,9 @@ import DistributorAgentDetail from "./pages/DistributorAgentDetail";
 import DistributorAgentReport from "./pages/DistributorAgentReport";
 import AgentManageFund from "./pages/AgentManageFund";
 import MDBusinessSummeryPage from "./pages/MDBusinessSummeryPage";
-import DistributorDetails from "./pages/DistributorDetails";
+
+import MdDistributorCreateUser from "./components/MdDashboard/MdDistributorCreateUser";
+
 import MdDistributorDetails from "./pages/MdDistributorDetails";
 import MasterRetailerList from "./pages/MasterRetailerList";
 import MasterManageFund from "./pages/MasterManageFund";
@@ -56,6 +58,7 @@ import MasterRechargeUtility from "./pages/MasterRechargeUtility";
 import MasterCreditCard from "./pages/MasterCreditCard";
 import MasterCreditDebitReport from "./pages/MasterCreditDebitReport";
 import MasterAepsTransaction from "./pages/MasterAepsTransaction";
+import MasterWalletToWallet from "./pages/MasterWalletToWallet";
 
 import MdDashboard from "./pages/MdDashboard";
 
@@ -89,6 +92,7 @@ const MasterDistributorRoutes = () => (
             <Route path="/md-dashboard" component={MdDashboard}/>
             <Route path="/md-business-summery" component={MDBusinessSummeryPage}/>
             <Route path="/md-distributor-details" component={MdDistributorDetails}/>
+            <Route path="/mastercreateuser/" component={MdDistributorCreateUser}/>
             <Route path="/master-retailer-list" component={MasterRetailerList}/>
             <Route path="/master-manage-fund" component={MasterManageFund}/>
             <Route path="/master-managefund-withdraw" component={MasterManageFundWithdraw}/>
@@ -103,7 +107,7 @@ const MasterDistributorRoutes = () => (
             <Route path="/master-credit-card" component={MasterCreditCard}/>
             <Route path="/master-creditdebit-report" component={MasterCreditDebitReport}/>
             <Route path="/master-aeps-transaction" component={MasterAepsTransaction}/>
-
+            <Route path="/master-wallet-wallet" component={MasterWalletToWallet}/>
 
 
             <Route path="/dashboard-setting" component={SettingPage}/>

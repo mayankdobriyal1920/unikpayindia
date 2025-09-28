@@ -74,23 +74,7 @@ export default function DashboardPage(){
                                 <p className="retailer_p pl-2 mb-0">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
                             </div>
 
-                            {/*<div className="col-xl-12 col-md-12 col-lg-12 d-flex d-block  my-3 page-header-breadcrumb">
-                                <div className="left-content">
-                                    <h3 className="content-title  mt-2">Welcome Back,</h3>
-                                    <div className="d-flex p-0">
-                                        <i className="fa-solid fa-house"></i>
-                                        <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
-                                    </div>
-                                </div>
-                                <div className="left-content float-right">
-                                    <h3 className="content-title  mt-2">My Business</h3>
-                                    <div className="d-flex p-0">
 
-                                        <p className="text-muted mb-0 hover-cursor">Summary </p>
-                                    </div>
-                                </div>
-
-                            </div>*/}
                         </div>
                         <div className="row">
 

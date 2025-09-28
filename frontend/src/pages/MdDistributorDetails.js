@@ -3,8 +3,13 @@ import {IonContent, IonHeader, IonPage} from "@ionic/react";
 import usericon from "../theme/images/user-icon.jpg";
 import LeftSideBarComponent from "../components/LeftSideBarComponent";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
+import {useHistory} from "react-router";
 
 export default function MdDistributorDetails(){
+    const history = useHistory();
+    const goToPage = (page)=>{
+        history.push(page);
+    }
     return(
         <IonPage className="UnikPayIndia">
             <HeaderAfterLoginComponent/>
@@ -28,7 +33,12 @@ export default function MdDistributorDetails(){
                             </div>
                         </div>
                         <div className="row main-retailer-report ShowTrans">
-                            <div className="col-xl-12">
+                            <div className="col-2 offset-10 d-flex justify-content-end">
+                                <a>
+                                    <h6 className="btn btn-width btn-success mr-2">Add User</h6>
+                                </a>
+                            </div>
+                              <div className="col-xl-12">
                                 <div className="card retailer-home-balance">
 
                                     <div className="card-body card-tabs-new">
