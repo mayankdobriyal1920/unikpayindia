@@ -2,38 +2,28 @@ import React from 'react';
 import {IonContent, IonHeader, IonPage, IonRouterOutlet} from "@ionic/react";
 
 import usericon from '../theme/images/user-icon.jpg';
-import MoneTransfer from '../theme/images/retailer-icons/MoneyTransfer.svg';
+import CreateDistrubutorIcon from "../../src/theme/images/md-icons/create-distrubutor.svg";
+import WithdrawalMoney from "../../src/theme/images/md-icons/withdrawal-money.svg";
 import PPIWallet from '../theme/images/retailer-icons/PPI-Wallet.svg';
-import AEpsIcon from '../theme/images/retailer-icons/AEPS.svg';
-import RechargeIcon from '../theme/images/retailer-icons/Recharge.svg';
-import GasIcon from '../theme/images/retailer-icons/GAS.svg';
-import DTHIcon from '../theme/images/retailer-icons/DTH.svg';
-import BillCMSIcon from '../theme/images/retailer-icons/Bill-CMS-Offlines.svg';
-import UPIIcon from '../theme/images/retailer-icons/UPI.svg';
-import CCPaymentIcon from '../theme/images/retailer-icons/CC-Payment.svg';
+import MoneTransfer from '../theme/images/retailer-icons/MoneyTransfer.svg';
+import AccountStatements from "../../src/theme/images/md-icons/account-statements.svg";
 import QuickFundIcon from '../theme/images/retailer-icons/QuickFund.svg';
-import LICIcon from '../theme/images/retailer-icons/LIC.svg';
-import CMSIcon from '../theme/images/retailer-icons/CMS.svg';
-import InsuranceIcon from '../theme/images/retailer-icons/Insurance.svg';
 import QRCodeIcon from '../theme/images/retailer-icons/QR-Code.svg';
-import TravelIcon from '../theme/images/retailer-icons/Travel.svg';
 import PGIcon from '../theme/images/retailer-icons/PG.svg';
-import FastagIcon from '../theme/images/retailer-icons/Fastag.svg';
+import PendingRequesticon from '../theme/images/md-icons/pending-request.svg';
 
-import multiwallet from '../theme/images/retailer-icons/multi-wallet-icon.svg';
-
-import myBusinessIcon from '../theme/images/retailer-icons/My-Business.svg';
 import LeftSideBarComponent from "../components/LeftSideBarComponent";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
 import {Redirect, Route, Switch, useRouteMatch} from "react-router";
 import LoginPage from "./LoginPage";
 import WithoutLoginHomePage from "./WithoutLoginHomePage";
+
 import MdDashBoardEntryActionButtonPartPage from "../components/MdDashboard/MdDashBoardEntryActionButtonPartPage";
 import MdDistributorCreateUser from "../components/MdDashboard/MdDistributorCreateUser";
 import MdUpiFunds from "../components/MdDashboard/MdUpiFunds";
 import MdAddFunds from "../components/MdDashboard/MdAddFunds";
 import MdQrCode from "../components/MdDashboard/MdQrCode";
-
+import MasterWalletToWallet from "../components/MdDashboard/MasterWalletToWallet";
 import PaymentTransactionSuccessModal from "../components/DashBoardPage/PaymentTransactionSuccessModal";
 import {useDispatch, useSelector} from "react-redux";
 import {actionToGetTransactionDetails} from "../redux/CommonAction";
@@ -71,6 +61,7 @@ export default function MdDashboard(){
                             <Route exact path={`${path}/mdupi-funds`} component={MdUpiFunds} />
                             <Route exact path={`${path}/mdadd-funds`} component={MdAddFunds} />
                             <Route exact path={`${path}/mdqr-code`} component={MdQrCode} />
+                            <Route exact path={`${path}/masterwallet-towallet`} component={MasterWalletToWallet} />
                             <Redirect  exact from={path}  to={`${path}/action`} />
                         </Switch>
                     </div>

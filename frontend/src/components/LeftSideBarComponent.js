@@ -147,16 +147,16 @@ export default function LeftSideBarComponent(){
                                 <li><a onClick={()=>goToPage('/master-credit-card')}>Credit Card</a></li>
                                 <li><a onClick={()=>goToPage('/master-creditdebit-report')}>Manage Funds</a></li>
                                 <li><a onClick={()=>goToPage('/master-aeps-transaction')}>AEPS Transaction</a></li>
-                                <li><a onClick={()=>goToPage('/master-distributor-statements')}>AEPS Statements</a></li>
-                                <li><a onClick={()=>goToPage('/master-distributor-statements')}>Account Statements</a></li>
+                                <li><a onClick={()=>goToPage('/master-aeps-statement')}>AEPS Statements</a></li>
+                                <li><a onClick={()=>goToPage('/master-user-transaction')}>Account Statements</a></li>
 
                             </ul>
                         </li>
                     )}
-
+                    {/*Distributor */}
                     {userInfo.role === 3 && (
                         <li className="">
-                            <a className="has-arrow" onClick={() => goToPage('/dashboard-home')} aria-expanded="false">
+                            <a className="has-arrow" onClick={() => goToPage('/distributordashboard')} aria-expanded="false">
                                 <i className="fa-solid fa-house"></i>
                                 <span className="nav-text">Dashboard</span>
                             </a>
@@ -164,17 +164,17 @@ export default function LeftSideBarComponent(){
                     )}
                     {userInfo.role === 3 && (
                         <li>
-                            <a className="ai-icon" onClick={()=>goToPage('/distributor-agent-detail')} aria-expanded="false">
+                            <a className="ai-icon">
                                 <i className="fa-solid fa-file-pen"></i>
                                 <span className="nav-text">Agent Details</span>
                             </a>
-                           {/* <ul aria-expanded="false" className="mm-collapse">
+                            <ul aria-expanded="false" className="mm-collapse">
                                 <li className="mm-active">
-                                    <a onClick={()=>goToPage('/dashboard-home')} className="mm-active">Users Registration</a>
+                                    <a onClick={()=>goToPage('/distributor-agent-detail')} className="mm-active">Users Registration</a>
                                 </li>
-                                <li><a onClick={()=>goToPage('/dashboard-home')}>Agent List</a></li>
+                                <li><a onClick={()=>goToPage('/disretailer-details')}>Agent List</a></li>
                                 <li><a onClick={()=>goToPage('/dashboard-home')}>Request ON/OFF</a></li>
-                            </ul>*/}
+                            </ul>
                         </li>
                     )}
 

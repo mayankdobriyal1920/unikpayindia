@@ -8,19 +8,12 @@ import QRCodeIcon from "../../theme/images/retailer-icons/QR-Code.svg";
 import PGIcon from '../../theme/images/retailer-icons/PG.svg';
 
 import MoneTransfer from "../../theme/images/retailer-icons/MoneyTransfer.svg";
-import multiwallet from "../../theme/images/retailer-icons/multi-wallet-icon.svg";
-import AEpsIcon from "../../theme/images/retailer-icons/AEPS.svg";
-import RechargeIcon from "../../theme/images/retailer-icons/Recharge.svg";
-import GasIcon from "../../theme/images/retailer-icons/GAS.svg";
-import DTHIcon from "../../theme/images/retailer-icons/DTH.svg";
-import BillCMSIcon from "../../theme/images/retailer-icons/Bill-CMS-Offlines.svg";
-import UPIIcon from "../../theme/images/retailer-icons/UPI.svg";
-import CCPaymentIcon from "../../theme/images/retailer-icons/CC-Payment.svg";
 import PendingRequesticon from '../../theme/images/md-icons/pending-request.svg';
 
 import {useHistory} from "react-router";
 
-export default function MdDashBoardEntryActionButtonPartPage() {
+
+export default function DistributorDashBoardEntryActionButtonPartPage() {
     const history = useHistory();
     const goToPage = (page)=>{
         history.push(page);
@@ -32,17 +25,17 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                     <h3 className="content-title  mt-2">Welcome Back,</h3>
                     <div className="d-flex p-0">
                         <i className="fa-solid fa-house"></i>
-                        <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;MD Dashboard </p>
+                        <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Distributor Dashboard </p>
                     </div>
                 </div>
                 <div className="upi-style-icon white-bgcolor boxShadow">
                     <div className="row retailer-das mb-4">
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/md-dashboard/create-user')}>
+                            <a onClick={()=>goToPage('/distributordashboard/create-retailer')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={CreateDistrubutorIcon} className=""/>
                                 </div>
-                                <h5 className="mt-0">Create Distributor</h5>
+                                <h5 className="mt-0">Create Retailer</h5>
                             </a>
                         </div>
 

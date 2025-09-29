@@ -36,7 +36,9 @@ import ReportsPage from "./pages/ReportsPage";
 import BusinessSummeryPage from "./pages/BusinessSummeryPage";
 import StatementsPage from "./pages/StatementsPage";
 import DistributorDashboardPage from "./pages/DistributorDashboardPage";
+import DisCreateRetailer from "./components/Distributor/DisCreateRetailer";
 import DistributorAgentDetail from "./pages/DistributorAgentDetail";
+import DistributorRetailerDetail from "./pages/DistributorRetailerDetail";
 import DistributorAgentReport from "./pages/DistributorAgentReport";
 import AgentManageFund from "./pages/AgentManageFund";
 import MDBusinessSummeryPage from "./pages/MDBusinessSummeryPage";
@@ -58,11 +60,16 @@ import MasterRechargeUtility from "./pages/MasterRechargeUtility";
 import MasterCreditCard from "./pages/MasterCreditCard";
 import MasterCreditDebitReport from "./pages/MasterCreditDebitReport";
 import MasterAepsTransaction from "./pages/MasterAepsTransaction";
-import MasterWalletToWallet from "./pages/MasterWalletToWallet";
+import MasterAepsStatement from "./pages/MasterAepsStatement";
+import UserTransactionDetails from "./pages/UserTransactionDetails";
+
 
 import MdDashboard from "./pages/MdDashboard";
 
+
+
 import './css/common.css';
+
 setupIonicReact();
 
 
@@ -107,7 +114,9 @@ const MasterDistributorRoutes = () => (
             <Route path="/master-credit-card" component={MasterCreditCard}/>
             <Route path="/master-creditdebit-report" component={MasterCreditDebitReport}/>
             <Route path="/master-aeps-transaction" component={MasterAepsTransaction}/>
-            <Route path="/master-wallet-wallet" component={MasterWalletToWallet}/>
+            <Route path="/master-aeps-statement" component={MasterAepsStatement}/>
+            <Route path="/master-user-transaction" component={UserTransactionDetails}/>
+
 
 
             <Route path="/dashboard-setting" component={SettingPage}/>
@@ -120,8 +129,10 @@ const MasterDistributorRoutes = () => (
 const LocalDistributorRoutes = () => (
     <IonReactRouter>
         <IonRouterOutlet>
-            <Route path="/dashboard-home" component={DistributorDashboardPage}/>
+            <Route path="/distributordashboard" component={DistributorDashboardPage}/>
+            <Route path="/discrateretailer" component={DisCreateRetailer}/>
             <Route path="/distributor-agent-detail" component={DistributorAgentDetail}/>
+            <Route path="/disretailer-details" component={DistributorRetailerDetail}/>
             <Route path="/dashboard-manage-funds" component={ManageFundsPage}/>
             <Route path="/dashboard-money-request" component={MoneyRequestPage}/>
             <Route path="/dashboard-statements" component={StatementsPage}/>

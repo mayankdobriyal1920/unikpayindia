@@ -4,7 +4,7 @@ import usericon from "../theme/images/user-icon.jpg";
 import LeftSideBarComponent from "../components/LeftSideBarComponent";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
 
-export default function MasterAepsTransaction(){
+export default function MasterAepsStatement(){
     return(
         <IonPage className="UnikPayIndia">
             <HeaderAfterLoginComponent/>
@@ -20,10 +20,10 @@ export default function MasterAepsTransaction(){
                         </div>
                         <div className="d-md-flex d-block align-items-center justify-content-between my-3 page-header-breadcrumb">
                             <div className="left-content">
-                                <h3 className="content-title  mt-2"> Aeps Transaction</h3>
+                                <h3 className="content-title  mt-2"> Aeps Statement</h3>
                                 <div className="d-flex p-0">
                                     <i className="fa-solid fa-house"></i>
-                                    <p className="text-muted mb-0 hover-cursor">  Master Distributor / Aeps Transaction</p>
+                                    <p className="text-muted mb-0 hover-cursor">  Master Distributor / Aeps Statement</p>
                                 </div>
                             </div>
                         </div>
@@ -120,9 +120,10 @@ export default function MasterAepsTransaction(){
                                                                 <th scope="col" className="text-end"> Bank </th>
                                                                 <th scope="col" className="text-end">Type</th>
                                                                 <th scope="col" className="text-end"> Transacation Amount </th>
+                                                                <th scope="col" className="text-end">Opening Bal</th>
+                                                                <th scope="col" className="text-end">Closing Bal</th>
                                                                 <th scope="col" className="text-end">RRN</th>
                                                                 <th scope="col" className="text-end">Status</th>
-                                                                <th scope="col" className="text-end">Message</th>
 
                                                             </tr>
                                                             </thead>
@@ -142,6 +143,7 @@ export default function MasterAepsTransaction(){
                                                                 <td className="text-end">0.00 </td>
                                                                 <td className="text-end">526217019495</td>
                                                                 <td className="text-end">Success</td>
+                                                                <th scope="col" className="text-end">Status</th>
                                                             </tr>
 
 

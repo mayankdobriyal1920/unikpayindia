@@ -2,58 +2,33 @@ import React from 'react';
 import {IonContent, IonHeader, IonPage, IonRouterOutlet} from "@ionic/react";
 
 import usericon from '../theme/images/user-icon.jpg';
-import MoneTransfer from '../theme/images/retailer-icons/MoneyTransfer.svg';
+import CreateDistrubutorIcon from "../../src/theme/images/md-icons/create-distrubutor.svg";
+import WithdrawalMoney from "../../src/theme/images/md-icons/withdrawal-money.svg";
 import PPIWallet from '../theme/images/retailer-icons/PPI-Wallet.svg';
-import AEpsIcon from '../theme/images/retailer-icons/AEPS.svg';
-import RechargeIcon from '../theme/images/retailer-icons/Recharge.svg';
-import GasIcon from '../theme/images/retailer-icons/GAS.svg';
-import DTHIcon from '../theme/images/retailer-icons/DTH.svg';
-import BillCMSIcon from '../theme/images/retailer-icons/Bill-CMS-Offlines.svg';
-import UPIIcon from '../theme/images/retailer-icons/UPI.svg';
-import CCPaymentIcon from '../theme/images/retailer-icons/CC-Payment.svg';
+import MoneTransfer from '../theme/images/retailer-icons/MoneyTransfer.svg';
+import AccountStatements from "../../src/theme/images/md-icons/account-statements.svg";
 import QuickFundIcon from '../theme/images/retailer-icons/QuickFund.svg';
-import LICIcon from '../theme/images/retailer-icons/LIC.svg';
-import CMSIcon from '../theme/images/retailer-icons/CMS.svg';
-import InsuranceIcon from '../theme/images/retailer-icons/Insurance.svg';
 import QRCodeIcon from '../theme/images/retailer-icons/QR-Code.svg';
-import TravelIcon from '../theme/images/retailer-icons/Travel.svg';
 import PGIcon from '../theme/images/retailer-icons/PG.svg';
-import FastagIcon from '../theme/images/retailer-icons/Fastag.svg';
+import PendingRequesticon from '../theme/images/md-icons/pending-request.svg';
 
-import multiwallet from '../theme/images/retailer-icons/multi-wallet-icon.svg';
-
-import myBusinessIcon from '../theme/images/retailer-icons/My-Business.svg';
 import LeftSideBarComponent from "../components/LeftSideBarComponent";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
 import {Redirect, Route, Switch, useRouteMatch} from "react-router";
 import LoginPage from "./LoginPage";
 import WithoutLoginHomePage from "./WithoutLoginHomePage";
-import DashBoardEntryActionButtonPartPage from "../components/DashBoardPage/DashBoardEntryActionButtonPartPage";
-import MoneyTransferPartPage from "../components/DashBoardPage/MoneyTransferPartPage";
-import PPIWalletPartPage from "../components/DashBoardPage/PPIWalletPartPage";
-import PPIDigiKhataPartPage from "../components/DashBoardPage/PPIDigiKhataPartPage";
-import AEPSPartPage from "../components/DashBoardPage/AEPSPartPage";
-import RechargePartPage from "../components/DashBoardPage/RechargePartPage";
-import GASPartPage from "../components/DashBoardPage/GASPartPage";
-import DTHPartPage from "../components/DashBoardPage/DTHPartPage";
-import BillCmsOfflinePartPage from "../components/DashBoardPage/BillCmsOfflinePartPage";
-import UPIPartPage from "../components/DashBoardPage/UPIPartPage";
-import CreditCardPaymentPartPage from "../components/DashBoardPage/CreditCardPaymentPartPage";
-import WalletPartPage from "../components/DashBoardPage/WalletPartPage";
-import LicPartPage from "../components/DashBoardPage/LicPartPage";
-import CMSPartPage from "../components/DashBoardPage/CMSPartPage";
-import InsurancePartPage from "../components/DashBoardPage/InsurancePartPage";
-import BBPSPartPage from "../components/DashBoardPage/BBPSPartPage";
-import QRCodePartPage from "../components/DashBoardPage/QRCodePartPage";
-import TravelPartPage from "../components/DashBoardPage/TravelPartPage";
-import PGPartPage from "../components/DashBoardPage/PGPartPage";
-import FastTagPartPage from "../components/DashBoardPage/FastTagPartPage";
+import DistributorDashBoardEntryActionButtonPartPage from "../components/Distributor/DistributorDashBoardEntryActionButtonPartPage";
+import DisCreateRetailer from "../components/Distributor/DisCreateRetailer";
+import MdUpiFunds from "../components/MdDashboard/MdUpiFunds";
+import MdAddFunds from "../components/MdDashboard/MdAddFunds";
+import MdQrCode from "../components/MdDashboard/MdQrCode";
+import MasterWalletToWallet from "../components/MdDashboard/MasterWalletToWallet";
 import PaymentTransactionSuccessModal from "../components/DashBoardPage/PaymentTransactionSuccessModal";
 import {useDispatch, useSelector} from "react-redux";
 import {actionToGetTransactionDetails} from "../redux/CommonAction";
 
 export default function DistributorDashboardPage(){
-    const path = `/dashboard-home`;
+    const path = `/distributordashboard`;
     const dispatch = useDispatch();
     const {userInfo} = useSelector((state) => state.userAuthDetail)
 
@@ -73,37 +48,19 @@ export default function DistributorDashboardPage(){
                                 <h6 className="crypto mt-0">Live Updates</h6>
                                 <p className="retailer_p pl-2 mb-0">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
                             </div>
-                            {/*<div className="col-xl-12 col-md-12 col-lg-12 d-flex d-block  my-3 page-header-breadcrumb">
-                                <div className="left-content">
-                                    <h3 className="content-title  mt-2">Welcome Back, distrubutor</h3>
-                                    <div className="d-flex p-0">
-                                        <i className="fa-solid fa-house"></i>
-                                        <p className="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard </p>
-                                    </div>
-                                </div>
-                            </div>*/}
+
+
+                        </div>
+                        <div className="row">
+
                         </div>
                         <Switch>
-                            <Route exact path={`${path}/action`} component={DashBoardEntryActionButtonPartPage} />
-                            <Route exact path={`${path}/money-transfer`} component={MoneyTransferPartPage} />
-                            <Route exact path={`${path}/ppi-wallet`} component={PPIWalletPartPage} />
-                            <Route exact path={`${path}/ppi-digikhata`} component={PPIDigiKhataPartPage} />
-                            <Route exact path={`${path}/aeps`} component={AEPSPartPage} />
-                            <Route exact path={`${path}/recharge`} component={RechargePartPage} />
-                            <Route exact path={`${path}/gas`} component={GASPartPage} />
-                            <Route exact path={`${path}/dth`} component={DTHPartPage} />
-                            <Route exact path={`${path}/bill-cms-offline`} component={BillCmsOfflinePartPage} />
-                            <Route exact path={`${path}/upi`} component={UPIPartPage} />
-                            <Route exact path={`${path}/credit-card-payment`} component={CreditCardPaymentPartPage} />
-                            <Route exact path={`${path}/wallet`} component={WalletPartPage} />
-                            <Route exact path={`${path}/lic`} component={LicPartPage} />
-                            <Route exact path={`${path}/cms`} component={CMSPartPage} />
-                            <Route exact path={`${path}/insurance`} component={InsurancePartPage} />
-                            <Route exact path={`${path}/bbps`} component={BBPSPartPage} />
-                            <Route exact path={`${path}/qr-code`} component={QRCodePartPage} />
-                            <Route exact path={`${path}/travel`} component={TravelPartPage} />
-                            <Route exact path={`${path}/pg`} component={PGPartPage} />
-                            <Route exact path={`${path}/fast-tag`} component={FastTagPartPage} />
+                            <Route exact path={`${path}/action`} component={DistributorDashBoardEntryActionButtonPartPage} />
+                            <Route exact path={`${path}/create-retailer`} component={DisCreateRetailer} />
+                            <Route exact path={`${path}/mdupi-funds`} component={MdUpiFunds} />
+                            <Route exact path={`${path}/mdadd-funds`} component={MdAddFunds} />
+                            <Route exact path={`${path}/mdqr-code`} component={MdQrCode} />
+                            <Route exact path={`${path}/masterwallet-towallet`} component={MasterWalletToWallet} />
                             <Redirect  exact from={path}  to={`${path}/action`} />
                         </Switch>
                     </div>
