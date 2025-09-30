@@ -35,12 +35,18 @@ import ManageFundsPage from "./pages/ManageFundsPage";
 import ReportsPage from "./pages/ReportsPage";
 import BusinessSummeryPage from "./pages/BusinessSummeryPage";
 import StatementsPage from "./pages/StatementsPage";
+
+// Distributor Pages
 import DistributorDashboardPage from "./pages/DistributorDashboardPage";
 import DisCreateRetailer from "./components/Distributor/DisCreateRetailer";
 import DistributorAgentDetail from "./pages/DistributorAgentDetail";
+import DistributorAgentRequestOnOff from "./pages/DistributorAgentRequestOnOff";
 import DistributorRetailerDetail from "./pages/DistributorRetailerDetail";
 import DistributorAgentReport from "./pages/DistributorAgentReport";
 import AgentManageFund from "./pages/AgentManageFund";
+
+// MD Pages
+import MdDashboard from "./pages/MdDashboard";
 import MDBusinessSummeryPage from "./pages/MDBusinessSummeryPage";
 
 import MdDistributorCreateUser from "./components/MdDashboard/MdDistributorCreateUser";
@@ -64,7 +70,7 @@ import MasterAepsStatement from "./pages/MasterAepsStatement";
 import UserTransactionDetails from "./pages/UserTransactionDetails";
 
 
-import MdDashboard from "./pages/MdDashboard";
+
 
 
 
@@ -133,6 +139,7 @@ const LocalDistributorRoutes = () => (
             <Route path="/discrateretailer" component={DisCreateRetailer}/>
             <Route path="/distributor-agent-detail" component={DistributorAgentDetail}/>
             <Route path="/disretailer-details" component={DistributorRetailerDetail}/>
+            <Route path="/distributoragent-request-onoff" component={DistributorAgentRequestOnOff}/>
             <Route path="/dashboard-manage-funds" component={ManageFundsPage}/>
             <Route path="/dashboard-money-request" component={MoneyRequestPage}/>
             <Route path="/dashboard-statements" component={StatementsPage}/>

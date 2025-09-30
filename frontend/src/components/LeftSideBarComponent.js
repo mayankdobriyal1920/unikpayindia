@@ -173,7 +173,7 @@ export default function LeftSideBarComponent(){
                                     <a onClick={()=>goToPage('/distributor-agent-detail')} className="mm-active">Users Registration</a>
                                 </li>
                                 <li><a onClick={()=>goToPage('/disretailer-details')}>Agent List</a></li>
-                                <li><a onClick={()=>goToPage('/dashboard-home')}>Request ON/OFF</a></li>
+                                <li><a onClick={()=>goToPage('/distributoragent-request-onoff')}>Request ON/OFF</a></li>
                             </ul>
                         </li>
                     )}
