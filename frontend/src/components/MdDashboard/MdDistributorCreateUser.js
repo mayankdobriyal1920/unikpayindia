@@ -98,17 +98,11 @@ export default function MoneyTransferPartPage() {
                                                 <div className="dmt-trasno btn-group d-flex" role="group">
                                                     <button type="button" className="btn btn-width btn-success mr-2">Save Changes </button>
                                                     <button type="button" onClick={goBack} className="btn btn-width btn-secondary"> Close</button>
-
                                                 </div>
                                             </div>
-
                                         </div>
-
-
                                     </form>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

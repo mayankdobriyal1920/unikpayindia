@@ -68,16 +68,9 @@ import MasterCreditDebitReport from "./pages/MasterCreditDebitReport";
 import MasterAepsTransaction from "./pages/MasterAepsTransaction";
 import MasterAepsStatement from "./pages/MasterAepsStatement";
 import UserTransactionDetails from "./pages/UserTransactionDetails";
-
-
-
-
-
-
 import './css/common.css';
 
 setupIonicReact();
-
 
 // Define one router for each role
 const SuperAdminRoutes = () => (
@@ -102,7 +95,7 @@ const SuperAdminRoutes = () => (
 const MasterDistributorRoutes = () => (
     <IonReactRouter>
         <IonRouterOutlet>
-            <Route path="/md-dashboard" component={MdDashboard}/>
+            <Route path="/dashboard-home" component={MdDashboard}/>
             <Route path="/md-business-summery" component={MDBusinessSummeryPage}/>
             <Route path="/md-distributor-details" component={MdDistributorDetails}/>
             <Route path="/mastercreateuser/" component={MdDistributorCreateUser}/>
@@ -122,9 +115,6 @@ const MasterDistributorRoutes = () => (
             <Route path="/master-aeps-transaction" component={MasterAepsTransaction}/>
             <Route path="/master-aeps-statement" component={MasterAepsStatement}/>
             <Route path="/master-user-transaction" component={UserTransactionDetails}/>
-
-
-
             <Route path="/dashboard-setting" component={SettingPage}/>
             <Redirect exact from="/" to="/dashboard-home" />
             <Route render={() => <Redirect to="/dashboard-home" />} />
@@ -135,7 +125,7 @@ const MasterDistributorRoutes = () => (
 const LocalDistributorRoutes = () => (
     <IonReactRouter>
         <IonRouterOutlet>
-            <Route path="/distributordashboard" component={DistributorDashboardPage}/>
+            <Route path="/dashboard-home" component={DistributorDashboardPage}/>
             <Route path="/discrateretailer" component={DisCreateRetailer}/>
             <Route path="/distributor-agent-detail" component={DistributorAgentDetail}/>
             <Route path="/disretailer-details" component={DistributorRetailerDetail}/>
@@ -147,7 +137,6 @@ const LocalDistributorRoutes = () => (
             <Route path="/distributor-agent-report" component={DistributorAgentReport}/>
             <Route path="/agent-manage-fund" component={AgentManageFund}/>
             <Route path="/dashboard-reports" component={ReportsPage}/>
-
             <Route path="/dashboard-setting" component={SettingPage}/>
             <Redirect exact from="/" to="/dashboard-home" />
             <Route render={() => <Redirect to="/dashboard-home" />} />
@@ -228,8 +217,10 @@ const App = () => {
                     {userInfo?.id ? <AppEnterMainPage/> : <PublicRoutes/>}
                 </React.Fragment>:''
             }
-            <IonLoading className={"loading_loader_spinner_container"} isOpen={userSession?.loading} message={"Loading..."}/>
-        </IonApp>
+            {(!userInfo?.id) &&
+              <IonLoading className={"loading_loader_spinner_container"} isOpen={userSession?.loading} message={"Loading..."}/>
+            }
+            </IonApp>
     );
 }
 export default App;

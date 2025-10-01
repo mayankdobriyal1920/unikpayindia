@@ -17,7 +17,6 @@ import QRCodeIcon from "../../theme/images/retailer-icons/QR-Code.svg";
 import TravelIcon from "../../theme/images/retailer-icons/Travel.svg";
 import PGIcon from "../../theme/images/retailer-icons/PG.svg";
 import FastagIcon from "../../theme/images/retailer-icons/Fastag.svg";
-import myBusinessIcon from "../../theme/images/retailer-icons/My-Business.svg";
 import {useHistory} from "react-router";
 
 export default function DashBoardEntryActionButtonPartPage() {

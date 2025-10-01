@@ -1,22 +1,9 @@
 import React from 'react';
-import {IonContent, IonHeader, IonPage, IonRouterOutlet} from "@ionic/react";
-
-import usericon from '../theme/images/user-icon.jpg';
-import CreateDistrubutorIcon from "../../src/theme/images/md-icons/create-distrubutor.svg";
-import WithdrawalMoney from "../../src/theme/images/md-icons/withdrawal-money.svg";
-import PPIWallet from '../theme/images/retailer-icons/PPI-Wallet.svg';
-import MoneTransfer from '../theme/images/retailer-icons/MoneyTransfer.svg';
-import AccountStatements from "../../src/theme/images/md-icons/account-statements.svg";
-import QuickFundIcon from '../theme/images/retailer-icons/QuickFund.svg';
-import QRCodeIcon from '../theme/images/retailer-icons/QR-Code.svg';
-import PGIcon from '../theme/images/retailer-icons/PG.svg';
-import PendingRequesticon from '../theme/images/md-icons/pending-request.svg';
+import {IonContent, IonPage} from "@ionic/react";
 
 import LeftSideBarComponent from "../components/LeftSideBarComponent";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
-import {Redirect, Route, Switch, useRouteMatch} from "react-router";
-import LoginPage from "./LoginPage";
-import WithoutLoginHomePage from "./WithoutLoginHomePage";
+import {Redirect, Route, Switch} from "react-router";
 
 import MdDashBoardEntryActionButtonPartPage from "../components/MdDashboard/MdDashBoardEntryActionButtonPartPage";
 import MdDistributorCreateUser from "../components/MdDashboard/MdDistributorCreateUser";
@@ -27,9 +14,9 @@ import MasterWalletToWallet from "../components/MdDashboard/MasterWalletToWallet
 import PaymentTransactionSuccessModal from "../components/DashBoardPage/PaymentTransactionSuccessModal";
 import {useDispatch, useSelector} from "react-redux";
 import {actionToGetTransactionDetails} from "../redux/CommonAction";
+const path = `/md-dashboard`;
 
 export default function MdDashboard(){
-    const path = `/md-dashboard`;
     const dispatch = useDispatch();
     const {userInfo} = useSelector((state) => state.userAuthDetail)
 
@@ -49,8 +36,6 @@ export default function MdDashboard(){
                                 <h6 className="crypto mt-0">Live Updates</h6>
                                 <p className="retailer_p pl-2 mb-0">join whatever blow destructive elephant less evening lump spoil stamp headdress misery</p>
                             </div>
-
-
                         </div>
                         <div className="row">
 
