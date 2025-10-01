@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {useHistory} from "react-router";
-import siteLogo from "../theme/images/UnikPayIndia-Logo2.png";
+import siteLogo from "../theme/images/UnikPayIndia-Logo3.png";
 import {useDispatch, useSelector} from "react-redux";
 import {actionToOpenCloseSideBarMenu} from "../redux/CommonAction";
 

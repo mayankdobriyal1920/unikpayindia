@@ -228,9 +228,9 @@ const App = () => {
                 </React.Fragment>:''
             }
             {(!userInfo?.id) &&
-              <IonLoading className={"loading_loader_spinner_container"} isOpen={userSession?.loading} message={"Loading..."}/>
+                <IonLoading className={"loading_loader_spinner_container"} isOpen={userSession?.loading} message={"Loading..."}/>
             }
-            </IonApp>
+        </IonApp>
     );
 }
 export default App;
