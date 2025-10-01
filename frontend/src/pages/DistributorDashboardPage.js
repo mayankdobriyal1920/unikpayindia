@@ -1,22 +1,9 @@
 import React from 'react';
-import {IonContent, IonHeader, IonPage, IonRouterOutlet} from "@ionic/react";
-
-import usericon from '../theme/images/user-icon.jpg';
-import CreateDistrubutorIcon from "../../src/theme/images/md-icons/create-distrubutor.svg";
-import WithdrawalMoney from "../../src/theme/images/md-icons/withdrawal-money.svg";
-import PPIWallet from '../theme/images/retailer-icons/PPI-Wallet.svg';
-import MoneTransfer from '../theme/images/retailer-icons/MoneyTransfer.svg';
-import AccountStatements from "../../src/theme/images/md-icons/account-statements.svg";
-import QuickFundIcon from '../theme/images/retailer-icons/QuickFund.svg';
-import QRCodeIcon from '../theme/images/retailer-icons/QR-Code.svg';
-import PGIcon from '../theme/images/retailer-icons/PG.svg';
-import PendingRequesticon from '../theme/images/md-icons/pending-request.svg';
+import {IonContent,IonPage} from "@ionic/react";
 
 import LeftSideBarComponent from "../components/LeftSideBarComponent";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
-import {Redirect, Route, Switch, useRouteMatch} from "react-router";
-import LoginPage from "./LoginPage";
-import WithoutLoginHomePage from "./WithoutLoginHomePage";
+import {Redirect, Route, Switch} from "react-router";
 import DistributorDashBoardEntryActionButtonPartPage from "../components/Distributor/DistributorDashBoardEntryActionButtonPartPage";
 import DisCreateRetailer from "../components/Distributor/DisCreateRetailer";
 import MdUpiFunds from "../components/MdDashboard/MdUpiFunds";

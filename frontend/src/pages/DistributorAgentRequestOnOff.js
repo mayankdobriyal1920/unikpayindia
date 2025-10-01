@@ -1,16 +1,14 @@
 import React from 'react';
-import {IonContent, IonHeader, IonPage} from "@ionic/react";
-import usericon from '../theme/images/user-icon.jpg';
+import {IonContent, IonPage} from "@ionic/react";
 import LeftSideBarComponent from "../components/LeftSideBarComponent";
 import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
+
 export default function DistributorAgentRequestOnOff(){
     return(
         <IonPage className="UnikPayIndia">
             <HeaderAfterLoginComponent/>
-
             <IonContent fullscreen>
                 <LeftSideBarComponent/>
-
                 <div className="upi-content-body">
                     <div className="container-fluid">
                         <div className="col-xl-12 col-md-12 col-lg-12 update-news d-flex mt-2 pl-0 align-items-center">
@@ -27,7 +25,6 @@ export default function DistributorAgentRequestOnOff(){
                             </div>
                         </div>
                         <div className="row main-retailer-report ShowTrans">
-
                             <div className="col-6 mx-auto">
                                 <h3 className="bgred-color white-color pl-2 pt-2 pb-2">Request ON/OFF</h3>
                                 <form className="mt-3">
@@ -45,20 +42,15 @@ export default function DistributorAgentRequestOnOff(){
                                         <div className="form-group col-md-12">
                                             <input type="text" placeholder="Remark" className="form-control" id="inputGroupFile01"/>
                                         </div>
-
                                     </div>
-
                                     <div className="form-row ">
                                        <div className="col-4 mx-auto" >
                                            <button type="button" className="btn btn-width-auto btn-success mr-2">Disable Money Request
                                            </button>
                                        </div>
                                     </div>
-
                                 </form>
                             </div>
-
-
                         </div>
                     </div>
                 </div>

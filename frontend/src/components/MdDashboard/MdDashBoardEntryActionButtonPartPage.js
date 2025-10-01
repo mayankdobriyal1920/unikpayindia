@@ -8,14 +8,6 @@ import QRCodeIcon from "../../theme/images/retailer-icons/QR-Code.svg";
 import PGIcon from '../../theme/images/retailer-icons/PG.svg';
 
 import MoneTransfer from "../../theme/images/retailer-icons/MoneyTransfer.svg";
-import multiwallet from "../../theme/images/retailer-icons/multi-wallet-icon.svg";
-import AEpsIcon from "../../theme/images/retailer-icons/AEPS.svg";
-import RechargeIcon from "../../theme/images/retailer-icons/Recharge.svg";
-import GasIcon from "../../theme/images/retailer-icons/GAS.svg";
-import DTHIcon from "../../theme/images/retailer-icons/DTH.svg";
-import BillCMSIcon from "../../theme/images/retailer-icons/Bill-CMS-Offlines.svg";
-import UPIIcon from "../../theme/images/retailer-icons/UPI.svg";
-import CCPaymentIcon from "../../theme/images/retailer-icons/CC-Payment.svg";
 import PendingRequesticon from '../../theme/images/md-icons/pending-request.svg';
 
 import {useHistory} from "react-router";
@@ -239,7 +231,6 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                                                 <h6 className="green-color">AEPS/MATM/MPOS/ADDHAR Pay</h6>
                                                 <p>$24.00</p>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -248,149 +239,6 @@ export default function MdDashBoardEntryActionButtonPartPage() {
                     </div>
                 </div>
             </div>
-            {/*<div className="col-lg-3">
-                <div className="left-content mt-4 mb-3">
-                    <h3 className="content-title  mt-2">My Business</h3>
-                    <div className="d-flex p-0">
-
-                        <p className="text-muted mb-0 hover-cursor"> Summary </p>
-                    </div>
-                </div>
-                <div className="upi-home-right">
-                    <div className="underBox">
-                        <div className="row ">
-                            <div className="col-12 ">
-                                <div className="my-buss-sum d-inline-flex align-items-center mb-3">
-                                    <img src={myBusinessIcon} alt="icon" className="mr-2 "/>
-                                    <div className="flex items-center">
-                                        <h3 className="mb-0 mt-0 red-color">My Business</h3>
-                                        <h4 className="mt-0">Summary</h4>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-12 mb-3">
-                                <div className="bg-white rounded-xl newstyle-dashome border-purple-500">
-                                    <p className="text-gray-500">Money Transfer</p>
-                                    <h3 className="text-lg font-bold">₹43,565</h3>
-                                </div>
-                            </div>
-
-                            <div className="col-12 mb-3">
-                                <div className="bg-white p-2 pl-3 pr-3 rounded-xl newstyle-dashome border-purple-500">
-                                    <p className="text-gray-500">Utilities/Bill</p>
-                                    <h3 className="text-lg font-bold">₹199</h3>
-                                </div>
-                            </div>
-
-                            <div className="col-12 mb-3">
-                                <div className="bg-white p-2 pl-3 pr-3 rounded-xl newstyle-dashome border-purple-500">
-                                    <p className="text-gray-500">Flight</p>
-                                    <h3 className="text-lg font-bold">₹565</h3>
-                                </div>
-                            </div>
-
-                            <div className="col-12 mb-3">
-                                <div className="bg-white p-2 pl-3 pr-3 rounded-xl newstyle-dashome border-purple-500">
-                                    <p className="text-gray-500">Credit Card Bill</p>
-                                    <h3 className="text-lg font-bold">₹199</h3>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className="row">
-                            <div className="col-6">
-                                <div className="d-flex align-items-center">
-                                <div className="flex-fill">
-                                        <div className="MoneyTransfer mr-2 text-center">
-                                            <h5>Money Transfer</h5>
-                                            <p className="yellow-color">₹ 43,565.00</p>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            <div className="col-6">
-                                <div className="flex-fill align-items-end">
-                                    <div className="MoneyTransfer text-center">
-                                        <h5>Utilities/Bill</h5>
-                                        <p className="yellow-color">₹199.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-md-6">
-                                <div className="flex-fill text-center summary-cc mr-3">
-                                    <h5>Credit Card Bill</h5>
-                                    <p className="text-center">₹ 0</p>
-                                </div>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="flex-fill summary-cc">
-                                    <h5 className="text-center">Flight</h5>
-                                    <p className="text-center">₹ 565.00</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div className="upi-home-right">
-                    <div className="underBox">
-
-
-                        <div className="flex">
-                            <div className="MoneyTransfer text-center">
-                                <h5>AEPS/MATM/MPOS/ADDHAR</h5>
-                                <p className="yellow-color text-center">₹ 43,565.00</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="retailer-recent-trans mt-2">
-                        <div className="flex text-center pb-2">
-                            <h5 className="mt-0">Recent Transaction</h5>
-                        </div>
-
-                        <div className="Recent-Trans">
-                            <div className="table-responsive">
-                                <table className="table border-dashed table-responsive-sm">
-                                    <thead>
-                                    <tr className="LightBlue-BgColor">
-                                        <th scope="col">Transaction No.</th>
-                                        <th scope="col" className="text-end">Amount</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row"><a href="#">101510100114692</a></th>
-                                        <td className="text-end">Rs. 18564</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">101510100114692</a></th>
-                                        <td className="text-end">Rs. 18564</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">101510100114692</a></th>
-                                        <td className="text-end">Rs. 18564</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><a href="#">101510100114692</a></th>
-                                        <td className="text-end">Rs. 18564</td>
-                                    </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>*/}
         </div>
     )
 }
