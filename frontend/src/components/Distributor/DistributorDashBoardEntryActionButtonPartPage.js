@@ -31,7 +31,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
                 <div className="upi-style-icon white-bgcolor boxShadow">
                     <div className="row retailer-das mb-4">
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/distributordashboard/create-retailer')}>
+                            <a onClick={()=>goToPage('/distributor-dashboard/create-retailer')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={CreateDistrubutorIcon} className=""/>
                                 </div>
@@ -40,7 +40,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
                         </div>
 
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/master-managefund-withdraw')}>
+                            <a onClick={()=>goToPage('/dist-managefund-credit')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={WithdrawalMoney} className=""/>
                                 </div>
@@ -49,7 +49,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
                         </div>
 
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/master-managefund-withdraw')}>
+                            <a onClick={()=>goToPage('/dist-managefund-withdraw')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={WithdrawalMoney} className=""/>
                                 </div>
@@ -57,7 +57,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
                             </a>
                         </div>
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/md-dashboard/mdupi-funds')}>
+                            <a onClick={()=>goToPage('/distributor-dashboard/distupi-funds')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={PPIWallet} className=""/>
                                 </div>
@@ -74,7 +74,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
                         </div>
 
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/md-dashboard/mdadd-funds')}>
+                            <a onClick={()=>goToPage('/distributor-dashboard/distadd-funds')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={QuickFundIcon} className=""/>
                                 </div>
@@ -88,7 +88,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
                     </div>
                     <div className="row retailer-das mb-4">
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/md-dashboard/mdqr-code')}>
+                            <a onClick={()=>goToPage('/distributor-dashboard/distqr-code')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={QRCodeIcon} className=""/>
                                 </div>
@@ -97,7 +97,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
                         </div>
 
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/dashboard-home/bill-cms-offline')}>
+                            <a onClick={()=>goToPage('/distributor-dashboard/distqr-code')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={QRCodeIcon} className=""/>
                                 </div>
@@ -105,7 +105,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
                             </a>
                         </div>
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/dashboard-home/upi')}>
+                            <a onClick={()=>goToPage('/distributor-dashboard/distqr-code')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={QRCodeIcon} className=""/>
                                 </div>
@@ -121,7 +121,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
                             </a>
                         </div>
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/md-dashboard/masterwallet-towallet')}>
+                            <a onClick={()=>goToPage('/distributor-dashboard/distwallet-towallet')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={PGIcon} className=""/>
                                 </div>
@@ -141,7 +141,7 @@ export default function DistributorDashBoardEntryActionButtonPartPage() {
 
                     <div className="row retailer-das mb-4">
                         <div className="col-2 text-center ">
-                            <a onClick={()=>goToPage('/master-manage-fund')}>
+                            <a onClick={()=>goToPage('/dist-managefund-credit')}>
                                 <div className="retailer-das-icon animate-bel">
                                     <img src={PendingRequesticon} className=""/>
                                 </div>

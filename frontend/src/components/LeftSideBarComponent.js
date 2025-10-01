@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {useHistory} from "react-router";
-import siteLogo from "../theme/images/UnikPayIndia-Logo.png";
+import siteLogo from "../theme/images/UnikPayIndia-Logo2.png";
 import {useDispatch, useSelector} from "react-redux";
 import {actionToOpenCloseSideBarMenu} from "../redux/CommonAction";
 
@@ -156,9 +156,17 @@ export default function LeftSideBarComponent(){
                     {/*Distributor */}
                     {userInfo.role === 3 && (
                         <li className="">
-                            <a className="has-arrow" onClick={() => goToPage('/distributordashboard')} aria-expanded="false">
+                            <a className="has-arrow" onClick={() => goToPage('/distributor-dashboard')} aria-expanded="false">
                                 <i className="fa-solid fa-house"></i>
                                 <span className="nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                    )}
+                    {userInfo.role === 3 && (
+                        <li>
+                            <a className="has-arrow" onClick={() => goToPage('/md-business-summery')} aria-expanded="false">
+                                <i className="fa-solid fa-file-pen"></i>
+                                <span className="nav-text">Business Summary</span>
                             </a>
                         </li>
                     )}
@@ -180,39 +188,59 @@ export default function LeftSideBarComponent(){
 
                     {userInfo.role === 3 && (
                         <li>
-                            <a className="ai-icon" onClick={()=>goToPage('/dashboard-manage-funds')} aria-expanded="false">
+                            <a className="ai-icon">
                                 <i className="fa-solid fa-file-pen"></i>
                                 <span className="nav-text">Manage Fund</span>
                             </a>
+                            <ul aria-expanded="false" className="mm-collapse">
+                                <li className="mm-active">
+                                    <a onClick={()=>goToPage('/dist-managefund-credit')} className="mm-active">Credit Money</a>
+                                </li>
+                                <li><a onClick={()=>goToPage('/dist-managefund-withdraw')}>Withdraw Money</a></li>
+                            </ul>
                         </li>
                     )}
 
                     {userInfo.role === 3 && (
                         <li>
-                            <a className="ai-icon" onClick={()=>goToPage('/dashboard-money-request')} aria-expanded="false">
+                            <a className="ai-icon" onClick={()=>goToPage('/master-money-request')} aria-expanded="false">
                                 <i className="fa-solid fa-file-pen"></i>
                                 <span className="nav-text">Money Request</span>
                             </a>
                         </li>
                     )}
+                    {userInfo.role === 3 && (
+                        <li className="">
+                            <a className="has-arrow">
+                                <i className="fa-solid fa-house"></i>
+                                <span className="nav-text">Reports</span>
+                            </a>
+                            <ul aria-expanded="false" className="mm-collapse">
+                                <li className="mm-active">
+                                    <a onClick={()=>goToPage('/master-qr-report')} className="mm-active">QR Report</a>
+                                </li>
+                                {/*<li><a onClick={()=>goToPage('/master-pg-report')}>PG Report</a></li>*/}
+                            </ul>
+                        </li>
+                    )}
 
                     {userInfo.role === 3 && (
                         <li>
-                            <a className="ai-icon" onClick={()=>goToPage('/dashboard-statements')} aria-expanded="false">
+                            <a className="ai-icon">
                                 <i className="fa-solid fa-file-pen"></i>
                                 <span className="nav-text">Statements</span>
                             </a>
+                            <ul aria-expanded="false" className="mm-collapse">
+                                <li className="mm-active">
+                                    <a onClick={()=>goToPage('/master-account-statements')} className="mm-active">Account Statements</a>
+                                </li>
+
+                                <li><a onClick={()=>goToPage('/master-commission-statements')}>Commission Statements</a></li>
+                            </ul>
                         </li>
                     )}
 
-                    {userInfo.role === 3 && (
-                        <li>
-                            <a className="ai-icon" onClick={()=>goToPage('/dashboard-business-summery')} aria-expanded="false">
-                                <i className="fa-solid fa-file-pen"></i>
-                                <span className="nav-text">Business Summary</span>
-                            </a>
-                        </li>
-                    )}
+
 
                     {userInfo.role === 3 && (
                         <li>

@@ -27,9 +27,23 @@ export default function MasterMoneyRequest(){
                                 </div>
                             </div>
                         </div>
+                        <div className="row">
+                            <div className="col-12">
+                                <form>
+                                    <div className="form-row">
+                                        <div className="form-group  col-3 ml-auto">
+                                            <div className="dmt-trasno btn-group d-flex" role="group">
+                                                <button type="button" className="btn btn-width btn-success mr-2">+ New Request </button>
+                                                <button type="button" className="btn btn-width btn-secondary">Export </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                         <div className="row main-retailer-report ShowTrans">
                             <div className="col-xl-12">
-                                <div className="card retailer-home-balance">
+                            <div className="card retailer-home-balance">
 
                                     <div className="card-body card-tabs-new">
                                         <ul className="nav nav-pills light" role="tablist">
@@ -202,9 +216,13 @@ export default function MasterMoneyRequest(){
                                                                 <select className="form-control form-select form-select-md" aria-label="Default select example">
                                                                 <option>Select</option>
                                                                 <option value="1">
-                                                                    <b>AMJAD MOBILE REPAIRING : 9540122184: QPR5589</b>
+                                                                    <b>All</b>
                                                                 </option>
-                                                                <option value="2">HARIOM TELECOM CENTRE : 9818872979 :QPR5460</option>
+                                                                <option value="2">Initiated</option>
+                                                                <option value="2">PG Initiated</option>
+                                                                    <option value="2">Pending</option>
+                                                                    <option value="2">Approved</option>
+                                                                    <option value="2">Declined </option>
                                                             </select></div>
 
                                                             <div className="form-group col-2">

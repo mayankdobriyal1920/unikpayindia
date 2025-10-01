@@ -36,11 +36,14 @@ import ReportsPage from "./pages/ReportsPage";
 import BusinessSummeryPage from "./pages/BusinessSummeryPage";
 import StatementsPage from "./pages/StatementsPage";
 
+
 // Distributor Pages
 import DistributorDashboardPage from "./pages/DistributorDashboardPage";
 import DisCreateRetailer from "./components/Distributor/DisCreateRetailer";
 import DistributorAgentDetail from "./pages/DistributorAgentDetail";
 import DistributorAgentRequestOnOff from "./pages/DistributorAgentRequestOnOff";
+import DistManageFundCredit from "./pages/DistManageFundCredit";
+import DistManageFundWithdraw from "./pages/DistManageFundWithdraw";
 import DistributorRetailerDetail from "./pages/DistributorRetailerDetail";
 import DistributorAgentReport from "./pages/DistributorAgentReport";
 import AgentManageFund from "./pages/AgentManageFund";
@@ -48,7 +51,6 @@ import AgentManageFund from "./pages/AgentManageFund";
 // MD Pages
 import MdDashboard from "./pages/MdDashboard";
 import MDBusinessSummeryPage from "./pages/MDBusinessSummeryPage";
-
 import MdDistributorCreateUser from "./components/MdDashboard/MdDistributorCreateUser";
 
 import MdDistributorDetails from "./pages/MdDistributorDetails";
@@ -95,7 +97,7 @@ const SuperAdminRoutes = () => (
 const MasterDistributorRoutes = () => (
     <IonReactRouter>
         <IonRouterOutlet>
-            <Route path="/dashboard-home" component={MdDashboard}/>
+            <Route path="/md-dashboard" component={MdDashboard}/>
             <Route path="/md-business-summery" component={MDBusinessSummeryPage}/>
             <Route path="/md-distributor-details" component={MdDistributorDetails}/>
             <Route path="/mastercreateuser/" component={MdDistributorCreateUser}/>
@@ -116,8 +118,8 @@ const MasterDistributorRoutes = () => (
             <Route path="/master-aeps-statement" component={MasterAepsStatement}/>
             <Route path="/master-user-transaction" component={UserTransactionDetails}/>
             <Route path="/dashboard-setting" component={SettingPage}/>
-            <Redirect exact from="/" to="/dashboard-home" />
-            <Route render={() => <Redirect to="/dashboard-home" />} />
+            <Redirect exact from="/" to="/md-dashboard" />
+            <Route render={() => <Redirect to="/md-dashboard" />} />
         </IonRouterOutlet>
     </IonReactRouter>
 );
@@ -125,12 +127,20 @@ const MasterDistributorRoutes = () => (
 const LocalDistributorRoutes = () => (
     <IonReactRouter>
         <IonRouterOutlet>
-            <Route path="/dashboard-home" component={DistributorDashboardPage}/>
+            <Route path="/distributor-dashboard" component={DistributorDashboardPage}/>
+            <Route path="/md-business-summery" component={MDBusinessSummeryPage}/>
             <Route path="/discrateretailer" component={DisCreateRetailer}/>
             <Route path="/distributor-agent-detail" component={DistributorAgentDetail}/>
             <Route path="/disretailer-details" component={DistributorRetailerDetail}/>
             <Route path="/distributoragent-request-onoff" component={DistributorAgentRequestOnOff}/>
-            <Route path="/dashboard-manage-funds" component={ManageFundsPage}/>
+            <Route path="/dist-managefund-credit" component={DistManageFundCredit}/>
+            <Route path="/dist-managefund-withdraw" component={DistManageFundWithdraw}/>
+            <Route path="/master-money-request" component={MasterMoneyRequest}/>
+            <Route path="/master-qr-report" component={MasterQrReport}/>
+            {/*<Route path="/master-pg-report" component={MasterPgReport}/>*/}
+            <Route path="/master-account-statements" component={MasterAccountStatements}/>
+            <Route path="/master-commission-statements" component={MasterCommissionStatements}/>
+
             <Route path="/dashboard-money-request" component={MoneyRequestPage}/>
             <Route path="/dashboard-statements" component={StatementsPage}/>
             <Route path="/dashboard-business-summery" component={BusinessSummeryPage}/>
@@ -138,8 +148,8 @@ const LocalDistributorRoutes = () => (
             <Route path="/agent-manage-fund" component={AgentManageFund}/>
             <Route path="/dashboard-reports" component={ReportsPage}/>
             <Route path="/dashboard-setting" component={SettingPage}/>
-            <Redirect exact from="/" to="/dashboard-home" />
-            <Route render={() => <Redirect to="/dashboard-home" />} />
+            <Redirect exact from="/" to="/distributor-dashboard" />
+            <Route render={() => <Redirect to="/distributor-dashboard" />} />
         </IonRouterOutlet>
     </IonReactRouter>
 );

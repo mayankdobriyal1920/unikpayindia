@@ -6,16 +6,18 @@ import HeaderAfterLoginComponent from "../components/HeaderAfterLoginComponent";
 import {Redirect, Route, Switch} from "react-router";
 import DistributorDashBoardEntryActionButtonPartPage from "../components/Distributor/DistributorDashBoardEntryActionButtonPartPage";
 import DisCreateRetailer from "../components/Distributor/DisCreateRetailer";
-import MdUpiFunds from "../components/MdDashboard/MdUpiFunds";
-import MdAddFunds from "../components/MdDashboard/MdAddFunds";
-import MdQrCode from "../components/MdDashboard/MdQrCode";
+import DistUpiFunds from "../components/Distributor/DistUpiFunds";
+import DistAddFunds from "../components/Distributor/DistAddFunds";
+import DistQrCode from "../components/Distributor/DistQrCode";
+import DistWalletToWallet from "../components/Distributor/DistWalletToWallet";
 import MasterWalletToWallet from "../components/MdDashboard/MasterWalletToWallet";
 import PaymentTransactionSuccessModal from "../components/DashBoardPage/PaymentTransactionSuccessModal";
 import {useDispatch, useSelector} from "react-redux";
 import {actionToGetTransactionDetails} from "../redux/CommonAction";
 
+
 export default function DistributorDashboardPage(){
-    const path = `/distributordashboard`;
+    const path = `/distributor-dashboard`;
     const dispatch = useDispatch();
     const {userInfo} = useSelector((state) => state.userAuthDetail)
 
@@ -44,10 +46,10 @@ export default function DistributorDashboardPage(){
                         <Switch>
                             <Route exact path={`${path}/action`} component={DistributorDashBoardEntryActionButtonPartPage} />
                             <Route exact path={`${path}/create-retailer`} component={DisCreateRetailer} />
-                            <Route exact path={`${path}/mdupi-funds`} component={MdUpiFunds} />
-                            <Route exact path={`${path}/mdadd-funds`} component={MdAddFunds} />
-                            <Route exact path={`${path}/mdqr-code`} component={MdQrCode} />
-                            <Route exact path={`${path}/masterwallet-towallet`} component={MasterWalletToWallet} />
+                            <Route exact path={`${path}/distupi-funds`} component={DistUpiFunds} />
+                            <Route exact path={`${path}/distadd-funds`} component={DistAddFunds} />
+                            <Route exact path={`${path}/distqr-code`} component={DistQrCode} />
+                            <Route exact path={`${path}/distwallet-towallet`} component={DistWalletToWallet} />
                             <Redirect  exact from={path}  to={`${path}/action`} />
                         </Switch>
                     </div>
